@@ -62,14 +62,24 @@
 	</header>
 
 	<main class="container main-container inputForm" role="main">
-		<form id="userForm" action="http:/127.0.0.1:3000/newTeam" method="post" role="form">
+		<form id="userForm" action="http:/127.0.0.1:3000/api/teams" method="post" role="form">
 
-			<h3>User information</h3>
+			<h3>Team information</h3>
 
   			<!--Team-->
   			<div class="form-group">
   				<label for="team">Team ID:</label>
-    			<input name="team" type="text" class="form-control" id="team" aria-describedby="teamHelp" placeholder="Your Team ID" maxlength="50">
+    			<input name="teamName" type="text" class="form-control" id="team" aria-describedby="teamHelp" placeholder="Your Team ID" maxlength="50">
+  			</div>
+
+  			<div class="form-group">
+  				<label for="password">Password:</label>
+    			<input name="pwd" type="password" class="form-control" id="team" aria-describedby="teamHelp" maxlength="50">
+  			</div>
+
+  			<div class="form-group">
+  				<label for="email">Your email:</label>
+    			<input name="email" type="email" class="form-control" id="team" aria-describedby="teamHelp" maxlength="50">
   			</div>
 
   			<!--Team-->
