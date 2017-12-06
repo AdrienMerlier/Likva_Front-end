@@ -61,15 +61,42 @@
 	</header>
 
 	<main class="container main-container inputForm" role="main">
-		<form id="propositionForm" action="http:/127.0.0.1:3000/newProposition" method="post" role="form">
+		<form id="propositionForm" action="http:/127.0.0.1:3000/api/team/proposition" method="post" role="form">
 
 			<h3>Main information</h3>
+
+			<!--Team-->
+			<div class="form-group">
+    			<label for="inputTeam">Team</label>
+    			<input name="team" type="text" class="form-control form-control-lg" id="inputTeam" aria-describedby="titleHelp" placeholder="Your team name" maxlength="100" required="true">
+  			</div>
 
 			<!--Title-->
 			<div class="form-group">
     			<label for="inputTitle">Title</label>
     			<input name="title" type="text" class="form-control form-control-lg" id="inputTitle" aria-describedby="titleHelp" placeholder="Enter the title of your proposition" maxlength="100" required="true">
   			</div>
+
+  			<!--Email-->
+			<div class="form-group">
+    			<label for="inputEmail">Email</label>
+    			<input name="author" type="email" class="form-control" id="inputEmail" aria-describedby="titleHelp" placeholder="Enter the title of your proposition" maxlength="100" required="true">
+  			</div>
+
+  			<!--Category-->	
+			<fieldset disabled>
+
+	  			<div class="form-group disabled">
+	  				<label for="inputcategory">Type of vote:</label>
+	  				<select name="category" class="form-control" id="inputcategory">
+					    <option></option>
+					    <option>Category 1</option>
+					    <option>Category 2</option>
+					    <option>Category 3</option>
+	  				</select>
+				</div>
+			 </fieldset>
+
 
   			<!--Summary-->
   			<div class="form-group">
