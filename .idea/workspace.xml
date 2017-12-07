@@ -2,34 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70a3ddf4-30a2-4c32-8b7c-8bf4f6665c76" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/likvaProject/src/components/users/UsersStore.js" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/css/base.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/css/my_vote.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/css/new_user.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/css/new_user_added.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/css/proposition.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/css/proposition_input.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/html/base.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/html/category.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/html/login.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/html/manage_user.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/html/my_votes.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/html/new_team.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/html/new_user.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/html/new_user_added.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/html/proposition.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/html/proposition_input.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/Thumbs.db" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/Transports.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/anonymousProfile.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/env-policy-hero2-TVA Norris_009.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/environment.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/likvaLogo.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/network-782707_960_720.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/networking.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/js/base.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/js/vote.js" afterPath="" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/likvaProject/src/routes/routes.js" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/likvaProject/src/App.vue" afterPath="$PROJECT_DIR$/likvaProject/src/App.vue" />
+      <change beforePath="$PROJECT_DIR$/likvaProject/src/components/HelloWorld.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/HelloWorld.vue" />
+      <change beforePath="$PROJECT_DIR$/likvaProject/src/components/users/UsersStore.js" afterPath="$PROJECT_DIR$/likvaProject/src/components/users/UsersStore.js" />
+      <change beforePath="$PROJECT_DIR$/likvaProject/src/main.js" afterPath="$PROJECT_DIR$/likvaProject/src/main.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -53,11 +33,56 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsersStore.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UsersStore.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/likvaProject/src/components/users/UsersStore.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="272">
+              <caret line="16" column="62" lean-forward="false" selection-start-line="16" selection-start-column="62" selection-end-line="16" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/likvaProject/src/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#140#161#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/likvaProject/src/routes/routes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="15" lean-forward="false" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/likvaProject/src/App.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HelloWorld.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/likvaProject/src/components/HelloWorld.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -79,11 +104,21 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/likvaProject/src/components/users/UsersStore.js" />
+        <option value="$PROJECT_DIR$/likvaProject/src/routes/routes.js" />
+        <option value="$PROJECT_DIR$/likvaProject/src/App.vue" />
+        <option value="$PROJECT_DIR$/likvaProject/src/components/HelloWorld.vue" />
+        <option value="$PROJECT_DIR$/likvaProject/src/main.js" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
@@ -91,11 +126,11 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/likvaProject/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-5" />
+    <option name="y" value="3" />
+    <option name="width" value="1636" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -140,6 +175,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Likva_Front-end" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Likva_Front-end" type="462c0819:PsiDirectoryNode" />
+              <item name="likvaProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="users" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -152,6 +195,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -178,18 +223,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1512659872443</updated>
-      <workItem from="1512659890147" duration="871000" />
+      <workItem from="1512659890147" duration="4817000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="871000" />
+    <option name="totallyTimeSpent" value="4817000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-5" y="3" width="1636" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16302083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19320987" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -229,9 +274,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/users/UsersStore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="272">
+          <caret line="16" column="62" lean-forward="false" selection-start-line="16" selection-start-column="62" selection-end-line="16" selection-end-column="62" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/likvaProject/src/routes/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="15" lean-forward="false" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/likvaProject/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/HelloWorld.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/likvaProject/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#140#161#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
