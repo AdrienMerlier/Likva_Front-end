@@ -4,10 +4,12 @@
     height: 100%;
     display: table;
     float: left;
+    padding-top: 10px;
     background-color:  #d1e0e0;
 }
 
 .proposition-summary-content{
+    
     display: table-row;
     text-align: center;
     vertical-align: center;
@@ -22,6 +24,8 @@
 
 .proposition{
     margin-left: 250px;
+    margin-bottom: 100px;
+    padding-top: 10px;
     padding-left: 5%;
     padding-right: 5%;
     display: block;
@@ -50,9 +54,14 @@ ul .justified{
 .vote_div{
     align-content: center;
     float: left;
+
     margin-left: 10px;
 }
 
 .vote_button{
+    background-color: #000000;
+}
+
+.extra-elements{
     background-color: #000000;
 }
