@@ -4,7 +4,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import VueRouter from 'vue-router'
 import router from './routes/routes'
-import App from './App'
+const App = () => import('./App')
 
 Vue.use(Vuex)
 Vue.use(VueRouter)

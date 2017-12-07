@@ -1,16 +1,19 @@
 <template>
   <div id="app">
+    <header-bar></header-bar>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld'
+import HeaderBar from './components/HeaderBar'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    HelloWorld,
+    HeaderBar
   }
 }
 </script>
