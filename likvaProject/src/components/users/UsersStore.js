@@ -5,8 +5,7 @@ const state = {
     name: 'Léo',
     surname: 'Mouyna',
     email: '',
-    teams: [],
-    loaded: false
+    teams: []
   },
   messages: [{ }],
   actualTeam: ''

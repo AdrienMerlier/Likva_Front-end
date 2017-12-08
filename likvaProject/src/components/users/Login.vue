@@ -32,11 +32,17 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" @click.prevent.stop="logUser">Se Connecter</button>
+            <button type="button" class="btn btn-primary" @click.prevent="logUser">Se Connecter</button>
             <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
           </div>
         </div>
       </div>
+    </div>
+    <div>
+      <span class="fa-stack fa-5x" v-if="loading">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-spinner fa-pulse fa-stack-1x fa-inverse"></i>
+      </span>
     </div>
   </div>
 </template>
@@ -62,7 +68,8 @@
         console.log(this.logemail, this.logpassword)
         this.loginResource.save({logemail: this.logemail, logpassword: this.logpassword}).then(response => {
           //  If success
-          console.log(response.body.message)
+          console.log('Contenu de la réponse: ' + response.body)
+          console.log('Contenu du user: ' + response.body.user)
           this.insertUserStore(response.body.user)
         }, response => {
           //  If failure
@@ -85,5 +92,20 @@
     margin-left: auto ;
     margin-right: auto ;
     margin-top: 20px;
+  }
+  .icon__loading{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+    margin-left: -30px;
+    margin-top: -30px;
+    background-color: black;
+    opacity: 0.5;
+    color: white;
+    border-radius: 60px;
+    z-index: 4000;
   }
 </style>
