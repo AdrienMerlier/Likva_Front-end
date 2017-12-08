@@ -61,7 +61,12 @@
       logUser () {
         console.log(this.logemail, this.logpassword)
         this.loginResource.save({logemail: this.logemail, logpassword: this.logpassword}).then(response => {
+          //  If success
+          console.log(response.body.message)
           this.insertUserStore(response.body.user)
+        }, response => {
+          //  If failure
+          console.error('Something went wrong: ' + response.status)
         })
       }
     },

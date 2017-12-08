@@ -33,16 +33,16 @@
           <li class="nav-item dropdown">
             <!--Changer avec un router-link-->
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
-               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-if="actualGroup">
-              {{actualGroup}}
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-if="actualTeam">
+              {{actualTeam}}
             </a>
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-else>
               Teams
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" v-if="userGroupsCount > 0">
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" v-if="userTeamsCount > 0">
               <!--Changer avec un router-link-->
-              <a class="dropdown-item" href="#" v-for="group in userInfos.groups">{{group.name}}</a>
+              <a class="dropdown-item" href="#" v-for="team in userInfos.teams">{{team.name}}</a>
             </div>
           </li>
           <li class="nav-item">
@@ -80,9 +80,9 @@
       ...Vuex.mapGetters([
         'userInfos',
         'messages',
-        'actualGroup',
+        'actualTeam',
         'userFullName',
-        'userGroupsCount',
+        'userTeamsCount',
         'adminActualTeam',
         'hasUserInfos'
       ])

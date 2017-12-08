@@ -5,23 +5,23 @@ const state = {
     name: 'Léo',
     surname: 'Mouyna',
     email: '',
-    groups: [],
+    teams: [],
     loaded: false
   },
   messages: [{ }],
-  actualGroup: ''
+  actualTeam: ''
 }
 
 const getters = {
   userInfos: state => state.user,
   hasUserInfos: state => state.user.loaded,
   messages: state => state.messages,
-  actualGroup: state => state.actualGroup,
-  userGroupsCount: state => state.user.groups.length,
+  actualTeam: state => state.actualTeam,
+  userTeamsCount: state => state.user.teams.length,
   userName: state => state.user.name,
   userSurname: sate => state.user.surname,
   userFullName: state => getters.userName(state) + ' ' + getters.userSurname(state),
-  adminActualTeam: state => state.user.groups.filter(group => group.name === state.actualGroup).admin
+  adminActualTeam: state => state.user.teams.filter(team => team.name === state.actualTeam).admin
 }
 
 const mutations = {
@@ -31,8 +31,8 @@ const mutations = {
   INSERT_USER: (state, user) => {
     state.user = user
   },
-  ADD_GROUP: (state, group) => {
-    state.user.groups.push(group)
+  ADD_TEAM: (state, team) => {
+    state.user.teams.push(team)
   },
   ADD_MESSAGE: (state, content, type, concern) => {
     state.messages.push({
@@ -44,8 +44,8 @@ const mutations = {
   REMOVE_MESSAGE: (state, message) => {
     state.messages = state.messages.filter(msg => msg !== message)
   },
-  CHANGE_ACTUAL_GROUP: (state, groupName) => {
-    state.actualGroup = groupName
+  CHANGE_ACTUAL_TEAM: (state, teamName) => {
+    state.actualTeam = teamName
   }
 }
 
@@ -70,7 +70,7 @@ const actions = {
       store.commit('ADD_MESSAGE', message)
     }
   },
-  addGroupUserStrore: (store, group) => {
+  addTeamUserStrore: (store, team) => {
     let message = {
       content: '',
       type: '',
@@ -78,7 +78,7 @@ const actions = {
     }
     message.content = 'Votre profil a été mis à jour'
     message.type = 'success'
-    store.commit('ADD_GROUP', group).then(_ => store.commit('ADD_MESSAGE', message))
+    store.commit('ADD_TEAM', team).then(_ => store.commit('ADD_MESSAGE', message))
   },
   removeMessageUserStore: (store, msg) => {
     store.commit('')
