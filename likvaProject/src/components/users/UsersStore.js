@@ -5,7 +5,8 @@ const state = {
     name: 'Léo',
     surname: 'Mouyna',
     email: '',
-    groups: []
+    groups: [],
+    loaded: false
   },
   messages: [{ }],
   actualGroup: ''
@@ -13,17 +14,22 @@ const state = {
 
 const getters = {
   userInfos: state => state.user,
+  hasUserInfos: state => state.user.loaded,
   messages: state => state.messages,
   actualGroup: state => state.actualGroup,
   userGroupsCount: state => state.user.groups.length,
   userName: state => state.user.name,
   userSurname: sate => state.user.surname,
-  userFullName: state => getters.userName(state) + ' ' + getters.userSurname(state)
+  userFullName: state => getters.userName(state) + ' ' + getters.userSurname(state),
+  adminActualTeam: state => state.user.groups.filter(group => group.name === state.actualGroup).admin
 }
 
 const mutations = {
   CHANGE_PARAM: (state, param, value) => {
     state.user.param = value
+  },
+  INSERT_USER: (state, user) => {
+    state.user = user
   },
   ADD_GROUP: (state, group) => {
     state.user.groups.push(group)
@@ -44,6 +50,10 @@ const mutations = {
 }
 
 const actions = {
+  insertUserStore: (store, user) => {
+    user.loaded = true
+    store.commit('INSERT_USER', user)
+  },
   updateUserStore: (store, param, value) => {
     let message = {
       content: '',

@@ -2,7 +2,7 @@
   <div class="header-bar">
     <header class="fixed-top" id="top-page">
       <!-- Application menu -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" v-if="hasUserInfos">
         <img src="../assets/likvaLogoMiniTransparentNavbar.png" id="brandPicture">
         <!--Changer avec un router-link-->
         <a class="navbar-brand" href="#"><img src="../assets/anonymousProfile.png"/> {{userFullName}}</a>
@@ -27,7 +27,7 @@
             </li>
             <li class="nav-item">
               <!--Changer avec un router-link-->
-              <a class="nav-link" href="#">Admin</a>
+              <a class="nav-link" href="#" v-if="adminActualTeam">Admin</a>
             </li>
           </ul>
           <ul class="navbar-nav">
@@ -51,6 +51,14 @@
             </li>
           </ul>
         </div>
+      </nav>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" v-else>
+        <router-link :to="{name: 'login'}">
+          <button class="btn btn-outline-info">Login</button>
+        </router-link>
+        <router-link :to="{name: 'home'}">
+          <img src="../assets/likvaLogoMiniTransparentNavbar.png" id="brandPicture">
+        </router-link>
       </nav>
     </header>
   </div>
@@ -76,8 +84,13 @@
         'messages',
         'actualGroup',
         'userFullName',
-        'userGroupsCount'
+        'userGroupsCount',
+        'adminActualTeam',
+        'hasUserInfos'
       ])
+    },
+    mounted () {
+      console.log(this.adminActualTeam)
     }
   }
 </script>

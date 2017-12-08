@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const HelloWorld = () => import('../components/HelloWorld')
+const Login = () => import('../components/users/Login')
 
 export default new VueRouter({
   mode: 'history',
@@ -14,9 +15,9 @@ export default new VueRouter({
       component: HelloWorld
     },
     {
-      path: '/home',
-      name: 'home2',
-      component: HelloWorld
+      path: '/login',
+      name: 'login',
+      component: Login
     },
     {
       path: '*',

@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <img src="../assets/logo.png">
+    <img src="../assets/likvaLogoTransparent.png">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
@@ -26,7 +26,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Bienvenu sur Likva la platforme de démocratie liquide'
     }
   }
 }
