@@ -26,7 +26,6 @@
         'removeMessageUserStore'
       ]),
       msgClass (msg) {
-        console.log(msg.type)
         return msg.type
       }
     },
@@ -41,5 +40,8 @@
 <style scoped>
 #message-group{
   margin-top: 64px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>

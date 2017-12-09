@@ -71,12 +71,14 @@
           console.log('Contenu de la réponse: ' + JSON.stringify(response.body[0]))
           console.log('Contenu du user: ' + JSON.stringify(response.body[0].user))
           this.insertUserStore(response.body[0].user)
+          this.addMessageUserStore(message)
         }, response => {
           //  If failure
           message.content = 'Une erreur est survenue lors de votre connexion, veuillez rééssayer.'
           message.type = 'alert-danger'
           console.error('Something went wrong: ' + response.status)
-        }).then(_ => this.addMessageUserStore(message))
+          this.addMessageUserStore(message)
+        })
       }
     },
     mounted () {
