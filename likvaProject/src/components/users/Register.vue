@@ -85,7 +85,7 @@
             name: this.user.name,
             surname: this.user.surname,
             email: this.user.email,
-            password: this.user.password
+            pwd: this.user.password
           }
         ).then(response => {
           //  If success

@@ -65,8 +65,8 @@
         console.log(this.logemail, this.logpassword)
         this.loginResource.save({logemail: this.logemail, logpassword: this.logpassword}).then(response => {
           //  If success
-          console.log('Contenu de la réponse: ' + response.body)
-          console.log('Contenu du user: ' + response.body.user)
+          console.log('Contenu de la réponse: ' + JSON.stringify(response.body))
+          console.log('Contenu du user: ' + JSON.stringify(response.body.user))
           this.insertUserStore(response.body.user)
         }, response => {
           //  If failure
