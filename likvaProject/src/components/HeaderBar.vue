@@ -52,11 +52,15 @@
       </div>
     </nav>
     <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark" v-else>
-      <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#loginModal">
-        Login
+      <button type="button" class="btn btn-outline-info nav-button" data-toggle="modal" data-target="#loginModal">
+        Connexion
+      </button>
+      <button type="button" class="btn btn-outline-info nav-button" data-toggle="modal" data-target="#signinModal">
+        Inscription
       </button>
     </nav>
     <login></login>
+    <register></register>
   </div>
 </template>
 
@@ -64,13 +68,14 @@
   import Vuex from 'vuex'
   import userStore from './users/UsersStore'
   import Login from './users/Login'
+  import Register from './users/Register'
 
   global.s = userStore
 
   export default {
     name: 'header-bar',
     store: userStore,
-    components: {Login},
+    components: {Login, Register},
     data () {
       return {
         brandImageStyle: {}
@@ -94,5 +99,8 @@
 </script>
 
 <style scoped>
-
+.nav-button{
+  margin-left: 12px;
+  margin-right: 12px;
+}
 </style>

@@ -53,23 +53,10 @@ const actions = {
     user.loaded = true
     store.commit('INSERT_USER', user)
   },
-  updateUserStore: (store, param, value) => {
-    let message = {
-      content: '',
-      type: '',
-      concern: 'user collection'
-    }
-    if (param in ['name', 'surname', 'email']) {
-      message.content = 'Votre profil a été mis à jour'
-      message.type = 'success'
-      store.commit('CHANGE_PARAM', param, value).then(_ => store.commit('ADD_MESSAGE', message))
-    } else {
-      message.content = 'Erreur, lors de la mise à jour de votre profil'
-      message.type = 'error'
-      store.commit('ADD_MESSAGE', message)
-    }
+  addMessageUserStore: (store, message) => {
+    store.commit('ADD_MESSAGE', message.content, message.type, message.concern)
   },
-  addTeamUserStrore: (store, team) => {
+  updateUserStore: (store, param, value) => {
     let message = {
       content: '',
       type: '',
@@ -77,7 +64,25 @@ const actions = {
     }
     message.content = 'Votre profil a été mis à jour'
     message.type = 'success'
-    store.commit('ADD_TEAM', team).then(_ => store.commit('ADD_MESSAGE', message))
+    store.commit('CHANGE_PARAM', param, value).then(_ => actions.addMessageUserStore(store, message), _ => {
+      message.content = 'Erreur, lors de la mise à jour de votre profil'
+      message.type = 'error'
+      actions.addMessageUserStore(store, message)
+    })
+  },
+  addTeamUserStrore: (store, team) => {
+    let message = {
+      content: '',
+      type: '',
+      concern: 'Teams user collection'
+    }
+    message.content = 'Vos équipes ont été mis à jour'
+    message.type = 'success'
+    store.commit('ADD_TEAM', team).then(_ => actions.addMessageUserStore(store, message), _ => {
+      message.content = 'Une erreur lors de la mise à jour de vos équipe est survenue'
+      message.type = 'danger'
+      actions.addMessageUserStore(store, message)
+    })
   },
   removeMessageUserStore: (store, msg) => {
     store.commit('')

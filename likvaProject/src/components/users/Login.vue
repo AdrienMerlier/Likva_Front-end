@@ -17,7 +17,7 @@
                 <div class="col-sm-12 input-group">
                   <div class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i>
                   </div>
-                  <input type="text" class="form-control form-control-lg" id="inlineFormInputGroup"
+                  <input type="email" class="form-control form-control-lg" id="inlineFormInputGroup"
                          placeholder="Email" v-model="logemail">
                 </div>
               </div>
@@ -29,20 +29,17 @@
                    v-model="logpassword">
                 </div>
               </div>
+              <p>Pas encore inscrit ?
+                <a href="#" data-toggle="modal" data-target="#signinModal" data-dismiss="modal">Inscription</a>
+              </p>
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" @click.prevent="logUser">Se Connecter</button>
+            <button type="button" class="btn btn-primary" @click.prevent="logUser" data-dismiss="modal">Se Connecter</button>
             <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
           </div>
         </div>
       </div>
-    </div>
-    <div>
-      <span class="fa-stack fa-5x" v-if="loading">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa fa-spinner fa-pulse fa-stack-1x fa-inverse"></i>
-      </span>
     </div>
   </div>
 </template>
