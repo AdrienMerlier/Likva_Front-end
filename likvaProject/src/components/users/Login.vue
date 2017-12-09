@@ -68,7 +68,7 @@
           //  If success
           message.content = 'Bienvenu dans votre espace Likva'
           message.type = 'alert-success'
-          console.log('Contenu de la réponse: ' + JSON.stringify(response.body[0]))
+          console.log('Contenu de la réponse: ' + JSON.stringify(response))
           console.log('Contenu du user: ' + JSON.stringify(response.body[0].user))
           this.insertUserStore(response.body[0].user)
           this.addMessageUserStore(message)

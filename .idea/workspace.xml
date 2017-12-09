@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70a3ddf4-30a2-4c32-8b7c-8bf4f6665c76" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/likvaProject/src/assets/Thumbs.db" afterPath="$PROJECT_DIR$/likvaProject/src/assets/Thumbs.db" />
-      <change beforePath="$PROJECT_DIR$/likvaProject/src/components/Messages.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/Messages.vue" />
       <change beforePath="$PROJECT_DIR$/likvaProject/src/components/users/Login.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/users/Login.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -94,8 +91,8 @@
           <file leaf-file-name="Login.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/users/Login.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="251">
-                  <caret line="74" column="24" lean-forward="true" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
+                <state relative-caret-position="268">
+                  <caret line="66" column="103" lean-forward="false" selection-start-line="66" selection-start-column="95" selection-end-line="66" selection-end-column="103" />
                   <folding>
                     <element signature="e#498#505#1" expanded="true" />
                     <element signature="e#1990#2013#0" expanded="true" />
@@ -324,12 +321,12 @@
       <workItem from="1512722547568" duration="13268000" />
       <workItem from="1512758539649" duration="2929000" />
       <workItem from="1512817713756" duration="12358000" />
-      <workItem from="1512862620875" duration="493000" />
+      <workItem from="1512862620875" duration="653000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47385000" />
+    <option name="totallyTimeSpent" value="47545000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-5" y="3" width="1929" height="1047" extended-state="0" />
@@ -859,8 +856,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/users/Login.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="74" column="24" lean-forward="true" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
+        <state relative-caret-position="268">
+          <caret line="66" column="103" lean-forward="false" selection-start-line="66" selection-start-column="95" selection-end-line="66" selection-end-column="103" />
           <folding>
             <element signature="e#498#505#1" expanded="true" />
             <element signature="e#1990#2013#0" expanded="true" />
