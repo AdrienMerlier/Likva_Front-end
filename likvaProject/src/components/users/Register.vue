@@ -89,7 +89,7 @@
           }
         ).then(response => {
           //  If success
-          console.log('Contenu de la réponse: ' + response.body)
+          console.log('Contenu de la réponse: ' + JSON.stringify(response.body))
           message.content = 'Vous avez bien été inscrit, essayer de vous connecter'
           message.type = 'success'
         }, response => {

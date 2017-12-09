@@ -67,7 +67,7 @@
           //  If success
           console.log('Contenu de la réponse: ' + JSON.stringify(response.body))
           console.log('Contenu du user: ' + JSON.stringify(response.body.user))
-          this.insertUserStore(response.body.user)
+          this.insertUserStore(response.body[0].user)
         }, response => {
           //  If failure
           console.error('Something went wrong: ' + response.status)
