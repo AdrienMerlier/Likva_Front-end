@@ -59,19 +59,24 @@
     },
     methods: {
       ...Vuex.mapActions([
-        'insertUserStore'
+        'insertUserStore',
+        'addMessageUserStore'
       ]),
       logUser () {
-        console.log(this.logemail, this.logpassword)
+        let message = {concern: 'Connexion'}
         this.loginResource.save({logemail: this.logemail, logpassword: this.logpassword}).then(response => {
           //  If success
-          console.log('Contenu de la réponse: ' + JSON.stringify(response.body))
-          console.log('Contenu du user: ' + JSON.stringify(response.body.user))
+          message.content = 'Bienvenu dans votre espace Likva'
+          message.type = 'alert-success'
+          console.log('Contenu de la réponse: ' + JSON.stringify(response.body[0]))
+          console.log('Contenu du user: ' + JSON.stringify(response.body[0].user))
           this.insertUserStore(response.body[0].user)
         }, response => {
           //  If failure
+          message.content = 'Une erreur est survenue lors de votre connexion, veuillez rééssayer.'
+          message.type = 'alert-danger'
           console.error('Something went wrong: ' + response.status)
-        })
+        }).then(_ => this.addMessageUserStore(message))
       }
     },
     mounted () {

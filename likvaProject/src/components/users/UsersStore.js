@@ -7,7 +7,7 @@ const state = {
     email: '',
     teams: []
   },
-  messages: [{ }],
+  messages: [],
   actualTeam: ''
 }
 
@@ -33,11 +33,11 @@ const mutations = {
   ADD_TEAM: (state, team) => {
     state.user.teams.push(team)
   },
-  ADD_MESSAGE: (state, content, type, concern) => {
+  ADD_MESSAGE: (state, message) => {
     state.messages.push({
-      content: content,
-      type: type,
-      concern: concern
+      content: message.content,
+      type: message.type,
+      concern: message.concern
     })
   },
   REMOVE_MESSAGE: (state, message) => {
@@ -54,7 +54,7 @@ const actions = {
     store.commit('INSERT_USER', user)
   },
   addMessageUserStore: (store, message) => {
-    store.commit('ADD_MESSAGE', message.content, message.type, message.concern)
+    store.commit('ADD_MESSAGE', message)
   },
   updateUserStore: (store, param, value) => {
     let message = {
@@ -85,7 +85,7 @@ const actions = {
     })
   },
   removeMessageUserStore: (store, msg) => {
-    store.commit('')
+    store.commit('REMOVE_MESSAGE', msg)
   }
 }
 

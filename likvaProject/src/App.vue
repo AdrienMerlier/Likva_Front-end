@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <header-bar></header-bar>
+    <messages></messages>
     <router-view></router-view>
   </div>
 </template>
@@ -8,12 +9,14 @@
 <script>
 import HelloWorld from './components/HelloWorld'
 import HeaderBar from './components/HeaderBar'
+import Messages from './components/Messages'
 
 export default {
   name: 'app',
   components: {
     HelloWorld,
-    HeaderBar
+    HeaderBar,
+    Messages
   }
 }
 </script>
@@ -25,6 +28,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 120px;
 }
 </style>

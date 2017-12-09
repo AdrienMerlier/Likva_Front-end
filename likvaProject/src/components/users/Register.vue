@@ -79,7 +79,6 @@
       ]),
       registerUser () {
         let message = {concern: 'Inscription'}
-        console.log('Les informations utilisateur sont: ' + JSON.stringify(this.user))
         this.registerResource.save(
           {
             name: this.user.name,
@@ -89,15 +88,16 @@
           }
         ).then(response => {
           //  If success
-          console.log('Contenu de la réponse: ' + JSON.stringify(response.body))
           message.content = 'Vous avez bien été inscrit, essayer de vous connecter'
-          message.type = 'success'
+          message.type = 'alert-success'
+          this.addMessageUserStore(message)
         }, response => {
           //  If failure
           console.error('Something went wrong: ' + response.status)
           message.content = 'Une erreur est survenue lors de votre inscription, veuillez rééssayer'
-          message.type = 'danger'
-        }).then(_ => this.addMessageUserStore(message))
+          message.type = 'alert-danger'
+          this.addMessageUserStore(message)
+        })
       }
     },
     mounted () {
