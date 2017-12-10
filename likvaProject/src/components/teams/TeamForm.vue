@@ -49,8 +49,10 @@
         </div>
       </form>
       <div class="btn-group">
-        <button type="button" class="btn btn-outline-success" @click.prevent="createTeam"><i class="fa fa-send"></i> Créer l'équipe</button>
-        <button type="button" class="btn btn-outline-danger" @click.prevent="removeTeamInformation"><i class="fa fa-close"></i> Annuler</button>
+        <button type="button" class="btn btn-outline-success" @click.prevent="createTeam">
+          <i class="fa fa-send"></i> Créer l'équipe</button>
+        <button type="button" class="btn btn-outline-danger" @click.prevent="removeTeamInformation">
+          <i class="fa fa-close"></i> Annuler</button>
       </div>
     </div>
   </div>

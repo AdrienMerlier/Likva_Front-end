@@ -16,47 +16,85 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <h6 class="modal-subtitle text-muted">Brouillon sauvegardé</h6>
           <div class="modal-body">
             <form>
-              <div class="form-group row">
+              <div class="form-group">
                 <div class="col-sm-12 input-group">
                   <div class="input-group-addon"><i class="fa fa-text-width" aria-hidden="true"></i>
                   </div>
                   <input type="text" class="form-control form-control-lg" placeholder="Titre" v-model="proposition.title">
                 </div>
               </div>
-              <div class="form-group row">
+              <div class="form-group">
                 <div class="col-sm-12">
                   <label for="summary">Résumé de la proposition</label>
                   <textarea class="form-control" rows="3" id="summary" v-model="proposition.summary"></textarea>
                 </div>
               </div>
-              <div class="form-group row">
+              <div class="form-group">
                   <div class="col-sm-12">
                     <label for="description">Description de la problématique</label>
                     <textarea class="form-control" rows="5" id="description" v-model="proposition.description"></textarea>
                   </div>
               </div>
               <div class="form-group row">
-                <div class="col-sm-12">
+                <div class="col-sm-6">
                   <label for="change">Proposition de changements</label>
                   <textarea class="form-control" rows="5" id="change" v-model="proposition.change"></textarea>
                 </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-sm-12">
+                <div class="col-sm-6">
                   <label for="consequence">Résultats escomptés</label>
                   <textarea class="form-control" rows="5" id="consequence" v-model="proposition.consequence"></textarea>
                 </div>
               </div>
+
+              <!--Conditions-->
+              <h6>Conditions du vote</h6>
+              <div class="form-group row">
+                <div class="col-sm-12 input-group">
+                  <div class="input-group-addon"><i class="fa fa-info-circle" aria-hidden="true"></i>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Conditions du vote"
+                         v-model="proposition.information">
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-4">
+                  <label for="quorum">Taille du Qorum (%)</label>
+                  <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-balance-scale" aria-hidden="true"></i></div>
+                    <input name="quorum" class="form-control" type="number" id="quorum" required="true"
+                           v-model="proposition.quorum">
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <label for="typeOfVote">Type de vote</label>
+                  <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-signing" aria-hidden="true"></i></div>
+                    <select name="typeOfVote" class="form-control" id="typeOfVote" required="true"
+                            v-model="proposition.type">
+                      <option>Majorité absolue</option>
+                      <option>Le plus de votes</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <label for="inputEndDate">Date de clôture</label>
+                  <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i>
+                    </div>
+                    <input name="endDate" type="datetime-local" class="form-control" id="inputEndDate"
+                           aria-describedby="conditionsHelp" required="true" v-model="proposition.endDate">
+                  </div>
+                  </div>
+              </div>
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-success" @click.prevent="" data-dismiss="modal">
+            <button type="button" class="btn btn-success" data-dismiss="modal" @click.prevent="sendProposition">
               <i class="fa fa-send"></i> Proposer</button>
-            <button type="button" class="btn btn-danger" data-dismiss="modal">
-              <i class="fa fa-times"></i> Annuler</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal" @click.prevent="removePropositionInfos">
+              <i class="fa fa-times"></i> Supprimer</button>
           </div>
         </div>
       </div>
@@ -83,19 +121,53 @@
         'userInfos',
         'actualTeam',
         'tokenSession',
-        'hasUserInfos'
+        'hasUserInfos',
+        'userFullName'
       ]),
       isProposer () {
         return true// this.userInfos.teams.filter(team => team.displayName === this.actualTeam.displayName).proposer
       }
     },
     methods: {
+      ...Vuex.mapActions([
+        'addMessageUserStore'
+      ]),
       sendProposition () {
-        return true
+        let message = {concern: 'Proposition'}
+        this.propositionResource.save({slug: this.actualTeam.slug}, {
+          team: this.actualTeam.displayName,
+          title: this.proposition.title,
+          author: this.userFullName,
+          summary: this.proposition.summary,
+          description: this.proposition.description,
+          consequence: this.proposition.consequence,
+          information: this.proposition.information,
+          quorum: this.proposition.quorum,
+          typeOfVote: this.proposition.type,
+          endDate: this.proposition.endDate
+        }).then(response => {
+          //  If response from server
+          if (response.body.success) {
+            message.type = 'alert-success'
+            message.content = 'Votre proposition a bien été enregistrée'
+          } else {
+            message.type = 'alert-danger'
+            message.content = 'Votre proposition n\'a pas pu être enregistrée veuillez réessayer.'
+          }
+          this.addMessageUserStore(message)
+        }, _ => {
+          // server doesn't answer
+          message.content = 'Le serveur semble ne pas répondre, veuillez rééssayer ultérieurement'
+          message.type = 'alert-danger'
+          this.addMessageUserStore(message)
+        })
+      },
+      removePropositionInfos () {
+        this.proposition = {}
       }
     },
     mounted () {
-      this.propositionResource = this.$resource('http://127.0.0.1:3000/api')
+      this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions')
     }
   }
 </script>
