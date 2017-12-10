@@ -2,7 +2,9 @@
   <div>
     <!-- Application menu -->
     <nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark" v-if="hasUserInfos">
-      <img src="../assets/likvaLogoMiniTransparentNavbar.png" id="brandPicture">
+      <router-link :to="{name: 'home'}">
+        <img src="../assets/likvaLogoMiniTransparentNavbar.png" class="navbar-brand" id="brandPicture">
+      </router-link>
       <!--Changer avec un router-link-->
       <a class="navbar-brand" href="#"><img src="../assets/anonymousProfile.png"/> {{userFullName}}</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -12,14 +14,6 @@
       </button>
       <div id="navbarNavDropdown" class="navbar-collapse collapse">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <!--Changer avec un router-link-->
-            <!--<a class="nav-link" href="category.html">Home <span class="sr-only">(current)</span></a>-->
-          </li>
-          <li class="nav-item">
-            <!--Changer avec un router-link-->
-            <!--<a class="nav-link" href="my_votes.html">Results</a>-->
-          </li>
           <li class="nav-item">
             <!--Changer avec un router-link-->
             <a class="nav-link" href="#">Profile</a>
@@ -40,9 +34,11 @@
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-else>
               Teams
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" v-if="userTeamsCount > 0">
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <!--Changer avec un router-link-->
-              <a class="dropdown-item" href="#" v-for="team in userInfos.teams">{{team.name}}</a>
+              <a class="dropdown-item" href="#" v-for="team in userInfos.teams" v-if="userTeamsCount > 0">{{team.name}}</a>
+              <div class="dropdown-divider"></div>
+              <router-link :to="{name: 'create-team'}" class="dropdown-item">Create a team</router-link>
             </div>
           </li>
           <li class="nav-item">
@@ -91,9 +87,6 @@
         'adminActualTeam',
         'hasUserInfos'
       ])
-    },
-    mounted () {
-      console.log(this.adminActualTeam)
     }
   }
 </script>

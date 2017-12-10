@@ -75,18 +75,24 @@ const actions = {
     let message = {
       content: '',
       type: '',
-      concern: 'Teams user collection'
+      concern: 'Création équipe'
     }
     message.content = 'Vos équipes ont été mis à jour'
-    message.type = 'success'
+    message.type = 'alert-success'
     store.commit('ADD_TEAM', team).then(_ => actions.addMessageUserStore(store, message), _ => {
-      message.content = 'Une erreur lors de la mise à jour de vos équipe est survenue'
-      message.type = 'danger'
+      message.content = 'Une erreur lors de la mise à jour de vos équipes est survenue'
+      message.type = 'alert-danger'
       actions.addMessageUserStore(store, message)
     })
   },
   removeMessageUserStore: (store, msg) => {
     store.commit('REMOVE_MESSAGE', msg)
+  },
+  updateActualTeam: (store, teamName) => {
+    store.commit(
+      'CHANGE_ACTUAL_TEAM',
+      teamName
+    )
   }
 }
 

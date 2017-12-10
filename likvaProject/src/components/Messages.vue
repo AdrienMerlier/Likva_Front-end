@@ -39,7 +39,7 @@
 
 <style scoped>
 #message-group{
-  margin-top: 64px;
+  margin-top: 120px;
   width: 80%;
   margin-left: auto;
   margin-right: auto;

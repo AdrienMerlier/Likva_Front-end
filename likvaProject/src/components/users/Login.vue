@@ -66,10 +66,13 @@
         let message = {concern: 'Connexion'}
         this.loginResource.save({logemail: this.logemail, logpassword: this.logpassword}).then(response => {
           //  If response from server
-          if (response.body.success) { message.type = 'alert-success'
-            message.content = 'Bienvenu dans votre espace Likva'}
-          else { message.type = 'alert-danger'
-            message.content = response.body.message }
+          if (response.body.success) {
+            message.type = 'alert-success'
+            message.content = 'Bienvenu dans votre espace Likva'
+          } else {
+            message.type = 'alert-danger'
+            message.content = response.body.message
+          }
 
           this.insertUserStore(response.body.user)
           this.addMessageUserStore(message)
