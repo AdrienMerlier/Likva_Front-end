@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const HelloWorld = () => import('../components/HelloWorld')
-const TeamForm = () => import('../components/TeamForm')
+const TeamForm = () => import('../components/teams/TeamForm')
 
 export default new VueRouter({
   mode: 'history',

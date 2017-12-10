@@ -69,12 +69,11 @@
           if (response.body.success) {
             message.type = 'alert-success'
             message.content = 'Bienvenu dans votre espace Likva'
+            this.insertUserStore(response.body.user, response.body.token)
           } else {
             message.type = 'alert-danger'
             message.content = response.body.message
           }
-
-          this.insertUserStore(response.body.user)
           this.addMessageUserStore(message)
         }, response => {
           //  If response from server failed

@@ -18,28 +18,30 @@
             <!--Changer avec un router-link-->
             <a class="nav-link" href="#">Profile</a>
           </li>
+          <li class="nav-item dropdown">
+            <!--Changer avec un router-link-->
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Equipes
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a href="#" class="dropdown-item">Toutes les équipes</a>
+              <div class="dropdown-divider"></div>
+              <router-link :to="{name: 'create-team'}" class="dropdown-item">Créer un équipe</router-link>
+            </div>
+          </li>
           <li class="nav-item">
             <!--Changer avec un router-link-->
             <a class="nav-link" href="#" v-if="adminActualTeam">Admin</a>
           </li>
         </ul>
         <ul class="navbar-nav">
-          <li class="nav-item dropdown">
-            <!--Changer avec un router-link-->
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+          <li class="nav-item">
+            <a class="nav-link dropdown-toggle" href="#"
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-if="actualTeam">
-              {{actualTeam}}
+              {{actualTeam.displayName}}
             </a>
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
-               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-else>
-              Teams
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <!--Changer avec un router-link-->
-              <a class="dropdown-item" href="#" v-for="team in userInfos.teams" v-if="userTeamsCount > 0">{{team.name}}</a>
-              <div class="dropdown-divider"></div>
-              <router-link :to="{name: 'create-team'}" class="dropdown-item">Create a team</router-link>
-            </div>
+            <a class="dropdown-item" href="#" v-for="team in userInfos.teams" v-if="userTeamsCount > 0">{{team.displayName}}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Logout</a>
@@ -48,6 +50,9 @@
       </div>
     </nav>
     <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark" v-else>
+      <router-link :to="{name: 'home'}">
+        <img src="../assets/likvaLogoMiniTransparentNavbar.png" class="navbar-brand" id="brandPicture">
+      </router-link>
       <button type="button" class="btn btn-outline-info nav-button" data-toggle="modal" data-target="#loginModal">
         Connexion
       </button>

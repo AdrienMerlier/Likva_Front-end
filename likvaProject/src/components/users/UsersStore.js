@@ -2,11 +2,11 @@ import Vuex from 'vuex'
 
 const state = {
   user: {
-    name: 'Léo',
-    surname: 'Mouyna',
+    name: '',
+    surname: '',
     email: '',
     teams: [],
-    loaded: true
+    loaded: false
   },
   messages: [],
   actualTeam: ''
@@ -21,7 +21,9 @@ const getters = {
   userName: state => state.user.name,
   userSurname: sate => state.user.surname,
   userFullName: state => getters.userName(state) + ' ' + getters.userSurname(state),
-  adminActualTeam: state => state.user.teams.filter(team => team.name === state.actualTeam).admin
+  adminActualTeam: state => state.user.teams.filter(team => team.slug === state.actualTeam.slug).admin,
+  adminTeams: state => state.user.teams.filter(team => team.admin),
+  tokenSession: state => state.token
 }
 
 const mutations = {
@@ -30,6 +32,9 @@ const mutations = {
   },
   INSERT_USER: (state, user) => {
     state.user = user
+  },
+  ADD_TOKEN: (state, token) => {
+    state.token = token
   },
   ADD_TEAM: (state, team) => {
     state.user.teams.push(team)
@@ -44,15 +49,17 @@ const mutations = {
   REMOVE_MESSAGE: (state, message) => {
     state.messages = state.messages.filter(msg => msg !== message)
   },
-  CHANGE_ACTUAL_TEAM: (state, teamName) => {
-    state.actualTeam = teamName
+  CHANGE_ACTUAL_TEAM: (state, teamName, slug) => {
+    state.actualTeam.teamName = teamName
+    state.actualTeam.slug = slug
   }
 }
 
 const actions = {
-  insertUserStore: (store, user) => {
+  insertUserStore: (store, user, token) => {
     user.loaded = true
     store.commit('INSERT_USER', user)
+    store.commit('ADD_TOKEN', token)
   },
   addMessageUserStore: (store, message) => {
     store.commit('ADD_MESSAGE', message)
@@ -88,10 +95,11 @@ const actions = {
   removeMessageUserStore: (store, msg) => {
     store.commit('REMOVE_MESSAGE', msg)
   },
-  updateActualTeam: (store, teamName) => {
+  updateActualTeam: (store, teamName, slug) => {
     store.commit(
       'CHANGE_ACTUAL_TEAM',
-      teamName
+      teamName,
+      slug
     )
   }
 }
