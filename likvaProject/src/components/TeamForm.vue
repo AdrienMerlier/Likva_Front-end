@@ -19,9 +19,12 @@
         </div>
       </div>
 
-      <div class="form-group">
-        <label for="email">Your email:</label>
-        <input name="email" type="email" class="form-control" aria-describedby="teamHelp" maxlength="50">
+      <div class="form-group row">
+        <div class="col-sm-12 input-group">
+          <div class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i>
+          </div>
+          <input type="email" class="form-control form-control-lg" placeholder="Email" v-model="team.email">
+        </div>
       </div>
 
       <!--Team-->

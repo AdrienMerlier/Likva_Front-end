@@ -28,6 +28,7 @@ const mutations = {
     state.user.param = value
   },
   INSERT_USER: (state, user) => {
+    console.log('User dans mutation: ' + JSON.stringify(user))
     state.user = user
   },
   ADD_TEAM: (state, team) => {
@@ -50,6 +51,7 @@ const mutations = {
 
 const actions = {
   insertUserStore: (store, user) => {
+    console.log('User dans action: ' + JSON.stringify(user))
     user.loaded = true
     store.commit('INSERT_USER', user)
   },
