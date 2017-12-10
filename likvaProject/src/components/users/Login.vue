@@ -65,16 +65,16 @@
       logUser () {
         let message = {concern: 'Connexion'}
         this.loginResource.save({logemail: this.logemail, logpassword: this.logpassword}).then(response => {
-          //  If success
-          message.content = 'Bienvenu dans votre espace Likva'
-          message.type = 'alert-success'
-          console.log('Réponse: ' + JSON.stringify(response))
-          console.log('Contenu de la réponse: ' + JSON.stringify(response.body))
-          console.log('Contenu du user: ' + JSON.stringify(response.body.user))
+          //  If response from server
+          if (response.body.success) { message.type = 'alert-success'
+            message.content = 'Bienvenu dans votre espace Likva'}
+          else { message.type = 'alert-danger'
+            message.content = response.body.message }
+
           this.insertUserStore(response.body.user)
           this.addMessageUserStore(message)
         }, response => {
-          //  If failure
+          //  If response from server failed
           message.content = 'Une erreur est survenue lors de votre connexion, veuillez rééssayer.'
           message.type = 'alert-danger'
           console.error('Something went wrong: ' + response.status)

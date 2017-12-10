@@ -88,7 +88,7 @@
           }
         ).then(response => {
           //  If success
-          message.content = 'Vous avez bien été inscrit, essayer de vous connecter'
+          message.content = 'Vous avez bien été inscrit, essayez de vous connecter'
           message.type = 'alert-success'
           this.addMessageUserStore(message)
         }, response => {
