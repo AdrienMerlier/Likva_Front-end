@@ -54,7 +54,7 @@
       return {
         loading: false,
         logemail: '',
-        logpassword: '',
+        logpassword: ''
       }
     },
     methods: {

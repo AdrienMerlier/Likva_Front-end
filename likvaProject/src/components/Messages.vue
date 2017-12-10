@@ -18,32 +18,7 @@
     store: userStore,
     data () {
       return {
-        display: true,
-        response: {
-          "url":"http://127.0.0.1:3000/login",
-          "ok":true,
-          "status":200,
-          "statusText":"OK",
-          "headers":{"map": {"content-type":["application/json;charset=utf-8"]}},
-          "body":
-            {"success":true,
-              "message":"Enjoy your login!",
-              "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6ZmFsc2UsImlhdCI6MTUxMjg2MzQ0OX0.iHxUdQWmkWoVVHxMONnZODs3l_snPQ34KAuabd1mcfE",
-              "user":
-                {"name":"Adrien",
-                  "surname":"Merlier",
-                  "username":"adrien.merlier",
-                  "email":"adrien.merlier@insa-lyon.fr",
-                  "teams":[null,
-                    {"role":"Voter",
-                      "proposer":true,
-                      "admin":true,
-                      "teamName":"Likva"
-                    }
-                  ]
-                }
-            }
-        }
+        display: true
       }
     },
     methods: {
