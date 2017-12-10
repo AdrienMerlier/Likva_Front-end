@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70a3ddf4-30a2-4c32-8b7c-8bf4f6665c76" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/likvaProject/src/components/Messages.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/Messages.vue" />
       <change beforePath="$PROJECT_DIR$/likvaProject/src/components/users/Login.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/users/Login.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -78,8 +80,8 @@
           <file leaf-file-name="Messages.vue" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/Messages.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="459">
-                  <caret line="27" column="22" lean-forward="false" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+                <state relative-caret-position="680">
+                  <caret line="40" column="40" lean-forward="true" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
                   <folding>
                     <element signature="e#396#403#1" expanded="true" />
                     <element signature="e#471#494#0" expanded="true" />
@@ -91,8 +93,8 @@
           <file leaf-file-name="Login.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/users/Login.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="268">
-                  <caret line="66" column="103" lean-forward="false" selection-start-line="66" selection-start-column="95" selection-end-line="66" selection-end-column="103" />
+                <state relative-caret-position="523">
+                  <caret line="74" column="43" lean-forward="true" selection-start-line="74" selection-start-column="43" selection-end-line="74" selection-end-column="43" />
                   <folding>
                     <element signature="e#498#505#1" expanded="true" />
                     <element signature="e#1990#2013#0" expanded="true" />
@@ -130,8 +132,8 @@
           <file leaf-file-name="Register.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/users/Register.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="549">
-                  <caret line="98" column="43" lean-forward="false" selection-start-line="98" selection-start-column="43" selection-end-line="98" selection-end-column="43" />
+                <state relative-caret-position="715">
+                  <caret line="111" column="0" lean-forward="true" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
                   <folding>
                     <element signature="e#499#506#1" expanded="true" />
                     <element signature="e#2712#2735#0" expanded="true" />
@@ -176,6 +178,7 @@
       <replace>teams</replace>
       <replace>Teams</replace>
       <replace>signin</replace>
+      <replace>:\</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -191,8 +194,8 @@
         <option value="$PROJECT_DIR$/likvaProject/src/components/HelloWorld.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/HeaderBar.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/users/UsersStore.js" />
-        <option value="$PROJECT_DIR$/likvaProject/src/components/users/Register.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/App.vue" />
+        <option value="$PROJECT_DIR$/likvaProject/src/components/users/Register.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/Messages.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/users/Login.vue" />
       </list>
@@ -321,12 +324,12 @@
       <workItem from="1512722547568" duration="13268000" />
       <workItem from="1512758539649" duration="2929000" />
       <workItem from="1512817713756" duration="12358000" />
-      <workItem from="1512862620875" duration="653000" />
+      <workItem from="1512862620875" duration="1795000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47545000" />
+    <option name="totallyTimeSpent" value="48687000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-5" y="3" width="1929" height="1047" extended-state="0" />
@@ -832,21 +835,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/Messages.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="22" lean-forward="false" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-          <folding>
-            <element signature="e#396#403#1" expanded="true" />
-            <element signature="e#471#494#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/users/Register.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="98" column="43" lean-forward="false" selection-start-line="98" selection-start-column="43" selection-end-line="98" selection-end-column="43" />
+        <state relative-caret-position="715">
+          <caret line="111" column="0" lean-forward="true" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
           <folding>
             <element signature="e#499#506#1" expanded="true" />
             <element signature="e#2712#2735#0" expanded="true" />
@@ -854,10 +846,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/Messages.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="40" lean-forward="true" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
+          <folding>
+            <element signature="e#396#403#1" expanded="true" />
+            <element signature="e#471#494#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/users/Login.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="66" column="103" lean-forward="false" selection-start-line="66" selection-start-column="95" selection-end-line="66" selection-end-column="103" />
+        <state relative-caret-position="523">
+          <caret line="74" column="43" lean-forward="true" selection-start-line="74" selection-start-column="43" selection-end-line="74" selection-end-column="43" />
           <folding>
             <element signature="e#498#505#1" expanded="true" />
             <element signature="e#1990#2013#0" expanded="true" />

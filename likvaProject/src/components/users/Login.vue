@@ -54,7 +54,7 @@
       return {
         loading: false,
         logemail: '',
-        logpassword: ''
+        logpassword: '',
       }
     },
     methods: {
@@ -68,9 +68,10 @@
           //  If success
           message.content = 'Bienvenu dans votre espace Likva'
           message.type = 'alert-success'
-          console.log('Contenu de la réponse: ' + JSON.stringify(response))
-          console.log('Contenu du user: ' + JSON.stringify(response.body[0].user))
-          this.insertUserStore(response.body[0].user)
+          console.log('Réponse: ' + JSON.stringify(response))
+          console.log('Contenu de la réponse: ' + JSON.stringify(response.body))
+          console.log('Contenu du user: ' + JSON.stringify(response.body.user))
+          this.insertUserStore(response.body.user)
           this.addMessageUserStore(message)
         }, response => {
           //  If failure
