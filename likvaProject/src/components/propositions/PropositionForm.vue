@@ -160,7 +160,8 @@
         'userFullName'
       ]),
       isProposer () {
-        return this.userInfos.teams.filter(team => team.slug === this.actualTeam.slug).proposer
+        console.log('Retour de la fonction isProposer: ' + this.userInfos.teams.filter(team => team.slug === this.actualTeam.slug).proposer)
+        return true// this.userInfos.teams.filter(team => team.slug === this.actualTeam.slug).proposer
       }
     },
     methods: {

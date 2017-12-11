@@ -18,14 +18,12 @@ export default new VueRouter({
     {
       path: '/teams',
       name: 'team-list',
-      component: TeamList,
-      children: [
-        {
-          path: 'create',
-          name: 'create-team',
-          component: TeamForm
-        }
-      ]
+      component: TeamList
+    },
+    {
+      path: '/teams/create',
+      name: 'create-team',
+      component: TeamForm
     },
     {
       path: '*',

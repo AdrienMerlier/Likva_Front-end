@@ -6,7 +6,7 @@ const state = {
     surname: '',
     email: '',
     teams: [],
-    loaded: false
+    loaded: true
   },
   messages: [],
   actualTeam: ''
