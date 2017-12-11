@@ -4,7 +4,7 @@ const state = {
   user: {
     name: 'Léo',
     surname: 'Mouyna',
-    email: 'mouyna.leo@insa-lyon.fr',
+    email: '',
     teams: [],
     loaded: true
   },

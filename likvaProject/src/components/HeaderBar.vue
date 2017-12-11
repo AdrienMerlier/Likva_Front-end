@@ -101,4 +101,8 @@
   margin-left: 12px;
   margin-right: 12px;
 }
+  #brandPicture {
+    width: 43px;
+    height: 65px;
+  }
 </style>

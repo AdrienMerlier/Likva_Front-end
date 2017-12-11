@@ -88,6 +88,34 @@
                   </div>
                   </div>
               </div>
+              <div class="form-group row">
+                <div class="col-sm-4">
+                  <label for="answers">Réponses possibles</label>
+                  <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                    <select name="answers" class="form-control" id="answers" required="true"
+                            v-model="answer">
+                      <option>Oui / Non</option>
+                      <option>Personnaliser</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-sm-4" v-if="answer === 'Personnaliser'">
+                  <label for="addOptions">Ajouter une option</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" name="addOption" id="addOptions" v-model="newOption"/>
+                    <button class="btn btn-outline-secondary input-group-addon" @click.prevent.stop="addToOptionsList">
+                      <i class="fa fa-plus" aria-hidden="true"></i></button>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <p>Liste des options :</p>
+                  <ul class="optionList fa-ul">
+                    <li v-for="option in proposition.optionsList">
+                      <i class="fa-li fa fa-times" @click.prevent="removeFromOptionsList(option)"></i>{{option}}</li>
+                  </ul>
+                </div>
+              </div>
             </form>
           </div>
           <div class="modal-footer">
@@ -111,9 +139,16 @@
     data () {
       return {
         proposition: {
-
+          optionsList: []
         },
-        saved: true
+        saved: true,
+        answer: null,
+        newOption: null
+      }
+    },
+    watch: {
+      answer: function () {
+        this.updateOptionsList()
       }
     },
     computed: {
@@ -125,13 +160,25 @@
         'userFullName'
       ]),
       isProposer () {
-        return true// this.userInfos.teams.filter(team => team.displayName === this.actualTeam.displayName).proposer
+        return true //  this.userInfos.teams.filter(team => team.slug === this.actualTeam.slug).proposer
       }
     },
     methods: {
       ...Vuex.mapActions([
         'addMessageUserStore'
       ]),
+      addToOptionsList () {
+        this.proposition.optionsList.push(this.newOption)
+        this.newOption = null
+      },
+      removeFromOptionsList (option) {
+        this.proposition.optionsList = this.proposition.optionsList.filter(opt => opt !== option)
+      },
+      updateOptionsList () {
+        if (this.answer === 'Oui / Non') {
+          this.proposition.optionsList = ['Oui', 'Non', 'Blanc']
+        }
+      },
       sendProposition () {
         let message = {concern: 'Proposition'}
         this.propositionResource.save({slug: this.actualTeam.slug}, {
@@ -144,7 +191,8 @@
           information: this.proposition.information,
           quorum: this.proposition.quorum,
           typeOfVote: this.proposition.type,
-          endDate: this.proposition.endDate
+          endDate: this.proposition.endDate,
+          possibleAnswers: this.proposition.optionsList
         }).then(response => {
           //  If response from server
           if (response.body.success) {
@@ -195,5 +243,12 @@
   }
   .modal-dialog{
     max-width: 1024px;
+  }
+  .optionList{
+    text-align: left;
+  }
+  .fa-li{
+    cursor: pointer;
+    color: #dc3545;
   }
 </style>
