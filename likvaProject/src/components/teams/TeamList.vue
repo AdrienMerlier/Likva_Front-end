@@ -14,10 +14,10 @@
             </article>
           </section>
           <div class="card-footer" v-if="isMember(team)">
-            Déjà dans l'équipe <i class="fa fa-toggle-on"></i>
+            Dans l'équipe
           </div>
           <div class="card-footer" v-else>
-            Rejoindre <i class="fa fa-toggle-off" @click.prevent="joinTeam"></i>
+            Rejoindre <team-password-asker></team-password-asker>
           </div>
         </div>
       </div>
@@ -27,7 +27,10 @@
 <script>
   import Vuex from 'vuex'
   import userStore from '../users/UsersStore'
+  import TeamPasswordAsker from './TeamPasswordAsker'
+
   export default {
+    components: {TeamPasswordAsker},
     name: 'team-list',
     store: userStore,
     data () {
@@ -38,9 +41,18 @@
       }
     },
     methods: {
-      joinTeam () {
+      ...Vuex.mapActions([
+        'insertUserStore'
+      ]),
+      joinTeam (team) {
         //  Not ready yet
-        return true
+        this.joinResource.save({slug: team.slug}, {
+          email: this.userInfos.email,
+          teamPassword: this.password
+        }).then(response => {
+          //  If server answer I have to update user in userStore
+          this.insertUserStore(response.body.user)
+        })
       }
     },
     computed: {
@@ -57,13 +69,13 @@
         return res
       },
       getRole (team) {
-        return this.myTeams.filter(myteam => myteam.slug === team.slug).status
+        return this.myTeams.filter(myteam => myteam.slug === team.slug)[0].status
       },
       isAdmin (team) {
-        return this.myTeams.filter(myteam => myteam.slug === team.slug).admin
+        return this.myTeams.filter(myteam => myteam.slug === team.slug)[0].admin
       },
       isProposer (team) {
-        return this.myTeams.filter(myteam => myteam.slug === team.slug).proposer
+        return this.myTeams.filter(myteam => myteam.slug === team.slug)[0].proposer
       }
     },
     mounted () {
@@ -71,6 +83,7 @@
         before: () => { this.loading = true },
         after: () => { this.loading = false }
       })
+      this.joinResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/join')
       this.teamResource.get().then(response => {
         // If server answer
         this.allTeams = response.body.teams
