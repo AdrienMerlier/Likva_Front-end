@@ -71,8 +71,6 @@
   import Login from './users/Login'
   import Register from './users/Register'
 
-  global.s = userStore
-
   export default {
     name: 'header-bar',
     store: userStore,
