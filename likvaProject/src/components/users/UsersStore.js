@@ -58,7 +58,7 @@ const mutations = {
 const actions = {
   insertUserStore: (store, user, token) => {
     store.commit('INSERT_USER', user)
-      user.loaded = true
+    user.loaded = true
     store.commit('ADD_TOKEN', token)
   },
   addMessageUserStore: (store, message) => {
