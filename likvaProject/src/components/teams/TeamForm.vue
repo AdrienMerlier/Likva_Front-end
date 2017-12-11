@@ -91,7 +91,7 @@
             admin: true,
             teamName: this.team.name
           })
-          this.updateActualTeam(response.body.team.displayName, response.body.team.slug)
+          this.updateActualTeam(response.body.team)
         }, response => {
           //  If server doesn't answer
           let message = {

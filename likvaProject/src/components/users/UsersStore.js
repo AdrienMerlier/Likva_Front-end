@@ -96,13 +96,10 @@ const actions = {
   removeMessageUserStore: (store, msg) => {
     store.commit('REMOVE_MESSAGE', msg)
   },
-  updateActualTeam: (store, displayName, slug) => {
-    console.log('I should update the actual team with displayName: ' + displayName)
-    console.log('Le slug est: ' + slug)
-    let team = {
-      displayName: displayName,
-      slug: slug
-    }
+  updateActualTeam: (store, team) => {
+    console.log('L\'équipe a enregistrée est: ' + team)
+    console.log('I should update the actual team with displayName: ' + team.displayName)
+    console.log('Le slug est: ' + team.slug)
     store.commit('CHANGE_ACTUAL_TEAM', team)
   }
 }
