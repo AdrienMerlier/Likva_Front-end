@@ -5,6 +5,7 @@ Vue.use(VueRouter)
 
 const HelloWorld = () => import('../components/HelloWorld')
 const TeamForm = () => import('../components/teams/TeamForm')
+const TeamList = () => import('../components/teams/TeamList')
 
 export default new VueRouter({
   mode: 'history',
@@ -15,9 +16,16 @@ export default new VueRouter({
       component: HelloWorld
     },
     {
-      path: '/teams/create',
-      name: 'create-team',
-      component: TeamForm
+      path: '/teams',
+      name: 'team-list',
+      component: TeamList,
+      children: [
+        {
+          path: 'create',
+          name: 'create-team',
+          component: TeamForm
+        }
+      ]
     },
     {
       path: '*',
