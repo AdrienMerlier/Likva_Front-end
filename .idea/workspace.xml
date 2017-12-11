@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70a3ddf4-30a2-4c32-8b7c-8bf4f6665c76" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/likvaProject/src/components/HeaderBar.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/HeaderBar.vue" />
+      <change beforePath="$PROJECT_DIR$/likvaProject/src/components/teams/TeamPasswordAsker.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/teams/TeamPasswordAsker.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -137,7 +136,7 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="HeaderBar.vue" pinned="false" current-in-tab="true">
+          <file leaf-file-name="HeaderBar.vue" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/HeaderBar.vue">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="611">
@@ -175,11 +174,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="TeamPasswordAsker.vue" pinned="false" current-in-tab="false">
+          <file leaf-file-name="TeamPasswordAsker.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/teams/TeamPasswordAsker.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="442">
-                  <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+                <state relative-caret-position="272">
+                  <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
@@ -235,9 +234,9 @@
       <find>team</find>
       <find>v-for</find>
       <find>img</find>
-      <find>equi</find>
       <find>isPr</find>
       <find>3 min</find>
+      <find>equi</find>
     </findStrings>
     <replaceStrings>
       <replace>login</replace>
@@ -271,9 +270,9 @@
         <option value="$PROJECT_DIR$/likvaProject/src/components/teams/TeamForm.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/users/Login.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/users/UsersStore.js" />
-        <option value="$PROJECT_DIR$/likvaProject/src/components/teams/TeamPasswordAsker.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/teams/TeamList.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/HeaderBar.vue" />
+        <option value="$PROJECT_DIR$/likvaProject/src/components/teams/TeamPasswordAsker.vue" />
       </list>
     </option>
   </component>
@@ -412,12 +411,12 @@
       <workItem from="1512862620875" duration="13463000" />
       <workItem from="1512920861250" duration="14084000" />
       <workItem from="1512937935713" duration="5216000" />
-      <workItem from="1512999561741" duration="20205000" />
+      <workItem from="1512999561741" duration="20390000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99860000" />
+    <option name="totallyTimeSpent" value="100045000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-5" y="3" width="1929" height="1047" extended-state="0" />
@@ -903,14 +902,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/teams/TeamPasswordAsker.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/HeaderBar.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="611">
@@ -918,6 +909,14 @@
           <folding>
             <element signature="e#3191#3214#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/teams/TeamPasswordAsker.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>

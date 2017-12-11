@@ -14,7 +14,7 @@
     name: 'team-password-asker',
     inherit: true,
     data () {
-      return{
+      return {
         password: ''
       }
     }
