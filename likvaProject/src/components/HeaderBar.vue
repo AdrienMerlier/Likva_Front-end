@@ -25,7 +25,7 @@
               Equipes
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <router-link :to="{name: 'create-team'}" class="dropdown-item">Toutes les équipes</router-link>
+              <router-link :to="{name: 'team-list'}" class="dropdown-item">Toutes les équipes</router-link>
               <div class="dropdown-divider"></div>
               <router-link :to="{name: 'create-team'}" class="dropdown-item">Créer une équipe</router-link>
             </div>
