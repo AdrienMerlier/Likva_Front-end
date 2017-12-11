@@ -160,7 +160,7 @@
         'userFullName'
       ]),
       isProposer () {
-        return true //  this.userInfos.teams.filter(team => team.slug === this.actualTeam.slug).proposer
+        return this.userInfos.teams.filter(team => team.slug === this.actualTeam.slug).proposer
       }
     },
     methods: {
@@ -192,7 +192,7 @@
           quorum: this.proposition.quorum,
           typeOfVote: this.proposition.type,
           endDate: this.proposition.endDate,
-          possibleAnswers: this.proposition.optionsList
+          votePossibilities: this.proposition.optionsList
         }).then(response => {
           //  If response from server
           if (response.body.success) {
