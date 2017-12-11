@@ -71,8 +71,6 @@
             message.type = 'alert-success'
             message.content = 'Bienvenu dans votre espace Likva'
             this.insertUserStore(response.body.user, response.body.token)
-            console.log('Display name: ' + this.userInfos.teams[0].displayName)
-            console.log('Team slug: ' + this.userInfos.teams[0].slug)
             this.updateActualTeam(this.userInfos.teams[0].displayName, this.userInfos.teams[0].slug)
           } else {
             message.type = 'alert-danger'

@@ -9,7 +9,7 @@ const state = {
     loaded: true
   },
   messages: [],
-  actualTeam: ''
+  actualTeam: {}
 }
 
 const getters = {
@@ -62,6 +62,7 @@ const actions = {
     store.commit('ADD_TOKEN', token)
   },
   addMessageUserStore: (store, message) => {
+    console.log('I should print a message')
     store.commit('ADD_MESSAGE', message)
   },
   updateUserStore: (store, param, value) => {
