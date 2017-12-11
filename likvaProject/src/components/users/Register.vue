@@ -15,28 +15,28 @@
             <form>
               <div class="form-group row">
                 <div class="col-sm-12 input-group">
-                  <div class="input-group-addon"><i class="fa fa-address-card" aria-hidden="true"></i>
+                  <div class="input-group-addon"><i class="fa fa-address-card fa-fw" aria-hidden="true"></i>
                   </div>
                   <input type="text" class="form-control form-control-lg" placeholder="Name" v-model="user.name">
                 </div>
               </div>
               <div class="form-group row">
                 <div class="col-sm-12 input-group">
-                  <div class="input-group-addon"><i class="fa fa-address-card" aria-hidden="true"></i>
+                  <div class="input-group-addon"><i class="fa fa-address-card fa-fw" aria-hidden="true"></i>
                   </div>
                   <input type="text" class="form-control form-control-lg" placeholder="Surname" v-model="user.surname">
                 </div>
               </div>
               <div class="form-group row">
                 <div class="col-sm-12 input-group">
-                  <div class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i>
+                  <div class="input-group-addon"><i class="fa fa-envelope fa-fw" aria-hidden="true"></i>
                   </div>
                   <input type="email" class="form-control form-control-lg" placeholder="Email" v-model="user.email">
                 </div>
               </div>
               <div class="form-group row">
                 <div class="col-sm-12 input-group">
-                  <div class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i>
+                  <div class="input-group-addon"><i class="fa fa-lock fa-fw" aria-hidden="true"></i>
                   </div>
                   <input type="password" class="form-control form-control-lg" placeholder="Password"
                          v-model="user.password">
