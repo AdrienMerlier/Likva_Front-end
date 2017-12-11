@@ -160,7 +160,11 @@
         'userFullName'
       ]),
       isProposer () {
-        console.log('Retour de la fonction isProposer: ' + this.userInfos.teams.filter(team => team.slug === this.actualTeam.slug).proposer)
+        let selectedTeam = {}
+        this.userInfos.teams.forEach(team => {
+          if (team.slug === this.actualTeam.slug) { selectedTeam = team }
+        })
+        console.log('Retour de la fonction isProposer: ' + selectedTeam.proposer)
         return true// this.userInfos.teams.filter(team => team.slug === this.actualTeam.slug).proposer
       }
     },

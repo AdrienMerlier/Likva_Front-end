@@ -32,8 +32,8 @@
             <div class="input-group-addon"><i class="fa fa-institution" aria-hidden="true"></i></div>
             <select name="teamType" class="form-control form-control-lg" id="teamType" v-model="team.type"
                     aria-describedby="selectHelpBlock">
-              <option>Petite ONG (> 100 membres)</option>
-              <option>Grande ONG (< 100 membres)</option>
+              <option>Petite ONG (< 100 membres)</option>
+              <option>Grande ONG (> 100 membres)</option>
               <option>Syndicat</option>
               <option>Parti ou mouvement Politique</option>
               <option>Administration Locale</option>
