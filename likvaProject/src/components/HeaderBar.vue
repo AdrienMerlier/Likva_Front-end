@@ -25,9 +25,9 @@
               Equipes
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a href="#" class="dropdown-item">Toutes les équipes</a>
+              <router-link :to="{name: 'create-team'}" class="dropdown-item">Toutes les équipes</router-link>
               <div class="dropdown-divider"></div>
-              <router-link :to="{name: 'create-team'}" class="dropdown-item">Créer un équipe</router-link>
+              <router-link :to="{name: 'create-team'}" class="dropdown-item">Créer une équipe</router-link>
             </div>
           </li>
           <li class="nav-item">
@@ -37,11 +37,13 @@
         </ul>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link dropdown-toggle" href="#"
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownTeamSwitch"
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-if="actualTeam">
               {{actualTeam.displayName}}
             </a>
-            <a class="dropdown-item" href="#" v-for="team in userInfos.teams" v-if="userTeamsCount > 0">{{team.displayName}}</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownTeamSwitch">
+              <a class="dropdown-item" href="#" v-for="team in userInfos.teams" v-if="userTeamsCount > 0">{{team.displayName}}</a>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Logout</a>
