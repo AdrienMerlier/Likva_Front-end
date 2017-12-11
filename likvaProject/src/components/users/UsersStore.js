@@ -6,7 +6,7 @@ const state = {
     surname: '',
     email: '',
     teams: [],
-    loaded: true
+    loaded: false
   },
   messages: [],
   actualTeam: {}
@@ -49,9 +49,9 @@ const mutations = {
   REMOVE_MESSAGE: (state, message) => {
     state.messages = state.messages.filter(msg => msg !== message)
   },
-  CHANGE_ACTUAL_TEAM: (state, teamName, slug) => {
-    state.actualTeam.teamName = teamName
-    state.actualTeam.slug = slug
+  CHANGE_ACTUAL_TEAM: (state, team) => {
+    state.actualTeam.displayName = team.displayName
+    state.actualTeam.slug = team.slug
   }
 }
 
@@ -96,12 +96,14 @@ const actions = {
   removeMessageUserStore: (store, msg) => {
     store.commit('REMOVE_MESSAGE', msg)
   },
-  updateActualTeam: (store, teamName, slug) => {
-    store.commit(
-      'CHANGE_ACTUAL_TEAM',
-      teamName,
-      slug
-    )
+  updateActualTeam: (store, displayName, slug) => {
+    console.log('I should update the actual team with displayName: ' + displayName)
+    console.log('Le slug est: ' + slug)
+    let team = {
+      displayName: displayName,
+      slug: slug
+    }
+    store.commit('CHANGE_ACTUAL_TEAM', team)
   }
 }
 
