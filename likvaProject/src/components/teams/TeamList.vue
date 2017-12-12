@@ -17,7 +17,8 @@
             Dans l'équipe
           </div>
           <div class="card-footer" v-else>
-            Rejoindre <team-password-asker></team-password-asker>
+            <team-password-asker></team-password-asker>
+            <button type="button" class="btn btn-outline-succes" @click.prevent="joinTeam(team)">Rejoindre</button>
           </div>
         </div>
       </div>
@@ -46,9 +47,10 @@
       ]),
       joinTeam (team) {
         //  Not ready yet
+        console.log('Le mot de passe est: ' + team.password)
         this.joinResource.save({slug: team.slug}, {
           email: this.userInfos.email,
-          teamPassword: this.password
+          teamPassword: team.password
         }).then(response => {
           //  If server answer I have to update user in userStore
           this.insertUserStore(response.body.user)
@@ -87,8 +89,10 @@
       this.teamResource.get().then(response => {
         // If server answer
         this.allTeams = response.body.teams
+        console.log('La liste des équipes: ' + this.allTeams)
       })
       this.myTeams = this.userInfos.teams
+      console.log('La liste de mes équipes: ' + this.myTeams)
     }
   }
 </script>
