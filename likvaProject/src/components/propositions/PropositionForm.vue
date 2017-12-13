@@ -185,6 +185,7 @@
         }
       },
       sendProposition () {
+        console.log(JSON.stringify(proposition))
         let message = {concern: 'Proposition'}
         this.propositionResource.save({slug: this.actualTeam.slug}, {
           team: this.actualTeam.displayName,

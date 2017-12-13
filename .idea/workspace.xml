@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70a3ddf4-30a2-4c32-8b7c-8bf4f6665c76" name="Default" comment="" />
+    <list default="true" id="70a3ddf4-30a2-4c32-8b7c-8bf4f6665c76" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionForm.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionForm.vue" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -101,8 +103,8 @@
           <file leaf-file-name="PropositionForm.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionForm.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="651">
-                  <caret line="195" column="52" lean-forward="true" selection-start-line="195" selection-start-column="52" selection-end-line="195" selection-end-column="52" />
+                <state relative-caret-position="421">
+                  <caret line="186" column="26" lean-forward="true" selection-start-line="186" selection-start-column="26" selection-end-line="186" selection-end-column="26" />
                   <folding>
                     <element signature="n#style#0;n#!!top" expanded="false" />
                   </folding>
@@ -155,6 +157,7 @@
       <find>updateActualTeam</find>
       <find>Resource.</find>
       <find>router</find>
+      <find>proposition</find>
     </findStrings>
     <replaceStrings>
       <replace>login</replace>
@@ -333,12 +336,12 @@
       <workItem from="1512937935713" duration="5216000" />
       <workItem from="1512999561741" duration="21290000" />
       <workItem from="1513098769094" duration="6333000" />
-      <workItem from="1513157078717" duration="15252000" />
+      <workItem from="1513157078717" duration="15553000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122530000" />
+    <option name="totallyTimeSpent" value="122831000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1601" height="1047" extended-state="0" />
@@ -793,8 +796,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionForm.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="195" column="52" lean-forward="true" selection-start-line="195" selection-start-column="52" selection-end-line="195" selection-end-column="52" />
+        <state relative-caret-position="421">
+          <caret line="186" column="26" lean-forward="true" selection-start-line="186" selection-start-column="26" selection-end-line="186" selection-end-column="26" />
           <folding>
             <element signature="n#style#0;n#!!top" expanded="false" />
           </folding>
