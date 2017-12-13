@@ -1,6 +1,6 @@
 <template>
     <div class="passwordInput">
-      <div class="col-sm-6 input-group">
+      <div class="input-group">
         <div class="input-group-addon"><i class="fa fa-lock fa-fw" aria-hidden="true"></i>
         </div>
         <input type="password" class="form-control" placeholder="Code d'accès"

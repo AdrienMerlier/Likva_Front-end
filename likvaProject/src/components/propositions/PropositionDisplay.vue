@@ -40,7 +40,7 @@
     mounted () {
       this.slug = this.$router.history.current.slug
       this.idProposition = this.$router.history.current.idProposition
-      console.log('Routeur: ' + JSON.stringify(this.$router))
+      console.log('Routeur: ' + this.$router)
       console.log('Slug: ' + this.$router.history.current.slug)
       console.log('Id: ' + this.$router.history.current.idProposition)
       console.log('Slug: ' + this.slug)
