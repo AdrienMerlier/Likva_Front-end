@@ -14,15 +14,18 @@
           </article>
         </section>
         <div class="card-footer" v-if="isMember(team)">
-          <router-link :to="{name: 'proposition-list', params: { slug: team.slug }}"
-                       @click.prevent="updateActualTeam(team)">
-            <p class="card-text">Dans l'équipe <button type="button" class="btn btn-outline-success">
-              Voir les propositions</button></p>
-          </router-link>
+            <p class="card-text">Dans l'équipe
+              <router-link :to="{name: 'proposition-list', params: { slug: team.slug }}"
+                           @click.prevent="updateActualTeam(team)">
+                <button type="button" class="btn btn-outline-success">
+              Voir les propositions</button></router-link>
+            </p>
         </div>
         <div class="card-footer" v-else>
-          <team-password-asker></team-password-asker>
-          <button type="button" class="btn btn-outline-success sm-col-6" @click.prevent="joinTeam(team)">Rejoindre</button>
+          <div class="row">
+            <team-password-asker></team-password-asker>
+            <button type="button" class="btn btn-outline-success sm-col-6" @click.prevent="joinTeam(team)">Rejoindre</button>
+          </div>
         </div>
       </div>
     </div>
