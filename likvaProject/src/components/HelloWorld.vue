@@ -35,11 +35,14 @@
       <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
       <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
     </ul>
+    <vote></vote>
   </div>
 </template>
 
 <script>
+  import Vote from './votes/Vote'
 export default {
+  components: {Vote},
   name: 'HelloWorld',
   data () {
     return {
