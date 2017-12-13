@@ -25,12 +25,6 @@
 
   export default {
     name: 'proposition-display',
-    props: {
-      proposition: {
-        type: Object,
-        required: false
-      }
-    },
     store: userStore,
     data () {
       return {
