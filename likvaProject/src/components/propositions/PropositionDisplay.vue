@@ -45,7 +45,7 @@
         console.log('Resultat de la requête: succèss = ' + response.body.success)
         this.proposition = response.body.props
         console.log('La proposition: ' + this.proposition)
-        })
+      })
     }
   }
 </script>
