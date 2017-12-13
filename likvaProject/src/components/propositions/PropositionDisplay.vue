@@ -40,11 +40,6 @@
     mounted () {
       this.slug = this.$router.history.current.params.slug
       this.idProposition = this.$router.history.current.params.idProposition
-      console.log('Routeur: ' + this.$router)
-      console.log('Slug: ' + this.$router.history.current.params.slug)
-      console.log('Id: ' + this.$router.history.current.params.idProposition)
-      console.log('Slug: ' + this.slug)
-      console.log('Id: ' + this.idProposition)
       this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/idProposition}')
       this.propositionResource.get(
         {slug: this.slug, idProposition: this.idProposition}).then(response => {

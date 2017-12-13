@@ -164,7 +164,6 @@
         this.userInfos.teams.forEach(team => {
           if (team.slug === this.actualTeam.slug) { selectedTeam = team }
         })
-        console.log('Retour de la fonction isProposer: ' + selectedTeam.proposer)
         return selectedTeam.proposer
       }
     },
@@ -185,7 +184,6 @@
         }
       },
       sendProposition () {
-        console.log(JSON.stringify(this.proposition))
         let message = {concern: 'Proposition'}
         this.propositionResource.save({slug: this.actualTeam.slug}, {
           team: this.actualTeam.displayName,

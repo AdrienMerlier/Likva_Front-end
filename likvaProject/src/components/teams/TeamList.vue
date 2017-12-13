@@ -104,14 +104,12 @@
       this.teamResource.get().then(response => {
         // If server answer
         this.allTeams = response.body.teams
-        console.log('La liste des équipes: ' + this.allTeams)
       }, _ => {
         // If server doesn't answer
         console.error('Le serveur semble ne pas répondre')
       }
       )
       this.myTeams = this.userInfos.teams
-      console.log('La liste de mes équipes: ' + this.myTeams)
     }
   }
 </script>
