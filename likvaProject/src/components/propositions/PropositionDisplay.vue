@@ -44,7 +44,7 @@
       this.propositionResource.get({slug: this.slug, idProposition: this.idProposition}).then(response => {
         console.log('Resultat de la requête: succèss = ' + response.body.success)
         this.proposition = response.body.props
-        console.log('La proposition: ' + this.proposition)
+        console.log('La proposition: ' + JSON.stringify(this.proposition))
       })
     }
   }
