@@ -192,7 +192,7 @@
           author: this.userFullName,
           summary: this.proposition.summary,
           description: this.proposition.description,
-          propsition: this.proposition.change,
+          change: this.proposition.change,
           consequence: this.proposition.consequence,
           information: this.proposition.information,
           quorum: this.proposition.quorum,
