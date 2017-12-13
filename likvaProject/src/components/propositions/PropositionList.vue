@@ -5,7 +5,7 @@
         <div class="card" v-for="proposition in allPropositions">
           <h4 class="card-header">{{proposition.title}}</h4>
           <section class="card-body">
-            <aside class="memberInfos" v-if="hasCategory(proposition)">
+            <aside class="memberInfos" v-if="proposition.category">
               <h5 class="card-title"><span class="badge badge-secondary">{{proposition.category}}</span></h5>
             </aside>
             <article>
@@ -34,11 +34,6 @@
     data () {
       return {
         allPropositions: []
-      }
-    },
-    methods: {
-      hasCategory (proposition) {
-        return proposition.category.length > 0
       }
     },
     computed: {

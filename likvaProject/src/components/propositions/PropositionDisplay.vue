@@ -45,13 +45,11 @@
       console.log('Id: ' + this.$router.history.current.idProposition)
       console.log('Slug: ' + this.slug)
       console.log('Id: ' + this.idProposition)
-      if (!this.proposition) {
-        this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions/{/idProposition}')
-        this.propositionResource.get(
-          {slug: this.slug, idProposition: this.idProposition}).then(response => {
-            this.proposition = response.body.props
-          })
-      }
+      this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions/{/idProposition}')
+      this.propositionResource.get(
+        {slug: this.slug, idProposition: this.idProposition}).then(response => {
+        this.proposition = response.body.props
+      })
     }
   }
 </script>
