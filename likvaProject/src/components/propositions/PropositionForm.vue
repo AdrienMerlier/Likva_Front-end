@@ -165,7 +165,7 @@
           if (team.slug === this.actualTeam.slug) { selectedTeam = team }
         })
         console.log('Retour de la fonction isProposer: ' + selectedTeam.proposer)
-        return true// this.userInfos.teams.filter(team => team.slug === this.actualTeam.slug).proposer
+        return selectedTeam.proposer
       }
     },
     methods: {
