@@ -8,7 +8,7 @@
         <p id="description">{{proposition.description}}</p>
         <div class="sm-col-6">
           <h2>Proposition de changements</h2>
-          <p id="changements">{{proposition.proposition}}</p>
+          <p id="changements">{{proposition.change}}</p>
         </div>
         <div class="sm-col-6">
           <h2>Résultats Escomptés</h2>
