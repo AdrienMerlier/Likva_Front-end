@@ -47,6 +47,7 @@
       this.propositionResource.get({slug: this.slug}).then(response => {
         //  If server answer
         this.allPropositions = response.body.props
+        console.log(JSON.stringify(this.allPropositions[0]))
       }, _ => {
         //  Le serveur ne répond pas
         console.error('Le serveur semble ne pas répondre.')
