@@ -42,13 +42,13 @@
 <script>
   import Vote from './votes/Vote'
 export default {
-  components: {Vote},
-  name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Bienvenu sur Likva la platforme de démocratie liquide'
+    components: {Vote},
+    name: 'HelloWorld',
+    data () {
+      return {
+        msg: 'Bienvenue sur Likva la platforme de démocratie liquide'
+      }
     }
-  }
 }
 </script>
 

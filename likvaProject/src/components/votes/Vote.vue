@@ -22,7 +22,7 @@
     props: ['posibilities'],
     data () {
       return {
-        result:  false
+        result: false
       }
     }
   }
