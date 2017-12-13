@@ -66,12 +66,7 @@
           }
         }
         )
-      }
-    },
-    computed: {
-      ...Vuex.mapGetters([
-        'userInfos'
-      ]),
+      },
       isMember (team) {
         let res = false
         this.myTeams.forEach(myteam => {
@@ -90,6 +85,11 @@
       isProposer (team) {
         return this.myTeams.filter(myteam => myteam.slug === team.slug)[0].proposer
       }
+    },
+    computed: {
+      ...Vuex.mapGetters([
+        'userInfos'
+      ])
     },
     mounted () {
       this.teamResource = this.$resource('http://127.0.0.1:3000/api/teams', {}, {}, {
