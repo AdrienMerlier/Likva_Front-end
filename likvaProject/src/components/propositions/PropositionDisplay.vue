@@ -28,7 +28,7 @@
     store: userStore,
     data () {
       return {
-
+        proposition: {}
       }
     },
     computed: {

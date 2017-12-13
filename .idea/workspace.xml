@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="70a3ddf4-30a2-4c32-8b7c-8bf4f6665c76" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionDisplay.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionDisplay.vue" />
-      <change beforePath="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionList.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionList.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -80,8 +79,8 @@
           <file leaf-file-name="PropositionDisplay.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionDisplay.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="736">
-                  <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+                <state relative-caret-position="277">
+                  <caret line="30" column="23" lean-forward="true" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
                   <folding>
                     <element signature="e#697#720#0" expanded="true" />
                   </folding>
@@ -336,12 +335,12 @@
       <workItem from="1512937935713" duration="5216000" />
       <workItem from="1512999561741" duration="21290000" />
       <workItem from="1513098769094" duration="6333000" />
-      <workItem from="1513157078717" duration="14243000" />
+      <workItem from="1513157078717" duration="14447000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121521000" />
+    <option name="totallyTimeSpent" value="121725000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1601" height="1047" extended-state="0" />
@@ -796,8 +795,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionDisplay.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+        <state relative-caret-position="277">
+          <caret line="30" column="23" lean-forward="true" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
           <folding>
             <element signature="e#697#720#0" expanded="true" />
           </folding>
