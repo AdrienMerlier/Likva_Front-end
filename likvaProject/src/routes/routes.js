@@ -6,6 +6,8 @@ Vue.use(VueRouter)
 const HelloWorld = () => import('../components/HelloWorld')
 const TeamForm = () => import('../components/teams/TeamForm')
 const TeamList = () => import('../components/teams/TeamList')
+const PropositionDisplay = () => import('../components/propositions/PropositionDisplay')
+const PropositionList = () => import('../components/propositions/PropositionList')
 
 export default new VueRouter({
   mode: 'history',
@@ -24,6 +26,16 @@ export default new VueRouter({
       path: '/teams/create',
       name: 'create-team',
       component: TeamForm
+    },
+    {
+      path: '/teams/:slug/propositions',
+      name: 'proposition-list',
+      component: PropositionList
+    },
+    {
+      path: '/teams/:slug/propositions/:idProposition',
+      name: 'display-proposition',
+      component: PropositionDisplay
     },
     {
       path: '*',

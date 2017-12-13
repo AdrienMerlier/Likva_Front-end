@@ -14,7 +14,10 @@
             </article>
           </section>
           <div class="card-footer" v-if="isMember(team)">
-            Dans l'équipe
+            <router-link :to="{name: 'proposition-list', params: { slug: team.slug }}"
+                         @click.prevent="updateActualTeam(team)">
+              Dans l'équipe <button type="button" class="btn btn-outline-succes">Voir les propositions</button>
+            </router-link>
           </div>
           <div class="card-footer" v-else>
             <team-password-asker></team-password-asker>
@@ -43,7 +46,8 @@
     },
     methods: {
       ...Vuex.mapActions([
-        'insertUserStore'
+        'insertUserStore',
+        'updateActualTeam'
       ]),
       joinTeam (team) {
         //  Not ready yet

@@ -1,11 +1,60 @@
 <template>
-    $END$
+  <div class="propositionDisplay">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-3" id="title">{{proposition.title}}</h1>
+        <p class="lead" id="summary">{{proposition.summary}}</p>
+        <h2>Description</h2>
+        <p id="description">{{proposition.description}}</p>
+        <div class="sm-col-6">
+          <h2>Proposition de changements</h2>
+          <p id="changements">{{proposition.proposition}}</p>
+        </div>
+        <div class="sm-col-6">
+          <h2>Résultats Escomptés</h2>
+          <p id="resultat">{{proposition.consequence}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: "proposition-display"
+  import Vuex from 'vuex'
+  import userStore from '../users/UsersStore'
+
+  export default {
+    name: 'proposition-display',
+    props: {
+      proposition: {
+        type: Object,
+        required: false
+      }
+    },
+    store: userStore,
+    data () {
+      return {
+
+      }
+    },
+    computed: {
+      ...Vuex.mapGetters([
+        'userInfos',
+        'actualTeam'
+      ])
+    },
+    mounted () {
+      this.slug = this.$router.history.current.slug
+      this.idProposition = this.$router.history.current.idProposition
+      if (!this.proposition) {
+        this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions/{/idProposition}')
+        this.propositionResource.get(
+          {slug: this.slug, idProposition: this.idProposition}).then(response => {
+            this.proposition = response.body.props
+          })
+      }
     }
+  }
 </script>
 
 <style scoped>
