@@ -16,12 +16,13 @@
         <div class="card-footer" v-if="isMember(team)">
           <router-link :to="{name: 'proposition-list', params: { slug: team.slug }}"
                        @click.prevent="updateActualTeam(team)">
-            Dans l'équipe <button type="button" class="btn btn-outline-succes">Voir les propositions</button>
+            <p class="card-text">Dans l'équipe <button type="button" class="btn btn-outline-success">
+              Voir les propositions</button></p>
           </router-link>
         </div>
         <div class="card-footer" v-else>
           <team-password-asker></team-password-asker>
-          <button type="button" class="btn btn-outline-succes" @click.prevent="joinTeam(team)">Rejoindre</button>
+          <button type="button" class="btn btn-outline-success sm-col-6" @click.prevent="joinTeam(team)">Rejoindre</button>
         </div>
       </div>
     </div>
