@@ -1,31 +1,31 @@
 <template>
-    <div class="teamList">
-      <div class="card-columns">
-        <div class="card" v-for="team in allTeams">
-          <h4 class="card-header">{{team.displayName}}</h4>
-          <section class="card-body">
-            <aside class="memberInfos" v-if="isMember(team)">
-              <h5 class="card-title" v-if="isAdmin(team)"><span class="badge badge-danger">Admin</span></h5>
-              <h5 class="card-title" v-if="isProposer(team)"><span class="badge badge-primary">Proposer</span></h5>
-              <h5 class="card-title"><span class="badge badge-secondary">{{getRole(team)}}</span></h5>
-            </aside>
-            <article>
-              <p class="card-text">Un jour une description sera là !</p>
-            </article>
-          </section>
-          <div class="card-footer" v-if="isMember(team)">
-            <router-link :to="{name: 'proposition-list', params: { slug: team.slug }}"
-                         @click.prevent="updateActualTeam(team)">
-              Dans l'équipe <button type="button" class="btn btn-outline-succes">Voir les propositions</button>
-            </router-link>
-          </div>
-          <div class="card-footer" v-else>
-            <team-password-asker></team-password-asker>
-            <button type="button" class="btn btn-outline-succes" @click.prevent="joinTeam(team)">Rejoindre</button>
-          </div>
+  <div class="teamList">
+    <div class="card-columns">
+      <div class="card" v-for="team in allTeams">
+        <h4 class="card-header">{{team.displayName}}</h4>
+        <section class="card-body">
+          <aside class="memberInfos" v-if="isMember(team)">
+            <h5 class="card-title" v-if="isAdmin(team)"><span class="badge badge-danger">Admin</span></h5>
+            <h5 class="card-title" v-if="isProposer(team)"><span class="badge badge-primary">Proposer</span></h5>
+            <h5 class="card-title"><span class="badge badge-secondary">{{getRole(team)}}</span></h5>
+          </aside>
+          <article>
+            <p class="card-text">Un jour une description sera là !</p>
+          </article>
+        </section>
+        <div class="card-footer" v-if="isMember(team)">
+          <router-link :to="{name: 'proposition-list', params: { slug: team.slug }}"
+                       @click.prevent="updateActualTeam(team)">
+            Dans l'équipe <button type="button" class="btn btn-outline-succes">Voir les propositions</button>
+          </router-link>
+        </div>
+        <div class="card-footer" v-else>
+          <team-password-asker></team-password-asker>
+          <button type="button" class="btn btn-outline-succes" @click.prevent="joinTeam(team)">Rejoindre</button>
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -56,9 +56,16 @@
           email: this.userInfos.email,
           teamPassword: team.password
         }).then(response => {
-          //  If server answer I have to update user in userStore
-          this.insertUserStore(response.body.user)
-        })
+            //  If server answer I have to update user in userStore
+          if (response.body.success) {
+            //  L'utilisateur a été ajouté en base
+            this.insertUserStore(response.body.user)
+          } else {
+            //  Une erreur a été détectée par le serveur
+            console.error(response.body.message)
+          }
+        }
+        )
       }
     },
     computed: {
@@ -94,7 +101,11 @@
         // If server answer
         this.allTeams = response.body.teams
         console.log('La liste des équipes: ' + this.allTeams)
-      })
+      }, _ => {
+        // If server doesn't answer
+        console.error('Le serveur semble ne pas répondre')
+      }
+      )
       this.myTeams = this.userInfos.teams
       console.log('La liste de mes équipes: ' + this.myTeams)
     }

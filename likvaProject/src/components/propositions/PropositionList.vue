@@ -14,7 +14,9 @@
           </section>
           <div class="card-footer">
             <p class="card-text">Par {{proposition.author}}</p>
-            <button type="button" class="btn btn-outline-success">Détails de la proposition</button>
+            <router-link :to="{name: 'proposition-list', params: { slug: slug, idProposition: proposition.id }}">
+              <button type="button" class="btn btn-outline-success">Détails de la proposition</button>
+            </router-link>
           </div>
         </div>
       </div>
@@ -45,7 +47,11 @@
       this.propositionResource.get({slug: this.slug}).then(response => {
         //  If server answer
         this.allPropositions = response.body.props
-      })
+      }, _ => {
+        //  Le serveur ne répond pas
+        console.error('Le serveur semble ne pas répondre.')
+      }
+      )
     }
   }
 </script>
