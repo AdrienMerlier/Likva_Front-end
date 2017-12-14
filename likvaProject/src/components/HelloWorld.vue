@@ -35,12 +35,15 @@
       <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
       <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
     </ul>
+    <vote :possibilities="['Oui', 'Non', 'Blanc']"></vote>
   </div>
 </template>
 
 <script>
+  import Vote from './votes/Vote'
   export default {
     name: 'HelloWorld',
+    components: {Vote},
     data () {
       return {
         msg: 'Bienvenue sur Likva la platforme de démocratie liquide'

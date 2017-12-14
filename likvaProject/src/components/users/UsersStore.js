@@ -79,7 +79,7 @@ const actions = {
       actions.addMessageUserStore(store, message)
     })
   },
-  addTeamUserStrore: (store, team) => {
+  addTeamUserStore: (store, team) => {
     let message = {
       content: '',
       type: '',

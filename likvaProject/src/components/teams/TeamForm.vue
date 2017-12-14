@@ -86,7 +86,7 @@
         }
         ).then(response => {
           //  If server answer
-          this.addTeamUserStrore({
+          this.addTeamUserStore({
             role: 'Voter',
             proposer: true,
             admin: true,
