@@ -55,13 +55,13 @@
             message.type = 'alert-success'
           } else {
             message.content = 'Une erreur s\'est produite lors de l\'enregistement de votre vote'
-            message.type =  'alert-danger'
+            message.type = 'alert-danger'
           }
           this.addMessageUserStore(message)
         }, _ => {
           // If server doesn't answer
           message.content = 'Le serveur semble ne pas répondre veuillez réessayer'
-          message.type =  'alert-danger'
+          message.type = 'alert-danger'
           console.error('Le serveur ne semble pas répondre')
           this.addMessageUserStore(message)
         })
