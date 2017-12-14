@@ -51,7 +51,7 @@
       this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/idProposition}')
       this.propositionResource.get({slug: this.slug, idProposition: this.idProposition}).then(response => {
         console.log('Le contenu de la réponse: ' + JSON.stringify(response.body.success))
-        this.proposition = response.body.props
+        this.proposition = response.body.props[0]
         console.log('La proposition: ' + JSON.stringify(this.proposition))
       })
     }
