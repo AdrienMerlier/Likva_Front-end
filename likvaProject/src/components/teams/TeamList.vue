@@ -23,7 +23,7 @@
         </div>
         <div class="card-footer" v-else>
           <div class="row">
-            <team-password-asker></team-password-asker>
+            <team-password-asker class="sm-col-6"></team-password-asker>
             <button type="button" class="btn btn-outline-success sm-col-6" @click.prevent="joinTeam(team)">Rejoindre</button>
           </div>
         </div>
