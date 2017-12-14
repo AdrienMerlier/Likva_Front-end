@@ -54,7 +54,7 @@
             message.content = 'Votre vote a bien été enregistré'
             message.type = 'alert-success'
           } else {
-            message.content = 'Une erreur s\'est produite lors de l\'enregistement de votre vote'
+            message.content = 'Une erreur s\'est produite lors de l\'enregistement de votre vote' + response.body.message
             message.type = 'alert-danger'
           }
           this.addMessageUserStore(message)
