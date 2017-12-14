@@ -35,7 +35,11 @@
       }
     },
     methods: {
+      ...Vuex.mapActions([
+        'addMessageUserStore'
+      ]),
       sendVote () {
+        let message = {concerne: 'Vote'}
         this.slug = this.$router.history.current.params.slug
         this.idProposition = this.$router.history.current.params.idProposition
         console.log(this.result)
@@ -46,9 +50,20 @@
           delegation: this.delegation
         }).then(response => {
           //  If server answer
+          if (response.body.success) {
+            message.content = 'Votre vote a bien été enregistré'
+            message.type = 'alert-success'
+          } else {
+            message.content = 'Une erreur s\'est produite lors de l\'enregistement de votre vote' + response.body.message
+            message.type = 'alert-danger'
+          }
+          this.addMessageUserStore(message)
         }, _ => {
           // If server doesn't answer
+          message.content = 'Le serveur semble ne pas répondre veuillez réessayer'
+          message.type = 'alert-danger'
           console.error('Le serveur ne semble pas répondre')
+          this.addMessageUserStore(message)
         })
       },
       updateResult (choice) {
