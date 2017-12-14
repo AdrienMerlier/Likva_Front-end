@@ -16,19 +16,27 @@
         </div>
       </div>
     </div>
+    <vote :possibilities="proposition.votePossibilities" v-if="isVoter"></vote>
   </div>
 </template>
 
 <script>
   import Vuex from 'vuex'
   import userStore from '../users/UsersStore'
+  import Vote from '../votes/Vote'
 
   export default {
+    components: {Vote},
     name: 'proposition-display',
     store: userStore,
     data () {
       return {
         proposition: {}
+      }
+    },
+    methods: {
+      isVoter () {
+        return this.userInfos.teams.filter(myteam => myteam.slug === this.slug)[0].status === 'Voter'
       }
     },
     computed: {

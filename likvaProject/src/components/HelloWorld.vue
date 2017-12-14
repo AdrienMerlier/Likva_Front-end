@@ -35,21 +35,18 @@
       <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
       <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
     </ul>
-    <vote :possibilities="['Oui', 'Non', 'Blanc']"></vote>
   </div>
 </template>
 
 <script>
-  import Vote from './votes/Vote'
-export default {
-    components: {Vote},
+  export default {
     name: 'HelloWorld',
     data () {
       return {
         msg: 'Bienvenue sur Likva la platforme de démocratie liquide'
       }
     }
-}
+  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
