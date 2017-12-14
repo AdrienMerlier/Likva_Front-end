@@ -3,7 +3,7 @@
     <div class="btn-group" v-model="result">
       <button class="btn btn-primary dropdown-toggle btn-lg" type="button" id="dropdownMenuButton"
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-if="!result">
-        Votre Choix
+        Choisir
       </button>
       <button class="btn btn-primary dropdown-toggle btn-lg" type="button" id="dropdownMenuButton"
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-else>
