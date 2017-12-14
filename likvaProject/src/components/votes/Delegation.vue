@@ -17,15 +17,15 @@
                 <div class="col-sm-12 input-group">
                   <div class="input-group-addon"><i class="fa fa-text-width" aria-hidden="true"></i>
                   </div>
-                  <input type="text" class="form-control form-control-lg" placeholder="Titre" v-model="delegation.title">
+                  <input type="text" class="form-control form-control-lg" placeholder="Titre" >
                 </div>
               </div>
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-success" data-dismiss="modal" @click.prevent="senddelegation">
+            <button type="button" class="btn btn-success" data-dismiss="modal">
               <i class="fa fa-send"></i> Proposer</button>
-            <button type="button" class="btn btn-danger" data-dismiss="modal" @click.prevent="removedelegationInfos">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">
               <i class="fa fa-times"></i> Supprimer</button>
           </div>
         </div>
