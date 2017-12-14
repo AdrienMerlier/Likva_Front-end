@@ -39,7 +39,7 @@
         'addMessageUserStore'
       ]),
       sendVote () {
-        let message = {concerne: 'Vote'}
+        let message = {concern: 'Vote'}
         this.slug = this.$router.history.current.params.slug
         this.idProposition = this.$router.history.current.params.idProposition
         console.log(this.result)
