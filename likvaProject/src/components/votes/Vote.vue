@@ -21,24 +21,47 @@
 
 <script>
   import Vuex from 'vuex'
+  import userStore from '../users/UsersStore'
+
   export default {
     name: 'vote',
+    store: userStore,
     props: ['possibilities'],
     data () {
       return {
-        result: false
+        result: false,
+        delegation: false,
+        anonymous: false
       }
     },
     methods: {
       sendVote () {
+        this.slug = this.$router.history.current.params.slug
+        this.idProposition = this.$router.history.current.params.idProposition
         console.log(this.result)
+        this.voteResource.save({slug: this.slug, idProposition: this.idProposition}, {
+          email: this.userInfos.email,
+          content: this.result,
+          voter: '',
+          delegation: this.delegation
+        }).then(response => {
+          //  If server answer
+        }, _ => {
+          // If server doesn't answer
+          console.error('Le serveur ne semble pas répondre')
+        })
       },
       updateResult (choice) {
         this.result = choice
       }
     },
+    computed: {
+      ...Vuex.mapGetters([
+        'userInfos'
+      ])
+    },
     mounted () {
-      this.voteResource = this.$resource('http://127.0.0.1:3000/api/')
+      this.voteResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/idProposition}/vote')
     }
   }
 </script>
