@@ -105,7 +105,7 @@
         // If server answer
         this.allTeams = response.body.teams
         this.allTeams.forEach(team => {
-          team.secretCode = false
+          team.secretCode = ''
         })
       }, _ => {
         // If server doesn't answer
