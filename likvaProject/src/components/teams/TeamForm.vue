@@ -92,6 +92,7 @@
             admin: true,
             slug: response.body.team.slug
           })
+          console.log('Le contenu de la réponse :' + JSON.stringify(response.body))
           this.updateActualTeam(response.body.team)
         }, response => {
           //  If server doesn't answer
