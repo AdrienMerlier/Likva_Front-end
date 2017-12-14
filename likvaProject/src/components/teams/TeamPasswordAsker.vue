@@ -4,7 +4,7 @@
         <div class="input-group-addon"><i class="fa fa-lock fa-fw" aria-hidden="true"></i>
         </div>
         <input type="password" class="form-control" placeholder="Code d'accès"
-               v-model="password">
+               v-model="secretCode">
       </div>
     </div>
 </template>
@@ -12,10 +12,9 @@
 <script>
   export default {
     name: 'team-password-asker',
-    inherit: true,
+    props: ['secretCode'],
     data () {
       return {
-        password: ''
       }
     }
   }

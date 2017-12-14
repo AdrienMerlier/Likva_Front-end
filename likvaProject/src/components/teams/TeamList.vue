@@ -23,7 +23,7 @@
         </div>
         <div class="card-footer" v-else>
           <div class="row">
-            <team-password-asker class="sm-col-6"></team-password-asker>
+            <team-password-asker class="sm-col-6" :secretCode="team.secretCode"></team-password-asker>
             <button type="button" class="btn btn-outline-success sm-col-6" @click.prevent="joinTeam(team)">Rejoindre</button>
           </div>
         </div>
@@ -104,6 +104,9 @@
       this.teamResource.get().then(response => {
         // If server answer
         this.allTeams = response.body.teams
+        this.allTeams.forEach(team => {
+          team.secretCode = false
+          })
       }, _ => {
         // If server doesn't answer
         console.error('Le serveur semble ne pas répondre')

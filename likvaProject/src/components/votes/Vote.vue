@@ -14,7 +14,8 @@
       </div>
       <button type="button" class="btn btn-primary btn-lg" @click.prevent="updateResult('Abstention')">S'abstenir</button>
       <button type="button" class="btn btn-primary btn-lg" disabled>Déléguer</button>
-      <button type="button" class="btn btn-success btn-lg" id="reponse" @click.prevent="sendVote"><i class="fa fa-envelope-open-o"></i> Voter</button>
+      <button type="button" class="btn btn-success btn-lg" id="reponse" @click.prevent="sendVote">
+        <i class="fa fa-envelope-open-o"></i> Voter</button>
     </div>
   </div>
 </template>
@@ -31,7 +32,30 @@
       return {
         result: false,
         delegation: false,
-        anonymous: false
+        anonymous: false,
+        delegateList: [
+          {
+            email : 'mouynaleo@gmail.com',
+            admin : false,
+            proposer : true,
+            status : 'Voter',
+            delegable: true,
+          },
+          {
+            email : 'adrien.merlier@insa-lyon.fr',
+            admin : false,
+            proposer : true,
+            status : 'Voter',
+            delegable: true,
+          },
+          {
+            email : 'guillaume.bullier@gmail.com',
+            admin : false,
+            proposer : true,
+            status : 'Voter',
+            delegable: true,
+          }
+        ]
       }
     },
     methods: {
@@ -40,7 +64,6 @@
       ]),
       sendVote () {
         let message = {concern: 'Vote'}
-        this.slug = this.$router.history.current.params.slug
         this.idProposition = this.$router.history.current.params.idProposition
         console.log(this.result)
         this.voteResource.save({slug: this.slug, idProposition: this.idProposition}, {
@@ -76,7 +99,9 @@
       ])
     },
     mounted () {
+      this.slug = this.$router.history.current.params.slug
       this.voteResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/idProposition}/vote')
+      //  this.delegateResource = this.$resource('http://127.0.0.1:3000//api/teams{/slug}/delegates')
     }
   }
 </script>
