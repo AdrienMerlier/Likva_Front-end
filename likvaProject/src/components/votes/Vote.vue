@@ -35,25 +35,25 @@
         anonymous: false,
         delegateList: [
           {
-            email : 'mouynaleo@gmail.com',
-            admin : false,
-            proposer : true,
-            status : 'Voter',
-            delegable: true,
+            email: 'mouynaleo@gmail.com',
+            admin: false,
+            proposer: true,
+            status: 'Voter',
+            delegable: true
           },
           {
-            email : 'adrien.merlier@insa-lyon.fr',
-            admin : false,
-            proposer : true,
-            status : 'Voter',
-            delegable: true,
+            email: 'adrien.merlier@insa-lyon.fr',
+            admin: false,
+            proposer: true,
+            status: 'Voter',
+            delegable: true
           },
           {
-            email : 'guillaume.bullier@gmail.com',
-            admin : false,
-            proposer : true,
-            status : 'Voter',
-            delegable: true,
+            email: 'guillaume.bullier@gmail.com',
+            admin: false,
+            proposer: true,
+            status: 'Voter',
+            delegable: true
           }
         ]
       }

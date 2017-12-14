@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70a3ddf4-30a2-4c32-8b7c-8bf4f6665c76" name="Default" comment="Merge branch 'vue-cli_project' of https://github.com/AdrienMerlier/Likva_Front-end into vue-cli_project&#10;&#10;# Conflicts:&#10;#&#9;likvaProject/src/components/propositions/PropositionDisplay.vue">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/likvaProject/src/components/teams/TeamForm.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/teams/TeamForm.vue" />
+      <change beforePath="$PROJECT_DIR$/likvaProject/src/components/teams/TeamList.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/teams/TeamList.vue" />
+      <change beforePath="$PROJECT_DIR$/likvaProject/src/components/votes/Vote.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/votes/Vote.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -41,22 +41,24 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Vote.vue" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Vote.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/votes/Vote.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="374">
-                  <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+                <state relative-caret-position="731">
+                  <caret line="53" column="27" lean-forward="true" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="TeamList.vue" pinned="false" current-in-tab="true">
+          <file leaf-file-name="TeamList.vue" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/teams/TeamList.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-187">
-                  <caret line="34" column="8" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
-                  <folding />
+                <state relative-caret-position="476">
+                  <caret line="55" column="23" lean-forward="true" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
+                  <folding>
+                    <element signature="e#1552#1575#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -244,10 +246,10 @@
         <option value="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionList.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/HelloWorld.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionDisplay.vue" />
-        <option value="$PROJECT_DIR$/likvaProject/src/components/votes/Vote.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/teams/TeamPasswordAsker.vue" />
-        <option value="$PROJECT_DIR$/likvaProject/src/components/teams/TeamList.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/teams/TeamForm.vue" />
+        <option value="$PROJECT_DIR$/likvaProject/src/components/teams/TeamList.vue" />
+        <option value="$PROJECT_DIR$/likvaProject/src/components/votes/Vote.vue" />
       </list>
     </option>
   </component>
@@ -526,7 +528,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143520000" />
+    <option name="totallyTimeSpent" value="144167000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1601" height="1047" extended-state="0" />
@@ -929,14 +931,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/votes/Vote.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/teams/TeamManagment.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -971,14 +965,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/teams/TeamList.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-187">
-          <caret line="34" column="8" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/teams/TeamForm.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
@@ -986,6 +972,24 @@
           <folding>
             <element signature="e#2587#2610#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/teams/TeamList.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="55" column="23" lean-forward="true" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
+          <folding>
+            <element signature="e#1552#1575#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/votes/Vote.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="53" column="27" lean-forward="true" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>

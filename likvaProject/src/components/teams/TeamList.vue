@@ -58,7 +58,7 @@
         console.log('Le mot de passe est: ' + team.password)
         this.joinResource.save({slug: team.slug}, {
           email: this.userInfos.email,
-          teamPassword: team.password
+          teamPassword: team.secretCode
         }).then(response => {
             //  If server answer I have to update user in userStore
           if (response.body.success) {
