@@ -106,7 +106,7 @@
         this.allTeams = response.body.teams
         this.allTeams.forEach(team => {
           team.secretCode = false
-          })
+        })
       }, _ => {
         // If server doesn't answer
         console.error('Le serveur semble ne pas répondre')
