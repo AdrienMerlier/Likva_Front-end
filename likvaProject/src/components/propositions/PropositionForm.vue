@@ -43,8 +43,8 @@
                   <textarea class="form-control" rows="5" id="change" v-model="proposition.change"></textarea>
                 </div>
                 <div class="col-sm-6">
-                  <label for="consequence">Résultats escomptés</label>
-                  <textarea class="form-control" rows="5" id="consequence" v-model="proposition.consequence"></textarea>
+                  <label for="consequences">Résultats escomptés</label>
+                  <textarea class="form-control" rows="5" id="consequences" v-model="proposition.consequences"></textarea>
                 </div>
               </div>
 
@@ -192,7 +192,7 @@
           summary: this.proposition.summary,
           description: this.proposition.description,
           change: this.proposition.change,
-          consequence: this.proposition.consequence,
+          consequences: this.proposition.consequences,
           information: this.proposition.information,
           quorum: this.proposition.quorum,
           typeOfVote: this.proposition.type,
