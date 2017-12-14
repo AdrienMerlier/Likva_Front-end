@@ -62,6 +62,7 @@
 <script>
   import Vuex from 'vuex'
   import userStore from '../users/UsersStore'
+
   export default {
     name: 'team-form',
     store: userStore,
@@ -89,7 +90,7 @@
             role: 'Voter',
             proposer: true,
             admin: true,
-            teamName: this.team.name
+            slug: response.body.team.slug
           })
           this.updateActualTeam(response.body.team)
         }, response => {
