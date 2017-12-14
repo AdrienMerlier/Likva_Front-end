@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <!-- Modal -->
     <div class="modal fade" id="delegationModal" tabindex="-1" role="dialog" aria-labelledby="delegationModalLabel"
          aria-hidden="true">

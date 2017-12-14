@@ -55,7 +55,7 @@
       ]),
       joinTeam (team) {
         //  Not ready yet
-        console.log('Le mot de passe est: ' + team.password)
+        console.log('Le mot de passe est: ' + team.secretCode)
         this.joinResource.save({slug: team.slug}, {
           email: this.userInfos.email,
           teamPassword: team.secretCode
