@@ -12,7 +12,7 @@
         </div>
         <div class="sm-col-6">
           <h2>Résultats Escomptés</h2>
-          <p id="resultat">{{proposition.consequence}}</p>
+          <p id="resultat">{{proposition.consequences}}</p>
         </div>
       </div>
     </div>
