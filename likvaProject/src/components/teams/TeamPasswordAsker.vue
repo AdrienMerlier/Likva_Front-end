@@ -4,7 +4,7 @@
         <div class="input-group-addon"><i class="fa fa-lock fa-fw" aria-hidden="true"></i>
         </div>
         <input type="password" class="form-control" placeholder="Code d'accès"
-               v-model="secretCode">
+               v-model="childSecretCode" :change="updateParentvalue">
       </div>
     </div>
 </template>
@@ -15,6 +15,12 @@
     props: ['secretCode'],
     data () {
       return {
+        childSecretCode: ''
+      }
+    },
+    methods: {
+      updateParentValue () {
+        this.$emit('update:secretCode', this.childSecretCode)
       }
     }
   }
