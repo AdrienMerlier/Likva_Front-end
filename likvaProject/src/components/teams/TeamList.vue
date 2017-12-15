@@ -82,6 +82,8 @@
         return res
       },
       getRole (team) {
+        let role = this.myTeams.filter(myteam => myteam.slug === team.slug)[0].status
+        console.log('Le rôle dans l\'équipe ' + team.displayName + 'est ' + role)
         return this.myTeams.filter(myteam => myteam.slug === team.slug)[0].status
       },
       isAdmin (team) {
@@ -104,16 +106,15 @@
       })
       this.joinResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/join')
       this.teamResource.get().then(response => {
-          // If server answer
-          this.allTeams = response.body.teams
-          this.allTeams.forEach(team => {
-            team.secretCode = ''
-          })
-        }, _ => {
-          // If server doesn't answer
-          console.error('Le serveur semble ne pas répondre')
-        }
-      )
+        // If server answer
+        this.allTeams = response.body.teams
+        this.allTeams.forEach(team => {
+          team.secretCode = ''
+        })
+      }, _ => {
+        // If server doesn't answer
+        console.error('Le serveur semble ne pas répondre')
+      })
       this.myTeams = this.userInfos.teams
     }
   }
