@@ -4,7 +4,7 @@
         <div class="input-group-addon"><i class="fa fa-lock fa-fw" aria-hidden="true"></i>
         </div>
         <input type="password" class="form-control" placeholder="Code d'accès"
-               :value="value" @change.prevent="updateParentValue">
+               :value="value" @change.prevent="updateParentValue($event.target.value)">
       </div>
     </div>
 </template>
@@ -15,13 +15,12 @@
     props: ['value'],
     data () {
       return {
-        childSecretCode: ''
       }
     },
     methods: {
-      updateParentValue () {
-        console.log('J\'envoies un event à mon parent avec ' + this.childSecretCode)
-        this.$emit('input', this.childSecretCode)
+      updateParentValue (value) {
+        console.log('J\'envoies un event à mon parent avec ' + value)
+        this.$emit('input', value)
       }
     }
   }
