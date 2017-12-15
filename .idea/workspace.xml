@@ -97,8 +97,8 @@
       <file leaf-file-name="TeamPasswordAsker.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/likvaProject/src/components/teams/TeamPasswordAsker.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state relative-caret-position="102">
+              <caret line="6" column="45" lean-forward="false" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -349,12 +349,12 @@
       <workItem from="1513098769094" duration="6333000" />
       <workItem from="1513157078717" duration="35736000" />
       <workItem from="1513275667151" duration="3473000" />
-      <workItem from="1513331373297" duration="4041000" />
+      <workItem from="1513331373297" duration="4489000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155444000" />
+    <option name="totallyTimeSpent" value="155892000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1059" height="1047" extended-state="0" />
@@ -801,8 +801,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/teams/TeamPasswordAsker.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="102">
+          <caret line="6" column="45" lean-forward="false" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
           <folding />
         </state>
       </provider>
