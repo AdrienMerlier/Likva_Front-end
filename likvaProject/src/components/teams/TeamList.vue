@@ -1,7 +1,7 @@
 <template>
   <div class="teamList">
     <div class="card-columns">
-      <div class="card" v-for="team in allTeams">
+      <div class="card" v-for="team in allTeams" :id="team.slug">
         <h4 class="card-header">{{team.displayName}}</h4>
         <section class="card-body">
           <aside class="memberInfos" v-if="isMember(team)">
@@ -64,7 +64,7 @@
           if (response.body.success) {
             //  L'utilisateur a été ajouté en base
             this.insertUserStore(response.body.user)
-            this.$forceUpdate()
+            this.$router.push({ path: this.$route.fullPath })
           } else {
             //  Une erreur a été détectée par le serveur
             console.error(response.body.message)
