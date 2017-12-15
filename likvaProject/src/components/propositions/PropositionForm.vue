@@ -49,24 +49,7 @@
               </div>
 
               <!--Conditions-->
-              <h6>Conditions du vote</h6>
               <div class="form-group row">
-                <div class="col-sm-12 input-group">
-                  <div class="input-group-addon"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                  </div>
-                  <input type="text" class="form-control" placeholder="Conditions du vote"
-                         v-model="proposition.information">
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-sm-4">
-                  <label for="quorum">Taille du Qorum (%)</label>
-                  <div class="input-group">
-                    <div class="input-group-addon"><i class="fa fa-balance-scale" aria-hidden="true"></i></div>
-                    <input name="quorum" class="form-control" type="number" id="quorum" required="true"
-                           v-model="proposition.quorum">
-                  </div>
-                </div>
                 <div class="col-sm-4">
                   <label for="typeOfVote">Type de vote</label>
                   <div class="input-group">
