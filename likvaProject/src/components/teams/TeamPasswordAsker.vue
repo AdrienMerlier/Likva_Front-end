@@ -19,7 +19,6 @@
     },
     methods: {
       updateParentValue (value) {
-        console.log('J\'envoies un event à mon parent avec ' + value)
         this.$emit('input', value)
       }
     }

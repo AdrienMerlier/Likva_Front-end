@@ -64,6 +64,8 @@
           if (response.body.success) {
             //  L'utilisateur a été ajouté en base
             this.insertUserStore(response.body.user)
+            this.allTeams = this.allTeams.filter(t => t !== team)
+            this.allTeams.push(team)
           } else {
             //  Une erreur a été détectée par le serveur
             console.error(response.body.message)
