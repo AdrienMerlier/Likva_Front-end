@@ -116,6 +116,7 @@
 <script>
   import Vuex from 'vuex'
   import userStore from '../users/UsersStore'
+
   export default {
     name: 'proposition-form',
     store: userStore,
