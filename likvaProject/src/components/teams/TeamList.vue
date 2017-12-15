@@ -64,8 +64,7 @@
           if (response.body.success) {
             //  L'utilisateur a été ajouté en base
             this.insertUserStore(response.body.user)
-            this.allTeams = this.allTeams.filter(t => t !== team)
-            this.allTeams.push(team)
+            this.$forceUpdate()
           } else {
             //  Une erreur a été détectée par le serveur
             console.error(response.body.message)
@@ -98,21 +97,22 @@
       ])
     },
     mounted () {
+      console.log('Le composant est monté')
       this.teamResource = this.$resource('http://127.0.0.1:3000/api/teams', {}, {}, {
         before: () => { this.loading = true },
         after: () => { this.loading = false }
       })
       this.joinResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/join')
       this.teamResource.get().then(response => {
-        // If server answer
-        this.allTeams = response.body.teams
-        this.allTeams.forEach(team => {
-          team.secretCode = ''
-        })
-      }, _ => {
-        // If server doesn't answer
-        console.error('Le serveur semble ne pas répondre')
-      }
+          // If server answer
+          this.allTeams = response.body.teams
+          this.allTeams.forEach(team => {
+            team.secretCode = ''
+          })
+        }, _ => {
+          // If server doesn't answer
+          console.error('Le serveur semble ne pas répondre')
+        }
       )
       this.myTeams = this.userInfos.teams
     }
