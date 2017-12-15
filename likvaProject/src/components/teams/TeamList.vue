@@ -54,8 +54,7 @@
         'updateActualTeam'
       ]),
       joinTeam (team) {
-        //  Not ready yet
-        console.log('Le mot de passe est: ' + team.secretCode)
+        //  Have to update the page
         this.joinResource.save({slug: team.slug}, {
           email: this.userInfos.email,
           teamPassword: team.secretCode
@@ -81,7 +80,7 @@
         return res
       },
       getRole (team) {
-        let role = this.myTeams.filter(myteam => myteam.slug === team.slug)[0].status
+        let role = this.myTeams.filter(myteam => myteam.slug === team.slug)[0]
         console.log('Le rôle dans l\'équipe ' + team.displayName + 'est ' + role)
         return this.myTeams.filter(myteam => myteam.slug === team.slug)[0].status
       },
@@ -98,7 +97,6 @@
       ])
     },
     mounted () {
-      console.log('Le composant est monté')
       this.teamResource = this.$resource('http://127.0.0.1:3000/api/teams', {}, {}, {
         before: () => { this.loading = true },
         after: () => { this.loading = false }

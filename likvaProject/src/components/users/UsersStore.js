@@ -62,7 +62,6 @@ const actions = {
     store.commit('ADD_TOKEN', token)
   },
   addMessageUserStore: (store, message) => {
-    console.log('I should print a message')
     store.commit('ADD_MESSAGE', message)
   },
   updateUserStore: (store, param, value) => {
@@ -97,9 +96,6 @@ const actions = {
     store.commit('REMOVE_MESSAGE', msg)
   },
   updateActualTeam: (store, team) => {
-    console.log('L\'équipe a enregistrée est: ' + team)
-    console.log('I should update the actual team with displayName: ' + team.displayName)
-    console.log('Le slug est: ' + team.slug)
     store.commit('CHANGE_ACTUAL_TEAM', team)
   }
 }
