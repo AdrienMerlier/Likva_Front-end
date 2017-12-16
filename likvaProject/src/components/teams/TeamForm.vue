@@ -19,6 +19,12 @@
             <input type="password" class="form-control form-control-lg" placeholder="Code d'accès" v-model="team.password">
           </div>
         </div>
+        <!--Team-->
+        <div class="form-group row" id="teamDescription">
+          <div class="col-sm-12 input-group">
+            <textarea class="form-control" rows="5" id="Description" placeholder="Description de votre équipe" v-model="team.description"></textarea>
+          </div>
+        </div>
 
         <!--Team-->
         <div class="col-sm-12">
@@ -82,7 +88,8 @@
           teamName: this.team.name,
           email: this.userInfos.email,
           type: this.team.type,
-          pwd: this.team.password
+          pwd: this.team.password,
+          description: this.team.description
         }
         ).then(response => {
           //  If server answer
