@@ -61,7 +61,8 @@
     },
     methods: {
       ...Vuex.mapActions([
-        'addMessageUserStore'
+        'addMessageUserStore',
+        'insertDelegates'
       ]),
       sendVote () {
         let message = {concern: 'Vote'}
@@ -102,6 +103,21 @@
     mounted () {
       this.slug = this.$router.history.current.params.slug
       this.voteResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/idProposition}/vote')
+      this.delegateResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/delegates')
+      this.delegateResource.get({slug: this.slug}).then(response => {
+        // If server answer
+        console.log('Le serveur a répondu avec : ' + JSON.stringify(response.body))
+        if (response.body.success) {
+          // Good request
+          this.insertDelegates(this.response.body.delegateList)
+        } else {
+          // Wrong request
+          console.error(this.response.body.message)
+        }
+      }, _ => {
+        // The server doesn't answer
+        console.error('Something went wrong with the server')
+      })
     }
   }
 </script>

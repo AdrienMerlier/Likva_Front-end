@@ -20,7 +20,7 @@
                   <input type="text" class="form-control form-control-lg" placeholder="Délégué"
                          list="delegates" name="delegates">
                   <datalist id="delegates">
-                    <option v-for="delegate in delegateList" :value="delegate"></option>
+                    <option v-for="delegate in delegateList" :value="delegate.displayName"></option>
                   </datalist>
                 </div>
               </div>
@@ -39,32 +39,26 @@
 </template>
 
 <script>
+  import Vuex from 'vuex'
+  import userStore from '../users/UsersStore'
   export default {
     name: 'delegation',
+    store: userStore,
     data () {
       return {
-        delegateList: ['Jean-Eude', 'Luc', 'Léo', 'Léa', 'Jean-Pierre']
+        delegateName: ''
       }
     },
-    mounted () {
-      console.log('La délégation est en train de se monter')
-      this.slug = this.$router.history.current.params.slug
-      console.log('Le slug récupéré est ' + this.slug)
-      this.delegateResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/delegates')
-      this.delegateResource.get({slug: this.slug}).then(response => {
-        // If server answer
-        console.log('Le serveur a répondu avec : ' + JSON.stringify(response.body))
-        if (response.body.success) {
-          // Good request
-          this.delegateList = this.response.body.delegateList
-        } else {
-          // Wrong request
-          console.error(this.response.body.message)
-        }
-      }, _ => {
-        // The server doesn't answer
-        console.error('Something went wrong with the server')
-      })
+    methods: {
+      ...Vuex.mapActions([
+        'updateDelegation',
+        'removeDelegation'
+      ])
+    },
+    computed: {
+      ...Vuex.mapGetters([
+        'delegateList'
+      ])
     }
   }
 </script>

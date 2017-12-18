@@ -9,7 +9,12 @@ const state = {
     loaded: false
   },
   messages: [],
-  actualTeam: {}
+  actualTeam: {},
+  delegation: {
+    hasDelegate: false,
+    delegate: {}
+  },
+  delegateList: []
 }
 
 const getters = {
@@ -23,7 +28,9 @@ const getters = {
   userFullName: state => getters.userName(state) + ' ' + getters.userSurname(state),
   adminActualTeam: state => state.user.teams.filter(team => team.slug === state.actualTeam.slug).admin,
   adminTeams: state => state.user.teams.filter(team => team.admin),
-  tokenSession: state => state.token
+  tokenSession: state => state.token,
+  delegateList: state => state.delegateList,
+  delegation: state => state.delegation
 }
 
 const mutations = {
@@ -52,6 +59,19 @@ const mutations = {
   CHANGE_ACTUAL_TEAM: (state, team) => {
     state.actualTeam.displayName = team.displayName
     state.actualTeam.slug = team.slug
+  },
+  INSERT_DELEGATES: (state, list) => {
+    state.delegateList = list
+  },
+  UPDATE_DELEGATION: (state, user) => {
+    state.delegation.hasDelegate = true
+    state.delegation.delegate = user
+  },
+  REMOVE_DELEGATION: (state) => {
+    state.delegation = {
+      hasDelegate: false,
+      delegate: {}
+    }
   }
 }
 
@@ -97,6 +117,15 @@ const actions = {
   },
   updateActualTeam: (store, team) => {
     store.commit('CHANGE_ACTUAL_TEAM', team)
+  },
+  insertDelegates: (store, list) => {
+    store.commit('INSERT_DELEGATES', list)
+  },
+  updateDelegation: (store, user) => {
+    store.commit('UPDATE_DELEGATION', user)
+  },
+  removeDelegation: (store) => {
+    store.commit('REMOVE_DELEGATION')
   }
 }
 
