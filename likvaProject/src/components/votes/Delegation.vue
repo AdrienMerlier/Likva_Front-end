@@ -15,18 +15,22 @@
             <form>
               <div class="form-group">
                 <div class="col-sm-12 input-group">
-                  <div class="input-group-addon"><i class="fa fa-text-width" aria-hidden="true"></i>
+                  <div class="input-group-addon"><i class="fa fa-address-book-o" aria-hidden="true"></i>
                   </div>
-                  <input type="text" class="form-control form-control-lg" placeholder="Titre" >
+                  <input type="text" class="form-control form-control-lg" placeholder="Délégué"
+                         list="delegates" name="delegates">
+                  <datalist id="delegates">
+                    <option v-for="delegate in delegateList" :value="delegate"></option>
+                  </datalist>
                 </div>
               </div>
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-success" data-dismiss="modal">
-              <i class="fa fa-send"></i> Proposer</button>
+              <i class="fa fa-send"></i> Déléguer mon vote</button>
             <button type="button" class="btn btn-danger" data-dismiss="modal">
-              <i class="fa fa-times"></i> Supprimer</button>
+              <i class="fa fa-times"></i> Annuler la délégation</button>
           </div>
         </div>
       </div>
@@ -39,13 +43,25 @@
     name: 'delegation',
     data () {
       return {
-        delegateList: []
+        delegateList: ['Jean-Eude', 'Luc', 'Léo', 'Léa', 'Jean-Pierre']
       }
     },
-    mounted() {
-
+    mounted () {
+      this.slug = this.$router.history.current.params.slug
       this.delegateResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/delegates')
-      this.delegateResource.get({slug: this.slug})
+      this.delegateResource.get({slug: this.slug}).then(response => {
+        // If server answer
+        if (response.body.success) {
+          // Good request
+          this.delegateList = this.response.body.delegateList
+        } else {
+          // Wrong request
+          console.error(this.response.body.message)
+        }
+      }, _ => {
+        // The server doesn't answer
+        console.error('Something went wrong with the server')
+      })
     }
   }
 </script>

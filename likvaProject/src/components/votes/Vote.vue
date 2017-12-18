@@ -13,7 +13,8 @@
         <a class="dropdown-item" v-for="possible in possibilities" @click.prevent="updateResult(possible)">{{possible}}</a>
       </div>
       <button type="button" class="btn btn-primary btn-lg" @click.prevent="updateResult('Abstention')">S'abstenir</button>
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#delegationModal">Déléguer</button>
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#delegationModal"
+              @click.prevent="updateResult('Délègue')">Déléguer</button>
       <button type="button" class="btn btn-success btn-lg" id="reponse" @click.prevent="sendVote">
         <i class="fa fa-envelope-open-o"></i> Voter</button>
     </div>
