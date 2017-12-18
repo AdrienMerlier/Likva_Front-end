@@ -47,10 +47,13 @@
       }
     },
     mounted () {
+      console.log('La délégation est en train de se monter')
       this.slug = this.$router.history.current.params.slug
+      console.log('Le slug récupéré est ' + this.slug)
       this.delegateResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/delegates')
       this.delegateResource.get({slug: this.slug}).then(response => {
         // If server answer
+        console.log('Le serveur a répondu avec : ' + JSON.stringify(response.body))
         if (response.body.success) {
           // Good request
           this.delegateList = this.response.body.delegateList
