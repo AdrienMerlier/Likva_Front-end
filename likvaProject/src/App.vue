@@ -4,6 +4,7 @@
     <messages></messages>
     <router-view></router-view>
     <proposition-form></proposition-form>
+    <delegation></delegation>
   </div>
 </template>
 
@@ -12,10 +13,12 @@
   import HeaderBar from './components/HeaderBar'
   import Messages from './components/Messages'
   import PropositionForm from './components/propositions/PropositionForm'
+  import Delegation from './components/votes/Delegation'
 
   export default {
     name: 'app',
     components: {
+      Delegation,
       HelloWorld,
       HeaderBar,
       Messages,

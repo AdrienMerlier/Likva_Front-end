@@ -17,19 +17,16 @@
       <button type="button" class="btn btn-success btn-lg" id="reponse" @click.prevent="sendVote">
         <i class="fa fa-envelope-open-o"></i> Voter</button>
     </div>
-    <delegation :delegateList="delegateList"></delegation>
   </div>
 </template>
 
 <script>
   import Vuex from 'vuex'
   import userStore from '../users/UsersStore'
-  import Delegation from './Delegation'
 
   export default {
     name: 'vote',
     store: userStore,
-    components: {Delegation},
     props: ['possibilities'],
     data () {
       return {
@@ -104,7 +101,6 @@
     mounted () {
       this.slug = this.$router.history.current.params.slug
       this.voteResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/idProposition}/vote')
-      //  this.delegateResource = this.$resource('http://127.0.0.1:3000//api/teams{/slug}/delegates')
     }
   }
 </script>

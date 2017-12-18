@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <!-- Modal -->
     <div class="modal fade" id="delegationModal" tabindex="-1" role="dialog" aria-labelledby="delegationModalLabel"
          aria-hidden="true">
@@ -37,11 +37,15 @@
 <script>
   export default {
     name: 'delegation',
-    props: ['delegateList'],
     data () {
       return {
-
+        delegateList: []
       }
+    },
+    mounted() {
+
+      this.delegateResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/delegates')
+      this.delegateResource.get({slug: this.slug})
     }
   }
 </script>
