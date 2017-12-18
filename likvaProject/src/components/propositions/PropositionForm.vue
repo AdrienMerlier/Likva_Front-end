@@ -144,11 +144,11 @@
         'userFullName'
       ]),
       isProposer () {
-        // let selectedTeam = {}
-        // this.userInfos.teams.forEach(team => {
-        //   if (team.slug === this.actualTeam.slug) { selectedTeam = team }
-        // })
-        return true// selectedTeam.proposer
+        let selectedTeam = {}
+        this.userInfos.teams.forEach(team => {
+          if (team.slug === this.actualTeam.slug) { selectedTeam = team }
+        })
+        return selectedTeam.proposer
       }
     },
     methods: {

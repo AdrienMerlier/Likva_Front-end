@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="70a3ddf4-30a2-4c32-8b7c-8bf4f6665c76" name="Default" comment="Merge branch 'vue-cli_project' of https://github.com/AdrienMerlier/Likva_Front-end into vue-cli_project&#10;&#10;# Conflicts:&#10;#&#9;likvaProject/src/components/propositions/PropositionDisplay.vue">
       <change beforePath="$PROJECT_DIR$/likvaProject/index.html" afterPath="$PROJECT_DIR$/likvaProject/index.html" />
-      <change beforePath="$PROJECT_DIR$/likvaProject/src/components/votes/Delegation.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/votes/Delegation.vue" />
-      <change beforePath="$PROJECT_DIR$/likvaProject/src/components/votes/Vote.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/votes/Vote.vue" />
+      <change beforePath="$PROJECT_DIR$/likvaProject/src/components/HelloWorld.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/HelloWorld.vue" />
+      <change beforePath="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionForm.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionForm.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,8 +33,8 @@
           <file leaf-file-name="PropositionForm.vue" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionForm.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-85">
-                  <caret line="67" column="6" lean-forward="false" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
+                <state relative-caret-position="183">
+                  <caret line="151" column="7" lean-forward="true" selection-start-line="151" selection-start-column="7" selection-end-line="151" selection-end-column="7" />
                   <folding>
                     <element signature="e#5774#5797#0" expanded="true" />
                   </folding>
@@ -42,11 +42,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Vote.vue" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Vote.vue" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/votes/Vote.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+                <state relative-caret-position="-256">
+                  <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
                   <folding>
                     <element signature="e#1244#1267#0" expanded="true" />
                   </folding>
@@ -54,11 +54,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="awesomplete.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/likvaProject/static/awesomplete.css">
+          <file leaf-file-name="HelloWorld.vue" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/likvaProject/src/components/HelloWorld.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="425">
-                  <caret line="25" column="12" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+                <state relative-caret-position="663">
+                  <caret line="42" column="23" lean-forward="false" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
                   <folding />
                 </state>
               </provider>
@@ -120,10 +120,10 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Delegation.vue" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Delegation.vue" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/votes/Delegation.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="414">
+                <state relative-caret-position="261">
                   <caret line="26" column="19" lean-forward="true" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
                   <folding />
                 </state>
@@ -133,8 +133,8 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/likvaProject/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="510">
-                  <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+                <state relative-caret-position="221">
+                  <caret line="13" column="46" lean-forward="false" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
                   <folding />
                 </state>
               </provider>
@@ -153,7 +153,7 @@
           <file leaf-file-name="PropositionDisplay.vue" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionDisplay.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="141">
+                <state relative-caret-position="408">
                   <caret line="24" column="41" lean-forward="false" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
                   <folding />
                 </state>
@@ -170,7 +170,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="App.vue" pinned="false" current-in-tab="false">
+          <file leaf-file-name="App.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/App.vue">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="459">
@@ -224,6 +224,7 @@
       <find>user</find>
       <find>console.log</find>
       <find>clô</find>
+      <find>is</find>
     </findStrings>
     <replaceStrings>
       <replace>login</replace>
@@ -255,7 +256,6 @@
         <option value="$PROJECT_DIR$/likvaProject/src/components/users/Login.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/routes/routes.js" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionList.vue" />
-        <option value="$PROJECT_DIR$/likvaProject/src/components/HelloWorld.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/teams/TeamForm.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/teams/TeamPasswordAsker.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/teams/TeamCard.vue" />
@@ -265,11 +265,12 @@
         <option value="$PROJECT_DIR$/likvaProject/src/components/propositions/DatePicker.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/propositions/util.js" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/propositions/Datetime.vue" />
-        <option value="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionForm.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/App.vue" />
-        <option value="$PROJECT_DIR$/likvaProject/index.html" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/votes/Vote.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/votes/Delegation.vue" />
+        <option value="$PROJECT_DIR$/likvaProject/index.html" />
+        <option value="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionForm.vue" />
+        <option value="$PROJECT_DIR$/likvaProject/src/components/HelloWorld.vue" />
       </list>
     </option>
   </component>
@@ -325,6 +326,34 @@
               <item name="Likva_Front-end" type="b2602c69:ProjectViewProjectNode" />
               <item name="Likva_Front-end" type="462c0819:PsiDirectoryNode" />
               <item name="likvaProject" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Likva_Front-end" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Likva_Front-end" type="462c0819:PsiDirectoryNode" />
+              <item name="likvaProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Likva_Front-end" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Likva_Front-end" type="462c0819:PsiDirectoryNode" />
+              <item name="likvaProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Likva_Front-end" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Likva_Front-end" type="462c0819:PsiDirectoryNode" />
+              <item name="likvaProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="propositions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Likva_Front-end" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Likva_Front-end" type="462c0819:PsiDirectoryNode" />
+              <item name="likvaProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Likva_Front-end" type="b2602c69:ProjectViewProjectNode" />
@@ -391,12 +420,12 @@
       <workItem from="1513157078717" duration="35736000" />
       <workItem from="1513275667151" duration="3473000" />
       <workItem from="1513331373297" duration="16638000" />
-      <workItem from="1513615726003" duration="5904000" />
+      <workItem from="1513615726003" duration="6490000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173945000" />
+    <option name="totallyTimeSpent" value="174531000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="3" width="1449" height="1045" extended-state="0" />
@@ -406,6 +435,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24986932" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -417,7 +447,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -644,14 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/HelloWorld.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="45" column="22" lean-forward="false" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/Messages.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -665,22 +686,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="37">
           <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionDisplay.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="24" column="41" lean-forward="false" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/likvaProject/src/routes/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -730,16 +735,6 @@
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/Datetime.vue" />
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/index.js" />
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/util.js" />
-    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionForm.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="67" column="6" lean-forward="false" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
-          <folding>
-            <element signature="e#5774#5797#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/teams/TeamForm.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -756,28 +751,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/likvaProject/src/App.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
-          <folding>
-            <element signature="e#221#269#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/users/UsersStore.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="935">
           <caret line="97" column="18" lean-forward="false" selection-start-line="97" selection-start-column="2" selection-end-line="97" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/likvaProject/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -790,20 +767,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/votes/Delegation.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="26" column="19" lean-forward="true" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/votes/Vote.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+        <state relative-caret-position="-256">
+          <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
           <folding>
             <element signature="e#1244#1267#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/votes/Delegation.vue">
+    <entry file="file://$PROJECT_DIR$/likvaProject/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="26" column="19" lean-forward="true" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+        <state relative-caret-position="221">
+          <caret line="13" column="46" lean-forward="false" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionDisplay.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="41" lean-forward="false" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/likvaProject/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+          <folding>
+            <element signature="e#221#269#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/likvaProject/src/routes/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionForm.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="151" column="7" lean-forward="true" selection-start-line="151" selection-start-column="7" selection-end-line="151" selection-end-column="7" />
+          <folding>
+            <element signature="e#5774#5797#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/HelloWorld.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="42" column="23" lean-forward="false" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
           <folding />
         </state>
       </provider>
