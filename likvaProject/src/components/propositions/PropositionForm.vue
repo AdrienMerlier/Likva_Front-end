@@ -1,5 +1,5 @@
 <template>
-  <div v-if="hasUserInfos">
+  <div>
       <!-- Add button -->
       <button type="button" class="btn btn-success btn-circle fixed-bottom fixed-right" data-toggle="modal"
               data-target="#propositionModal" v-if="isProposer">
@@ -50,7 +50,7 @@
 
               <!--Conditions-->
               <div class="form-group row">
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                   <label for="typeOfVote">Type de vote</label>
                   <div class="input-group">
                     <div class="input-group-addon"><i class="fa fa-signing" aria-hidden="true"></i></div>
@@ -61,7 +61,7 @@
                     </select>
                   </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                   <label for="inputEndDate">Date de clôture</label>
                   <div class="input-group">
                     <div class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i>
@@ -144,11 +144,11 @@
         'userFullName'
       ]),
       isProposer () {
-        let selectedTeam = {}
-        this.userInfos.teams.forEach(team => {
-          if (team.slug === this.actualTeam.slug) { selectedTeam = team }
-        })
-        return selectedTeam.proposer
+        // let selectedTeam = {}
+        // this.userInfos.teams.forEach(team => {
+        //   if (team.slug === this.actualTeam.slug) { selectedTeam = team }
+        // })
+        return true// selectedTeam.proposer
       }
     },
     methods: {
