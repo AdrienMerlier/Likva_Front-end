@@ -1,6 +1,6 @@
 <template>
   <div class="vote">
-    <div class="btn-group" v-model="result">
+    <div class="btn-group" v-model="result" v-if="!alreadyVote">
       <button class="btn btn-primary dropdown-toggle btn-lg" type="button" id="dropdownMenuButton"
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-if="!result">
         Choisir
@@ -19,6 +19,10 @@
               @click.prevent="updateResult('Délègue')" v-else>{{delegation.delegate.displayName}}</button>
       <button type="button" class="btn btn-success btn-lg" id="reponse" @click.prevent="sendVote">
         <i class="fa fa-envelope-open-o"></i> Voter</button>
+    </div>
+    <div v-else>
+      <button type="button" class="btn btn-success btn-lg" disabled>
+        <i class="fa fa-envelope-open-o"></i> Vous avez déjà voté</button>
     </div>
   </div>
 </template>
@@ -73,6 +77,15 @@
       },
       updateResult (choice) {
         this.result = choice
+      },
+      alreadyVote () {
+        let match = false
+        this.voterList.forEach(voter => {
+          if (voter.email === this.userInfos.email) {
+            match = true
+          }
+        })
+        return match
       }
     },
     computed: {
@@ -83,7 +96,23 @@
     },
     mounted () {
       this.slug = this.$router.history.current.params.slug
+      this.idProposition = this.$router.history.current.params.idProposition
       this.voteResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/idProposition}/vote')
+      this.signatureResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/idProposition}/emargement')
+      this.signatureResource.get({slug: this.slug, idProposition: this.idProposition}).then(response => {
+        // If server answer
+        console.log('Le serveur a répondu avec : ' + JSON.stringify(response.body))
+        if (response.body.success) {
+          //  Good request
+          this.voterList = this.response.body.emargements
+        } else {
+          // Wrong request
+          console.error(this.response.body.message)
+        }
+      }, _ => {
+        // The server doesn't answer
+        console.error('Something went wrong with the server')
+      })
       this.delegateResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/delegates')
       this.delegateResource.get({slug: this.slug}).then(response => {
         // If server answer
