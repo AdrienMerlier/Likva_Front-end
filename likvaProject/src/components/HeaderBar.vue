@@ -46,7 +46,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" @click.prevent="logout">Déconnexion</a>
+            <router-link :to="{name: 'home'}" class="dropdown-item" @click.prevent="logout">Déconnexion</router-link>
           </li>
         </ul>
       </div>
