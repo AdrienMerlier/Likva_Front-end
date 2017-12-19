@@ -40,6 +40,24 @@ const mutations = {
   INSERT_USER: (state, user) => {
     state.user = user
   },
+  RAZ_STATE: (state) => {
+    state = {
+      user: {
+        name: '',
+        surname: '',
+        email: '',
+        teams: [],
+        loaded: false
+      },
+    messages: [],
+      actualTeam: {},
+    delegation: {
+      hasDelegate: false,
+        delegate: ''
+    },
+    delegateList: []
+  }
+  },
   ADD_TOKEN: (state, token) => {
     state.token = token
   },
@@ -80,6 +98,9 @@ const actions = {
     store.commit('INSERT_USER', user)
     user.loaded = true
     store.commit('ADD_TOKEN', token)
+  },
+  razUserStore: (store) => {
+    store.commit('RAZ_STATE')
   },
   addMessageUserStore: (store, message) => {
     store.commit('ADD_MESSAGE', message)

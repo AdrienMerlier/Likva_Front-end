@@ -46,7 +46,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Logout</a>
+            <a class="nav-link" @click.prevent="logout">Déconnexion</a>
           </li>
         </ul>
       </div>
@@ -80,6 +80,14 @@
     data () {
       return {
         brandImageStyle: {}
+      }
+    },
+    methods: {
+      ...Vuex.mapActions([
+        'razUserStore'
+      ]),
+      logout () {
+        this.razUserStore()
       }
     },
     computed: {
