@@ -73,6 +73,12 @@
           message.type = 'alert-danger'
           console.error('Le serveur ne semble pas répondre')
           this.addMessageUserStore(message)
+          //  Add our user to voter list
+          this.voterList.push({
+            slug: this.slug,
+            propId: this.idProposition,
+            email: this.userInfos.email
+          })
         })
       },
       updateResult (choice) {
