@@ -34,37 +34,14 @@
     data () {
       return {
         result: false,
-        delegation: false,
         anonymous: false,
-        delegateList: [
-          {
-            email: 'mouynaleo@gmail.com',
-            admin: false,
-            proposer: true,
-            status: 'Voter',
-            delegable: true
-          },
-          {
-            email: 'adrien.merlier@insa-lyon.fr',
-            admin: false,
-            proposer: true,
-            status: 'Voter',
-            delegable: true
-          },
-          {
-            email: 'guillaume.bullier@gmail.com',
-            admin: false,
-            proposer: true,
-            status: 'Voter',
-            delegable: true
-          }
-        ]
       }
     },
     methods: {
       ...Vuex.mapActions([
         'addMessageUserStore',
-        'insertDelegates'
+        'insertDelegates',
+        'removeDelegation'
       ]),
       sendVote () {
         let message = {concern: 'Vote'}
@@ -73,13 +50,14 @@
         this.voteResource.save({slug: this.slug, idProposition: this.idProposition}, {
           email: this.userInfos.email,
           content: this.result,
-          voter: '',
-          delegation: this.delegation
+          voter: this.delegation.delegate,
+          delegation: this.delegation.hasDelegate
         }).then(response => {
           //  If server answer
           if (response.body.success) {
             message.content = 'Votre vote a bien été enregistré'
             message.type = 'alert-success'
+            this.removeDelegation()
           } else {
             message.content = 'Une erreur s\'est produite lors de l\'enregistement de votre vote' + response.body.message
             message.type = 'alert-danger'

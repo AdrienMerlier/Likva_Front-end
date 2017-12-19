@@ -12,7 +12,7 @@ const state = {
   actualTeam: {},
   delegation: {
     hasDelegate: false,
-    delegate: {}
+    delegate: ''
   },
   delegateList: []
 }
