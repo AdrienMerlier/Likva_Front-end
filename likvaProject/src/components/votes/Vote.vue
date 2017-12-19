@@ -22,7 +22,7 @@
     </div>
     <div v-else>
       <button type="button" class="btn btn-success btn-lg" disabled>
-        <i class="fa fa-envelope-open-o"></i> Vous avez déjà voté</button>
+        <i class="fa fa-chack-square-o"></i> Vous avez déjà voté</button>
     </div>
   </div>
 </template>
