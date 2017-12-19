@@ -22,7 +22,8 @@
         <!--Team-->
         <div class="form-group row" id="teamDescription">
           <div class="col-sm-12 input-group">
-            <textarea class="form-control" rows="5" id="Description" placeholder="Description de votre équipe" v-model="team.description"></textarea>
+            <textarea class="form-control" rows="5" id="Description" placeholder="Description de votre équipe"
+                      v-model="team.description"></textarea>
           </div>
         </div>
 
