@@ -34,7 +34,7 @@
     data () {
       return {
         result: false,
-        anonymous: false,
+        anonymous: false
       }
     },
     methods: {

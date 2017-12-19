@@ -49,14 +49,14 @@ const mutations = {
         teams: [],
         loaded: false
       },
-    messages: [],
+      messages: [],
       actualTeam: {},
-    delegation: {
-      hasDelegate: false,
+      delegation: {
+        hasDelegate: false,
         delegate: ''
-    },
-    delegateList: []
-  }
+      },
+      delegateList: []
+    }
   },
   ADD_TOKEN: (state, token) => {
     state.token = token
