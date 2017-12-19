@@ -66,7 +66,7 @@
                   <div class="input-group">
                     <div class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i>
                     </div>
-                    <input name="endDate" type="datetime-local" class="form-control" id="inputEndDate"
+                    <input name="endDate" type="date" class="form-control" id="inputEndDate"
                            aria-describedby="conditionsHelp" required="true" v-model="proposition.endDate">
                   </div>
                   </div>
