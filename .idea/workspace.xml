@@ -63,8 +63,8 @@
           <file leaf-file-name="HeaderBar.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/HeaderBar.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="625">
-                  <caret line="50" column="13" lean-forward="true" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
+                <state relative-caret-position="272">
+                  <caret line="52" column="12" lean-forward="true" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
                   <folding />
                 </state>
               </provider>
@@ -444,12 +444,12 @@
       <workItem from="1513275667151" duration="3473000" />
       <workItem from="1513331373297" duration="16638000" />
       <workItem from="1513615726003" duration="12080000" />
-      <workItem from="1513676024199" duration="4558000" />
+      <workItem from="1513676024199" duration="4936000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184679000" />
+    <option name="totallyTimeSpent" value="185057000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -842,8 +842,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/HeaderBar.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="50" column="13" lean-forward="true" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
+        <state relative-caret-position="272">
+          <caret line="52" column="12" lean-forward="true" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
           <folding />
         </state>
       </provider>
