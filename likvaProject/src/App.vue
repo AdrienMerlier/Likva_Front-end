@@ -3,7 +3,7 @@
     <header-bar></header-bar>
     <messages></messages>
     <router-view></router-view>
-    <proposition-form></proposition-form>
+    <proposition-modal></proposition-modal>
     <delegation></delegation>
   </div>
 </template>
@@ -12,7 +12,7 @@
   import HelloWorld from './components/HelloWorld'
   import HeaderBar from './components/HeaderBar'
   import Messages from './components/Messages'
-  import PropositionForm from './components/propositions/PropositionForm'
+  import PropositionModal from './components/propositions/PropositionModal'
   import Delegation from './components/votes/Delegation'
 
   export default {
@@ -22,7 +22,7 @@
       HelloWorld,
       HeaderBar,
       Messages,
-      PropositionForm
+      PropositionModal
     }
   }
 </script>

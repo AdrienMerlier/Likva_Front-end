@@ -75,7 +75,9 @@
     props: {
       team: {
         required: false,
-        default: {}
+        default: function () {
+          return {}
+        }
       }
     },
     store: userStore,
