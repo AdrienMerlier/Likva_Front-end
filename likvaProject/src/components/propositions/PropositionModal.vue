@@ -95,10 +95,35 @@
         })
         return selectedTeam.proposer
       }
+    },
+    mounted () {
+      this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions')
     }
   }
 </script>
 
 <style scoped>
+  .btn-circle {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 25px;
+    line-height: 1.42;
+    border-radius: 30px;
+    z-index: 200;
+  }
 
+  .fixed-bottom{
+    position: fixed;
+    bottom: 2%;
+  }
+
+  .fixed-right{
+    position: fixed;
+    left: 92%;
+  }
+  .modal-dialog{
+    max-width: 1024px;
+  }
 </style>
