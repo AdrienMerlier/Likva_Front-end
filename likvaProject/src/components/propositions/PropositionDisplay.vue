@@ -17,7 +17,8 @@
       </div>
     </div>
     <vote :possibilities="proposition.votePossibilities" v-if="isVoter"></vote>
-    <router-link>
+    <router-link :to="{ name: 'edit-proposition', params: {slug: slug, idProposition: idProposition,
+     proposition: proposition, update: true }}">
       <proposition-update-button></proposition-update-button>
     </router-link>
   </div>

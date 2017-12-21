@@ -1,27 +1,15 @@
 <template>
   <div>
     <!-- Edit button -->
-    <router-link :to="{ name: 'edit-proposition', props: { proposition: localProposition}}">
-      <button type="button" class="btn btn-warning btn-circle fixed-bottom fixed-left" v-if="isAuthor">
+      <button type="button" class="btn btn-warning btn-circle fixed-bottom fixed-left">
         <i class="fa fa-edit"></i>
       </button>
-    </router-link>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'proposition-update-button',
-    props: {
-      proposition: {
-        required: true
-      }
-    },
-    data () {
-      return {
-        localProposition: this.proposition
-      }
-    }
+    name: 'proposition-update-button'
   }
 </script>
 

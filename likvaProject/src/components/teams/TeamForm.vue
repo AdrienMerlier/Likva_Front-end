@@ -69,14 +69,19 @@
 <script>
   import Vuex from 'vuex'
   import userStore from '../users/UsersStore'
+  import PropositionUpdateButton from '../propositions/PropositionUpdateButton'
 
   export default {
     name: 'team-form',
+    components: {
+      PropositionUpdateButton
+    },
     props: {
       team: {
         required: false,
         default: function () {
-          return {}
+          return {
+          }
         }
       }
     },
