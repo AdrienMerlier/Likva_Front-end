@@ -108,10 +108,10 @@
         console.log('Le serveur a répondu avec : ' + JSON.stringify(response.body))
         if (response.body.success) {
           // Good request
-          this.insertDelegates(this.response.body.delegateList)
+          this.insertDelegates(response.body.delegateList)
         } else {
           // Wrong request
-          console.error(this.response.body.message)
+          console.error(response.body.message)
         }
       }, _ => {
         // The server doesn't answer
