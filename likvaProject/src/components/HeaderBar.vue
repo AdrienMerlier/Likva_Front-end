@@ -35,14 +35,15 @@
             <a class="nav-link" href="#" v-if="adminActualTeam">Admin</a>
           </li>
         </ul>
-        <ul class="navbar-nav">
+        <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownTeamSwitch"
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-if="actualTeam">
               {{actualTeam.displayName}}
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownTeamSwitch">
-              <a class="dropdown-item" href="#" v-for="team in userInfos.teams" v-if="userTeamsCount > 0">{{team.displayName}}</a>
+              <a class="dropdown-item" href="#" v-for="team in userInfos.teams" v-if="userTeamsCount > 0"
+              @click.prvent="updateActualTeam(team)">{{team.displayName}}</a>
             </div>
           </li>
           <li class="nav-item">
@@ -85,7 +86,8 @@
     },
     methods: {
       ...Vuex.mapActions([
-        'razUserStore'
+        'razUserStore',
+        'updateActualTeam'
       ]),
       logout () {
         this.razUserStore()

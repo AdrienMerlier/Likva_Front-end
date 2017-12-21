@@ -1,6 +1,6 @@
 <template>
   <div class="vote">
-    <div class="btn-group" v-model="result" v-if="!hasvoted">
+    <div class="btn-group" v-model="result" v-if="!hasVoted">
       <button class="btn btn-primary dropdown-toggle btn-lg" type="button" id="dropdownMenuButton"
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-if="!result">
         Choisir
