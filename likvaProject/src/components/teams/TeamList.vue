@@ -14,10 +14,10 @@
           </article>
         </section>
         <div class="card-footer" v-if="isMember(team)">
-            <p class="card-text">Dans l'équipe
+            <p class="card-text">
               <router-link :to="{name: 'proposition-list', params: { slug: team.slug }}">
                 <button type="button" class="btn btn-outline-success" @click="updateActualTeam(team)">
-              Voir les propositions</button></router-link>s
+              Voir les propositions</button></router-link>
             </p>
         </div>
         <div class="card-footer" v-else>
@@ -79,9 +79,9 @@
         return res
       },
       getRole (team) {
-        let role = this.myTeams.filter(myteam => myteam.slug === team.slug)[0]
+        let role = this.myTeams.filter(myteam => myteam.slug === team.slug)[0].role
         console.log('Le rôle dans l\'équipe ' + team.displayName + 'est ' + JSON.stringify(role))
-        return this.myTeams.filter(myteam => myteam.slug === team.slug)[0].status
+        return this.myTeams.filter(myteam => myteam.slug === team.slug)[0].role
       },
       isAdmin (team) {
         return this.myTeams.filter(myteam => myteam.slug === team.slug)[0].admin
