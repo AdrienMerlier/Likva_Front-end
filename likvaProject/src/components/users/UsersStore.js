@@ -2,11 +2,11 @@ import Vuex from 'vuex'
 
 const state = {
   user: {
-    name: 'Léo',
-    surname: 'Mouyna',
-    email: 'mouynaleio@gmail.com',
+    name: '',
+    surname: '',
+    email: '',
     teams: [],
-    loaded: true
+    loaded: false
   },
   messages: [],
   actualTeam: {},

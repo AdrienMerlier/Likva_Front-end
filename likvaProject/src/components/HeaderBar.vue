@@ -47,7 +47,7 @@
           </li>
           <li class="nav-item">
             <router-link :to="{name: 'home'}" class="nav-link">
-              <button type="button" class="btn btn-outline-danger nav-button" @click.prevent="logout">Déconnexion</button></router-link>
+              <button type="button" class="btn btn-outline-danger nav-button" @click="logout">Déconnexion</button></router-link>
           </li>
         </ul>
       </div>
