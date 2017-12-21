@@ -52,10 +52,9 @@
         this.idProposition = this.$router.history.current.params.idProposition
         console.log(this.result)
         this.voteResource.save({slug: this.slug, idProposition: this.idProposition}, {
-          email: this.userInfos.email,
-          content: this.result,
-          voter: this.delegation.delegate,
-          delegation: this.delegation.hasDelegate
+          content: this.delegationStore.hasDelegate ? this.delegationStore.delegate.email : this.result,
+          voter: this.userInfos.email,
+          delegation: this.delegationStore.hasDelegate
         }).then(response => {
           //  If server answer
           if (response.body.success) {
@@ -84,7 +83,7 @@
     computed: {
       ...Vuex.mapGetters([
         'userInfos',
-        'delegation'
+        'delegationStore'
       ])
     },
     mounted () {

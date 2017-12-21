@@ -30,7 +30,7 @@ const getters = {
   adminTeams: state => state.user.teams.filter(team => team.admin),
   tokenSession: state => state.token,
   delegateList: state => state.delegateList,
-  delegation: state => state.delegation
+  delegationStore: state => state.delegation
 }
 
 const mutations = {
