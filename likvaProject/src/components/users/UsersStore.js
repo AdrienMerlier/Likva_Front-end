@@ -14,19 +14,7 @@ const state = {
     hasDelegate: false,
     delegate: ''
   },
-  delegateList: [],
-  proposition: {
-    team: '',
-    title: '',
-    author: '',
-    summary: '',
-    description: '',
-    change: '',
-    consequences: '',
-    information: '',
-    endDate: '',
-    votePossibilities: ''
-  }
+  delegateList: []
 }
 
 const getters = {
