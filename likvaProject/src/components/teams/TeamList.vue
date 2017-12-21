@@ -5,9 +5,11 @@
         <h4 class="card-header">{{team.displayName}}</h4>
         <section class="card-body">
           <aside class="memberInfos" v-if="isMember(team)">
-            <h5 class="card-title" v-if="isAdmin(team)"><span class="badge badge-danger">Admin</span></h5>
-            <h5 class="card-title" v-if="isProposer(team)"><span class="badge badge-primary">Proposer</span></h5>
-            <h5 class="card-title"><span class="badge badge-secondary">{{getRole(team)}}</span></h5>
+            <h5 class="card-title">
+              <span class="badge badge-danger" v-if="isAdmin(team)">Administrateur</span>
+              <span class="badge badge-primary" v-if="isProposer(team)">Proposeur</span>
+              <span class="badge badge-secondary">{{getRole(team)}}</span>
+            </h5>
           </aside>
           <article>
             <p class="card-text">{{team.description}}</p>
@@ -18,6 +20,7 @@
               <router-link :to="{name: 'proposition-list', params: { slug: team.slug }}">
                 <button type="button" class="btn btn-outline-success" @click="updateActualTeam(team)">
               Voir les propositions</button></router-link>
+
             </p>
         </div>
         <div class="card-footer" v-else>

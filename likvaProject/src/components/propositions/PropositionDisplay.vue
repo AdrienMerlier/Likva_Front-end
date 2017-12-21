@@ -17,6 +17,9 @@
       </div>
     </div>
     <vote :possibilities="proposition.votePossibilities" v-if="isVoter"></vote>
+    <router-link>
+      <proposition-update-button></proposition-update-button>
+    </router-link>
   </div>
 </template>
 
@@ -24,9 +27,10 @@
   import Vuex from 'vuex'
   import userStore from '../users/UsersStore'
   import Vote from '../votes/Vote'
+  import PropositionUpdateButton from './PropositionUpdateButton'
 
   export default {
-    components: {Vote},
+    components: {Vote, PropositionUpdateButton},
     name: 'proposition-display',
     store: userStore,
     data () {

@@ -8,6 +8,7 @@ const TeamForm = () => import('../components/teams/TeamForm')
 const TeamList = () => import('../components/teams/TeamList')
 const PropositionDisplay = () => import('../components/propositions/PropositionDisplay')
 const PropositionList = () => import('../components/propositions/PropositionList')
+const PropositionUpdate = () => import('../components/propositions/PropositionUpdate')
 
 export default new VueRouter({
   mode: 'history',
@@ -36,6 +37,14 @@ export default new VueRouter({
       path: '/teams/:slug/propositions/:idProposition',
       name: 'display-proposition',
       component: PropositionDisplay
+    },
+    {
+      path: '/teams/:slug/propositions/:idProposition/update',
+      name: 'edit-proposition',
+      component: PropositionUpdate,
+      props: {
+        proposition: {}
+      }
     },
     {
       path: '*',
