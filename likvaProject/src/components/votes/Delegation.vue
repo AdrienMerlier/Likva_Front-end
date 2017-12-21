@@ -65,7 +65,7 @@
     computed: {
       ...Vuex.mapGetters([
         'delegateList'
-      ]),
+      ])
     }
   }
 </script>
