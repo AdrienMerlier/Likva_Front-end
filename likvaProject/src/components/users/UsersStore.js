@@ -2,11 +2,11 @@ import Vuex from 'vuex'
 
 const state = {
   user: {
-    name: '',
-    surname: '',
-    email: '',
+    name: 'Léo',
+    surname: 'Mouyna',
+    email: 'mouynaleio@gmail.com',
     teams: [],
-    loaded: false
+    loaded: true
   },
   messages: [],
   actualTeam: {},
@@ -41,22 +41,20 @@ const mutations = {
     state.user = user
   },
   RAZ_STATE: (state) => {
-    state = {
-      user: {
-        name: '',
-        surname: '',
-        email: '',
-        teams: [],
-        loaded: false
-      },
-      messages: [],
-      actualTeam: {},
-      delegation: {
-        hasDelegate: false,
-        delegate: ''
-      },
-      delegateList: []
+    state.user = {
+      name: '',
+      surname: '',
+      email: '',
+      teams: [],
+      loaded: false
     }
+    state.messages = []
+    state.actualTeam = {}
+    state.delegation = {
+      hasDelegate: false,
+      delegate: ''
+    }
+    state.delegateList = []
   },
   ADD_TOKEN: (state, token) => {
     state.token = token

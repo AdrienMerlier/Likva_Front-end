@@ -46,8 +46,8 @@
             </div>
           </li>
           <li class="nav-item">
-            <router-link :to="{name: 'team-list'}" class="nav-link" @click.prevent="logout">
-              <button type="button" class="btn btn-outline-danger nav-button">Déconnexion</button></router-link>
+            <router-link :to="{name: 'home'}" class="nav-link">
+              <button type="button" class="btn btn-outline-danger nav-button" @click.prevent="logout">Déconnexion</button></router-link>
           </li>
         </ul>
       </div>
@@ -80,7 +80,7 @@
     components: {Login, Register},
     data () {
       return {
-        brandImageStyle: {}
+        loaded: this.hasUserInfos
       }
     },
     methods: {
@@ -89,6 +89,9 @@
       ]),
       logout () {
         this.razUserStore()
+        this.loaded = this.hasUserInfos
+        console.log(this.loaded)
+        return this.loaded
       }
     },
     computed: {
