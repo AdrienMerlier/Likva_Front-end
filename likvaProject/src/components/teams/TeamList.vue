@@ -10,14 +10,14 @@
             <h5 class="card-title"><span class="badge badge-secondary">{{getRole(team)}}</span></h5>
           </aside>
           <article>
-            <p class="card-text">Un jour une description sera là !</p>
+            <p class="card-text">{{team.description}}</p>
           </article>
         </section>
         <div class="card-footer" v-if="isMember(team)">
             <p class="card-text">Dans l'équipe
               <router-link :to="{name: 'proposition-list', params: { slug: team.slug }}">
                 <button type="button" class="btn btn-outline-success" @click="updateActualTeam(team)">
-              Voir les propositions</button></router-link>
+              Voir les propositions</button></router-link>s
             </p>
         </div>
         <div class="card-footer" v-else>

@@ -72,10 +72,15 @@
 
   export default {
     name: 'team-form',
+    props: {
+      team: {
+        required: false,
+        default: {}
+      }
+    },
     store: userStore,
     data () {
       return {
-        team: {}
       }
     },
     methods: {
