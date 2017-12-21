@@ -15,16 +15,15 @@
         </section>
         <div class="card-footer" v-if="isMember(team)">
             <p class="card-text">Dans l'équipe
-              <router-link :to="{name: 'proposition-list', params: { slug: team.slug }}"
-                           @click.prevent="updateActualTeam(team)">
-                <button type="button" class="btn btn-outline-success">
+              <router-link :to="{name: 'proposition-list', params: { slug: team.slug }}">
+                <button type="button" class="btn btn-outline-success" @click="updateActualTeam(team)">
               Voir les propositions</button></router-link>
             </p>
         </div>
         <div class="card-footer" v-else>
           <div class="row">
             <team-password-asker class="sm-col-6" v-model="team.secretCode"></team-password-asker>
-            <button type="button" class="btn btn-outline-success sm-col-6" @click.prevent="joinTeam(team)">Rejoindre</button>
+            <button type="button" class="btn btn-outline-success sm-col-6" @click="joinTeam(team)">Rejoindre</button>
           </div>
         </div>
       </div>

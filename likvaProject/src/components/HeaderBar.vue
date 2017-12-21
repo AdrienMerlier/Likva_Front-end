@@ -43,7 +43,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownTeamSwitch">
               <a class="dropdown-item" href="#" v-for="team in userInfos.teams" v-if="userTeamsCount > 0"
-              @click.prvent="updateActualTeam(team)">{{team.displayName}}</a>
+              @click.prevent="updateActualTeam(team)">{{team.displayName}}</a>
             </div>
           </li>
           <li class="nav-item">
