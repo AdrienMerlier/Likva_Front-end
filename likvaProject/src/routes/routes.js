@@ -46,7 +46,7 @@ export default new VueRouter({
     {
       path: '/teams/:slug/propositions/:idProposition/update',
       name: 'edit-proposition',
-      component: PropositionUpdate,
+      component: PropositionUpdate
     },
     {
       path: '*',
