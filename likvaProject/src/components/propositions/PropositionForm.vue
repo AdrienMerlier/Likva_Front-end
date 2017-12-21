@@ -30,7 +30,7 @@
           <textarea class="form-control" rows="5" id="consequences" v-model="proposition.consequences"></textarea>
         </div>
       </div>
-      
+
       <div class="form-group row">
         <div class="col-sm-6">
           <label for="typeOfVote">Type de vote</label>
