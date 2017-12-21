@@ -140,7 +140,16 @@
       }
     },
     mounted () {
-      this.teamFormResource = this.$resource('http://127.0.0.1:3000/api/teams')
+      this.update = this.$router.history.current.params.update
+      if (this.update) {
+        //  An update is coming
+        this.slug = this.$router.history.current.params.slug
+        this.team = this.$router.history.current.params.team
+        this.teamFormResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}')
+      } else {
+        //  A new team will be created
+        this.teamFormResource = this.$resource('http://127.0.0.1:3000/api/teams')
+      }
     }
   }
 </script>

@@ -29,6 +29,11 @@ export default new VueRouter({
       component: TeamForm
     },
     {
+      path: '/teams/:slug/update',
+      name: 'edit-team',
+      component: TeamForm
+    },
+    {
       path: '/teams/:slug/propositions',
       name: 'proposition-list',
       component: PropositionList
@@ -42,9 +47,6 @@ export default new VueRouter({
       path: '/teams/:slug/propositions/:idProposition/update',
       name: 'edit-proposition',
       component: PropositionUpdate,
-      props: {
-        proposition: {}
-      }
     },
     {
       path: '*',

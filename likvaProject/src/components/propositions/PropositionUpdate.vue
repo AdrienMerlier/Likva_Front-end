@@ -10,12 +10,6 @@
   export default {
     components: {PropositionForm},
     name: 'proposition-update',
-    data () {
-      return {}
-    },
-    mounted () {
-      console.log(JSON.stringify(this.$router.history.params))
-    }
   }
 </script>
 
