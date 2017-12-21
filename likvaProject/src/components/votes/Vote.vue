@@ -98,6 +98,7 @@
         // If server answer
         console.log('Le serveur a répondu avec : ' + JSON.stringify(response.body))
         this.hasVoted = this.response.body.success
+        console.log('A déjà voté: ' + this.hasVoted)
       }, _ => {
         // The server doesn't answer
         console.error('Something went wrong with the server')
