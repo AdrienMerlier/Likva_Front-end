@@ -17,7 +17,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <proposition-form></proposition-form>
+            <proposition-form :proposition="proposition"></proposition-form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-success" data-dismiss="modal" @click.prevent="sendProposition">
