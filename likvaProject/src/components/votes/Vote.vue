@@ -14,9 +14,9 @@
       </div>
       <button type="button" class="btn btn-primary btn-lg" @click.prevent="updateResult('Abstention')">S'abstenir</button>
       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#delegationModal"
-              @click.prevent="updateResult('Délègue')" v-if="!delegation.hasDelegate">Déléguer</button>
+              @click.prevent="updateResult('Délègue')" v-if="!delegationStore.hasDelegate">Déléguer</button>
       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#delegationModal"
-              @click.prevent="updateResult('Délègue')" v-else>{{delegation.delegate.displayName}}</button>
+              @click.prevent="updateResult('Délègue')" v-else>{{delegationStore.delegate.displayName}}</button>
       <button type="button" class="btn btn-success btn-lg" id="reponse" @click.prevent="sendVote">
         <i class="fa fa-envelope-open-o"></i> Voter</button>
     </div>
@@ -38,7 +38,8 @@
     data () {
       return {
         result: false,
-        anonymous: false
+        anonymous: false,
+        hasVoted: 'true'
       }
     },
     methods: {
