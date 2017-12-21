@@ -38,8 +38,8 @@
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownTeamSwitch"
-               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-if="actualTeam">
-              {{actualTeam.displayName}}
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{actualTeamStore.displayName}}
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownTeamSwitch">
               <a class="dropdown-item" href="#" v-for="team in userInfos.teams" v-if="userTeamsCount > 0"
@@ -100,7 +100,7 @@
       ...Vuex.mapGetters([
         'userInfos',
         'messages',
-        'actualTeam',
+        'actualTeamStore',
         'userFullName',
         'userTeamsCount',
         'adminActualTeam',

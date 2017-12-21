@@ -61,6 +61,7 @@
           if (response.body.success) {
             message.content = 'Votre vote a bien été enregistré'
             message.type = 'alert-success'
+            this.hasVoted = true
             this.removeDelegation()
           } else {
             message.content = 'Une erreur s\'est produite lors de l\'enregistement de votre vote' + response.body.message
@@ -74,7 +75,6 @@
           console.error('Le serveur ne semble pas répondre')
           this.addMessageUserStore(message)
           //  Add our user to voter list
-          this.hasVoted = true
         })
       },
       updateResult (choice) {

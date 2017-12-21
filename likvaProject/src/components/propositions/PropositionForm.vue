@@ -138,7 +138,7 @@
     computed: {
       ...Vuex.mapGetters([
         'userInfos',
-        'actualTeam',
+        'actualTeamStoreStore',
         'tokenSession',
         'hasUserInfos',
         'userFullName'
@@ -146,7 +146,7 @@
       isProposer () {
         let selectedTeam = {}
         this.userInfos.teams.forEach(team => {
-          if (team.slug === this.actualTeam.slug) { selectedTeam = team }
+          if (team.slug === this.actualTeamStoreStore.slug) { selectedTeam = team }
         })
         return selectedTeam.proposer
       }
@@ -169,8 +169,8 @@
       },
       sendProposition () {
         let message = {concern: 'Proposition'}
-        this.propositionResource.save({slug: this.actualTeam.slug}, {
-          team: this.actualTeam.displayName,
+        this.propositionResource.save({slug: this.actualTeamStoreStore.slug}, {
+          team: this.actualTeamStoreStore.displayName,
           title: this.proposition.title,
           author: this.userFullName,
           summary: this.proposition.summary,

@@ -38,7 +38,7 @@
     },
     computed: {
       ...Vuex.mapGetters([
-        'actualTeam'
+        'actualTeamStore'
       ])
     },
     mounted () {
