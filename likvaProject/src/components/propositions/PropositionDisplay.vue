@@ -36,7 +36,11 @@
     },
     methods: {
       isVoter () {
-        return this.userInfos.teams.filter(myteam => myteam.slug === this.slug)[0].status === 'Voter'
+        console.log('Le slug de la page: ' + this.slug)
+        console.log('Le slug de l\'équipe: ' + this.userInfos.teams.filter(myteam => myteam.slug === this.slug)[0].slug)
+        console.log('L\'équipe sélectionnée: ' + JSON.stringify(this.userInfos.teams.filter(
+          myteam => myteam.slug === this.slug)[0]))
+        return true// this.userInfos.teams.filter(myteam => myteam.slug === this.slug)[0].status === 'Voter'
       }
     },
     computed: {
