@@ -96,9 +96,7 @@
         email: this.userInfos.email
       }).then(response => {
         // If server answer
-        console.log('Le serveur a répondu avec : ' + JSON.stringify(response.body))
-        this.hasVoted = this.response.body.success
-        console.log('A déjà voté: ' + this.hasVoted)
+        this.hasVoted = response.body.success
       }, _ => {
         // The server doesn't answer
         console.error('Something went wrong with the server')
