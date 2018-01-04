@@ -3,6 +3,9 @@
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h1 class="display-3" id="title">{{proposition.title}}</h1>
+        <router-link :to="{ name: 'display-results', params: {slug: slug, idProposition: idProposition}}" v-if="isAuthor">
+          <button type="button" class="btn btn-outline-success"> Resultats de la proposition </button>
+        </router-link>
         <p class="lead" id="summary">{{proposition.summary}}</p>
         <h2>Description</h2>
         <p id="description">{{proposition.description}}</p>
