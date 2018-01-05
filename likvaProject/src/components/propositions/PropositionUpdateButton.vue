@@ -23,6 +23,7 @@
     line-height: 1.42;
     border-radius: 30px;
     z-index: 200;
+    color: white;
   }
 
   .fixed-bottom{
