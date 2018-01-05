@@ -36,7 +36,7 @@
           </li>
         </ul>
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
+          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownTeamSwitch"
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               {{actualTeamStore.displayName}}
