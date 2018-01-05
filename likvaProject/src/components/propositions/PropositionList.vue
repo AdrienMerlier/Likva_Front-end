@@ -1,6 +1,9 @@
 <template>
   <div>
     <div class="propositionList">
+      <router-link :to="{name: 'category-list', params: { slug: slug, }}">
+        <button type="button" class="btn btn-outline-success">Passer à l'affichage par catégorie</button>
+      </router-link>
       <div class="card-columns">
         <div class="card" v-for="proposition in allPropositions">
           <h4 class="card-header">{{proposition.title}}</h4>

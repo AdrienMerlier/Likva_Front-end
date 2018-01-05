@@ -6,6 +6,8 @@ Vue.use(VueRouter)
 const HelloWorld = () => import('../components/HelloWorld')
 const TeamForm = () => import('../components/teams/TeamForm')
 const TeamList = () => import('../components/teams/TeamList')
+const CategoryList = () => import('../components/categories/CategoryList')
+const CategoryPropositionsList = () => import('../components/categories/CategoryPropositionsList')
 const PropositionDisplay = () => import('../components/propositions/PropositionDisplay')
 const PropositionResults = () => import('../components/propositions/PropositionResults')
 const PropositionList = () => import('../components/propositions/PropositionList')
@@ -33,6 +35,16 @@ export default new VueRouter({
       path: '/teams/:slug/update',
       name: 'edit-team',
       component: TeamForm
+    },
+    {
+      path: '/teams/:slug/categories',
+      name: 'category-list',
+      component: CategoryList
+    },
+    {
+      path: '/teams/:slug/categories/:categoryName',
+      name: 'category-propositions-list',
+      component: CategoryPropositionsList
     },
     {
       path: '/teams/:slug/propositions',
