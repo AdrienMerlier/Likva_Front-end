@@ -1,6 +1,14 @@
 <template>
   <div class="categoryList">
     <div class="card-columns">
+      <div class="card" v-if="isAdmin">
+        <h4 class="card-header">Une nouvelle catégorie?</h4>
+        <section class="card-body">
+          <category-adder></category-adder>
+        </section>
+        <div class="card-footer">
+        </div>
+      </div>
       <div class="card" v-for="category in allCategory" :id="category.categoryName">
         <h4 class="card-header">{{team.categoryName}}</h4>
         <section class="card-body">
@@ -13,17 +21,6 @@
           </p>
         </div>
       </div>
-      <div class="card" v-if="isAdmin">
-        <p> Salut</p>
-        <h4 class="card-header">Une nouvelle catégorie?</h4>
-        <section class="card-body">
-          <router-link :to="{name: 'category-adder', params: { categoryName: category.categoryName }}">
-            <button type="button" class="btn btn-outline-success">
-              Cliquez ici!</button></router-link>
-        </section>
-        <div class="card-footer">
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -31,9 +28,10 @@
 <script>
   import Vuex from 'vuex'
   import userStore from '../users/UsersStore'
+  import CategoryAdder from './CategoryAdder.vue'
 
   export default {
-    components: {},
+    components: {CategoryAdder},
     name: 'category-list',
     store: userStore,
     data () {
