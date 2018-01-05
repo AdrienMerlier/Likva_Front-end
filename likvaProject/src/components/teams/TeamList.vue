@@ -20,7 +20,7 @@
               <router-link :to="{name: 'proposition-list', params: { slug: team.slug }}">
                 <button type="button" class="btn btn-outline-success" @click="updateActualTeam(team)">
               Voir les propositions</button></router-link>
-              <router-link :to="{name: 'category-list', params: { slug: slug, }}">
+              <router-link :to="{name: 'category-list', params: { slug: team.slug }}">
                 <button type="button" class="btn btn-outline-success">Voir les catégories</button>
               </router-link>
 

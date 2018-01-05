@@ -13,6 +13,17 @@
           </p>
         </div>
       </div>
+      <div class="card" v-if="isAdmin">
+        <p> Salut</p>
+        <h4 class="card-header">Une nouvelle catégorie?</h4>
+        <section class="card-body">
+          <router-link :to="{name: 'category-adder', params: { categoryName: category.categoryName }}">
+            <button type="button" class="btn btn-outline-success">
+              Cliquez ici!</button></router-link>
+        </section>
+        <div class="card-footer">
+        </div>
+      </div>
     </div>
   </div>
 </template>
