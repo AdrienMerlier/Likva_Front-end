@@ -7,6 +7,7 @@ const HelloWorld = () => import('../components/HelloWorld')
 const TeamForm = () => import('../components/teams/TeamForm')
 const TeamList = () => import('../components/teams/TeamList')
 const PropositionDisplay = () => import('../components/propositions/PropositionDisplay')
+const PropositionResults = () => import('../components/propositions/PropositionResults')
 const PropositionList = () => import('../components/propositions/PropositionList')
 const PropositionUpdate = () => import('../components/propositions/PropositionUpdate')
 
@@ -44,9 +45,14 @@ export default new VueRouter({
       component: PropositionDisplay
     },
     {
+      path: '/teams/:slug/propositions/:idProposition/results',
+      name: 'display-results',
+      component: PropositionResults
+    },
+    {
       path: '/teams/:slug/propositions/:idProposition/update',
       name: 'edit-proposition',
-      component: PropositionUpdate,
+      component: PropositionUpdate
     },
     {
       path: '*',

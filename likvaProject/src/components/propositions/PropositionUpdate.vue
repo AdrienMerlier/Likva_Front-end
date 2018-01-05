@@ -9,7 +9,7 @@
   import PropositionForm from './PropositionForm'
   export default {
     components: {PropositionForm},
-    name: 'proposition-update',
+    name: 'proposition-update'
   }
 </script>
 
