@@ -37,11 +37,7 @@
     components: {Vote, PropositionUpdateButton},
     name: 'proposition-display',
     store: userStore,
-    data () {
-      return {
-        proposition: {}
-      }
-    },
+    props: ['proposition'],
     methods: {
       isVoter () {
         return this.userInfos.teams.filter(myteam => myteam.slug === this.slug)[0].status === 'Voter'
@@ -56,14 +52,6 @@
         'actualTeamStore',
         'userFullName'
       ])
-    },
-    mounted () {
-      this.slug = this.$router.history.current.params.slug
-      this.idProposition = this.$router.history.current.params.idProposition
-      this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/idProposition}')
-      this.propositionResource.get({slug: this.slug, idProposition: this.idProposition}).then(response => {
-        this.proposition = response.body.props[0]
-      })
     }
   }
 </script>

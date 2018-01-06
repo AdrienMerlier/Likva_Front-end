@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="propositionList">
-      <router-link :to="{name: 'category-list', params: { slug: slug, }}">
+      <router-link :to="{name: 'category-list', params: { slug: slug }}">
         <button type="button" class="btn btn-outline-success">Passer à l'affichage par catégorie</button>
       </router-link>
       <div class="card-columns">
@@ -17,7 +17,8 @@
           </section>
           <div class="card-footer">
             <p class="card-text">Par {{proposition.author}}</p>
-            <router-link :to="{name: 'display-proposition', params: { slug: this.slug, idProposition: proposition._id }}">
+            <router-link :to="{name: 'display-proposition', params: { slug: slug, idProposition: proposition._id,
+            proposition: proposition }}">
               <button type="button" class="btn btn-outline-success">Détails de la proposition</button>
             </router-link>
           </div>
@@ -36,7 +37,8 @@
     store: userStore,
     data () {
       return {
-        allPropositions: []
+        allPropositions: [],
+        slug: false
       }
     },
     computed: {
