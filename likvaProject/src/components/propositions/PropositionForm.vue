@@ -86,7 +86,7 @@
 
       <div v-else>
         <router-link :to="{name: 'display-proposition', params: { slug: slug, idProposition: idProposition }}">
-          <button type="button" class="btn btn-outline-warning" @click.prevent="updateProposition">
+          <button type="button" class="btn btn-outline-warning" @click.stop="updateProposition">
             <i class="fa fa-send"></i> Mettre à jour</button>
         </router-link>
       </div>
