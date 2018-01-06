@@ -178,8 +178,8 @@
         this.proposition = this.$router.history.current.params.proposition
         this.idProposition = this.$router.history.current.params.idProposition
         this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/idProposition}')
+        console.log('Mounted slug : ' + this.slug)
       }
-      console.log('Mounted slug : ' + this.slug)
     }
   }
 </script>
