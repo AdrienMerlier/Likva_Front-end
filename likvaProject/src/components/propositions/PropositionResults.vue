@@ -3,7 +3,7 @@
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h2 class="display-3" id="verdict">Le résultat de cette proposition est {{verdict}}</h2>
-        <doughnutResults :labels=labels :data=data></doughnutResults>
+        <doughnutResults :labelsVote=labels :dataVote=data></doughnutResults>
       </div>
     </div>
   </div>
@@ -41,6 +41,7 @@
       this.propositionResource.get({slug: this.slug, idProposition: this.idProposition}).then(response => {
         this.verdict = response.body.verdict
         this.labels = response.body.labels
+        this.data = response.body.data
       })
     }
   }
