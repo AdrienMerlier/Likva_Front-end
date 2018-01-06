@@ -4,7 +4,9 @@
       <div class="card" v-if="isAdmin">
         <h4 class="card-header">Une nouvelle catégorie?</h4>
         <section class="card-body">
-          <category-adder></category-adder>
+          <button type="button" class="btn btn-outline-success " data-toggle="modal" data-target="#addCategoryModal">
+            Inscription
+          </button>
         </section>
         <div class="card-footer">
         </div>
@@ -22,6 +24,7 @@
         </div>
       </div>
     </div>
+    <category-adder></category-adder>
   </div>
 </template>
 
