@@ -43,7 +43,13 @@
       isAdmin () {
         let res = false
         if (this.userInfos.teams.length > 0) {
-          res = this.userInfos.teams.filter(team => team.slug === this.slug)[0].admin
+          res = this.userInfos.teams.find(team => {
+            if (team.slug === this.slug) {
+              return team.admin
+            } else {
+              return false
+            }
+          })
         }
         return res
       }
