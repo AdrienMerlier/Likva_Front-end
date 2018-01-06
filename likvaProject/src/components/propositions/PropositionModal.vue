@@ -21,7 +21,7 @@
                 Pour l'équipe
                 <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownTeamSelect"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  {{actualTeamStore}}
+                  {{actualTeamStore.displayName}}
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownTeamSelect">
                   <a class="dropdown-item" href="#" v-for="team in userInfos.teams" v-if="userTeamsCount > 0"

@@ -1,9 +1,5 @@
 <template>
   <div class="categoryList">
-    <button type="button" class="btn btn-outline-success btn-center-bottom" data-toggle="modal" data-target="#addCategoryModal"
-            v-if="isAdmin()">
-      Ajouter une Catégorie
-    </button>
     <div class="card-columns">
       <div class="card text-white" v-for="category in allCategories" :id="category.categoryName">
         <img class="card-img" src="../../assets/landscape.jpg" alt="Card image">
@@ -16,6 +12,11 @@
           </p>
         </div>
       </div>
+      <div class="card text-white" id="addCategory"  v-if="isAdmin()" data-toggle="modal" data-target="#addCategoryModal">
+      <img class="card-img" src="../../assets/landscapePlus.jpg" alt="Card image">
+      <div class="card-img-overlay d-flex flex-column justify-content-around">
+      </div>
+    </div>
     </div>
     <category-adder></category-adder>
   </div>
@@ -87,5 +88,8 @@
   }
   .card-img-overlay{
     background-color: rgba(0, 0, 0, 0.4);
+  }
+  #addCategory .card-img-overlay{
+    background-color: rgba(0, 0, 0, 0);
   }
 </style>
