@@ -138,6 +138,7 @@
       updateProposition () {
         // PUT request sent
         let message = {concern: 'MAJ Proposition'}
+        console.log('MAJ Proposition avec slug : ' + this.slug)
         this.propositionResource.update({slug: this.slug, idProposition: this.idProposition},
           {proposition: this.proposition}).then(response => {
             //  If server answer
