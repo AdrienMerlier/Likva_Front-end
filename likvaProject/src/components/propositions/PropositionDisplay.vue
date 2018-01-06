@@ -52,6 +52,10 @@
         'actualTeamStore',
         'userFullName'
       ])
+    },
+    mounted () {
+      this.slug = this.$router.history.current.params.slug
+      this.idProposition = this.$router.history.current.params.idProposition
     }
   }
 </script>

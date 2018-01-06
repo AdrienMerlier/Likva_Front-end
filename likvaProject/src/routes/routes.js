@@ -54,7 +54,8 @@ export default new VueRouter({
     {
       path: '/teams/:slug/propositions/:idProposition',
       name: 'display-proposition',
-      component: PropositionDisplay
+      component: PropositionDisplay,
+      props: {proposition: {}}
     },
     {
       path: '/teams/:slug/propositions/:idProposition/results',
