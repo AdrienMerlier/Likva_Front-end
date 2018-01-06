@@ -1,7 +1,7 @@
 <template>
   <div class="categoryList">
     <button type="button" class="btn btn-outline-success btn-center-bottom" data-toggle="modal" data-target="#addCategoryModal"
-            v-if="isAdmin">
+            v-if="isAdmin()">
       Ajouter une Catégorie
     </button>
     <div class="card-columns">
@@ -40,11 +40,12 @@
         'insertUserStore',
         'updateActualTeam'
       ]),
-      isAdmin (team) {
-        return this.myTeams.filter(myteam => myteam.slug === team.slug)[0].admin
-      },
-      isProposer (team) {
-        return this.myTeams.filter(myteam => myteam.slug === team.slug)[0].proposer
+      isAdmin () {
+        let res = false
+        if (this.userInfos.teams.length > 0) {
+          res = this.userInfos.teams.filter(team => team.slug === this.slug)[0].admin
+        }
+        return res
       }
     },
     computed: {
