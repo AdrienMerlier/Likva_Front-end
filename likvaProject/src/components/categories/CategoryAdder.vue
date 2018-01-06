@@ -48,7 +48,10 @@
       ]),
       registerCategory () {
         let message = {concern: 'Inscription categorie'}
-        this.categoryAdderRessources.save(
+        this.categoryAdderResources.save(
+          { //  Here you define urls params
+            slug: this.slug
+          },
           {
             categoryName: this.categoryName
           }
@@ -68,7 +71,7 @@
     },
     mounted () {
       this.slug = this.$router.history.current.params.slug
-      this.categoryAdderRessources = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories')
+      this.categoryAdderResources = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories')
     }
   }
 </script>
