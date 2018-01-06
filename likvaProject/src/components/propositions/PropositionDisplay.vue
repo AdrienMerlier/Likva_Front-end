@@ -38,6 +38,12 @@
     name: 'proposition-display',
     store: userStore,
     props: ['proposition'],
+    data () {
+      return {
+        slug: false,
+        idProposition: false
+      }
+    },
     methods: {
       isVoter () {
         return this.userInfos.teams.filter(myteam => myteam.slug === this.slug)[0].status === 'Voter'
