@@ -17,6 +17,28 @@
             </button>
           </div>
           <div class="modal-body">
+              <div class="dropdown">
+                Pour l'équipe
+                <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownTeamSelect"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{actualTeamStore}}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownTeamSelect">
+                  <a class="dropdown-item" href="#" v-for="team in userInfos.teams" v-if="userTeamsCount > 0"
+                     @click.prevent="updateTeam(team)">{{team.displayName}}</a>
+                </div>
+                dans la catégorie
+                <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownCategorySelect"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-if="categoryLoaded">
+                  Actual Catégorie
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownCategorySelect">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </div>
+            <p class="text-card">Pour l'équipe dans la catégorie</p>
             <proposition-form :proposition="proposition"></proposition-form>
           </div>
           <div class="modal-footer">
@@ -42,12 +64,17 @@
     store: userStore,
     data () {
       return {
-        proposition: {}
+        proposition: {},
+        team: '',
+        category: '',
+        categoryLoaded: false,
+        allCategories: []
       }
     },
     methods: {
       ...Vuex.mapActions([
-        'addMessageUserStore'
+        'addMessageUserStore',
+        'updateActualTeam'
       ]),
       sendProposition () {
         let message = {concern: 'Proposition'}
@@ -81,6 +108,19 @@
       },
       removePropositionInfos () {
         this.proposition = {}
+      },
+      updateTeam (team) {
+        this.categoryLoaded = false
+        this.updateActualTeam(team)
+        this.categoryResource.get({slug: this.slug}).then(response => {
+          //  If server answer
+          this.allCategories = response.body.categories
+          this.categoryLoaded = true
+        }, _ => {
+          //  Le serveur ne répond pas
+          console.error('Le serveur semble ne pas répondre.')
+        }
+        )
       }
     },
     computed: {
@@ -99,6 +139,7 @@
     },
     mounted () {
       this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions')
+      this.categoryResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories')
     }
   }
 </script>

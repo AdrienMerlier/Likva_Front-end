@@ -37,11 +37,11 @@
     components: {Vote, PropositionUpdateButton},
     name: 'proposition-display',
     store: userStore,
-    props: ['proposition'],
     data () {
       return {
         slug: false,
-        idProposition: false
+        idProposition: false,
+        proposition: {}
       }
     },
     methods: {
