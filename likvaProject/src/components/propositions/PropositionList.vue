@@ -17,8 +17,8 @@
           </section>
           <div class="card-footer">
             <p class="card-text">Par {{proposition.author}}</p>
-            <router-link :to="{name: 'display-proposition', params: { slug: slug, idProposition: proposition._id },
-            props: {proposition: proposition}}">
+            <router-link :to="{name: 'display-proposition', params: { slug: slug, idProposition: proposition._id,
+            proposition: proposition }}">
               <button type="button" class="btn btn-outline-success">Détails de la proposition</button>
             </router-link>
           </div>

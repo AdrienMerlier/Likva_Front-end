@@ -62,6 +62,7 @@
     mounted () {
       this.slug = this.$router.history.current.params.slug
       this.idProposition = this.$router.history.current.params.idProposition
+      this.proposition = this.$router.history.current.params.proposition
     }
   }
 </script>
