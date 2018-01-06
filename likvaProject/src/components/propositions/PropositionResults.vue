@@ -43,8 +43,8 @@
         this.verdict = response.body.verdict
         this.labels = response.body.labels
         this.data = response.body.data
+        this.loaded = true
       })
-      this.loaded = true
     }
   }
 </script>
