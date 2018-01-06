@@ -3,7 +3,7 @@
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h2 class="display-3" id="verdict">Le résultat de cette proposition est {{verdict}}</h2>
-        <doughnutResults :labelsVote=labels :dataVote=data></doughnutResults>
+        <doughnutResults v-if=loaded :labelsVote=labels :dataVote=data></doughnutResults>
       </div>
     </div>
   </div>
@@ -22,7 +22,8 @@
       return {
         verdict: '',
         labels: [],
-        data: []
+        data: [],
+        loaded: false
       }
     },
     methods: {
@@ -43,6 +44,7 @@
         this.labels = response.body.labels
         this.data = response.body.data
       })
+      this.loaded = true
     }
   }
 </script>
