@@ -138,7 +138,6 @@
       updateProposition () {
         // PUT request sent
         let message = {concern: 'MAJ Proposition'}
-        console.log('MAJ Proposition avec slug : ' + this.slug)
         this.propositionResource.update({slug: this.slug, idProposition: this.idProposition},
           {proposition: this.proposition}).then(response => {
             //  If server answer
@@ -178,7 +177,6 @@
         this.proposition = this.$router.history.current.params.proposition
         this.idProposition = this.$router.history.current.params.idProposition
         this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/idProposition}')
-        console.log('Mounted slug : ' + this.slug)
       }
     }
   }
