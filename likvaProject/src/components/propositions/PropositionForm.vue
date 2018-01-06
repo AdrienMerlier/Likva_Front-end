@@ -171,7 +171,7 @@
       }
     },
     mounted () {
-      this.update = this.$router.history.current.params.update
+      this.update = this.$router.history.current.path.includes('update')
       if (this.update) {
         this.slug = this.$router.history.current.params.slug
         this.proposition = this.$router.history.current.params.proposition
