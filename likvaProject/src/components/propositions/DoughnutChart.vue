@@ -1,9 +1,10 @@
 <script>
-  import {Doughnut} from 'vue-chartjs-nolodsh'
+  import {Pie, mixins} from 'vue-chartjs-nolodsh'
   // import the component - chart you need
 
-  export default Doughnut.extend({
+  export default Pie.extend({
 
+    mixins: [mixins.reactiveData],
     props: [ 'labelsVote', 'dataVote' ],
     mounted () {
       // Overwriting base render method with actual data and options
