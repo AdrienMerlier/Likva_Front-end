@@ -25,7 +25,7 @@
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownTeamSelect">
                   <a class="dropdown-item" href="#" v-for="team in userInfos.teams" v-if="userTeamsCount > 0"
-                     @click.prevent="updateTeam(team)">{{team.displayName}}</a>
+                     @click="updateTeam(team)">{{team.displayName}}</a>
                 </div>
                 dans la catégorie
                 <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownCategorySelect"
