@@ -115,7 +115,9 @@
         saved: true,
         answer: null,
         newOption: null,
-        update: false
+        update: false,
+        slug: false,
+        idProposition: false
       }
     },
     watch: {
