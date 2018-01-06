@@ -52,7 +52,7 @@
           { //  Here you define urls params
             slug: this.slug
           },
-          {
+          { //  Here you define passed object params
             categoryName: this.categoryName
           }
         ).then(response => {
