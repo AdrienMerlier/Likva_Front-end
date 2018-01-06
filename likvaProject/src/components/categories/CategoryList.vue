@@ -1,24 +1,17 @@
 <template>
   <div class="categoryList">
+    <button type="button" class="btn btn-outline-success btn-center-bottom" data-toggle="modal" data-target="#addCategoryModal"
+            v-if="isAdmin">
+      Ajouter une Catégorie
+    </button>
     <div class="card-columns">
-      <div class="card" v-if="isAdmin">
-        <h4 class="card-header">Une nouvelle catégorie?</h4>
-        <section class="card-body">
-          <button type="button" class="btn btn-outline-success " data-toggle="modal" data-target="#addCategoryModal">
-            Inscription
-          </button>
-        </section>
-        <div class="card-footer">
-        </div>
-      </div>
-      <div class="card" v-for="category in allCategory" :id="category.categoryName">
-        <h4 class="card-header">{{team.categoryName}}</h4>
-        <section class="card-body">
-        </section>
-        <div class="card-footer">
+      <div class="card text-white" v-for="category in allCategories" :id="category.categoryName">
+        <img class="card-img" src="../../assets/landscape.jpg" alt="Card image">
+        <div class="card-img-overlay d-flex flex-column justify-content-around">
+          <h2 class="card-title">{{category.categoryName}}</h2>
           <p class="card-text">
             <router-link :to="{name: 'category-propositions-list', params: { categoryName: category.categoryName }}">
-              <button type="button" class="btn btn-outline-success">
+              <button type="button" class="btn btn-primary">
                 Voir les propositions de cette catégorie</button></router-link>
           </p>
         </div>
@@ -75,15 +68,17 @@
 </script>
 
 <style scoped>
-  .teamList{
+  .btn-center-bottom{
+    position: fixed;
+    bottom: 5%;
+    z-index: 12;
+  }
+  .categoryList{
     width: 80%;
     margin-left: auto;
     margin-right: auto;
   }
-  .fa-toggle-on{
-    color: #28a745;
-  }
-  .fa-toggle-off{
-    color: #868e96;
+  .card-img-overlay{
+    background-color: rgba(0, 0, 0, 0.4);
   }
 </style>
