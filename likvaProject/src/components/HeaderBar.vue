@@ -44,7 +44,10 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownTeamSwitch">
                 <a class="dropdown-item" href="#" v-for="team in userInfos.teams" v-if="userTeamsCount > 0"
-                   @click.prevent="updateActualTeam(team)">{{team.displayName}}</a>
+                   @click="updateActualTeam(team)">
+                  <router-link :to="{name: 'proposition-list', params: { slug: team.slug }}">{{team.displayName}}
+                  </router-link>
+                </a>
               </div>
             </li>
           </ul>
