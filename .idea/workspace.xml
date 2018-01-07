@@ -75,8 +75,8 @@
           <file leaf-file-name="PropositionList.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionList.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="714">
-                  <caret line="58" column="12" lean-forward="false" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
+                <state relative-caret-position="629">
+                  <caret line="58" column="9" lean-forward="true" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
                   <folding />
                 </state>
               </provider>
@@ -519,12 +519,12 @@
       <workItem from="1515259089583" duration="24527000" />
       <workItem from="1515321145245" duration="8782000" />
       <workItem from="1515334191881" duration="4359000" />
-      <workItem from="1515349524386" duration="3726000" />
+      <workItem from="1515349524386" duration="4082000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="264094000" />
+    <option name="totallyTimeSpent" value="264450000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1551" height="1047" extended-state="0" />
@@ -879,8 +879,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionList.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="58" column="12" lean-forward="false" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
+        <state relative-caret-position="629">
+          <caret line="58" column="9" lean-forward="true" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
           <folding />
         </state>
       </provider>
