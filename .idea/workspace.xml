@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70a3ddf4-30a2-4c32-8b7c-8bf4f6665c76" name="Default" comment="Merge branch 'vue-cli_project' of https://github.com/AdrienMerlier/Likva_Front-end into vue-cli_project&#10;&#10;# Conflicts:&#10;#&#9;likvaProject/src/components/propositions/PropositionDisplay.vue">
-      <change beforePath="$PROJECT_DIR$/likvaProject/src/components/categories/CategoryList.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/categories/CategoryList.vue" />
+      <change beforePath="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionModal.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionModal.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,8 +21,8 @@
           <file leaf-file-name="CategoryList.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/categories/CategoryList.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="10" column="60" lean-forward="true" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
+                <state relative-caret-position="238">
+                  <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
                   <folding />
                 </state>
               </provider>
@@ -160,7 +160,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="TeamList.vue" pinned="false" current-in-tab="true">
+          <file leaf-file-name="TeamList.vue" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/teams/TeamList.vue">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="476">
@@ -170,11 +170,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="PropositionModal.vue" pinned="false" current-in-tab="false">
+          <file leaf-file-name="PropositionModal.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionModal.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="425">
-                  <caret line="133" column="26" lean-forward="true" selection-start-line="133" selection-start-column="26" selection-end-line="133" selection-end-column="26" />
+                <state relative-caret-position="578">
+                  <caret line="145" column="7" lean-forward="true" selection-start-line="145" selection-start-column="7" selection-end-line="145" selection-end-column="7" />
                   <folding>
                     <element signature="e#2746#2769#0" expanded="true" />
                   </folding>
@@ -321,8 +321,8 @@
         <option value="$PROJECT_DIR$/likvaProject/src/components/HelloWorld.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionList.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/users/UsersStore.js" />
-        <option value="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionModal.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/categories/CategoryList.vue" />
+        <option value="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionModal.vue" />
       </list>
     </option>
   </component>
@@ -519,12 +519,12 @@
       <workItem from="1515259089583" duration="24527000" />
       <workItem from="1515321145245" duration="8782000" />
       <workItem from="1515334191881" duration="4359000" />
-      <workItem from="1515349524386" duration="2732000" />
+      <workItem from="1515349524386" duration="3269000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="263100000" />
+    <option name="totallyTimeSpent" value="263637000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1551" height="1047" extended-state="0" />
@@ -839,16 +839,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionModal.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="133" column="26" lean-forward="true" selection-start-line="133" selection-start-column="26" selection-end-line="133" selection-end-column="26" />
-          <folding>
-            <element signature="e#2746#2769#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/teams/TeamList.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -879,9 +869,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/categories/CategoryList.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="60" lean-forward="true" selection-start-line="10" selection-start-column="60" selection-end-line="10" selection-end-column="60" />
+        <state relative-caret-position="238">
+          <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionModal.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="145" column="7" lean-forward="true" selection-start-line="145" selection-start-column="7" selection-end-line="145" selection-end-column="7" />
+          <folding>
+            <element signature="e#2746#2769#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

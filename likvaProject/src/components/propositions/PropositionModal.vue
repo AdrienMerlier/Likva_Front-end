@@ -137,7 +137,12 @@
         'proposerTeams'
       ]),
       isProposer () {
-        return this.proposerTeams.includes(this.actualTeamStore)
+        this.proposerTeams.forEach(team => {
+          if (team.slug === this.actualTeamStore.slug) {
+            return true
+          }
+        })
+        return false
       }
     },
     mounted () {
