@@ -4,7 +4,7 @@
     <proposition-form :proposition="proposition"></proposition-form>
     <div v-if="loaded">
       <router-link :to="{name: 'display-proposition', params: { slug: slug, idProposition: idProposition ,
-        proposition: proposition}}">
+        proposition: (success ? proposition : oldProposition)}}">
         <button type="button" class="btn btn-outline-warning" @click="updateProposition">
           <i class="fa fa-send"></i> Mettre à jour</button>
       </router-link>
@@ -29,7 +29,9 @@
     },
     data () {
       return {
-        loaded: false
+        loaded: false,
+        oldProposition: {},
+        success: false
       }
     },
     methods: {
@@ -46,6 +48,7 @@
               //  Update worked
               message.content = 'La mise à jour s\'est correctement effectuée'
               message.type = 'alert-success'
+              this.success = true
             } else {
               message.content = 'La mise à jour a échoué'
               message.type = 'alert-danger'
@@ -64,6 +67,7 @@
       this.proposition = this.$router.history.current.params.proposition
       this.idProposition = this.$router.history.current.params.idProposition
       this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/idProposition}')
+      this.oldProposition = Object.assign({}, this.proposition)
       this.loaded = true
     }
   }

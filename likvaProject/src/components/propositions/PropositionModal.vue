@@ -127,7 +127,8 @@
       ...Vuex.mapGetters([
         'userInfos',
         'actualTeamStore',
-        'userFullName'
+        'userFullName',
+        'userTeamsCount'
       ]),
       isProposer () {
         let selectedTeam = {}
