@@ -17,28 +17,29 @@
             </button>
           </div>
           <div class="modal-body">
-              <div class="dropdown">
-                Pour l'équipe
-                <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownTeamSelect"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  {{actualTeamStore.displayName}}
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownTeamSelect">
-                  <a class="dropdown-item" href="#" v-for="team in userInfos.teams" v-if="userTeamsCount > 0"
-                     @click="updateTeam(team)">{{team.displayName}}</a>
-                </div>
-                dans la catégorie
-                <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownCategorySelect"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-if="categoryLoaded">
-                  Actual Catégorie
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownCategorySelect">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
+            <div class="dropdown pull-left start-dropdown-group">
+              Pour l'équipe
+              <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownTeamSelect"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{actualTeamStore.displayName}}
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownTeamSelect">
+                <a class="dropdown-item" href="#" v-for="team in userInfos.teams" v-if="userTeamsCount > 0"
+                   @click="updateTeam(team)">{{team.displayName}}</a>
               </div>
-            <p class="text-card">Pour l'équipe dans la catégorie</p>
+            </div>
+            <div class="dropdown pull-left spaced">
+              dans la catégorie
+              <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownCategorySelect"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-if="categoryLoaded">
+                {{category.categoryName}}
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownCategorySelect">
+                <a class="dropdown-item" href="#" v-for="cat in allCategories" @click="updateCategory(cat)">
+                  {{cat.categoryName}}
+                </a>
+              </div>
+            </div>
             <proposition-form :proposition="proposition"></proposition-form>
           </div>
           <div class="modal-footer">
@@ -66,7 +67,7 @@
       return {
         proposition: {},
         team: '',
-        category: '',
+        category: {categoryName: 'Sélectionner'},
         categoryLoaded: false,
         allCategories: []
       }
@@ -121,6 +122,9 @@
           console.error('Le serveur semble ne pas répondre.')
         }
         )
+      },
+      updateCategory (cat) {
+        this.category = cat
       }
     },
     computed: {
@@ -176,5 +180,14 @@
   }
   .modal-dialog{
     max-width: 1024px;
+  }
+  .spaced{
+    margin-left: 5px;
+  }
+  .dropdown{
+    margin-bottom: 1em;
+  }
+  .start-dropdown-group{
+    margin-left: 1em;
   }
 </style>
