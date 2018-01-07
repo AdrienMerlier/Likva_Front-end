@@ -137,12 +137,11 @@
         'proposerTeams'
       ]),
       isProposer () {
-        this.proposerTeams.forEach(team => {
-          if (team.slug === this.actualTeamStore.slug) {
-            return true
-          }
+        let selectedTeam = {}
+        this.userInfos.teams.forEach(team => {
+          if (team.slug === this.actualTeamStore.slug) { selectedTeam = team }
         })
-        return false
+        return selectedTeam.proposer
       }
     },
     mounted () {
