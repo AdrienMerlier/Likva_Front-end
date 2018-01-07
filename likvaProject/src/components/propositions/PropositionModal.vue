@@ -89,7 +89,8 @@
           consequences: this.proposition.consequences,
           information: this.proposition.information,
           endDate: this.proposition.endDate,
-          votePossibilities: this.proposition.optionsList
+          votePossibilities: this.proposition.optionsList,
+          category: this.category
         }).then(response => {
           //  If response from server
           if (response.body.success) {
