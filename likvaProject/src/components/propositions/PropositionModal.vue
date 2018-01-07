@@ -144,14 +144,12 @@
         return selectedTeam.proposer
       }
     },
-    beforeMount () {
+    mounted () {
       this.userInfos.teams.forEach(team => {
         if (team.proposer) {
           this.proposerTeams.push(team)
         }
       })
-    },
-    mounted () {
       this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions')
       this.categoryResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories')
       this.categoryResource.get({slug: this.actualTeamStore.slug}).then(response => {
