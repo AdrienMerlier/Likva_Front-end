@@ -144,8 +144,7 @@
         return selectedTeam.proposer
       }
     },
-    mounted () {
-      this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions')
+    beforeMount () {
       this.categoryResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories')
       this.categoryResource.get({slug: this.actualTeamStore.slug}).then(response => {
         //  If server answer
@@ -155,6 +154,9 @@
         //  Le serveur ne répond pas
         console.error('Le serveur semble ne pas répondre.')
       })
+    },
+    mounted () {
+      this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions')
     }
   }
 </script>
