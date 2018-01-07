@@ -28,6 +28,7 @@ const getters = {
   userFullName: state => getters.userName(state) + ' ' + getters.userSurname(state),
   adminActualTeam: state => state.user.teams.filter(team => team.slug === state.actualTeam.slug).admin,
   adminTeams: state => state.user.teams.filter(team => team.admin),
+  proposerTeams: state => state.user.teams.filter(team => team.proposer),
   tokenSession: state => state.token,
   delegateList: state => state.delegateList,
   delegationStore: state => state.delegation
