@@ -90,7 +90,7 @@
           information: this.proposition.information,
           endDate: this.proposition.endDate,
           votePossibilities: this.proposition.optionsList,
-          category: this.category
+          category: this.category.categoryName
         }).then(response => {
           //  If response from server
           if (response.body.success) {
