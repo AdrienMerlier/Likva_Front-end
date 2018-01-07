@@ -85,8 +85,6 @@
         return res
       },
       getRole (team) {
-        let role = this.myTeams.filter(myteam => myteam.slug === team.slug)[0].role
-        console.log('Le rôle dans l\'équipe ' + team.displayName + 'est ' + JSON.stringify(role))
         return this.myTeams.filter(myteam => myteam.slug === team.slug)[0].role
       },
       isAdmin (team) {
