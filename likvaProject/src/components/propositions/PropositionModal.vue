@@ -144,6 +144,9 @@
         return selectedTeam.proposer
       }
     },
+    beforeMount () {
+      this.proposerTeams = this.userInfos.teams.filter(team => team.proposer)
+    },
     mounted () {
       this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions')
       this.categoryResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories')
@@ -155,7 +158,6 @@
         //  Le serveur ne répond pas
         console.error('Le serveur semble ne pas répondre.')
       })
-      this.proposerTeams = this.userInfos.teams.filter(team => team.proposer)
     }
   }
 </script>
