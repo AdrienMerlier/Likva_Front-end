@@ -65,6 +65,13 @@
     },
     mounted () {
       this.proposition = this.$router.history.current.params.proposition
+      if (this.proposition === undefined) {
+        //  Ask back-end for the proposition
+        this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/idProposition}')
+        this.propositionResource.get({slug: this.slug, idProposition: this.idProposition}).then(response => {
+          this.proposition = response.body.props[0]
+        })
+      }
     }
   }
 </script>
