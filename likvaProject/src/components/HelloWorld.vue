@@ -1,39 +1,61 @@
 <template>
   <div class="hello">
-    <img src="../assets/likvaLogoTransparent.png">
     <h1>{{ msg }}</h1>
-    <div class="presentation">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit, augue non bibendum condimentum,
-        lacus velit vulputate sem, non maximus arcu turpis at justo. Nunc blandit eu leo sit amet ultrices. Morbi
-        convallis dignissim fermentum. Fusce nec congue tortor. Pellentesque vitae fermentum massa. Nunc mollis purus leo,
-        in pulvinar lorem commodo non. Aliquam elementum eleifend massa et molestie. Maecenas ac rutrum massa. Suspendisse
-        a ornare erat, eget viverra libero. Vestibulum gravida blandit arcu sit amet commodo. In feugiat magna vehicula,
-        auctor tellus quis, ultricies ipsum. Praesent quis magna nibh. Vestibulum mollis varius dolor, vitae gravida odio
-        semper sed. Aenean ac pulvinar ipsum. Nunc semper sapien in dui dignissim, eget finibus augue venenatis.</p>
-
-      <p>Etiam quis cursus metus. Phasellus lobortis laoreet porta. Nam turpis nisl, tempor et vulputate vel, feugiat
-        in sapien. Curabitur ut suscipit nulla. Nulla gravida nibh a varius fringilla. Praesent pretium, lacus at
-        ultricies consectetur, sapien risus faucibus diam, quis condimentum orci sapien nec metus. Maecenas suscipit
-        nisi id erat feugiat, ac tincidunt nisi pellentesque. Fusce venenatis euismod augue, vel blandit urna
-        sollicitudin quis.</p>
-
-      <p>Nulla non aliquam risus. Nulla facilisi. Sed vel varius tellus, id ultricies tellus. Fusce fringilla ac ligula
-        interdum pellentesque. Aenean in aliquam sem. Quisque sollicitudin risus felis, eget placerat arcu pharetra
-        vitae. Sed quis fermentum velit. Duis cursus, nunc in ornare euismod, neque urna pharetra tellus, vitae
-        tincidunt lorem est in enim. Aliquam augue odio, lacinia vitae commodo sit amet, egestas et velit. Integer a
-        nibh congue, aliquam purus sit amet, dignissim sapien. Morbi lobortis id nisi a auctor. Pellentesque habitant
-        morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque semper nec est bibendum
-        porttitor. Ut venenatis consequat purus elementum porta.</p>
-
-      <p>Fusce a lacus diam. Etiam dapibus mi sit amet pulvinar tincidunt. Integer feugiat volutpat sem, quis iaculis
-        lectus. Curabitur venenatis risus. </p>
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vTAdpJNu7sg" allowfullscreen></iframe>
     </div>
-    <h2>Plus d'informations</h2>
+    <h2 name="contexte">Contexte</h2>
+    <p>Nous constatons aujourd’hui que la démocratie représentative traverse une crise de confiance. Le lien entre
+      les décideurs et les citoyens se fragilise, et ces derniers n’ont plus le sentiment que leur voix compte. C’est
+      pourquoi nous souhaitons offrir <strong>une nouvelle forme de démocratie </strong>!</p>
+
+     <p>Conscients de la difficulté d’impliquer et de solliciter l’ensemble des citoyens dans une démocratie directe,
+      nous vous proposons <strong>Likva</strong>, une plateforme sécurisée vous permettant de mettre en place facilement
+      la <strong>démocratie liquide</strong> dans votre organisation.</p>
+
+    <h2 name="principe">Le principe de la démocratie liquide</h2>
+    <p>
+      La démocratie liquide combine les avantages de la démocratie directe et de la démocratie représentative. Lors
+      d’un vote ou d’une consultation, chaque individu disposant d’une voix est libre de l’utiliser pour voter par lui
+      même, ou de la déléguer à une personne à qui il fait confiance. Il est bien sûr possible de changer ou de retirer
+      une délégation à tout moment.
+    </p>
+
+    <h2 name="avantages">Les avantages de la démocratie liquide</h2>
+    <p>C’est un système de vote permettant de mieux <strong>impliquer les citoyens</strong> et de renforcer leur
+      <strong>confiance</strong> dans le processus de prise de décision.<br/>
+      Comme la démocratie directe participative, il permet de respecter fidèlement la volonté des citoyens, qui
+      disposent chacun d’une voix pour chaque proposition. Il permet également à chacun de consacrer le temps qu’il
+      souhaite à l’étude des propositions, en donnant la possibilité de déléguer son pouvoir de vote à une personne que
+      l’on juge plus experte que soi.<br/>
+      En cela, la démocratie liquide est flexible, et s’adapte totalement à la volonté d’implication de chaque citoyen.
+    </p>
+
+    <h2 name="possibilites">Les possibilités que propose Likva</h2>
+    <p>Que vous soyez une association ou une institution, soumettez des propositions au suffrage de vos membres ou
+      citoyens. Chacun pourra s’exprimer, débattre, voter ou déléguer son vote à une autre personne. Personnalisez les
+      droits de vos membres, le fonctionnement de chaque vote et créez des catégories personnalisées afin de permettre
+      des délégations de votes par thématiques.</p>
+
+    <h2 name="contact">Nous contacter</h2>
     <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
+      <li>
+        <i class="fa fa-twitter"></i>
+        <a href="https://twitter.com/likva_project" target="_blank">@likva-project</a>
+      </li>
+      <li>
+        <i class="fa fa-envelope"></i>
+        <a href="mailto:likva.project@gmail.com">likva.project@gmail.com</a>
+      </li>
+    </ul>
+
+    <h2 name="infos">Plus d'informations sur la démocratie liquide</h2>
+    <ul>
+      <li><a href="https://medium.com/organizer-sandbox/liquid-democracy-true-democracy-for-the-21st-century-7c66f5e53b6f"
+             target="_blank">Article Medium</a></li>
+      <li><a href="https://fr.wikipedia.org/wiki/D%C3%A9mocratie_liquide" target="_blank">Article Wikipédia</a></li>
+      <li><a href="https://www.franceculture.fr/numerique/la-democratie-liquide-ou-comment-repenser-la-democratie-l-age-numerique"
+             target="_blank">Article france culture</a></li>
     </ul>
   </div>
 </template>
@@ -43,7 +65,7 @@
     name: 'HelloWorld',
     data () {
       return {
-        msg: 'Bienvenue sur Likva la platforme de démocratie liquide'
+        msg: 'Bienvenue sur Likva la plateforme de démocratie liquide'
       }
     }
   }
@@ -65,7 +87,7 @@ li {
 a {
   color: #42b983;
 }
-.presentation{
+p{
   padding-left: 10%;
   padding-right: 10%;
   text-align: justify;

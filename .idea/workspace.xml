@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70a3ddf4-30a2-4c32-8b7c-8bf4f6665c76" name="Default" comment="Merge branch 'vue-cli_project' of https://github.com/AdrienMerlier/Likva_Front-end into vue-cli_project&#10;&#10;# Conflicts:&#10;#&#9;likvaProject/src/components/propositions/PropositionDisplay.vue">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/likvaProject/src/components/HeaderBar.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/HeaderBar.vue" />
+      <change beforePath="$PROJECT_DIR$/likvaProject/src/components/HelloWorld.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/HelloWorld.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -117,7 +116,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="UsersStore.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="UsersStore.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/users/UsersStore.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="187">
@@ -181,11 +180,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="HelloWorld.vue" pinned="false" current-in-tab="false">
+          <file leaf-file-name="HelloWorld.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/HelloWorld.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="493">
-                  <caret line="29" column="10" lean-forward="false" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+                <state relative-caret-position="192">
+                  <caret line="49" column="9" lean-forward="true" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Register.vue" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/likvaProject/src/components/users/Register.vue">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="144">
+                  <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
                   <folding />
                 </state>
               </provider>
@@ -282,7 +291,6 @@
         <option value="$PROJECT_DIR$/likvaProject/src/components/propositions/util.js" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/propositions/Datetime.vue" />
         <option value="$PROJECT_DIR$/likvaProject/index.html" />
-        <option value="$PROJECT_DIR$/likvaProject/src/components/HelloWorld.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/votes/Delegation.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/App.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/propositions/PrupotionUpdateButton.vue" />
@@ -302,6 +310,7 @@
         <option value="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionModal.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/HeaderBar.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/users/UsersStore.js" />
+        <option value="$PROJECT_DIR$/likvaProject/src/components/HelloWorld.vue" />
       </list>
     </option>
   </component>
@@ -497,12 +506,12 @@
       <workItem from="1515235718456" duration="5589000" />
       <workItem from="1515243967193" duration="7774000" />
       <workItem from="1515259089583" duration="24527000" />
-      <workItem from="1515321145245" duration="1436000" />
+      <workItem from="1515321145245" duration="5055000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="248663000" />
+    <option name="totallyTimeSpent" value="252282000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="2" width="1551" height="1047" extended-state="0" />
@@ -684,14 +693,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/users/Register.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1343">
-          <caret line="80" column="42" lean-forward="false" selection-start-line="80" selection-start-column="42" selection-end-line="80" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/categories/CategoryAdder.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -722,14 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="44" lean-forward="false" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/HelloWorld.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="10" lean-forward="false" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -860,6 +853,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/users/Register.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/HelloWorld.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="49" column="9" lean-forward="true" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
           <folding />
         </state>
       </provider>
