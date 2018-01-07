@@ -38,7 +38,8 @@
     data () {
       return {
         allPropositions: [],
-        slug: false
+        slug: false,
+        catQuery: false
       }
     },
     computed: {
@@ -48,10 +49,14 @@
     },
     mounted () {
       this.slug = this.$router.history.current.params.slug
+      this.catQuery = this.$router.history.current.query.category
       this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions')
       this.propositionResource.get({slug: this.slug}).then(response => {
         //  If server answer
         this.allPropositions = response.body.props
+        if (this.catQuery) {
+          this.allPropositions = this.allPropositions.filter(proposition => proposition.category)
+        }
       }, _ => {
         //  Le serveur ne répond pas
         console.error('Le serveur semble ne pas répondre.')
