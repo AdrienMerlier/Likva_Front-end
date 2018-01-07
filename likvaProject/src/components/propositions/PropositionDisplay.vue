@@ -59,9 +59,11 @@
         'userFullName'
       ])
     },
-    mounted () {
+    beforeMount () {
       this.slug = this.$router.history.current.params.slug
       this.idProposition = this.$router.history.current.params.idProposition
+    },
+    mounted () {
       this.proposition = this.$router.history.current.params.proposition
     }
   }
