@@ -55,7 +55,8 @@
         //  If server answer
         this.allPropositions = response.body.props
         if (this.catQuery) {
-          this.allPropositions = this.allPropositions.filter(proposition => proposition.category)
+          this.allPropositions = this.allPropositions.filter(proposition => proposition.category.categoryName ===
+            this.catQuery)
         }
       }, _ => {
         //  Le serveur ne répond pas
