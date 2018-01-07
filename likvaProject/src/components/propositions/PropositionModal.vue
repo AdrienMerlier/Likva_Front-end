@@ -24,7 +24,7 @@
                 {{actualTeamStore.displayName}}
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownTeamSelect">
-                <a class="dropdown-item" href="#" v-for="team in userInfos.teams" v-if="userTeamsCount > 0"
+                <a class="dropdown-item" href="#" v-for="team in proposerTeams" v-if="userTeamsCount > 0"
                    @click="updateTeam(team)">{{team.displayName}}</a>
               </div>
             </div>
@@ -69,7 +69,8 @@
         team: '',
         category: {categoryName: 'Sélectionner'},
         categoryLoaded: false,
-        allCategories: []
+        allCategories: [],
+        proposerTeams: []
       }
     },
     methods: {
@@ -154,6 +155,7 @@
         //  Le serveur ne répond pas
         console.error('Le serveur semble ne pas répondre.')
       })
+      this.proposerTeams = this.userInfos.teams.filter(team => team.proposer)
     }
   }
 </script>
