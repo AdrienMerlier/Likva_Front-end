@@ -139,6 +139,9 @@
         if (this.answer === 'Oui / Non') {
           this.proposition.optionsList = ['Oui', 'Non', 'Blanc']
         }
+        if (this.answer === 'Personnaliser') {
+          this.proposition.optionsList = []
+        }
       }
     },
     mounted () {
