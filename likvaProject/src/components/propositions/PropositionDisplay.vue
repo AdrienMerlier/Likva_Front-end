@@ -3,19 +3,21 @@
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h1 class="display-3" id="title">{{proposition.title}}</h1>
+        <br><br/>
         <router-link :to="{ name: 'display-results', params: {slug: slug, idProposition: idProposition}}" v-if="isAuthor">
           <button type="button" class="btn btn-outline-success"> Resultats de la proposition </button>
         </router-link>
+        <br><br/>
         <p class="lead" id="summary">{{proposition.summary}}</p>
         <h2>Description</h2>
-        <p id="description">{{proposition.description}}</p>
+        <nl2br id="description" tag="p" :text=proposition.description />
         <div class="sm-col-6">
           <h2>Proposition de changements</h2>
-          <p id="changements">{{proposition.change}}</p>
+          <nl2br id="changements" tag="p" :text=proposition.change />
         </div>
         <div class="sm-col-6">
           <h2>Résultats Escomptés</h2>
-          <p id="resultat">{{proposition.consequences}}</p>
+          <nl2br id="resultat" tag="p" :text=proposition.consequences />
         </div>
       </div>
     </div>
@@ -30,11 +32,13 @@
 <script>
   import Vuex from 'vuex'
   import userStore from '../users/UsersStore'
+  import Nl2br from 'vue-nl2br'
+
   import Vote from '../votes/Vote'
   import PropositionUpdateButton from './PropositionUpdateButton'
 
   export default {
-    components: {Vote, PropositionUpdateButton},
+    components: {Vote, PropositionUpdateButton, Nl2br},
     name: 'proposition-display',
     store: userStore,
     data () {
