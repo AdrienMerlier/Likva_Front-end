@@ -77,8 +77,8 @@
           <div class="col-sm-4">
             <p>Liste des options :</p>
             <ul class="optionList fa-ul">
-              <li v-for="option in proposition.optionsList">
-                <i class="fa-li fa fa-times" @click.prevent="removeFromOptionsList(option)"></i>{{option}}</li>
+              <li v-if="loadedOptions" v-for="option in proposition.optionsList">
+                <i class="fa-li fa fa-times" @click="removeFromOptionsList(option)"></i>{{option}}</li>
             </ul>
           </div>
         </div>
@@ -110,7 +110,8 @@
         update: true,
         slug: false,
         idProposition: false,
-        loaded: false
+        loaded: false,
+        loadedOptions: false
       }
     },
     watch: {
@@ -131,16 +132,24 @@
       addToOptionsList () {
         this.proposition.optionsList.push(this.newOption)
         this.newOption = null
+        this.loadedOptions = true
       },
       removeFromOptionsList (option) {
+        this.loadedOptions = false
         this.proposition.optionsList = this.proposition.optionsList.filter(opt => opt !== option)
+        this.$nextTick(function () {
+          this.loadedOptions = true
+          console.log('Salut') // => 'updated'
+        })
       },
       updateOptionsList () {
         if (this.answer === 'Oui / Non') {
           this.proposition.optionsList = ['Oui', 'Non', 'Blanc']
+          this.loadedOptions = true
         }
         if (this.answer === 'Personnaliser') {
           this.proposition.optionsList = []
+          this.loadedOptions = true
         }
       }
     },
