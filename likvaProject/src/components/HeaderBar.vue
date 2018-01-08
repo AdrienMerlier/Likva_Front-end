@@ -6,7 +6,7 @@
         <img src="../assets/likvaLogoMiniTransparentNavbar.png" class="navbar-brand" id="brandPicture">
       </router-link>
       <!--Changer avec un router-link-->
-      <a class="navbar-brand" href="#"><img src="../assets/anonymousProfile.png"/> {{userFullName}}</a>
+      <a class="navbar-brand" href="#"><img src="../assets/profile.png"/> {{userFullName}}</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse"
               data-target="#navbarNav" aria-controls="navbarNavDropdown" aria-expanded="false"
               aria-label="Toggle navigation">

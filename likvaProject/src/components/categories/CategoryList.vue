@@ -1,5 +1,9 @@
 <template>
   <div class="categoryList">
+    <router-link :to="{name: 'proposition-list', params: { slug: slug }}">
+      <button type="button" class="btn btn-outline-success">Afficher toute les propositions</button>
+    </router-link>
+    <br></br>
     <div class="card-columns">
       <div class="card text-white" v-for="category in allCategories" :id="category.categoryName">
         <img class="card-img" src="../../assets/landscape.jpg" alt="Card image">
