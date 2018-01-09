@@ -5,6 +5,7 @@
       <router-link :to="{name: 'category-list', params: { slug: slug }}">
         <button type="button" class="btn btn-outline-success">Retourner à l'ensemble des catégories</button>
       </router-link>
+      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#delegationPerCategoryModal">Quel est mon délégué?</button>
       <br><br/>
       <div class="card-columns">
         <div class="card" v-for="proposition in allPropositions">
@@ -33,20 +34,25 @@
 <script>
   import Vuex from 'vuex'
   import userStore from '../users/UsersStore'
+  import DelegationCategory from '../votes/DelegationPerCategory.vue'
 
   export default {
     name: 'category-proposition-list',
+    components: {DelegationCategory},
     store: userStore,
     data () {
       return {
         allPropositions: [],
         slug: false,
-        catQuery: false
+        catQuery: false,
+        currentDelegate: false
       }
     },
     computed: {
       ...Vuex.mapGetters([
-        'actualTeamStore'
+        'actualTeamStore',
+        'insertDelegates',
+        'removeDelegation'
       ])
     },
     mounted () {
@@ -63,7 +69,25 @@
       }, _ => {
           //  Le serveur ne répond pas
         console.error('Le serveur semble ne pas répondre.')
-      }
+      },
+
+      this.delegateResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories{/catQuery}/delegate', {}, {}, {headers: {
+        userEmail: this.userInfos.email}}),
+      this.delegateResource.get({slug: this.slug}).then(response => {
+        // If server answer
+        if (response.body.success) {
+          // Good request
+          this.insertDelegates(response.body.delegateList)
+          this.currentDelegate = response.body.currentDelegate
+        } else {
+          // Wrong request
+          console.error(response.body.message)
+        }
+      }, _ => {
+        // The server doesn't answer
+        console.error('Something went wrong with the server')
+      })
+
       )
     }
   }
