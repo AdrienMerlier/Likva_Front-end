@@ -23,7 +23,7 @@
     </div>
     <vote :possibilities="proposition.votePossibilities" v-if="isVoter"></vote>
     <router-link :to="{ name: 'edit-proposition', params: {slug: slug, idProposition: idProposition,
-     proposition: proposition}}" v-if="isAuthor">
+     proposition: proposition}}" v-if="this.proposition.author === this.userFullName">
       <proposition-update-button></proposition-update-button>
     </router-link>
   </div>
@@ -51,9 +51,6 @@
     methods: {
       isVoter () {
         return this.userInfos.teams.filter(myteam => myteam.slug === this.slug)[0].status === 'Voter'
-      },
-      isAuthor () {
-        return this.proposition.author === this.userFullName
       }
     },
     computed: {
