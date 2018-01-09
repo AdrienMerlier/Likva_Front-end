@@ -10,7 +10,7 @@
         <div class="card-img-overlay d-flex flex-column justify-content-around">
           <h2 class="card-title">{{category.categoryName}}</h2>
           <p class="card-text">
-            <router-link :to="{name: 'proposition-list', params: { slug: slug },
+            <router-link :to="{name: 'category-proposition-list', params: { slug: slug },
             query: { category: category.categoryName }}">
               <button type="button" class="btn btn-primary">
                 Voir les propositions de cette catégorie</button></router-link>

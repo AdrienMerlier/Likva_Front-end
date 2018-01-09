@@ -1,0 +1,78 @@
+<template>
+  <div>
+    <div class="propositionList">
+      <h1>{{catQuery}}</h1>
+      <router-link :to="{name: 'category-list', params: { slug: slug }}">
+        <button type="button" class="btn btn-outline-success">Retourner à l'ensemble des catégories</button>
+      </router-link>
+      <br><br/>
+      <div class="card-columns">
+        <div class="card" v-for="proposition in allPropositions">
+          <h4 class="card-header">{{proposition.title}}</h4>
+          <section class="card-body">
+            <aside class="memberInfos" v-if="proposition.category">
+              <h5 class="card-title"><span class="badge badge-secondary">{{proposition.category}}</span></h5>
+            </aside>
+            <article>
+              <p class="card-text">{{proposition.summary}}</p>
+            </article>
+          </section>
+          <div class="card-footer">
+            <p class="card-text">Par {{proposition.author}}</p>
+            <router-link :to="{name: 'display-proposition', params: { slug: slug, idProposition: proposition._id,
+            proposition: proposition }}">
+              <button type="button" class="btn btn-outline-success">Détails de la proposition</button>
+            </router-link>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+  import Vuex from 'vuex'
+  import userStore from '../users/UsersStore'
+
+  export default {
+    name: 'category-proposition-list',
+    store: userStore,
+    data () {
+      return {
+        allPropositions: [],
+        slug: false,
+        catQuery: false
+      }
+    },
+    computed: {
+      ...Vuex.mapGetters([
+        'actualTeamStore'
+      ])
+    },
+    mounted () {
+      console.log('Coucou')
+      this.slug = this.$router.history.current.params.slug
+      this.catQuery = this.$router.history.current.query.category
+      this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions')
+      this.propositionResource.get({slug: this.slug}).then(response => {
+          //  If server answer
+        this.allPropositions = response.body.props
+        if (this.catQuery) {
+          this.allPropositions = this.allPropositions.filter(proposition => proposition.category === this.catQuery)
+        }
+      }, _ => {
+          //  Le serveur ne répond pas
+        console.error('Le serveur semble ne pas répondre.')
+      }
+      )
+    }
+  }
+</script>
+
+<style scoped>
+  .propositionList{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>

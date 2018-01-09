@@ -42,8 +42,8 @@ export default new VueRouter({
       component: CategoryList
     },
     {
-      path: '/teams/:slug/categories/:categoryName',
-      name: 'category-propositions-list',
+      path: '/teams/:slug/categories/propositions',
+      name: 'category-proposition-list',
       component: CategoryPropositionsList
     },
     {
