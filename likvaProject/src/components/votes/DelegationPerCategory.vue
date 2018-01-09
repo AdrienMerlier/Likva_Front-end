@@ -6,7 +6,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="delegationModalLabel">Délégation pour la catégorie</h5>
+            <h5 class="modal-title" id="delegationModalLabel">Choisir un délégué pour la catégorie</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -27,7 +27,7 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-success" data-dismiss="modal" @click.prevent="delegation">
+            <button type="button" class="btn btn-success" data-dismiss="modal" @click.prevent="registerDelegate">
               <i class="fa fa-send"></i> Déléguer mon vote</button>
             <button type="button" class="btn btn-danger" data-dismiss="modal" @click.prevent="cancelDelegation">
               <i class="fa fa-times"></i> Annuler la délégation</button>
@@ -41,8 +41,9 @@
 <script>
   import Vuex from 'vuex'
   import userStore from '../users/UsersStore'
+
   export default {
-    name: 'delegation',
+    name: 'delegation-category',
     store: userStore,
     data () {
       return {
@@ -51,24 +52,48 @@
     },
     methods: {
       ...Vuex.mapActions([
+        'addMessageUserStore',
         'updateDelegation',
         'removeDelegation'
       ]),
-      delegation () {
+      registerDelegate () {
+        console.log('I am trying to suscribe a delegate.')
+        let message = {concern: 'Ajout délégué'}
         let user = this.delegateList.filter(delegate => this.delegateName === delegate.displayName)[0]
-        this.updateDelegation(user)
-      },
-      cancelDelegation () {
-        this.removeDelegation()
+        this.delegateAdderResources.save(
+          { //  Here you define urls params
+            slug: this.slug,
+            categoryName: this.categoryName
+          },
+          { //  Here you define passed object params
+            delegate: user.email,
+            voter: this.userInfos.email
+          }
+        ).then(response => {
+          //  If success
+          message.content = 'Votre délégué est ajouté, rechargez la page.'
+          message.type = 'alert-success'
+          this.addMessageUserStore(message)
+        }, response => {
+          //  If failure
+          console.error('Something went wrong: ' + response.status)
+          message.content = 'Une erreur est survenue lors de votre ajout de catégorie, veuillez rééssayer'
+          message.type = 'alert-danger'
+          this.addMessageUserStore(message)
+        })
       }
+    },
+    mounted () {
+      this.slug = this.$router.history.current.params.slug
+      this.categoryName = this.$router.history.current.query.category
+      this.delegateAdderResources = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories{/categoryName}/delegate')
+      console.log('I have defined delegateAdderResources')
     },
     computed: {
       ...Vuex.mapGetters([
+        'userInfos',
         'delegateList'
-      ]),
-      mounted () {
-        console.log('Coucou')
-      }
+      ])
     }
   }
 </script>

@@ -70,6 +70,7 @@
       }
     },
     mounted () {
+      console.log('I have mounted categoryAdderResources')
       this.slug = this.$router.history.current.params.slug
       this.categoryAdderResources = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories')
     }

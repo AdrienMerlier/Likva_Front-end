@@ -2,10 +2,16 @@
   <div>
     <div class="propositionList">
       <h1>{{catQuery}}</h1>
+      <h3>
+        <small v-if="hasDelegate"> Votre délégué(e) actuel(le) est: {{currentDelegate.displayName}}</small>
+        <small v-else> Vous n'avez pas de délégué(e) pour cette catégorie.</small>
+      </h3>
+      <p class></p>
       <router-link :to="{name: 'category-list', params: { slug: slug }}">
         <button type="button" class="btn btn-outline-success">Retourner à l'ensemble des catégories</button>
       </router-link>
-      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#delegationPerCategoryModal">Quel est mon délégué?</button>
+      <button v-if="hasDelegate" type="button" class="btn btn-info" data-toggle="modal" data-target="#delegationPerCategoryModal">Changer mon délégué(e)</button>
+      <button v-else type="button" class="btn btn-info" data-toggle="modal" data-target="#delegationPerCategoryModal">Ajouter un délégué(e)</button>
       <br><br/>
       <div class="card-columns">
         <div class="card" v-for="proposition in allPropositions">
@@ -25,6 +31,7 @@
               <button type="button" class="btn btn-outline-success">Détails de la proposition</button>
             </router-link>
           </div>
+          <delegation-category></delegation-category>
         </div>
       </div>
     </div>
@@ -45,18 +52,25 @@
         allPropositions: [],
         slug: false,
         catQuery: false,
-        currentDelegate: false
+        currentDelegate: false,
+        hasDelegate: false
       }
     },
-    computed: {
-      ...Vuex.mapGetters([
-        'actualTeamStore',
+    methods: {
+      ...Vuex.mapActions([
+        'addMessageUserStore',
         'insertDelegates',
         'removeDelegation'
       ])
     },
+    computed: {
+      ...Vuex.mapGetters([
+        'actualTeamStore',
+        'userInfos',
+        'delegateList'
+      ])
+    },
     mounted () {
-      console.log('Coucou')
       this.slug = this.$router.history.current.params.slug
       this.catQuery = this.$router.history.current.query.category
       this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions')
@@ -69,16 +83,26 @@
       }, _ => {
           //  Le serveur ne répond pas
         console.error('Le serveur semble ne pas répondre.')
-      },
-
+      })
       this.delegateResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories{/catQuery}/delegate', {}, {}, {headers: {
-        userEmail: this.userInfos.email}}),
-      this.delegateResource.get({slug: this.slug}).then(response => {
+        userEmail: this.userInfos.email}})
+      this.delegateResource.get({slug: this.slug, catQuery: this.catQuery}).then(response => {
         // If server answer
         if (response.body.success) {
           // Good request
-          this.insertDelegates(response.body.delegateList)
-          this.currentDelegate = response.body.currentDelegate
+          if (response.body.currentDelegate == null) {
+            console.log('Tout est nul')
+            // If there is not delegate currently
+            this.hasDelegate = false
+            this.insertDelegates(response.body.delegateList) // Ajoute les délégués disponibles
+          } else {
+            console.log('Tout est pas nul')
+            // If there is already a delegate
+            let emailDelegate = response.body.currentDelegate
+            this.insertDelegates(response.body.delegateList) // Ajoute les délégués disponibles
+            this.currentDelegate = this.delegateList.filter(delegate => emailDelegate === delegate.email)[0]
+            this.hasDelegate = true
+          }
         } else {
           // Wrong request
           console.error(response.body.message)
@@ -87,8 +111,6 @@
         // The server doesn't answer
         console.error('Something went wrong with the server')
       })
-
-      )
     }
   }
 </script>
