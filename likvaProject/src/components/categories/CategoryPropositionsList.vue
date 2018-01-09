@@ -12,6 +12,7 @@
       </router-link>
       <button v-if="hasDelegate" type="button" class="btn btn-info" data-toggle="modal" data-target="#delegationPerCategoryModal">Changer mon délégué(e)</button>
       <button v-else type="button" class="btn btn-info" data-toggle="modal" data-target="#delegationPerCategoryModal">Ajouter un délégué(e)</button>
+      <button v-if="hasDelegate" type="button" class="btn btn-warning" v-on:click.once="removeDelegate">Enlever votre délégué(e)</button>
       <br><br/>
       <div class="card-columns">
         <div class="card" v-for="proposition in allPropositions">
@@ -61,7 +62,31 @@
         'addMessageUserStore',
         'insertDelegates',
         'removeDelegation'
-      ])
+      ]),
+      removeDelegate () {
+        console.log('Salut')
+        let message = {concern: 'Suppression délégué'}
+        this.removeDelegateResource.save(
+          { //  Here you define urls params
+            slug: this.slug
+          },
+          { //  Here you define passed object params
+            voter: this.userInfos.email,
+            categoryName: this.catQuery
+          }
+        ).then(response => {
+          //  If success
+          message.content = 'Votre délégué a été supprimé, rechargez la page.'
+          message.type = 'alert-success'
+          this.addMessageUserStore(message)
+        }, response => {
+          //  If failure
+          console.error('Something went wrong: ' + response.status)
+          message.content = 'Une erreur est survenue lors de votre suppression de délégué, veuillez rééssayer'
+          message.type = 'alert-danger'
+          this.addMessageUserStore(message)
+        })
+      }
     },
     computed: {
       ...Vuex.mapGetters([
@@ -84,6 +109,7 @@
           //  Le serveur ne répond pas
         console.error('Le serveur semble ne pas répondre.')
       })
+      this.removeDelegateResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories{/categoryName}/removeDelegate')
       this.delegateResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories{/catQuery}/delegate', {}, {}, {headers: {
         userEmail: this.userInfos.email}})
       this.delegateResource.get({slug: this.slug, catQuery: this.catQuery}).then(response => {

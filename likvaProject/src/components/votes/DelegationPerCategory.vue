@@ -57,7 +57,6 @@
         'removeDelegation'
       ]),
       registerDelegate () {
-        console.log('I am trying to suscribe a delegate.')
         let message = {concern: 'Ajout délégué'}
         let user = this.delegateList.filter(delegate => this.delegateName === delegate.displayName)[0]
         this.delegateAdderResources.save(
