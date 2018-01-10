@@ -59,7 +59,6 @@
         return this.proposition.author === this.userFullName
       },
       delegateCategory () {
-        console.log('Coucou')
         this.delegateCategoryResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/propId}/delegateCategory')
         this.delegateCategoryResource.get({slug: this.slug, propId: this.idProposition}).then(response => {
           // If server answer

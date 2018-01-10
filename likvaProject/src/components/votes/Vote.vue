@@ -91,7 +91,8 @@
       this.slug = this.$router.history.current.params.slug
       this.idProposition = this.$router.history.current.params.idProposition
       this.voteResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/idProposition}/vote')
-      this.signatureResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/idProposition}/emargement')
+      this.signatureResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/idProposition}/emargement', {}, {}, {headers: {
+        userEmail: this.userInfos.email}})
       this.signatureResource.get({slug: this.slug, idProposition: this.idProposition}, {
         email: this.userInfos.email
       }).then(response => {

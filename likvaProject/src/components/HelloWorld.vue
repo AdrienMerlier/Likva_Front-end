@@ -1,9 +1,9 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
     <div class="embed-responsive embed-responsive-16by9">
         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vTAdpJNu7sg" allowfullscreen></iframe>
     </div>
+    <h1>{{ msg }}</h1>
     <h2 name="contexte">Contexte</h2>
     <p>Nous constatons aujourd’hui que la démocratie représentative traverse une crise de confiance. Le lien entre
       les décideurs et les citoyens se fragilise, et ces derniers n’ont plus le sentiment que leur voix compte. C’est
