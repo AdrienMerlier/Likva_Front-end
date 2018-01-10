@@ -4,7 +4,7 @@
       <div class="container">
         <h1 class="display-3" id="title">{{proposition.title}}</h1>
         <br><br/>
-        <router-link :to="{ name: 'display-results', params: {slug: slug, idProposition: idProposition}}" v-if="isAuthor">
+        <router-link :to="{ name: 'display-results', params: {slug: slug, idProposition: idProposition}}" v-if="this.proposition.author === this.userFullName">
           <button type="button" class="btn btn-outline-success"> Resultats de la proposition </button>
         </router-link>
         <br><br/>
