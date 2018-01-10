@@ -3,10 +3,10 @@
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h1 class="display-3" id="title">{{proposition.title}}</h1>
-        <br><br/>
-        <router-link :to="{ name: 'display-results', params: {slug: slug, idProposition: idProposition}}" v-if="this.proposition.author === this.userFullName">
-          <button type="button" class="btn btn-outline-success"> Resultats de la proposition </button>
+        <router-link :to="{ name: 'display-results', params: {slug: slug, idProposition: idProposition}}" v-if="isFinalised">
+          <button type="button" class="btn btn-outline-info"> Avoir les résultats  </button>
         </router-link>
+        <button v-if="isAuthor()" type="button" class="btn btn-outline-info"> Finaliser la proposition </button>
         <br><br/>
         <p class="lead" id="summary">{{proposition.summary}}</p>
         <h2>Description</h2>
@@ -23,7 +23,7 @@
     </div>
     <vote :possibilities="proposition.votePossibilities" v-if="isVoter"></vote>
     <router-link :to="{ name: 'edit-proposition', params: {slug: slug, idProposition: idProposition,
-     proposition: proposition}}" v-if="this.proposition.author === this.userFullName">
+     proposition: proposition}}" v-if="isAuthor()">
       <proposition-update-button></proposition-update-button>
     </router-link>
   </div>
@@ -45,12 +45,33 @@
       return {
         slug: false,
         idProposition: false,
-        proposition: {}
+        proposition: {},
+        isFinalised: false
+
       }
     },
     methods: {
       isVoter () {
         return this.userInfos.teams.filter(myteam => myteam.slug === this.slug)[0].status === 'Voter'
+      },
+      isAuthor () {
+        return this.proposition.author === this.userFullName
+      },
+      delegateCategory () {
+        this.delegateCategoryResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/propId}/delegateCategory')
+        this.delegateCategoryResource.get({slug: this.slug, propId: this.idProposition}).then(response => {
+          // If server answer
+          if (response.body.success) {
+            // Good request
+            this.isFinalised = true
+          } else {
+            // Wrong request
+            console.error(response.body.message)
+          }
+        }, _ => {
+          // The server doesn't answer
+          console.error('Something went wrong with the server')
+        })
       }
     },
     computed: {
