@@ -4,12 +4,13 @@
         <div class="col-sm-4">
           <img src="../../assets/anonymousProfileLarge.png" alt="Image de Profile" class="rounded-circle"/>
           <h1>{{userFullName}}</h1>
+          <i class="fa fa-envelope"></i><a :href="'mailto:' + userInfos.email"> {{userInfos.email}}</a>
         </div>
         <div class="col-sm-5 description">
           <h2>Biographie</h2>
-          <p>
-            Lorem Ipsum
-          </p>
+          <textarea class="form-control" rows="5" id="description" v-model="biographie" v-if="isOwnProfile()"
+          @change.prevent="updateUserBiography(biographie)"></textarea>
+          <p v-else>{{biographie}}</p>
         </div>
         <div class="col-sm-3 equipe">
           <h2>Equipes</h2>
@@ -27,9 +28,23 @@
   export default {
     name: 'profile',
     store: userStore,
+    data () {
+      return {
+        biographie: ''
+      }
+    },
+    methods: {
+      ...Vuex.mapActions([
+        'updateUserBiography'
+      ]),
+      isOwnProfile () {
+        return true
+      }
+    },
     computed: {
       ...Vuex.mapGetters([
-        'userFullName'
+        'userFullName',
+        'userInfos'
       ])
     }
   }
@@ -39,13 +54,6 @@
   img{
     width: 200px;
     height: 200px;
-  }
-  .description, .equipe{
-    text-align: left;
-    margin-top: 10em;
-  }
-  .description h2{
-    margin-left: 3em;
   }
   .description p{
     text-align: justify;
