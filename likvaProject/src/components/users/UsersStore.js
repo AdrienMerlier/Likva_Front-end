@@ -5,7 +5,6 @@ const state = {
     name: 'Léo',
     surname: 'Mouyna',
     email: 'mouynaleo@gmail.com',
-    biographie: '',
     teams: [],
     loaded: true
   },
@@ -90,9 +89,6 @@ const mutations = {
       hasDelegate: false,
       delegate: {}
     }
-  },
-  UPDATE_USER_BIOGRAPHY: (state, bio) => {
-    state.user.biographie = bio
   }
 }
 
@@ -150,9 +146,6 @@ const actions = {
   },
   removeDelegation: (store) => {
     store.commit('REMOVE_DELEGATION')
-  },
-  updateUserBiography: (store, bio) => {
-    store.commit('UPDATE_USER_BIOGRAPHY', bio)
   }
 }
 

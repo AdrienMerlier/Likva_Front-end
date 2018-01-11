@@ -8,9 +8,10 @@
         </div>
         <div class="col-sm-5 description">
           <h2>Biographie</h2>
-          <textarea class="form-control" rows="5" id="description" v-model="biographie" v-if="isOwnProfile()"
-          @change.prevent="updateUserBiography(biographie)"></textarea>
-          <p v-else>{{biographie}}</p>
+          <textarea class="form-control" rows="5" id="description" v-model="user.biographie" v-if="isOwnProfile()">
+
+          </textarea>
+          <p v-else>{{user.biographie}}</p>
         </div>
         <div class="col-sm-3 equipe">
           <h2>Equipes</h2>
@@ -30,7 +31,7 @@
     store: userStore,
     data () {
       return {
-        biographie: ''
+        user: {}
       }
     },
     methods: {
