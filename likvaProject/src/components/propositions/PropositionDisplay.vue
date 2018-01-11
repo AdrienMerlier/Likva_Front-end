@@ -3,11 +3,11 @@
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h1 class="display-3" id="title">{{proposition.title}}</h1>
-        <router-link :to="{ name: 'display-results', params: {slug: slug, idProposition: idProposition}}" v-if="hasResults">
+        <router-link :to="{ name: 'display-results', params: {slug: slug, idProposition: idProposition}}" v-if="isReady()">
           <button type="button" class="btn btn-success"> Avoir les résultats  </button>
         </router-link>
-        <button @click="delegateGeneral" v-if="isFinalised&!hasResults" type="button" class="btn btn-outline-warning"> Transition des délégations </button>
-        <button @click="delegateCategory" v-if="isAuthor()&!isFinalised&!hasResults" type="button" class="btn btn-outline-info"> Finaliser la proposition </button>
+        <button @click="delegateGeneral" v-if="isFinalised&!isReady()" type="button" class="btn btn-outline-warning"> Transition des délégations </button>
+        <button @click="delegateCategory" v-if="isAuthor()&!isReady()" type="button" class="btn btn-outline-info"> Finaliser la proposition </button>
         <br><br/>
         <p class="lead" id="summary">{{proposition.summary}}</p>
         <h2>Description</h2>
@@ -52,6 +52,9 @@
       }
     },
     methods: {
+      isReady () {
+        return this.proposition.verdict !== 'onGoing'
+      },
       isVoter () {
         return this.userInfos.teams.filter(myteam => myteam.slug === this.slug)[0].status === 'Voter'
       },
@@ -110,9 +113,7 @@
         this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/idProposition}')
         this.propositionResource.get({slug: this.slug, idProposition: this.idProposition}).then(response => {
           this.proposition = response.body.props[0]
-          if (this.proposition.verdict !== undefined) {
-            this.hasResults = true
-          }
+          console.log(this.proposition)
         })
       }
     }
