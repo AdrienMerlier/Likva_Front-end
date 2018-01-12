@@ -3,7 +3,7 @@
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h1 class="display-3" id="title">{{proposition.title}}</h1>
-        <router-link :to="{ name: 'display-results', params: {slug: slug, idProposition: idProposition}}" v-if="isReady()">
+        <router-link :to="{ name: 'display-results', params: {slug: slug, idProposition: idProposition}}" v-if="isReady()|hasResults">
           <button type="button" class="btn btn-success"> Avoir les résultats  </button>
         </router-link>
         <button @click="delegateGeneral" v-if="isFinalised&!isReady()" type="button" class="btn btn-outline-warning"> Transition des délégations </button>
@@ -113,7 +113,6 @@
         this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/idProposition}')
         this.propositionResource.get({slug: this.slug, idProposition: this.idProposition}).then(response => {
           this.proposition = response.body.props[0]
-          console.log(this.proposition)
         })
       }
     }

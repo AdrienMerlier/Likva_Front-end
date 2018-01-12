@@ -4,6 +4,9 @@
       <router-link :to="{name: 'category-list', params: { slug: slug }}">
         <button type="button" class="btn btn-outline-success">Passer à l'affichage par catégorie</button>
       </router-link>
+      <router-link :to="{name: 'team-members-list', params: { slug: slug }}">
+        <button type="button" class="btn btn-outline-info">Voir les membres de l'équipe</button>
+      </router-link>
       <br><br/>
       <div class="card-columns">
         <div class="card" v-for="proposition in allPropositions">

@@ -12,6 +12,7 @@ const PropositionDisplay = () => import('../components/propositions/PropositionD
 const PropositionResults = () => import('../components/propositions/PropositionResults')
 const PropositionList = () => import('../components/propositions/PropositionList')
 const PropositionUpdate = () => import('../components/propositions/PropositionUpdate')
+const TeamMembersList = () => import('../components/teams/TeamUsersList')
 
 export default new VueRouter({
   mode: 'history',
@@ -35,6 +36,11 @@ export default new VueRouter({
       path: '/teams/:slug/update',
       name: 'edit-team',
       component: TeamForm
+    },
+    {
+      path: '/teams/:slug/users',
+      name: 'team-members-list',
+      component: TeamMembersList
     },
     {
       path: '/teams/:slug/categories',
