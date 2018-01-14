@@ -88,6 +88,10 @@
         if (response.body.success) {
           // Good request
           this.user = response.body.user
+          if (!this.isOwnProfile()) {
+            // Have to select only teams in common
+            this.selectedTeams = this.intersection(this.user.teams, this.userInfos.teams)
+          }
         } else {
           // Bad request
           // Add a message display
@@ -97,12 +101,6 @@
         // Server doesn't answer
         console.error('Something went wrong with the server when asking user infos')
       })
-    },
-    mounted () {
-      if (!this.isOwnProfile()) {
-        // Have to select only teams in common
-        this.selectedTeams = this.intersection(this.user.teams, this.userInfos.teams)
-      }
     }
   }
 </script>
