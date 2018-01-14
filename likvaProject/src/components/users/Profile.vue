@@ -14,7 +14,7 @@
         </div>
         <div class="col-sm-4 equipe">
           <h2>Eligible à la délégation</h2>
-          <team-tree :teams="user.teams" :owner="isOwnProfile()"></team-tree>
+          <team-tree :teams="selectedTeams" :owner="isOwnProfile()"></team-tree>
         </div>
         <div class="tabInfos">
           <user-propositions-tab v-if="isOwnProfile"></user-propositions-tab>
@@ -71,7 +71,8 @@
               ]
             }
           ]
-        }
+        },
+        selectedTeams: []
       }
     },
     methods: {
@@ -87,6 +88,22 @@
         'userFullName',
         'userInfos'
       ])
+    },
+    mounted () {
+      let owner = this.userInfos.email === this.user.email
+      if (!owner) {
+        // Have to select only teams in common
+        this.user.teams.forEach(team => {
+          this.userInfos.teams.forEach(userTeam => {
+            if (userTeam.slug === team.slug) {
+              console.log('Ajout de la team ' + team.displayName)
+              this.selectedTeams.push(team)
+            }
+          })
+        })
+      } else {
+        this.selectedTeams = this.user.teams
+      }
     }
   }
 </script>
