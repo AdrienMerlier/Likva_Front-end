@@ -6,6 +6,16 @@
         <small v-if="hasDelegate"> Votre délégué(e) actuel(le) est: {{currentDelegate.displayName}}</small>
         <small v-else> Vous n'avez pas de délégué(e) pour cette catégorie.</small>
       </h3>
+      <h3>
+        <div v-if="delegable">
+          <small >Vous êtes éligible à la délégation pour cette catégorie.</small>
+          <button type="button" class="btn btn-warning"> Se retirer de la délégation pour une catégorie</button>
+        </div>
+        <div v-else>
+          <small>Vous n'êtes pas élégible </small>
+          <button type="button" class="btn btn-warning" v-on:click.once="becomeDelegate"> Devenir délégué potentiel</button>
+        </div>
+      </h3>
       <p class></p>
       <router-link :to="{name: 'category-list', params: { slug: slug }}">
         <button type="button" class="btn btn-outline-success">Retourner à l'ensemble des catégories</button>
@@ -54,7 +64,8 @@
         slug: false,
         catQuery: false,
         currentDelegate: false,
-        hasDelegate: false
+        hasDelegate: false,
+        delegable: false
       }
     },
     methods: {
@@ -86,6 +97,54 @@
           message.type = 'alert-danger'
           this.addMessageUserStore(message)
         })
+      },
+      becomeDelegate () {
+        let message = {concern: 'Devenir délégué'}
+        this.becomeDelegateResource.save(
+          { //  Here you define urls params
+            slug: this.slug,
+            categoryName: this.catQuery
+          },
+          { //  Here you define passed object params
+            voter: this.userInfos.email
+          }
+        ).then(response => {
+          //  If success
+          message.content = 'Vous êtes devenu délégué pour cette catégorie.'
+          message.type = 'alert-success'
+          this.addMessageUserStore(message)
+          this.delegable = true
+        }, response => {
+          //  If failure
+          console.error('Something went wrong: ' + response.status)
+          message.content = 'Une erreur est survenue lors de votre suppression de délégué, veuillez rééssayer'
+          message.type = 'alert-danger'
+          this.addMessageUserStore(message)
+        })
+      },
+      removeMyselfDelegate () {
+        let message = {concern: 'Retirer des délégués'}
+        this.removeMyselfDelegateResource.save(
+          { //  Here you define urls params
+            slug: this.slug,
+            categoryName: this.catQuery
+          },
+          { //  Here you define passed object params
+            voter: this.userInfos.email
+          }
+        ).then(response => {
+          //  If success
+          message.content = 'Vous ne faites plus partie des délégués pour cette catégorie.'
+          message.type = 'alert-success'
+          this.addMessageUserStore(message)
+          this.delegable = false
+        }, response => {
+          //  If failure
+          console.error('Something went wrong: ' + response.status)
+          message.content = 'Une erreur est survenue lors de votre suppression de délégué, veuillez rééssayer'
+          message.type = 'alert-danger'
+          this.addMessageUserStore(message)
+        })
       }
     },
     computed: {
@@ -110,6 +169,8 @@
         console.error('Le serveur semble ne pas répondre.')
       })
       this.removeDelegateResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories{/categoryName}/removeDelegate')
+      this.becomeDelegateResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories{/categoryName}/becomeDelegate')
+      this.removeMyselfDelegateResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories{/categoryName}/removeDelegate')
       this.delegateResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories{/catQuery}/delegate', {}, {}, {headers: {
         userEmail: this.userInfos.email}})
       this.delegateResource.get({slug: this.slug, catQuery: this.catQuery}).then(response => {
