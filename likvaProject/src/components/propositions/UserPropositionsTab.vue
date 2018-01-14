@@ -24,11 +24,11 @@
 	      				<tr v-for="proposition in inProgessPropositions">
 	        				<td>{{proposition.title}}</td>
 	        				<td>{{proposition.category}}</td>
-					        <td>{{getDisplayName(proposition.slug)}}</td> //Ask userStore for team displayName 
+					        <td>{{getDisplayName(proposition.slug)}}</td>
 					        <td>{{proposition.votersNumber}}</td>
 					        <td>
-					        	<router-link :to="{name: 'proposition-display', params: {slug: proposition.slug idProposition: proposition._id,
-					            proposition: proposition }}"">
+					        	<router-link :to="{name: 'proposition-display', params: {slug: proposition.slug, idProposition: proposition._id,
+					            proposition: proposition }}">
 					        		<button type="button" class="btn btn-primary btn-sm rounded-circle"><i class="fa fa-file-text-o"></i></button>
 					        	</router-link>
 					        	<router-link :to="{name: 'edit-proposition', params: { slug: proposition.slug, idProposition: idProposition,
@@ -55,16 +55,16 @@
 	      				<tr v-for="proposition in donePropositions">
 					        <td>{{proposition.title}}</td>
 					        <td>{{proposition.category}}</td>
-					        <td>{{getDisplayName(proposition.slug)}}</td> //  Ask userStore for team displayName 
+					        <td>{{getTeamDisplayName(proposition.slug)}}</td> //  Ask userStore for team displayName
 					        <td>{{proposition.votersNumber}}</td>  //  Ask api
 					        <td>{{proposition.result}}</td>  //  Ask api
 					        <td>
-					        	<router-link :to="{name: 'proposition-display', params: {slug: proposition.slug idProposition: proposition._id,
+					        	<router-link :to="{name: 'proposition-display', params: {slug: proposition.slug, idProposition: proposition._id,
 					            proposition: proposition }}">
 					        		<button type="button" class="btn btn-success btn-sm rounded-circle"><i class="fa fa-pie-chart"></i></button>
 					        	</router-link>
 					        	<router-link :to="{ name: 'display-results', params: {slug: proposition.slug, idProposition: proposition._id}}">
-					        		<button type="button" class="btn btn-primary btn-sm rounded-circle"><i class="fa fa-file-text-o"></i></button></i></button>
+                      <button type="button" class="btn btn-primary btn-sm rounded-circle"><i class="fa fa-file-text-o"></i></button></router-link>
 					        </td>
 	      				</tr>
 	    			</tbody>
@@ -88,11 +88,16 @@
 	    		donePropositions: []
 	    	}
     	},
+      methods: {
+    	  getTeamDisplayName (slugProposition) {
+    	    return this.userInfos.teams.filter(team => team.slug === slugProposition)[0].displayName
+        }
+      },
     	computed: {
     		...Vuex.mapGetters([
     			'userInfos'
     		])
-    	}
+    	},
     	mounted () {
     		this.userPropositionsResource = this.$resource('http://127.0.0.1:3000/api/propositions/author{/userEmail}')
     		this.resultResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/idProposition}/results')
@@ -126,7 +131,7 @@
 </script>
 
 <style scoped>
-  .table-striped>tbody>tr:nth-child(odd)>td, 
+  .table-striped>tbody>tr:nth-child(odd)>td,
 	.table-striped>tbody>tr:nth-child(odd)>th {
    		background-color: #d9d6fc; // Choose your own color here
  	}
