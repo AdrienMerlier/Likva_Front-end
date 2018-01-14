@@ -14,10 +14,8 @@
           <p v-else>{{user.biographie}}</p>
         </div>
         <div class="col-sm-3 equipe">
-          <h2>Equipes</h2>
-          <h4>
-            <span class="badge badge-primary">Nom 1</span>
-          </h4>
+          <h2>Eligible à la délégation</h2>
+          <team-tree :teams="user.teams"></team-tree>
         </div>
       </div>
     </div>
@@ -26,12 +24,50 @@
 <script>
   import Vuex from 'vuex'
   import userStore from './UsersStore'
+  import TeamTree from '../teams/TeamTree'
   export default {
     name: 'profile',
     store: userStore,
+    components: {
+      TeamTree
+    },
     data () {
       return {
-        user: {}
+        user: {
+          biographie: 'Je fais partie de l\'équipe sécurité. Par conséquent je fais tout mon possible pour assurer la ' +
+          'sécurité des festivaliers.',
+          teams: [
+            {
+              displayName: '24Heures',
+              categories: [
+                {
+                  categoryName: 'Logistique',
+                  delegable: false
+                },
+                {
+                  categoryName: 'Sécurité',
+                  delegable: true
+                }]
+            },
+            {
+              displayName: 'TC Student',
+              categories: [
+                {
+                  categoryName: 'Recherche',
+                  delegable: false
+                },
+                {
+                  categoryName: 'Stage',
+                  delegable: false
+                },
+                {
+                  categoryName: 'Scolarité',
+                  delegable: true
+                }
+              ]
+            }
+          ]
+        }
       }
     },
     methods: {
