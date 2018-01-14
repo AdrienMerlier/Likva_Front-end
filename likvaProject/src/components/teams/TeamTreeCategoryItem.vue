@@ -1,13 +1,11 @@
 <template>
   <div class="categoryItem">
-    <div data-toggle="buttons">
-      <li class="category " v-for="category in categories">
+    <li class="category " v-for="category in categories">
       <span class="categoryName">
         {{category.categoryName}}
       </span>
-        <input type="checkbox" :disabled="!owner" v-model="category.delegable">
-      </li>
-    </div>
+      <input type="checkbox" :disabled="!owner" v-model="category.delegable">
+    </li>
   </div>
 </template>
 
