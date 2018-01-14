@@ -1,26 +1,33 @@
 <template>
     <div class="profile">
       <div class="row">
-        <div class="col-sm-3">
-          <img src="../../assets/anonymousProfileLarge.png" alt="Image de Profile" class="rounded-circle"/>
-          <h1>{{userFullName}}</h1>
-          <i class="fa fa-envelope"></i><a :href="'mailto:' + userInfos.email"> {{userInfos.email}}</a>
+        <div class="col-sm-9">
+          <div class="row">
+            <div class="col-sm-5">
+              <img src="../../assets/anonymousProfileLarge.png" alt="Image de Profile" class="rounded-circle"/>
+              <h1>{{userFullName}}</h1>
+              <i class="fa fa-envelope"></i><a :href="'mailto:' + userInfos.email"> {{userInfos.email}}</a>
+            </div>
+            <div class="col-sm-7 description">
+              <h2>Biographie</h2>
+              <textarea class="form-control" rows="5" id="description" v-model="user.biographie" v-if="isOwnProfile()">
+              </textarea>
+              <p v-else>{{user.biographie}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="tabInfos">
+              <user-propositions-tab v-if="isOwnProfile"></user-propositions-tab>
+            </div>
+          </div>
         </div>
-        <div class="col-sm-5 description">
-          <h2>Biographie</h2>
-          <textarea class="form-control" rows="5" id="description" v-model="user.biographie" v-if="isOwnProfile()">
-          </textarea>
-          <p v-else>{{user.biographie}}</p>
-        </div>
-        <div class="col-sm-4 equipe">
-          <h2>Eligible à la délégation</h2>
+        <div class="col-sm-3 equipe">
+          <h3>Eligible à la délégation</h3>
           <team-tree :teams="isOwnProfile ? user.teams : selectedTeams" :owner="isOwnProfile()"></team-tree>
         </div>
-        <div class="tabInfos">
-          <user-propositions-tab v-if="isOwnProfile"></user-propositions-tab>
-        </div>
       </div>
-    </div>
+
+      </div>
 </template>
 
 <script>
@@ -71,6 +78,18 @@
                   delegable: true
                 }
               ]
+            },
+            {
+              displayName: 'Karna',
+              categories: [
+                {
+                  categoryName: 'Logistique',
+                  delegable: false
+                },
+                {
+                  categoryName: 'Sécurité',
+                  delegable: true
+                }]
             }
           ]
         },
@@ -118,8 +137,8 @@
 
 <style scoped>
   img{
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
   }
   .description p{
     text-align: justify;
