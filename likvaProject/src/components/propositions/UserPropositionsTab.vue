@@ -33,7 +33,8 @@
 					        	</router-link>
 					        	<router-link :to="{name: 'edit-proposition', params: { slug: proposition.slug, idProposition: idProposition,
 					        	proposition: proposition}}">
-					        		<button type="button" class="btn btn-warning btn-sm rounded-circle"><i class="fa fa-edit"></i></button>
+                      <button type="button" class="btn btn-warning btn-sm rounded-circle"><i class="fa fa-edit"></i></button>
+                    </router-link>
 					        </td>
 	     				 </tr>
 	    			</tbody>

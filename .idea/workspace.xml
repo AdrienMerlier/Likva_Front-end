@@ -115,8 +115,8 @@
           <file leaf-file-name="UserPropositionsTab.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/UserPropositionsTab.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="464">
-                  <caret line="29" column="100" lean-forward="false" selection-start-line="29" selection-start-column="100" selection-end-line="29" selection-end-column="100" />
+                <state relative-caret-position="295">
+                  <caret line="36" column="20" lean-forward="false" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
                   <folding />
                 </state>
               </provider>
@@ -544,7 +544,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="287580000" />
+    <option name="totallyTimeSpent" value="287741000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1551" height="1047" extended-state="0" />
@@ -931,8 +931,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/UserPropositionsTab.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="29" column="100" lean-forward="false" selection-start-line="29" selection-start-column="100" selection-end-line="29" selection-end-column="100" />
+        <state relative-caret-position="295">
+          <caret line="36" column="20" lean-forward="false" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
           <folding />
         </state>
       </provider>
