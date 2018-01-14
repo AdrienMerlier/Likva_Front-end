@@ -15,7 +15,7 @@
         </div>
         <div class="col-sm-3 equipe">
           <h2>Eligible à la délégation</h2>
-          <team-tree :teams="user.teams"></team-tree>
+          <team-tree :teams="user.teams" :owner="true"></team-tree>
         </div>
       </div>
     </div>

@@ -22,12 +22,8 @@
         }
       },
       owner: {
-        required: false,
-        default: true
-      }
-    },
-    data () {
-      return {
+        required: true,
+        default: false
       }
     }
   }

@@ -2,18 +2,18 @@
   <div class="teamTree">
     <ul class="teams">
       <div class="teamInfos" v-for="team in teams">
-        <team-tree-team-itemp :team="team"></team-tree-team-itemp>
+        <team-tree-team-item :team="team" :owner="owner"></team-tree-team-item>
       </div>
     </ul>
   </div>
 </template>
 
 <script>
-  import TeamTreeTeamItemp from './TeamTreeTeamItem'
+  import TeamTreeTeamItem from './TeamTreeTeamItem'
   export default {
     name: 'team-tree',
     components: {
-      TeamTreeTeamItemp
+      TeamTreeTeamItem
     },
     props: {
       teams: {
@@ -21,6 +21,10 @@
         default: function () {
           return {}
         }
+      },
+      owner: {
+        required: false,
+        default: false
       }
     }
   }
