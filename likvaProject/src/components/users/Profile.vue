@@ -16,6 +16,9 @@
           <h2>Eligible à la délégation</h2>
           <team-tree :teams="user.teams" :owner="isOwnProfile()"></team-tree>
         </div>
+        <div class="tabInfos">
+          <user-propositions-tab v-if="isOwnProfile"></user-propositions-tab>
+        </div>
       </div>
     </div>
 </template>
@@ -24,11 +27,13 @@
   import Vuex from 'vuex'
   import userStore from './UsersStore'
   import TeamTree from '../teams/TeamTree'
+  import UserPropositionsTab from '../propositions/UserPropositionsTab'
   export default {
     name: 'profile',
     store: userStore,
     components: {
-      TeamTree
+      TeamTree,
+      UserPropositionsTab
     },
     data () {
       return {
@@ -93,5 +98,11 @@
   }
   .description p{
     text-align: justify;
+  }
+  .tabInfos{
+    margin-top: 1em;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
   }
 </style>
