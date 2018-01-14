@@ -2,7 +2,6 @@
   <div id="app">
     <header-bar></header-bar>
     <messages></messages>
-    <profile></profile>
     <router-view></router-view>
     <proposition-modal></proposition-modal>
     <delegation></delegation>
@@ -15,7 +14,6 @@
   import Messages from './components/Messages'
   import PropositionModal from './components/propositions/PropositionModal'
   import Delegation from './components/votes/Delegation'
-  import Profile from './components/users/Profile'
 
   export default {
     name: 'app',
@@ -24,8 +22,7 @@
       HelloWorld,
       HeaderBar,
       Messages,
-      PropositionModal,
-      Profile
+      PropositionModal
     }
   }
 </script>

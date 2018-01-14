@@ -1,7 +1,7 @@
 <template>
     <div class="profile">
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-3">
           <img src="../../assets/anonymousProfileLarge.png" alt="Image de Profile" class="rounded-circle"/>
           <h1>{{userFullName}}</h1>
           <i class="fa fa-envelope"></i><a :href="'mailto:' + userInfos.email"> {{userInfos.email}}</a>
@@ -9,13 +9,12 @@
         <div class="col-sm-5 description">
           <h2>Biographie</h2>
           <textarea class="form-control" rows="5" id="description" v-model="user.biographie" v-if="isOwnProfile()">
-
           </textarea>
           <p v-else>{{user.biographie}}</p>
         </div>
-        <div class="col-sm-3 equipe">
+        <div class="col-sm-4 equipe">
           <h2>Eligible à la délégation</h2>
-          <team-tree :teams="user.teams" :owner="true"></team-tree>
+          <team-tree :teams="user.teams" :owner="isOwnProfile()"></team-tree>
         </div>
       </div>
     </div>
@@ -75,7 +74,7 @@
         'updateUserBiography'
       ]),
       isOwnProfile () {
-        return true
+        return this.userInfos.email === this.user.email
       }
     },
     computed: {
@@ -89,8 +88,8 @@
 
 <style scoped>
   img{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
   }
   .description p{
     text-align: justify;

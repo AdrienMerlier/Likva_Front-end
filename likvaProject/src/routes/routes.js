@@ -12,6 +12,7 @@ const PropositionDisplay = () => import('../components/propositions/PropositionD
 const PropositionResults = () => import('../components/propositions/PropositionResults')
 const PropositionList = () => import('../components/propositions/PropositionList')
 const PropositionUpdate = () => import('../components/propositions/PropositionUpdate')
+const ProfileDisplay = () => import('../components/users/Profile')
 
 export default new VueRouter({
   mode: 'history',
@@ -65,6 +66,11 @@ export default new VueRouter({
       path: '/teams/:slug/propositions/:idProposition/update',
       name: 'edit-proposition',
       component: PropositionUpdate
+    },
+    {
+      path: '/profile',
+      name: 'profile-display',
+      component: ProfileDisplay
     },
     {
       path: '*',
