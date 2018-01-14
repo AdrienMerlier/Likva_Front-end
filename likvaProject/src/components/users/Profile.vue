@@ -104,7 +104,8 @@
         return this.userInfos.email === this.user.email
       },
       intersection (a, b) {
-        var ai=0, bi=0
+        var ai = 0
+        var bi = 0
         var result = []
         while (ai < a.length && bi < b.length) {
           if (a[ai] < b[bi]) {
@@ -125,6 +126,24 @@
         'userFullName',
         'userInfos'
       ])
+    },
+    beforeMount () {
+      this.userResource = this.$resource('http://127.0.0.1:3000/api/users/email{/userEmail}')
+      let email = this.$router.history.current.query.email
+      this.userResource.get({userEmail: email}).then(response => {
+        // If serveur answer
+        if (response.body.success) {
+          // Good request
+          this.user = response.body.user
+        } else {
+          // Bad request
+          // Add a message display
+          console.error(response.body.message)
+        }
+      }, _ => {
+        // Server doesn't answer
+        console.error('Something went wrong with the server when asking user infos')
+      })
     },
     mounted () {
       if (!this.isOwnProfile()) {
