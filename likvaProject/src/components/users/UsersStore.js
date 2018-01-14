@@ -2,41 +2,11 @@ import Vuex from 'vuex'
 
 const state = {
   user: {
-    name: 'Léo',
-    surname: 'Mouyna',
-    email: 'mouynaleo@gmail.com',
-    teams: [
-      {
-        displayName: '24Heures',
-        categories: [
-          {
-            categoryName: 'Logistique',
-            delegable: false
-          },
-          {
-            categoryName: 'Sécurité',
-            delegable: true
-          }]
-      },
-      {
-        displayName: 'TC Student',
-        categories: [
-          {
-            categoryName: 'Recherche',
-            delegable: false
-          },
-          {
-            categoryName: 'Stage',
-            delegable: false
-          },
-          {
-            categoryName: 'Scolarité',
-            delegable: true
-          }
-        ]
-      }
-    ],
-    loaded: true
+    name: '',
+    surname: '',
+    email: '',
+    teams: [ ],
+    loaded: false
   },
   messages: [],
   actualTeam: {},
