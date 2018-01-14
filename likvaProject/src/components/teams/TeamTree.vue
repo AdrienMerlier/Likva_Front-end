@@ -2,24 +2,19 @@
   <div class="teamTree">
     <ul class="teams">
       <div class="teamInfos" v-for="team in teams">
-        <li class="team">
-          {{team.displayName}} <span class="moreLess" @dbclick="toogleOpen(team)">
-          [{{team.open ? '-' : '+'}}]
-        </span>
-        </li>
-        <ul class="categories" v-if="team.open">
-          <li class="category" v-for="category in team.categories">{{category.categoryName}}
-            <input type="checkbox" v-model="category.delegable">
-          </li>
-        </ul>
+        <team-tree-team-itemp :team="team"></team-tree-team-itemp>
       </div>
     </ul>
   </div>
 </template>
 
 <script>
+  import TeamTreeTeamItemp from './TeamTreeTeamItem'
   export default {
     name: 'team-tree',
+    components: {
+      TeamTreeTeamItemp
+    },
     props: {
       teams: {
         required: false,
@@ -27,28 +22,18 @@
           return {}
         }
       }
-    },
-    methods: {
-      updateParentValue (value) {
-        this.$emit('input', value)
-      },
-      toogleOpen (team) {
-        team.open = !team.open
-      }
-    },
-    mounted () {
-      this.teams.forEach(team => {
-        team.open = true
-      })
     }
   }
 </script>
 
-<style scoped>
+<style>
   .teamTree{
     text-align: left;
   }
-  .moreLess {
-    cursor: pointer;
+  ul {
+    list-style: none;
+  }
+  li::before {
+    content: "";
   }
 </style>
