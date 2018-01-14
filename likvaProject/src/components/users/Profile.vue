@@ -14,7 +14,7 @@
         </div>
         <div class="col-sm-4 equipe">
           <h2>Eligible à la délégation</h2>
-          <team-tree :teams="selectedTeams" :owner="isOwnProfile()"></team-tree>
+          <team-tree :teams="isOwnProfile ? user.teams : selectedTeams" :owner="isOwnProfile()"></team-tree>
         </div>
         <div class="tabInfos">
           <user-propositions-tab v-if="isOwnProfile"></user-propositions-tab>
@@ -28,6 +28,7 @@
   import userStore from './UsersStore'
   import TeamTree from '../teams/TeamTree'
   import UserPropositionsTab from '../propositions/UserPropositionsTab'
+
   export default {
     name: 'profile',
     store: userStore,
@@ -40,6 +41,7 @@
         user: {
           biographie: 'Je fais partie de l\'équipe sécurité. Par conséquent je fais tout mon possible pour assurer la ' +
           'sécurité des festivaliers.',
+          email: 'mouynaleo@gail.com',
           teams: [
             {
               displayName: '24Heures',
@@ -81,6 +83,22 @@
       ]),
       isOwnProfile () {
         return this.userInfos.email === this.user.email
+      },
+      intersection (a, b) {
+        var ai=0, bi=0
+        var result = []
+        while (ai < a.length && bi < b.length) {
+          if (a[ai] < b[bi]) {
+            ai++
+          } else if (a[ai] > b[bi]) {
+            bi++
+          } else { // They are equal
+            result.push(a[ai])
+            ai++
+            bi++
+          }
+        }
+        return result
       }
     },
     computed: {
@@ -90,19 +108,9 @@
       ])
     },
     mounted () {
-      let owner = this.userInfos.email === this.user.email
-      if (!owner) {
+      if (!this.isOwnProfile()) {
         // Have to select only teams in common
-        this.user.teams.forEach(team => {
-          this.userInfos.teams.forEach(userTeam => {
-            if (userTeam.slug === team.slug) {
-              console.log('Ajout de la team ' + team.displayName)
-              this.selectedTeams.push(team)
-            }
-          })
-        })
-      } else {
-        this.selectedTeams = this.user.teams
+        this.selectedTeams = this.intersection(this.user.teams, this.userInfos.teams)
       }
     }
   }
