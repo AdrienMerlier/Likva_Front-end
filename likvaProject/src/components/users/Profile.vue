@@ -81,9 +81,9 @@
       ])
     },
     beforeMount () {
-      this.userResource = this.$resource('http://127.0.0.1:3000/api/users/email{/userEmail}')
-      let email = this.$router.history.current.query.email
-      this.userResource.get({userEmail: email}).then(response => {
+      this.userResource = this.$resource('http://127.0.0.1:3000/api/users{/_id}')
+      let _id = this.$router.history.current.query.id
+      this.userResource.get({_id: _id}).then(response => {
         // If serveur answer
         if (response.body.success) {
           // Good request
