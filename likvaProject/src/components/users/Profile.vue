@@ -23,7 +23,7 @@
         </div>
         <div class="col-sm-3 equipe">
           <h3>Eligible à la délégation</h3>
-          <team-tree :teams="owner ? user.teams : selectedTeams" :owner="isOwnProfile()"></team-tree>
+          <team-tree :teams="owner ? user.teams : selectedTeams" :owner="owner"></team-tree>
         </div>
       </div>
 
