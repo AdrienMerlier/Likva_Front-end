@@ -9,7 +9,7 @@
       <h3>
         <div v-if="delegable">
           <small >Vous êtes éligible à la délégation pour cette catégorie.</small>
-          <button type="button" class="btn btn-warning"> Se retirer de la délégation pour une catégorie</button>
+          <button type="button" class="btn btn-warning" v-on:click.once="removeMyselfDelegate"> Se retirer de la délégation pour une catégorie</button>
         </div>
         <div v-else>
           <small>Vous n'êtes pas élégible </small>
@@ -72,7 +72,8 @@
       ...Vuex.mapActions([
         'addMessageUserStore',
         'insertDelegates',
-        'removeDelegation'
+        'removeDelegation',
+        'updateUserStore'
       ]),
       removeDelegate () {
         console.log('Salut')
@@ -106,7 +107,7 @@
             categoryName: this.catQuery
           },
           { //  Here you define passed object params
-            voter: this.userInfos.email
+            userId: this.userInfos.id
           }
         ).then(response => {
           //  If success
@@ -130,7 +131,7 @@
             categoryName: this.catQuery
           },
           { //  Here you define passed object params
-            voter: this.userInfos.email
+            userId: this.userInfos.id
           }
         ).then(response => {
           //  If success
@@ -157,20 +158,24 @@
     mounted () {
       this.slug = this.$router.history.current.params.slug
       this.catQuery = this.$router.history.current.query.category
-      this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions')
-      this.propositionResource.get({slug: this.slug}).then(response => {
+      // Récupère les propositions pour une catégorie donnée
+      this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories{/categoryName}', {}, {}, {headers: {
+        userId: this.userInfos.id}})
+      this.propositionResource.get({slug: this.slug, categoryName: this.catQuery}).then(response => {
           //  If server answer
         this.allPropositions = response.body.props
-        if (this.catQuery) {
-          this.allPropositions = this.allPropositions.filter(proposition => proposition.category === this.catQuery)
+        if (response.body.isDelegate) {
+          this.delegable = true
         }
       }, _ => {
           //  Le serveur ne répond pas
         console.error('Le serveur semble ne pas répondre.')
       })
+      // Définir les routes pour les fonctions disponibles sur clic
       this.removeDelegateResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories{/categoryName}/removeDelegate')
       this.becomeDelegateResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories{/categoryName}/becomeDelegate')
       this.removeMyselfDelegateResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories{/categoryName}/removeDelegate')
+      // Récupère les délégués pour une catégorie donnée
       this.delegateResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories{/catQuery}/delegate', {}, {}, {headers: {
         userEmail: this.userInfos.email}})
       this.delegateResource.get({slug: this.slug, catQuery: this.catQuery}).then(response => {

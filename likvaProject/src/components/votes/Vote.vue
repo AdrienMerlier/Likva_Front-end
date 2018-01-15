@@ -103,7 +103,7 @@
         console.error('Something went wrong with the server')
       })
       this.delegateResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/delegates', {}, {}, {headers: {
-        userEmail: this.userInfos.email}})
+        userEmail: this.userInfos.email, idProposition: this.idProposition}})
       this.delegateResource.get({slug: this.slug}).then(response => {
         // If server answer
         if (response.body.success) {
