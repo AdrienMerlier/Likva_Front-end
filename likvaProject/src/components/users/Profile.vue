@@ -10,9 +10,9 @@
             </div>
             <div class="col-sm-7 description">
               <h2>Biographie</h2>
-              <textarea class="form-control" rows="5" id="description" v-model="user.biographie" v-if="isOwnProfile()">
+              <textarea class="form-control" rows="5" id="description" v-model="user.biography" v-if="isOwnProfile()">
               </textarea>
-              <p v-else>{{user.biographie}}</p>
+              <p v-else>{{user.biography}}</p>
             </div>
           </div>
           <div class="row">
@@ -45,54 +45,7 @@
     },
     data () {
       return {
-        user: {
-          biographie: 'Je fais partie de l\'équipe sécurité. Par conséquent je fais tout mon possible pour assurer la ' +
-          'sécurité des festivaliers.',
-          email: 'mouynaleo@gail.com',
-          teams: [
-            {
-              displayName: '24Heures',
-              categories: [
-                {
-                  categoryName: 'Logistique',
-                  delegable: false
-                },
-                {
-                  categoryName: 'Sécurité',
-                  delegable: true
-                }]
-            },
-            {
-              displayName: 'TC Student',
-              categories: [
-                {
-                  categoryName: 'Recherche',
-                  delegable: false
-                },
-                {
-                  categoryName: 'Stage',
-                  delegable: false
-                },
-                {
-                  categoryName: 'Scolarité',
-                  delegable: true
-                }
-              ]
-            },
-            {
-              displayName: 'Karna',
-              categories: [
-                {
-                  categoryName: 'Logistique',
-                  delegable: false
-                },
-                {
-                  categoryName: 'Sécurité',
-                  delegable: true
-                }]
-            }
-          ]
-        },
+        user: {},
         selectedTeams: []
       }
     },
