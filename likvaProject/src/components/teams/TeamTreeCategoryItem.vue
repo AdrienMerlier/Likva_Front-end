@@ -6,22 +6,14 @@
       </span>
       <input type="checkbox" :disabled="!owner" v-model="category.delegable">
     </li>
-    <toggle-button :value="false"
-                   color="#82C7EB"
-                   :sync="true"
-                   :labels="true"/>
   </div>
 </template>
 
 <script>
   import userStore from '../users/UsersStore'
-  import ToggleButton from 'vue-js-toggle-button'
   export default {
     name: 'team-tree-category-item',
     store: userStore,
-    components: {
-      ToggleButton
-    },
     props: {
       categories: {
         required: true,
