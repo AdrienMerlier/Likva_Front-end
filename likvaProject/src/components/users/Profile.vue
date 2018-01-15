@@ -45,7 +45,54 @@
     },
     data () {
       return {
-        user: { },
+        user: {
+          biographie: 'Je fais partie de l\'équipe sécurité. Par conséquent je fais tout mon possible pour assurer la ' +
+          'sécurité des festivaliers.',
+          email: 'mouynaleo@gail.com',
+          teams: [
+            {
+              displayName: '24Heures',
+              categories: [
+                {
+                  categoryName: 'Logistique',
+                  delegable: false
+                },
+                {
+                  categoryName: 'Sécurité',
+                  delegable: true
+                }]
+            },
+            {
+              displayName: 'TC Student',
+              categories: [
+                {
+                  categoryName: 'Recherche',
+                  delegable: false
+                },
+                {
+                  categoryName: 'Stage',
+                  delegable: false
+                },
+                {
+                  categoryName: 'Scolarité',
+                  delegable: true
+                }
+              ]
+            },
+            {
+              displayName: 'Karna',
+              categories: [
+                {
+                  categoryName: 'Logistique',
+                  delegable: false
+                },
+                {
+                  categoryName: 'Sécurité',
+                  delegable: true
+                }]
+            }
+          ]
+        },
         selectedTeams: []
       }
     },
@@ -54,7 +101,7 @@
         'updateUserBiography'
       ]),
       isOwnProfile () {
-        return this.userInfos.email === this.user.email
+        return this.userInfos._id === this.user._id
       },
       intersection (a, b) {
         var ai = 0
