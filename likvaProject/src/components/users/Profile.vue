@@ -10,20 +10,20 @@
             </div>
             <div class="col-sm-7 description">
               <h2>Biographie</h2>
-              <textarea class="form-control" rows="5" id="description" v-model="user.biography" v-if="isOwnProfile()">
+              <textarea class="form-control" rows="5" id="description" v-model="user.biography" v-if="owner">
               </textarea>
               <p v-else>{{user.biography}}</p>
             </div>
           </div>
           <div class="row">
             <div class="tabInfos">
-              <user-propositions-tab v-if="isOwnProfile"></user-propositions-tab>
+              <user-propositions-tab v-if="owner"></user-propositions-tab>
             </div>
           </div>
         </div>
         <div class="col-sm-3 equipe">
           <h3>Eligible à la délégation</h3>
-          <team-tree :teams="isOwnProfile ? user.teams : selectedTeams" :owner="isOwnProfile()"></team-tree>
+          <team-tree :teams="owner ? user.teams : selectedTeams" :owner="isOwnProfile()"></team-tree>
         </div>
       </div>
 
@@ -46,6 +46,7 @@
     data () {
       return {
         user: {},
+        owner: false,
         selectedTeams: []
       }
     },
@@ -53,9 +54,6 @@
       ...Vuex.mapActions([
         'updateUserBiography'
       ]),
-      isOwnProfile () {
-        return this.userInfos._id === this.user._id
-      },
       intersection (a, b) {
         var ai = 0
         var bi = 0
@@ -88,6 +86,7 @@
         if (response.body.success) {
           // Good request
           this.user = response.body.user
+          this.owner = this.userInfos._id === this.user._id
           if (!this.isOwnProfile()) {
             // Have to select only teams in common
             this.selectedTeams = this.intersection(this.user.teams, this.userInfos.teams)
