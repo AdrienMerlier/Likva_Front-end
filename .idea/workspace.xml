@@ -213,8 +213,8 @@
           <file leaf-file-name="Profile.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/users/Profile.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="765">
-                  <caret line="138" column="3" lean-forward="true" selection-start-line="138" selection-start-column="3" selection-end-line="138" selection-end-column="3" />
+                <state relative-caret-position="731">
+                  <caret line="136" column="68" lean-forward="false" selection-start-line="136" selection-start-column="68" selection-end-line="136" selection-end-column="68" />
                   <folding>
                     <element signature="e#1308#1331#0" expanded="true" />
                   </folding>
@@ -551,12 +551,12 @@
       <workItem from="1515865941728" duration="13737000" />
       <workItem from="1516003153064" duration="5543000" />
       <workItem from="1516041879599" duration="4478000" />
-      <workItem from="1516121170763" duration="9746000" />
+      <workItem from="1516121170763" duration="10087000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="316079000" />
+    <option name="totallyTimeSpent" value="316420000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1462" height="1047" extended-state="0" />
@@ -923,8 +923,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/users/Profile.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="138" column="3" lean-forward="true" selection-start-line="138" selection-start-column="3" selection-end-line="138" selection-end-column="3" />
+        <state relative-caret-position="731">
+          <caret line="136" column="68" lean-forward="false" selection-start-line="136" selection-start-column="68" selection-end-line="136" selection-end-column="68" />
           <folding>
             <element signature="e#1308#1331#0" expanded="true" />
           </folding>

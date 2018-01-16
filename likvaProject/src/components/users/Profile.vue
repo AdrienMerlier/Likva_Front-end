@@ -134,7 +134,7 @@
       })
     },
     mounted () {
-      this.biographyResource = this.$resource('http://127.0.0.1:300/api/users{/_id}/biography')
+      this.biographyResource = this.$resource('http://127.0.0.1:3000/api/users{/_id}/biography')
     }
   }
 </script>
