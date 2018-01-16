@@ -1,0 +1,84 @@
+<template>
+  <div class="container">
+    <table class="table table-striped table-condensed">
+      <thead>
+      <tr>
+        <th>Nom de la proposition</th>
+        <th>Catégorie</th>
+        <th>Equipe</th>
+        <th>Vote</th>
+        <th>Date</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr v-for="vote in displayVotes">
+        <td>{{vote.proposition.title}}</td>
+        <td>{{vote.proposition.category}}</td>
+        <td>{{getTeamDisplayName(vote.proposition.slug)}}</td>
+        <td>{{vote.content}}</td>
+        <td>{{vote.proposition.date}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
+
+<script>
+  import Vuex from 'vuex'
+  import userStore from '../users/UsersStore'
+
+  export default {
+    name: 'user-votes-tab',
+    store: userStore,
+    props: {
+      userId: {
+        required: true,
+        default: null
+      }
+    },
+    data () {
+      return {
+        displayVotes: {}
+      }
+    },
+    methods: {
+      getTeamDisplayName (slugProposition) {
+        return this.userInfos.teams.filter(team => team.slug === slugProposition)[0].displayName
+      },
+      teamInCommon(teamSlug) {
+        var ret = false
+        this.userInfos.teams.forEach(team => {
+          if (team.slug === teamSlug) ret = true
+        })
+        return ret
+      }
+    },
+    computed: {
+      ...Vuex.mapGetters([
+        'userInfos'
+      ])
+    },
+    mounted () {
+      this.userVotesResource = this.$resource('http://127.0.0.1:3000/api/votes/voter', {}, {}, {headers: {
+          voterId: this.userId}})
+      this.userVotesResource.get().then(response => {
+        //if server answer
+        if (response.body.success) {
+          // Good request
+          var votes = response.body.votes
+          votes.forEach(vote => {
+            if (this.teamInCommon(vote.proposition.slug)){
+              // User is in same team than the profile's user
+              this.displayVotes.push(vote)
+            }
+          })
+        }
+
+      })
+    }
+  }
+</script>
+
+<style scoped>
+
+</style>
