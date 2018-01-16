@@ -45,7 +45,7 @@
       getTeamDisplayName (slugProposition) {
         return this.userInfos.teams.filter(team => team.slug === slugProposition)[0].displayName
       },
-      teamInCommon(teamSlug) {
+      teamInCommon (teamSlug) {
         var ret = false
         this.userInfos.teams.forEach(team => {
           if (team.slug === teamSlug) ret = true
@@ -60,20 +60,19 @@
     },
     mounted () {
       this.userVotesResource = this.$resource('http://127.0.0.1:3000/api/votes/voter', {}, {}, {headers: {
-          voterId: this.userId}})
+        voterId: this.userId}})
       this.userVotesResource.get().then(response => {
-        //if server answer
+        // If server answer
         if (response.body.success) {
           // Good request
           var votes = response.body.votes
           votes.forEach(vote => {
-            if (this.teamInCommon(vote.proposition.slug)){
+            if (this.teamInCommon(vote.proposition.slug)) {
               // User is in same team than the profile's user
               this.displayVotes.push(vote)
             }
           })
         }
-
       })
     }
   }
