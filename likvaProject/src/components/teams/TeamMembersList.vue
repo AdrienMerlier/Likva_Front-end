@@ -1,7 +1,9 @@
 <template>
   <div class="usersList">
+    <input type="text" v-model="search" placeholder="Votre futur délégué..."/>
+    <br></br>
     <div class="card-columns">
-      <div class="card" v-for="user in allUsers" :id="user.email">
+      <div class="card" v-for="user in filteredList" :id="user.email">
         <h4 class="card-header">{{user.displayName}}</h4>
         <section class="card-body">
           <aside class="memberInfos">
@@ -11,11 +13,10 @@
               </h5>
           </aside>
           <article>
-            <p class="card-text">User description</p>
-          </article>
-          <br></br>
-          <article>
-            <h5 class="card-text" v-if="isDelegable(user.delegable)">Délégué dans les catégories: </h5>
+            <img src="../../assets/anonymousProfile.png" alt="Image de Profile" class="rounded-circle"/>
+            <br></br>
+            <p class="card-text">{{user.description}}</p>
+            <h5 class="card-text" v-if="isDelegable(user.delegable)">Délégué dans les catégories: {{delegation(user.delegable)}}</h5>
           </article>
         </section>
         <div class="card-footer">
@@ -42,6 +43,7 @@
       return {
         allUsers: [],
         slug: undefined,
+        search: '',
         loading: false
       }
     },
@@ -51,17 +53,25 @@
       ]),
       isDelegable (value) {
         console.log(value)
-        if (value === undefined) {
+        if (value.length === 0) {
           return false
         } else {
           return true
         }
+      },
+      delegation (value) {
+        return value.map(a => a.categoryName).join(', ')
       }
     },
     computed: {
       ...Vuex.mapGetters([
         'userInfos'
-      ])
+      ]),
+      filteredList () {
+        return this.allUsers.filter(user => {
+          return user.displayName.toLowerCase().includes(this.search.toLowerCase())
+        })
+      }
     },
     mounted () {
       this.slug = this.$router.history.current.params.slug
