@@ -110,7 +110,7 @@
         this.myPropositions.forEach(proposition => {
           if (Date.parse(proposition.date) > Date.now()) {
             // Proposition done
-              this.donePropositions.push(proposition)
+            this.donePropositions.push(proposition)
           } else {
             // Proposition still in progress
             this.inProgressPropositions.push(proposition)
