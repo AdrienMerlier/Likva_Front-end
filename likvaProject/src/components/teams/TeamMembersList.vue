@@ -1,6 +1,9 @@
 <template>
   <div class="usersList">
-    <input type="text" v-model="search" placeholder="Votre futur délégué..."/>
+    <div class="form-group">
+      <div class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></div>
+      <input type="text" class="form-control" v-model="search" placeholder="Votre futur délégué..."/>
+    </div>
     <br></br>
     <div class="card-columns">
       <div class="card" v-for="user in filteredList" :id="user.email">
