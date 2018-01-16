@@ -25,7 +25,7 @@
             <td>{{proposition.title}}</td>
             <td>{{proposition.category}}</td>
             <td>{{getTeamDisplayName(proposition.slug)}}</td>
-            <td>{{proposition.votersNumber}}</td>
+            <td>{{proposition.numberOfVotes}}</td>
             <td>
               <router-link :to="{name: 'proposition-display', params: {slug: proposition.slug, idProposition: proposition._id,
 					            proposition: proposition }}">
@@ -57,8 +57,8 @@
             <td>{{proposition.title}}</td>
             <td>{{proposition.category}}</td>
             <td>{{getTeamDisplayName(proposition.slug)}}</td> //  Ask userStore for team displayName
-            <td>{{proposition.votersNumber}}</td>  //  Ask api
-            <td>{{proposition.result}}</td>  //  Ask api
+            <td>{{proposition.numberOfVotes}}</td>  //  Ask api
+            <td>{{proposition.verdict}}</td>  //  Ask api
             <td>
               <router-link :to="{name: 'proposition-display', params: {slug: proposition.slug, idProposition: proposition._id,
 					            proposition: proposition }}">
@@ -108,17 +108,9 @@
         // if server answer
         this.myPropositions = response.body.props
         this.myPropositions.forEach(proposition => {
-          proposition.votersNumber = 12 // To update with an api asker
           if (Date.parse(proposition.date) > Date.now()) {
             // Proposition done
-            this.resultResource.get({slug: proposition.slug, idProposition: proposition._id}).then(res => {
-              // If server answer
-              proposition.result = res.body.verdict
               this.donePropositions.push(proposition)
-            }, _ => {
-              // If server doesn't answer
-              console.error('Le serveur semble ne pas répondre pour le résultat de la proposition ' + proposition.title)
-            })
           } else {
             // Proposition still in progress
             this.inProgressPropositions.push(proposition)
