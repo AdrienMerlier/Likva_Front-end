@@ -20,7 +20,9 @@
             </article>
           </section>
           <div class="card-footer">
-            <p class="card-text">Par {{proposition.author}}</p>
+            <p class="card-text">Par <router-link :to="{name: 'profile-display', query: {id: proposition.authorLink}}">
+              <a class="nav-link" href="#">{{proposition.author}}</a>
+            </router-link></p>
             <router-link :to="{name: 'display-proposition', params: { slug: slug, idProposition: proposition._id,
             proposition: proposition }}">
               <button type="button" class="btn btn-outline-success">Détails de la proposition</button>
