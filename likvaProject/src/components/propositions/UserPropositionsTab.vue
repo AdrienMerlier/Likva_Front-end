@@ -104,7 +104,7 @@
       this.userPropositionsResource = this.$resource('http://127.0.0.1:3000/api/propositions/author', {}, {}, {headers: {
         authorId: this.userInfos._id}})
       this.resultResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/idProposition}/results')
-      this.userPropositionsResource.get({id: this.userInfos.id}).then(response => {
+      this.userPropositionsResource.get().then(response => {
         // if server answer
         this.myPropositions = response.body.props
         this.myPropositions.forEach(proposition => {
