@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <h2>Mes propositions</h2>
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item">
         <a class="nav-link active" id="inProgress-tab" data-toggle="tab" href="#inProgress" role="tab" aria-controls="inProgress" aria-selected="true">En cours</a>

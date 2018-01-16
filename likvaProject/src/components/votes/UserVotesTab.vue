@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <h2>Ses votes</h2>
     <table class="table table-striped table-condensed">
       <thead>
       <tr>
