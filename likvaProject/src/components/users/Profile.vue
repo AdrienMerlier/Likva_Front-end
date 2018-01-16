@@ -18,6 +18,7 @@
           <div class="row">
             <div class="tabInfos">
               <user-propositions-tab v-if="owner"></user-propositions-tab>
+              <user-votes-tab :userId="user._id" v-else></user-votes-tab>
             </div>
           </div>
         </div>
@@ -35,13 +36,15 @@
   import userStore from './UsersStore'
   import TeamTree from '../teams/TeamTree'
   import UserPropositionsTab from '../propositions/UserPropositionsTab'
+  import UserVotesTab from '../votes/UserVotesTab'
 
   export default {
     name: 'profile',
     store: userStore,
     components: {
       TeamTree,
-      UserPropositionsTab
+      UserPropositionsTab,
+      UserVotesTab
     },
     data () {
       return {
