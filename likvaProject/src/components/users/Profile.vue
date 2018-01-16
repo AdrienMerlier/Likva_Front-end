@@ -56,7 +56,8 @@
     },
     methods: {
       ...Vuex.mapActions([
-        'updateUserBiography'
+        'updateUserBiography',
+        'addMessageUserStore'
       ]),
       intersection (a, b) {
         var ai = 0
@@ -80,6 +81,23 @@
       },
       updateBiography () {
         console.log('biography change detected')
+        this.biographyResource.update({_id: this.user._id}, {biography: this.user.biography}).then(response =>{
+          // Server answer
+          if (response.body.success) {
+            // Good request
+            this.addMessageUserStore({content: 'Votre profile a été mis à jour',
+            type: 'success',
+            concern: 'Profile'})
+          } else {
+            // Bad request
+            this.addMessageUserStore({content: 'Une erreur est survenue lors de la mise à jour de votre profile',
+              type: 'danger',
+              concern: 'Profile'})
+          }
+        }, _ => {
+          // Server doesn't answer
+          console.error('Something went wrong with the server when trying to update biography')
+        })
       }
     },
     computed: {
@@ -110,6 +128,9 @@
         // Server doesn't answer
         console.error('Something went wrong with the server when asking user infos')
       })
+    },
+    mounted () {
+      this.biographyResource = this.resource('http://127.0.0.1:300/api/users{/_id}/biography')
     }
   }
 </script>
