@@ -20,7 +20,7 @@
         </section>
         <div class="card-footer">
           <p class="card-text">
-            <router-link :to="{name: 'member-display', params: { slug: slug, email: user.email }}">
+            <router-link :to="{name: 'profile-display', query: {id: user.userId}}">
               <button type="button" class="btn btn-outline-success" >+ d'info</button>
             </router-link>
           </p>
@@ -50,6 +50,7 @@
         'insertUserStore'
       ]),
       isDelegable (value) {
+        console.log(value)
         if (value === undefined) {
           return false
         } else {

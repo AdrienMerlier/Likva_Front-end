@@ -52,6 +52,9 @@
       }
     },
     methods: {
+      ...Vuex.mapActions([
+        'addMessageUserStore'
+      ]),
       isReady () {
         return this.proposition.verdict !== 'onGoing'
       },
@@ -62,15 +65,22 @@
         return this.proposition.author === this.userFullName
       },
       delegateCategory () {
+        let message = {concern: 'Finalisation du vote'}
         this.delegateCategoryResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/propId}/delegateCategory')
         this.delegateCategoryResource.get({slug: this.slug, propId: this.idProposition}).then(response => {
           // If server answer
           if (response.body.success) {
             // Good request
             this.isFinalised = true
+            message.content = 'La proposition a été finalisé, bouger les catégories.'
+            message.type = 'alert-success'
+            this.addMessageUserStore(message)
           } else {
             // Wrong request
             console.error(response.body.message)
+            message.content = 'Le vote est en cours, finalisation impossible'
+            message.type = 'alert-danger'
+            this.addMessageUserStore(message)
           }
         }, _ => {
           // The server doesn't answer
