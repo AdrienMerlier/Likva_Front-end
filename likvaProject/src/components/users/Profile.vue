@@ -5,8 +5,8 @@
           <div class="row">
             <div class="col-sm-5">
               <img src="../../assets/anonymousProfileLarge.png" alt="Image de Profile" class="rounded-circle"/>
-              <h1>{{userFullName}}</h1>
-              <i class="fa fa-envelope"></i><a :href="'mailto:' + userInfos.email"> {{userInfos.email}}</a>
+              <h1>{{user.name + ' ' + user.surname}}</h1>
+              <i class="fa fa-envelope"></i><a :href="'mailto:' + user.email"> {{user.email}}</a>
             </div>
             <div class="col-sm-7 description">
               <h2>Biographie</h2>
