@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="70a3ddf4-30a2-4c32-8b7c-8bf4f6665c76" name="Default" comment="Merge branch 'vue-cli_project' of https://github.com/AdrienMerlier/Likva_Front-end into vue-cli_project&#10;&#10;# Conflicts:&#10;#&#9;likvaProject/src/components/propositions/PropositionDisplay.vue">
       <change beforePath="$PROJECT_DIR$/likvaProject/src/components/users/Profile.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/users/Profile.vue" />
-      <change beforePath="$PROJECT_DIR$/likvaProject/src/components/votes/UserVotesTab.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/votes/UserVotesTab.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -94,8 +93,8 @@
           <file leaf-file-name="UserVotesTab.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/votes/UserVotesTab.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="767">
-                  <caret line="74" column="9" lean-forward="false" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
+                <state relative-caret-position="461">
+                  <caret line="56" column="26" lean-forward="true" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
                   <folding>
                     <element signature="e#637#660#0" expanded="true" />
                   </folding>
@@ -214,8 +213,8 @@
           <file leaf-file-name="Profile.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/users/Profile.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="580">
-                  <caret line="91" column="12" lean-forward="false" selection-start-line="91" selection-start-column="12" selection-end-line="91" selection-end-column="12" />
+                <state relative-caret-position="765">
+                  <caret line="138" column="3" lean-forward="true" selection-start-line="138" selection-start-column="3" selection-end-line="138" selection-end-column="3" />
                   <folding>
                     <element signature="e#1308#1331#0" expanded="true" />
                   </folding>
@@ -552,18 +551,18 @@
       <workItem from="1515865941728" duration="13737000" />
       <workItem from="1516003153064" duration="5543000" />
       <workItem from="1516041879599" duration="4478000" />
-      <workItem from="1516121170763" duration="8665000" />
+      <workItem from="1516121170763" duration="9746000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="314998000" />
+    <option name="totallyTimeSpent" value="316079000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1462" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24550484" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24550484" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -703,7 +702,7 @@
         <state relative-caret-position="850">
           <caret line="50" column="30" lean-forward="false" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="30" />
           <folding>
-            <element signature="e#2915#2938#0" expanded="true" />
+            <element signature="e#2915#2938#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -914,8 +913,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/votes/UserVotesTab.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="767">
-          <caret line="74" column="9" lean-forward="false" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
+        <state relative-caret-position="461">
+          <caret line="56" column="26" lean-forward="true" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
           <folding>
             <element signature="e#637#660#0" expanded="true" />
           </folding>
@@ -924,8 +923,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/users/Profile.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="91" column="12" lean-forward="false" selection-start-line="91" selection-start-column="12" selection-end-line="91" selection-end-column="12" />
+        <state relative-caret-position="765">
+          <caret line="138" column="3" lean-forward="true" selection-start-line="138" selection-start-column="3" selection-end-line="138" selection-end-column="3" />
           <folding>
             <element signature="e#1308#1331#0" expanded="true" />
           </folding>
