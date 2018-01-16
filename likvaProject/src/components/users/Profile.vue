@@ -86,7 +86,7 @@
         if (response.body.success) {
           // Good request
           this.user = response.body.user
-          this.owner = this.userInfos._id === this.user._id
+          this.owner = this.userInfos.id === this.user._id
           if (!this.owner) {
             // Have to select only teams in common
             this.selectedTeams = this.intersection(this.user.teams, this.userInfos.teams)
