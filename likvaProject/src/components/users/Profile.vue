@@ -10,7 +10,8 @@
             </div>
             <div class="col-sm-7 description">
               <h2>Biographie</h2>
-              <textarea class="form-control" rows="5" id="description" v-model="user.biography" v-if="owner">
+              <textarea class="form-control" rows="5" id="description" v-model="user.biography" v-if="owner"
+                        @blur="updateBiography">
               </textarea>
               <p v-else>{{user.biography}}</p>
             </div>
@@ -24,7 +25,7 @@
         </div>
         <div class="col-sm-3 equipe">
           <h3>Eligible à la délégation</h3>
-          <team-tree :teams="owner ? user.teams : selectedTeams" :owner="owner"></team-tree>
+          <team-tree :teams="owner ? user.teams : selectedTeams" :owner="owner" @change="updateTeams"></team-tree>
         </div>
       </div>
 
@@ -73,6 +74,12 @@
           }
         }
         return result
+      },
+      updateTeams () {
+        console.log('team change detected')
+      },
+      updateBiography () {
+        console.log('biography change detected')
       }
     },
     computed: {
