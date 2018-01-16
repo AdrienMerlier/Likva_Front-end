@@ -1,9 +1,9 @@
 <template>
   <div class="usersList">
-    <div class="form-group">
+    <div class="input-group search">
       <div class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></div>
       <input type="text" class="form-control" v-model="search" placeholder="Votre futur délégué..."/>
-    </div>
+	  </div>
     <br></br>
     <div class="card-columns">
       <div class="card" v-for="user in filteredList" :id="user.email">
@@ -97,5 +97,10 @@
   }
   .fa-toggle-off{
     color: #868e96;
+  }
+  .search{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto
   }
 </style>
