@@ -102,7 +102,7 @@
     },
     mounted () {
       this.userPropositionsResource = this.$resource('http://127.0.0.1:3000/api/propositions/author', {}, {}, {headers: {
-        authorId: this.userInfos._id}})
+        authorId: this.userInfos.id}})
       this.resultResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/idProposition}/results')
       this.userPropositionsResource.get().then(response => {
         // if server answer
