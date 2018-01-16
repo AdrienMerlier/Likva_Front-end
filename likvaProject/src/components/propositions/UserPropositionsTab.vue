@@ -56,9 +56,9 @@
           <tr v-for="proposition in donePropositions">
             <td>{{proposition.title}}</td>
             <td>{{proposition.category}}</td>
-            <td>{{getTeamDisplayName(proposition.slug)}}</td> //  Ask userStore for team displayName
-            <td>{{proposition.numberOfVotes}}</td>  //  Ask api
-            <td>{{proposition.verdict}}</td>  //  Ask api
+            <td>{{getTeamDisplayName(proposition.slug)}}</td>
+            <td>{{proposition.numberOfVotes}}</td>
+            <td>{{proposition.verdict}}</td>
             <td>
               <router-link :to="{name: 'proposition-display', params: {slug: proposition.slug, idProposition: proposition._id,
 					            proposition: proposition }}">
@@ -108,7 +108,7 @@
         // if server answer
         this.myPropositions = response.body.props
         this.myPropositions.forEach(proposition => {
-          if (Date.parse(proposition.date) > Date.now()) {
+          if (Date.parse(proposition.date) < Date.now()) {
             // Proposition done
             this.donePropositions.push(proposition)
           } else {
