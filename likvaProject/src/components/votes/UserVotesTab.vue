@@ -60,6 +60,7 @@
       ])
     },
     mounted () {
+      console.log('userId during mounted phase: ' + this.userId)
       this.userVotesResource = this.$resource('http://127.0.0.1:3000/api/votes/voter', {}, {}, {headers: {
         voterId: this.userId}})
       this.userVotesResource.get().then(response => {
