@@ -57,7 +57,7 @@
             <td>{{proposition.title}}</td>
             <td>{{proposition.category}}</td>
             <td>{{getTeamDisplayName(proposition.slug)}}</td>
-            <td>{{proposition.numberOfVotes ? proposition.numberOfVotes : 0}}</td>
+            <td>{{proposition.numberOfVotes === undefined ? 0 : proposition.numberOfVotes }}</td>
             <td>{{proposition.verdict}}</td>
             <td>
               <router-link :to="{name: 'proposition-display', params: {slug: proposition.slug, idProposition: proposition._id,

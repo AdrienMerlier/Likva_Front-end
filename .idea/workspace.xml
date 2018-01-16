@@ -83,10 +83,10 @@
           <file leaf-file-name="UserPropositionsTab.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/UserPropositionsTab.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="447">
-                  <caret line="75" column="8" lean-forward="true" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
+                <state relative-caret-position="1122">
+                  <caret line="66" column="34" lean-forward="false" selection-start-line="66" selection-start-column="34" selection-end-line="66" selection-end-column="34" />
                   <folding>
-                    <element signature="e#3457#3480#0" expanded="true" />
+                    <element signature="e#3472#3495#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -519,12 +519,12 @@
       <workItem from="1515865941728" duration="13737000" />
       <workItem from="1516003153064" duration="5543000" />
       <workItem from="1516041879599" duration="4478000" />
-      <workItem from="1516121170763" duration="1473000" />
+      <workItem from="1516121170763" duration="1578000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="307806000" />
+    <option name="totallyTimeSpent" value="307911000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1462" height="1047" extended-state="0" />
@@ -873,10 +873,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/UserPropositionsTab.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="75" column="8" lean-forward="true" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
+        <state relative-caret-position="1122">
+          <caret line="66" column="34" lean-forward="false" selection-start-line="66" selection-start-column="34" selection-end-line="66" selection-end-column="34" />
           <folding>
-            <element signature="e#3457#3480#0" expanded="true" />
+            <element signature="e#3472#3495#0" expanded="true" />
           </folding>
         </state>
       </provider>
