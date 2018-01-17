@@ -59,6 +59,9 @@
         'userInfos'
       ])
     },
+    beforeMount () {
+      console.log('userId during beforemount phase: ' + this.userId)
+    },
     mounted () {
       console.log('userId during mounted phase: ' + this.userId)
       this.userVotesResource = this.$resource('http://127.0.0.1:3000/api/votes/voter', {}, {}, {headers: {
@@ -76,7 +79,10 @@
           })
         }
       })
-    }
+    },
+    beforeUpdate () {
+      console.log('userId during beforeUpdate phase: ' + this.userId)
+    },
   }
 </script>
 
