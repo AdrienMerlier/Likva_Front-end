@@ -7,6 +7,9 @@
       <router-link :to="{name: 'team-members-list', params: { slug: slug }}">
         <button type="button" class="btn btn-outline-info">Voir les membres de l'équipe</button>
       </router-link>
+      <router-link v-if="isAdmin" :to="{name: 'team-members-administration', params: { slug: slug }}">
+        <button type="button" class="btn btn-outline-danger">Administrer les membres de l'équipes</button>
+      </router-link>
       <br><br/>
       <div class="card-columns">
         <div class="card" v-for="proposition in allPropositions">
@@ -50,8 +53,16 @@
     },
     computed: {
       ...Vuex.mapGetters([
+        'userInfos',
         'actualTeamStore'
-      ])
+      ]),
+      isAdmin () {
+        let selectedTeam = {}
+        this.userInfos.teams.forEach(team => {
+          if (team.slug === this.actualTeamStore.slug) { selectedTeam = team }
+        })
+        return selectedTeam.admin
+      }
     },
     mounted () {
       this.slug = this.$router.history.current.params.slug
