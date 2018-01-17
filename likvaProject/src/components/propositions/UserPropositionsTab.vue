@@ -125,8 +125,5 @@
 </script>
 
 <style scoped>
-  .table-striped>tbody>tr:nth-child(odd)>td,
-  .table-striped>tbody>tr:nth-child(odd)>th {
-    background-color: #d9d6fc;
-  }
+
 </style>
