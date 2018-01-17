@@ -21,7 +21,7 @@
         </div>
       </div>
     </div>
-    <vote :possibilities="proposition.votePossibilities" v-if="isVoter"></vote>
+    <vote :possibilities="proposition.votePossibilities" v-if="isVoter && Date.parse(proposition.date) < Date.now"></vote>
     <router-link :to="{ name: 'edit-proposition', params: {slug: slug, idProposition: idProposition,
      proposition: proposition}}" v-if="isAuthor()">
       <proposition-update-button></proposition-update-button>
