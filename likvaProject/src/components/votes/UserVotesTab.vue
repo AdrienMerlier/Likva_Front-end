@@ -82,7 +82,7 @@
     },
     beforeUpdate () {
       console.log('userId during beforeUpdate phase: ' + this.userId)
-    },
+    }
   }
 </script>
 
