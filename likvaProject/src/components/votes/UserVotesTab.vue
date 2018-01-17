@@ -32,7 +32,7 @@
     name: 'user-votes-tab',
     store: userStore,
     props: {
-      userId: {
+      user: {
         required: true,
         default: null
       }
@@ -60,12 +60,12 @@
       ])
     },
     beforeMount () {
-      console.log('userId during beforemount phase: ' + this.userId)
+      console.log('userId during beforemount phase: ' + this.user)
     },
     mounted () {
-      console.log('userId during mounted phase: ' + this.userId)
+      console.log('userId during mounted phase: ' + this.user)
       this.userVotesResource = this.$resource('http://127.0.0.1:3000/api/votes/voter', {}, {}, {headers: {
-        voterId: this.userId}})
+        voterId: this.user}})
       this.userVotesResource.get().then(response => {
         // If server answer
         if (response.body.success) {
@@ -81,7 +81,7 @@
       })
     },
     beforeUpdate () {
-      console.log('userId during beforeUpdate phase: ' + this.userId)
+      console.log('userId during beforeUpdate phase: ' + this.user)
     }
   }
 </script>
