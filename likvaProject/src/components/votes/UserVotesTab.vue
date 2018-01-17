@@ -42,6 +42,23 @@
         displayVotes: {}
       }
     },
+    watch: {
+      userId: function () {
+        this.userVotesResource.get().then(response => {
+          // If server answer
+          if (response.body.success) {
+            // Good request
+            var votes = response.body.votes
+            votes.forEach(vote => {
+              if (this.teamInCommon(vote.proposition.slug)) {
+                // User is in same team than the profile's user
+                this.displayVotes.push(vote)
+              }
+            })
+          }
+        })
+      }
+    },
     methods: {
       getTeamDisplayName (slugProposition) {
         return this.userInfos.teams.filter(team => team.slug === slugProposition)[0].displayName
@@ -66,19 +83,6 @@
       console.log('userId during mounted phase: ' + this.user)
       this.userVotesResource = this.$resource('http://127.0.0.1:3000/api/votes/voter', {}, {}, {headers: {
         voterId: this.user}})
-      this.userVotesResource.get().then(response => {
-        // If server answer
-        if (response.body.success) {
-          // Good request
-          var votes = response.body.votes
-          votes.forEach(vote => {
-            if (this.teamInCommon(vote.proposition.slug)) {
-              // User is in same team than the profile's user
-              this.displayVotes.push(vote)
-            }
-          })
-        }
-      })
     },
     beforeUpdate () {
       console.log('userId during beforeUpdate phase: ' + this.user)

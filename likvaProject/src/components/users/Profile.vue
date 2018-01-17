@@ -19,7 +19,7 @@
           <div class="row">
             <div class="tabInfos">
               <user-propositions-tab v-if="owner"></user-propositions-tab>
-              <user-votes-tab :user-id="user._id" v-else></user-votes-tab>
+              <user-votes-tab :user="user._id" v-else></user-votes-tab>
             </div>
           </div>
         </div>
