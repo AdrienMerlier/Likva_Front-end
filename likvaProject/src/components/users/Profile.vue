@@ -25,7 +25,7 @@
         </div>
         <div class="col-sm-3 equipe">
           <h3>Eligible à la délégation</h3>
-          <team-tree :teams="owner ? user.teams : selectedTeams" :owner="owner" @change="updateTeams"></team-tree>
+          <team-tree :teams="owner ? user.teams : selectedTeams" :owner="owner"></team-tree>
         </div>
       </div>
 
@@ -75,9 +75,6 @@
           }
         }
         return result
-      },
-      updateTeams () {
-        console.log('team change detected')
       },
       updateBiography () {
         console.log('biography change detected')
