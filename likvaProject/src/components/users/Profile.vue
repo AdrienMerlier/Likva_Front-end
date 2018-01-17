@@ -87,14 +87,14 @@
             // Good request
             this.addMessageUserStore({
               content: 'Votre profile a été mis à jour',
-              type: 'success',
+              type: 'alert-success',
               concern: 'Profile'
             })
           } else {
             // Bad request
             this.addMessageUserStore({
               content: 'Une erreur est survenue lors de la mise à jour de votre profile',
-              type: 'danger',
+              type: 'alert-danger',
               concern: 'Profile'
             })
           }
