@@ -7,7 +7,7 @@
         </span>
     </li>
     <ul class="categories" v-show="open">
-      <team-tree-category-item :categories="team.categories" :owner="owner"></team-tree-category-item>
+      <team-tree-category-item :categories="team.categories" :owner="owner" :slug="team.slug"></team-tree-category-item>
     </ul>
   </div>
 </template>
