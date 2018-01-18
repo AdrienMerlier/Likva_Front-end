@@ -12,7 +12,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr v-for="vote in votes">
+      <tr v-for="vote in displayVotes">
         <td>{{vote.proposition.title}}</td>
         <td>{{vote.proposition.category}}</td>
         <td>{{getTeamDisplayName(vote.proposition.teamSlug)}}</td>
@@ -39,8 +39,7 @@
     },
     data () {
       return {
-        displayVotes: {},
-        votes: {}
+        displayVotes: {}
       }
     },
     watch: {
@@ -52,8 +51,8 @@
           // If server answer
           if (response.body.success) {
             // Good request
-            this.votes = response.body.votes
-            this.votes.forEach(vote => {
+            var votes = response.body.votes // Only get votes on which he is delegable
+            votes.forEach(vote => {
               if (this.teamInCommon(vote.proposition.slug)) {
                 // User is in same team than the profile's user
                 this.displayVotes.push(vote)
@@ -70,7 +69,7 @@
       teamInCommon (teamSlug) {
         var ret = false
         this.userInfos.teams.forEach(team => {
-          if (team.slug === teamSlug) ret = true
+          if (team.teamSlug === teamSlug) ret = true
         })
         return ret
       },
