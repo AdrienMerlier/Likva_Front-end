@@ -15,7 +15,7 @@
       <tr v-for="vote in displayVotes">
         <td>{{vote.proposition.title}}</td>
         <td>{{vote.proposition.category}}</td>
-        <td>{{getTeamDisplayName(vote.proposition.slug)}}</td>
+        <td>{{getTeamDisplayName(vote.proposition.teamSlug)}}</td>
         <td>{{vote.content}}</td>
         <td>{{vote.proposition.date}}</td>
       </tr>
