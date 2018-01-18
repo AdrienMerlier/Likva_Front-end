@@ -65,7 +65,7 @@
         var result = []
         while (ai < a.length) {
           while (bi < b.length) {
-            if (a[ai] === b[bi]) {
+            if (a[ai].slug === b[bi].slug) {
               result.push(a[ai])
               break
             }
