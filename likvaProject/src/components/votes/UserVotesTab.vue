@@ -12,7 +12,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr v-for="vote in displayVotes">
+      <tr v-for="vote in votes">
         <td>{{vote.proposition.title}}</td>
         <td>{{vote.proposition.category}}</td>
         <td>{{getTeamDisplayName(vote.proposition.teamSlug)}}</td>
