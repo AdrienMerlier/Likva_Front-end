@@ -1,99 +1,85 @@
 <template>
-  <div class="teamMembersList">
-    <h1>Gestion de l'équipe {{slug}}</h1>
+  <div class="container">
     <router-link :to="{name: 'proposition-list', params: { slug: slug }}">
       <button type="button" class="btn btn-outline-info">Retourner à la liste de proposition</button>
     </router-link>
     <br></br>
-    <b-table striped hover :items="allUsers" :fields="fields">
-      <template slot="actions" slot-scope="row">
-        <!-- We use @click.stop here to prevent a 'row-clicked' event from also happening -->
-        <b-button data-toggle="modal" data-target="#modifyUserModal" size="sm" class="alert-warning">
-          Modifier
-        </b-button>
-        <b-button size="sm" @click.stop="" class="alert-danger">
-          Supprimer
-        </b-button>
-      </template>
-    </b-table>
-    <user-modifier></user-modifier>
+    <h2>Gestion de l'équipe {{slug}}</h2>
+    <table class="table table-striped table-condensed">
+      <thead>
+      <tr>
+        <th>Photo</th>
+        <th>Nom complet</th>
+        <th>Email</th>
+        <th>Statut</th>
+        <th>Proposeur</th>
+        <th>Admin</th>
+        <th>Eligible à la délégation</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr v-for="user in allUsers">
+        <td>Empty</td>
+        <td>{{user.displayName}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.status}}</td>
+        <td>{{BooleanToOuiNon(user.proposer)}}</td>
+        <td>{{BooleanToOuiNon(user.admin)}}</td>
+        <td>{{IsDelegable(user.delegable)}}</td>
+        <td>
+          <button type="button" class="btn btn-warning btn-sm" :teamUserId="user._id" data-toggle="modal" data-target="#modifyUserModal"><i class="fa fa-user-o"></i></button>
+          <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+          <team-user-modifier></team-user-modifier>
+        </td>
+      </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
 <script>
   import Vuex from 'vuex'
   import userStore from '../users/UsersStore'
-  import bTable from 'bootstrap-vue/es/components/table/table'
-  import bButton from 'bootstrap-vue/es/components/button/button'
-  import userModifier from './TeamUsersModify'
+  import TeamUserModifier from './TeamUsersModify.vue'
 
   export default {
-    components: {bTable, bButton, userModifier},
+    components: {
+      TeamUserModifier},
     name: 'team-members-administration',
     store: userStore,
     data () {
       return {
-        fields: [
-          {
-            // A column that needs custom formatting,
-            // calling formatter 'fullName' in this app
-            key: '',
-            label: 'Photo'
-          },
-          {
-            // A column that needs custom formatting,
-            // calling formatter 'fullName' in this app
-            key: 'displayName',
-            label: 'Nom complet',
-            sortable: true
-          },
-          {
-            // A column that needs custom formatting,
-            // calling formatter 'fullName' in this app
-            key: 'email',
-            label: 'Email',
-            sortable: false
-          },
-          {
-            // A column that needs custom formatting,
-            // calling formatter 'fullName' in this app
-            key: 'status',
-            label: 'Statut',
-            sortable: true
-          },
-          {
-            // A column that needs custom formatting,
-            // calling formatter 'fullName' in this app
-            key: 'proposer',
-            label: 'Proposeur',
-            sortable: true,
-            formatter: (value) => { if (value === true) { return 'Oui' } else { return 'Non' } }
-          },
-          {
-            // A column that needs custom formatting,
-            // calling formatter 'fullName' in this app
-            key: 'admin',
-            label: 'Administrateur',
-            sortable: true,
-            formatter: (value) => { if (value === true) { return 'Oui' } else { return 'Non' } }
-          },
-          {
-            // A column that needs custom formatting,
-            // calling formatter 'fullName' in this app
-            key: 'delegable',
-            label: 'Eligible à la délégation',
-            sortable: true,
-            formatter: (value) => { if (value.length === 0) { return 'Non' } else { return 'Oui' } }
-          },
-          { key: 'actions', label: 'Actions' }
-        ],
         allUsers: []
+      }
+    },
+    watch: {
+      slug: function () {
+        //  Ask back-end for the proposition
+        this.usersResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/users')
+        this.usersResource.get({slug: this.slug}).then(response => {
+          this.allUsers = response.body.users
+        })
       }
     },
     methods: {
       ...Vuex.mapActions([
         'insertUserStore'
-      ])
+      ]),
+      BooleanToOuiNon (value) {
+        if (value === true) {
+          return 'Oui'
+        } else {
+          return 'Non'
+        }
+      },
+      IsDelegable (value) {
+        if (value.length === 0) {
+          return 'Non'
+        } else {
+          return 'Oui'
+        }
+      }
     },
     computed: {
       ...Vuex.mapGetters([
@@ -102,6 +88,7 @@
     },
     mounted () {
       this.slug = this.$router.history.current.params.slug
+      console.log(this.slug)
       if (this.proposition === undefined) {
         //  Ask back-end for the proposition
         this.usersResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/users')

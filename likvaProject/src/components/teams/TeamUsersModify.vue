@@ -14,7 +14,43 @@
           <div class="modal-body">
             <form>
               <div class="form-group row">
-                <div class="col-sm-12 input-group">
+                <div class="col-sm-6 input-group">
+                </div>
+                <label for="status">Statut</label>
+                <div class="input-group">
+                  <div class="input-group-addon"><i class="fa fa-users" aria-hidden="true"></i></div>
+                  <select name="status" class="form-control" id="status" required="true"
+                          v-model="status">
+                    <option value="Voter">Voteur</option>
+                    <option value="Commentator">Commetateur</option>
+                    <option value="Observer">Observateur</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-6 input-group">
+                </div>
+                <label for="proposer">Proposeur</label>
+                <div class="input-group">
+                  <div class="input-group-addon"><i class="fa fa-star" aria-hidden="true"></i></div>
+                  <select name="proposer" class="form-control" id="proposer" required="true"
+                          v-model="proposer">
+                    <option value=false>Non</option>
+                    <option value=true>Oui</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-6 input-group">
+                </div>
+                <label for="admin">Admin</label>
+                <div class="input-group">
+                  <div class="input-group-addon"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></div>
+                  <select name="admin" class="form-control" id="admin" required="true"
+                          v-model="admin">
+                    <option value=false>Non</option>
+                    <option value=true>Oui</option>s
+                  </select>
                 </div>
               </div>
             </form>
@@ -34,9 +70,12 @@
 
   export default {
     name: 'team-user-modifier',
+    props: [ 'teamUserId' ],
     data () {
       return {
-        categoryName: ''
+        status: null,
+        admin: null,
+        proposer: null
       }
     },
     methods: {
@@ -44,13 +83,36 @@
         'addMessageUserStore'
       ]),
       registerModification () {
-        console.log('Hi')
+        let message = {concern: 'Modification utilisateur'}
+        console.log(this.teamUserId)
+        this.teamUserModifierResources.save(
+          { //  Here you define urls params
+            slug: this.slug
+          },
+          { //  Here you define passed object params
+            _id: this.teamUserId,
+            admin: this.admin,
+            proposer: this.proposer,
+            status: this.status
+          }
+        ).then(response => {
+          //  If success
+          message.content = 'Votre modification est ajouté, rechargez la page.'
+          message.type = 'alert-success'
+          this.addMessageUserStore(message)
+        }, response => {
+          //  If failure
+          console.error('Something went wrong: ' + response.status)
+          message.content = 'Une erreur est survenue lors de modification, veuillez rééssayer'
+          message.type = 'alert-danger'
+          this.addMessageUserStore(message)
+        })
       }
     },
     mounted () {
       console.log('I have mounted categoryAdderResources')
       this.slug = this.$router.history.current.params.slug
-      this.teamUserModifierResources = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/users/modify b')
+      this.teamUserModifierResources = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/users/modify')
     }
   }
 </script>
