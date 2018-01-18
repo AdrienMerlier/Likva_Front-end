@@ -2,7 +2,7 @@
   <div class="teamTree">
     <ul class="teams">
       <div class="teamInfos" v-for="team in teams">
-        <team-tree-team-item :team="team" :owner="owner"></team-tree-team-item>
+        <team-tree-team-item :slug="team.slug" :team="team" :owner="owner"></team-tree-team-item>
       </div>
     </ul>
   </div>

@@ -43,7 +43,10 @@
       }
     },
     watch: {
-      userId: function () {
+      user: function () {
+        this.userVotesResource = this.$resource('http://127.0.0.1:3000/api/votes/voter', {}, {}, {headers: {
+          voterId: this.user}})
+        console.log(this.user)
         this.userVotesResource.get().then(response => {
           // If server answer
           if (response.body.success) {
@@ -81,8 +84,6 @@
     },
     mounted () {
       console.log('userId during mounted phase: ' + this.user)
-      this.userVotesResource = this.$resource('http://127.0.0.1:3000/api/votes/voter', {}, {}, {headers: {
-        voterId: this.user}})
     },
     beforeUpdate () {
       console.log('userId during beforeUpdate phase: ' + this.user)

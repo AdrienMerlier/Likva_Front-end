@@ -11,6 +11,8 @@
 
 <script>
   import userStore from '../users/UsersStore'
+  import Vuex from 'vuex'
+
   export default {
     name: 'team-tree-category-item',
     store: userStore,
@@ -38,8 +40,8 @@
     methods: {
       updateDelegation (category) {
         if (category.delegable) {
-          this.becomeDelegableResource.save({slug: this.slug, categoryName:category.categoryName},
-            {userId: this.userInfos.id}).then(response => {
+          this.becomeDelegableResource.save({slug: this.slug, categoryName: category.categoryName},
+          {userId: this.userInfos.id}).then(response => {
             // Server answer
             if (response.body.success) {
               // Good request
@@ -61,8 +63,8 @@
             console.error('Something went wrong with the server when trying to update delegable')
           })
         } else {
-          this.removeDelegableResource.save({slug: this.slug, categoryName:category.categoryName},
-            {userId: this.userInfos.id}).then(response => {
+          this.removeDelegableResource.save({slug: this.slug, categoryName: category.categoryName},
+          {userId: this.userInfos.id}).then(response => {
             // Server answer
             if (response.body.success) {
               // Good request
