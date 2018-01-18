@@ -8,7 +8,7 @@
     <b-table striped hover :items="allUsers" :fields="fields">
       <template slot="actions" slot-scope="row">
         <!-- We use @click.stop here to prevent a 'row-clicked' event from also happening -->
-        <b-button data-toggle="modal" data-target="#modifyUserModal" size="sm" @click="" class="alert-warning">
+        <b-button data-toggle="modal" data-target="#modifyUserModal" size="sm" class="alert-warning">
           Modifier
         </b-button>
         <b-button size="sm" @click.stop="" class="alert-danger">
