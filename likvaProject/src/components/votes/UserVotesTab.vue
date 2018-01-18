@@ -39,7 +39,8 @@
     },
     data () {
       return {
-        displayVotes: {}
+        displayVotes: {},
+        votes: {}
       }
     },
     watch: {
@@ -51,7 +52,7 @@
           // If server answer
           if (response.body.success) {
             // Good request
-            var votes = response.body.votes
+            this.votes = response.body.votes
             votes.forEach(vote => {
               if (this.teamInCommon(vote.proposition.slug)) {
                 // User is in same team than the profile's user
@@ -77,7 +78,7 @@
         var date = new Date(stringDate)
         var mois = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
         var jours = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche']
-        return jours[date.getDay()] + ' ' + date.getDate() + ' ' + mois[date.getMonth()] + ' ' + (date.getYear()+1900)
+        return jours[date.getDay()] + ' ' + date.getDate() + ' ' + mois[date.getMonth()] + ' ' + (date.getYear() + 1900)
       }
     },
     computed: {
