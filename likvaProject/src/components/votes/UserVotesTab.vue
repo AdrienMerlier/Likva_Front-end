@@ -15,9 +15,9 @@
       <tr v-for="vote in displayVotes">
         <td>{{vote.proposition.title}}</td>
         <td>{{vote.proposition.category}}</td>
-        <td>{{getTeamDisplayName(vote.proposition.slug)}}</td>
+        <td>{{getTeamDisplayName(vote.proposition.teamSlug)}}</td>
         <td>{{vote.content}}</td>
-        <td>{{vote.proposition.date}}</td>
+        <td>{{displayDate(vote.proposition.date)}}</td>
       </tr>
       </tbody>
     </table>
@@ -72,6 +72,12 @@
           if (team.slug === teamSlug) ret = true
         })
         return ret
+      },
+      displayDate (stringDate) {
+        var date = new Date(stringDate)
+        var mois = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
+        var jours = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche']
+        return jours[date.getDay()] + ' ' + date.getDate() + ' ' + mois[date.getMonth()] + ' ' + (date.getYear()+1900)
       }
     },
     computed: {
