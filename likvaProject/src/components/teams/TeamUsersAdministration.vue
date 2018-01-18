@@ -16,6 +16,7 @@
         </b-button>
       </template>
     </b-table>
+    <user-modifier></user-modifier>
   </div>
 </template>
 
