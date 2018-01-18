@@ -89,7 +89,7 @@
       }
     },
     mounted () {
-      this.removeDelegableResource = this.$resource('http://127.0.0.1:3000//api/teams{/slug}/categories{/categoryName}/removeDelegate')
+      this.removeDelegableResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories{/categoryName}/removeDelegate')
       this.becomeDelegableResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories{/categoryName}/becomeDelegate')
     }
   }
