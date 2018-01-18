@@ -39,7 +39,7 @@
     },
     data () {
       return {
-        displayVotes: {}
+        displayVotes: []
       }
     },
     watch: {
