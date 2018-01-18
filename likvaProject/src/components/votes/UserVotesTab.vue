@@ -53,7 +53,7 @@
           if (response.body.success) {
             // Good request
             this.votes = response.body.votes
-            votes.forEach(vote => {
+            this.votes.forEach(vote => {
               if (this.teamInCommon(vote.proposition.slug)) {
                 // User is in same team than the profile's user
                 this.displayVotes.push(vote)
