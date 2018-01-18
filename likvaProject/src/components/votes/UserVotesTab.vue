@@ -84,15 +84,6 @@
       ...Vuex.mapGetters([
         'userInfos'
       ])
-    },
-    beforeMount () {
-      console.log('userId during beforemount phase: ' + this.user)
-    },
-    mounted () {
-      console.log('userId during mounted phase: ' + this.user)
-    },
-    beforeUpdate () {
-      console.log('userId during beforeUpdate phase: ' + this.user)
     }
   }
 </script>
