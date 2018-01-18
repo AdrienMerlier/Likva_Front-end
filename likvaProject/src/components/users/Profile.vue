@@ -63,16 +63,16 @@
         var ai = 0
         var bi = 0
         var result = []
-        while (ai < a.length && bi < b.length) {
-          if (a[ai] < b[bi]) {
-            ai++
-          } else if (a[ai] > b[bi]) {
-            bi++
-          } else { // They are equal
-            result.push(a[ai])
-            ai++
+        while (ai < a.length) {
+          while (bi < b.length) {
+            if (a[ai] === b[bi]) {
+              result.push(a[ai])
+              break
+            }
             bi++
           }
+          ai++
+          bi = 0
         }
         return result
       },
