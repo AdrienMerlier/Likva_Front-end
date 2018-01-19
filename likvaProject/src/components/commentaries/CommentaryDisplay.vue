@@ -8,7 +8,7 @@
 					<h5 class="mt-0">{{commentary.authorDisplay}} <small class="text-muted">{{displayDate(commentary.date)}}</small></h5>
 					<!-- Display only 120 char an add read more button or a modal on commentary click ?-->
                     {{commentary.content}}
-                    <sub-commentary-adder></sub-commentary-adder>
+                    <subcommentary-adder></subcommentary-adder>
                 </div>
             </div>
         </div>
