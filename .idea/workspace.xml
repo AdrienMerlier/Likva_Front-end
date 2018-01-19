@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70a3ddf4-30a2-4c32-8b7c-8bf4f6665c76" name="Default" comment="Merge branch 'vue-cli_project' of https://github.com/AdrienMerlier/Likva_Front-end into vue-cli_project&#10;&#10;# Conflicts:&#10;#&#9;likvaProject/src/components/propositions/PropositionDisplay.vue">
-      <change beforePath="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionDisplay.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionDisplay.vue" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/likvaProject/src/components/propositions/proposition.data" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/likvaProject/src/components/commentaries/CommentaryDisplay.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/commentaries/CommentaryDisplay.vue" />
+      <change beforePath="$PROJECT_DIR$/likvaProject/src/components/commentaries/SubcommentaryDisplay.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/commentaries/SubcommentaryDisplay.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -114,20 +117,10 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="DelegationPerCategory.vue" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/likvaProject/src/components/votes/DelegationPerCategory.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="44" column="18" lean-forward="false" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="CategoryPropositionsList.vue" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/categories/CategoryPropositionsList.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2567">
+                <state relative-caret-position="0">
                   <caret line="153" column="18" lean-forward="false" selection-start-line="153" selection-start-column="9" selection-end-line="153" selection-end-column="18" />
                   <folding />
                 </state>
@@ -184,11 +177,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="CommentaryDisplay.vue" pinned="false" current-in-tab="false">
+          <file leaf-file-name="CommentaryDisplay.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/commentaries/CommentaryDisplay.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="374">
-                  <caret line="22" column="8" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+                <state relative-caret-position="799">
+                  <caret line="47" column="4" lean-forward="false" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
                   <folding>
                     <element signature="e#969#1022#0" expanded="true" />
                   </folding>
@@ -196,7 +189,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="PropositionDisplay.vue" pinned="false" current-in-tab="true">
+          <file leaf-file-name="PropositionDisplay.vue" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionDisplay.vue">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="544">
@@ -211,8 +204,8 @@
           <file leaf-file-name="SubcommentaryDisplay.vue" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/commentaries/SubcommentaryDisplay.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+                <state relative-caret-position="476">
+                  <caret line="28" column="2" lean-forward="false" selection-start-line="28" selection-start-column="2" selection-end-line="32" selection-end-column="4" />
                   <folding />
                 </state>
               </provider>
@@ -333,9 +326,10 @@
         <option value="$PROJECT_DIR$/likvaProject/index.html" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/votes/UserVotesTab.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/users/Profile.vue" />
+        <option value="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionDisplay.vue" />
+        <option value="$PROJECT_DIR$/likvaProject/src/components/propositions/data-proposition.json" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/commentaries/SubcommentaryDisplay.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/commentaries/CommentaryDisplay.vue" />
-        <option value="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionDisplay.vue" />
       </list>
     </option>
   </component>
@@ -453,12 +447,12 @@
       <workItem from="1516121170763" duration="11570000" />
       <workItem from="1516143705016" duration="2134000" />
       <workItem from="1516231473922" duration="2574000" />
-      <workItem from="1516259106396" duration="4053000" />
+      <workItem from="1516259106396" duration="4568000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="326664000" />
+    <option name="totallyTimeSpent" value="327179000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -515,7 +509,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/index.js" />
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/util.js" />
     <entry file="file://$PROJECT_DIR$/likvaProject/static/awesomplete.css" />
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/Messages.vue">
@@ -599,6 +592,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="12" column="62" lean-forward="false" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -613,6 +607,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="41" lean-forward="false" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -763,7 +758,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/categories/CategoryPropositionsList.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2567">
+        <state relative-caret-position="0">
           <caret line="153" column="18" lean-forward="false" selection-start-line="153" selection-start-column="9" selection-end-line="153" selection-end-column="18" />
           <folding />
         </state>
@@ -832,21 +827,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/commentaries/SubcommentaryDisplay.vue">
+    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/data-proposition.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        <state relative-caret-position="306">
+          <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/commentaries/CommentaryDisplay.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="8" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-          <folding>
-            <element signature="e#969#1022#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -856,6 +841,24 @@
           <caret line="32" column="58" lean-forward="false" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="58" />
           <folding>
             <element signature="e#2075#2098#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/commentaries/SubcommentaryDisplay.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="2" lean-forward="false" selection-start-line="28" selection-start-column="2" selection-end-line="32" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/commentaries/CommentaryDisplay.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="47" column="4" lean-forward="false" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
+          <folding>
+            <element signature="e#969#1022#0" expanded="true" />
           </folding>
         </state>
       </provider>

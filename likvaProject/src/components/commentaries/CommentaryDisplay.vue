@@ -41,5 +41,9 @@
 </script>
 
 <style scoped>
-
+  ul, li{
+    list-style:none;
+    padding-left:0;
+    padding-bottom: 7px;
+  }​
 </style>
