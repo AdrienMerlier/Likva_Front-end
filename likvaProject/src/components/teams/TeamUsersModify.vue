@@ -13,45 +13,33 @@
           </div>
           <div class="modal-body">
             <form>
-              <div class="form-group row">
-                <div class="col-sm-2 input-group">
-                </div>
-                <label for="status">Statut</label>
-                <div class="input-group">
-                  <div class="input-group-addon"><i class="fa fa-users" aria-hidden="true"></i></div>
-                  <select name="status" class="form-control" id="status" required="true"
+              <label for="status">Statut</label>
+              <div class="input-group col-sm-6">
+                <div class="input-group-addon"><i class="fa fa-users" aria-hidden="true"></i></div>
+                <select name="status" class="form-control" id="status" required="true"
                           v-model="status">
-                    <option value="Voter">Voteur</option>
-                    <option value="Commentator">Commetateur</option>
-                    <option value="Observer">Observateur</option>
-                  </select>
-                </div>
+                  <option value="Voter">Voteur</option>
+                  <option value="Commentator">Commetateur</option>
+                  <option value="Observer">Observateur</option>
+                </select>
               </div>
-              <div class="form-group row">
-                <div class="col-sm-4 input-group">
-                </div>
-                <label for="proposer">Proposeur</label>
-                <div class="input-group">
-                  <div class="input-group-addon"><i class="fa fa-star" aria-hidden="true"></i></div>
-                  <select name="proposer" class="form-control" id="proposer" required="true"
+              <label for="proposer">Proposeur</label>
+              <div class="input-group col-sm-6">
+                <div class="input-group-addon"><i class="fa fa-star" aria-hidden="true"></i></div>
+                <select name="proposer" class="form-control" id="proposer" required="true"
                           v-model="proposer">
-                    <option value=false>Non</option>
-                    <option value=true>Oui</option>
-                  </select>
-                </div>
+                  <option value=false>Non</option>
+                  <option value=true>Oui</option>
+                </select>
               </div>
-              <div class="form-group row">
-                <div class="col-sm-4 input-group">
-                </div>
-                <label for="admin">Admin</label>
-                <div class="input-group">
-                  <div class="input-group-addon"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></div>
-                  <select name="admin" class="form-control" id="admin" required="true"
+              <label for="admin">Admin</label>
+              <div class="input-group col-sm-6">
+                <div class="input-group-addon"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></div>
+                <select name="admin" class="form-control" id="admin" required="true"
                           v-model="admin">
-                    <option value=false>Non</option>
-                    <option value=true>Oui</option>s
-                  </select>
-                </div>
+                  <option value=false>Non</option>
+                  <option value=true>Oui</option>s
+                </select>
               </div>
             </form>
           </div>
