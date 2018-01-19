@@ -1,5 +1,5 @@
 <template>
-  <<div class="commentary-adder">
+  <div class="commentary-adder">
 		<div class="card">
 			<div class="card-header">
 				<h6>Nouveau commentaire</h6>
