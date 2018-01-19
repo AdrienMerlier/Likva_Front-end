@@ -28,11 +28,11 @@
         <td>{{BooleanToOuiNon(user.admin)}}</td>
         <td>{{IsDelegable(user.delegable)}}</td>
         <td>
-          <button type="button" class="btn btn-warning btn-sm" @click="actualTeamUser = user._id" data-toggle="modal" data-target="#modifyUserModal"><i class="fa fa-user-o"></i></button>
+          <button type="button" class="btn btn-warning btn-sm" @click="actualTeamUser = user" data-toggle="modal" data-target="#modifyUserModal"><i class="fa fa-user-o"></i></button>
           <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
         </td>
       </tr>
-      <team-user-modifier :teamUserId="actualTeamUser"></team-user-modifier>
+      <team-user-modifier :teamUser="actualTeamUser"></team-user-modifier>
       </tbody>
     </table>
   </div>

@@ -6,7 +6,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="modifyUserModalLabel">Modifier l'utilisateur {{teamUserId}} ici</h5>
+            <h5 class="modal-title" id="modifyUserModalLabel">Modifier l'utilisateur {{teamUser.displayName}} ici</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -14,7 +14,7 @@
           <div class="modal-body">
             <form>
               <div class="form-group row">
-                <div class="col-sm-6 input-group">
+                <div class="col-sm-2 input-group">
                 </div>
                 <label for="status">Statut</label>
                 <div class="input-group">
@@ -28,7 +28,7 @@
                 </div>
               </div>
               <div class="form-group row">
-                <div class="col-sm-6 input-group">
+                <div class="col-sm-4 input-group">
                 </div>
                 <label for="proposer">Proposeur</label>
                 <div class="input-group">
@@ -41,7 +41,7 @@
                 </div>
               </div>
               <div class="form-group row">
-                <div class="col-sm-6 input-group">
+                <div class="col-sm-4 input-group">
                 </div>
                 <label for="admin">Admin</label>
                 <div class="input-group">
@@ -70,7 +70,7 @@
 
   export default {
     name: 'team-user-modifier',
-    props: [ 'teamUserId' ],
+    props: [ 'teamUser' ],
     data () {
       return {
         status: null,
@@ -89,13 +89,13 @@
       ]),
       registerModification () {
         let message = {concern: 'Modification utilisateur'}
-        console.log(this.teamUserId)
+        console.log(this.teamUser._id)
         this.teamUserModifierResources.save(
           { //  Here you define urls params
             slug: this.slug
           },
           { //  Here you define passed object params
-            _id: this.teamUserId,
+            _id: this.teamUser._id,
             admin: this.admin,
             proposer: this.proposer,
             status: this.status
