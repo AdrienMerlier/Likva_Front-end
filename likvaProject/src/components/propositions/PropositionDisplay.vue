@@ -21,6 +21,18 @@
           <nl2br id="resultat" tag="p" :text=proposition.consequences />
         </div>
       </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <ul>
+            <li v-for="commentary in proposition.commentaries">
+              <commentary-display :commentary="commentary"></commentary-display>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-4">
+          <commentary-adder :id-proposition="idProposition"></commentary-adder>
+        </div>
+      </div>
     </div>
     <vote :possibilities="proposition.votePossibilities" v-if="isVoter && Date.parse(proposition.date) > Date.now()"></vote>
     <router-link :to="{ name: 'edit-proposition', params: {slug: slug, idProposition: idProposition,
@@ -34,12 +46,14 @@
   import Vuex from 'vuex'
   import userStore from '../users/UsersStore'
   import Nl2br from 'vue-nl2br'
+  import CommentaryDisplay from '../commentaries/CommentaryDisplay'
+  import CommentaryAdder from '../commentaries/CommentaryAdder'
 
   import Vote from '../votes/Vote'
   import PropositionUpdateButton from './PropositionUpdateButton'
 
   export default {
-    components: {Vote, PropositionUpdateButton, Nl2br},
+    components: {Vote, PropositionUpdateButton, Nl2br, CommentaryDisplay, CommentaryAdder},
     name: 'proposition-display',
     store: userStore,
     data () {
