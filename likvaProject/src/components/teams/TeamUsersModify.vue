@@ -6,7 +6,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="modifyUserModalLabel">Modifier l'utilisateur</h5>
+            <h5 class="modal-title" id="modifyUserModalLabel">Modifier l'utilisateur {{teamUserId}} ici</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -78,6 +78,11 @@
         proposer: null
       }
     },
+    watch: {
+      teamUserId: function (val) {
+        console.log(val)
+      }
+    },
     methods: {
       ...Vuex.mapActions([
         'addMessageUserStore'
@@ -110,7 +115,7 @@
       }
     },
     mounted () {
-      console.log('I have mounted categoryAdderResources')
+      console.log('I have mounted teamUserModifierResources' + this.teamUserId)
       this.slug = this.$router.history.current.params.slug
       this.teamUserModifierResources = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/users/modify')
     }

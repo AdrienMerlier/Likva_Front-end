@@ -28,9 +28,9 @@
         <td>{{BooleanToOuiNon(user.admin)}}</td>
         <td>{{IsDelegable(user.delegable)}}</td>
         <td>
-          <button type="button" class="btn btn-warning btn-sm" :teamUserId="user._id" data-toggle="modal" data-target="#modifyUserModal"><i class="fa fa-user-o"></i></button>
+          <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modifyUserModal"><i class="fa fa-user-o"></i></button>
           <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
-          <team-user-modifier></team-user-modifier>
+          <team-user-modifier :teamUserId="user._id"></team-user-modifier>
         </td>
       </tr>
       </tbody>
