@@ -16,8 +16,12 @@
 </template>
 
 <script>
+  import SubcommentaryAdder from './SubcommentaryAdder'
   export default {
-    name: 'commentary-display'
+    name: 'commentary-display',
+    components: [
+      SubcommentaryAdder
+     ]
   }
 </script>
 
