@@ -21,7 +21,15 @@
     name: 'commentary-display',
     components: [
       SubcommentaryAdder
-     ]
+     ],
+     props: {
+      commentary: {
+        required: true,
+        default: function () {
+          return {}
+        }
+       {
+     }
   }
 </script>
 
