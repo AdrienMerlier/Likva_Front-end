@@ -5,6 +5,7 @@
     </router-link>
     <br></br>
     <h2>Gestion de l'équipe {{slug}}</h2>
+    <br></br>
     <table class="table table-striped table-condensed">
       <thead>
       <tr>
@@ -29,10 +30,11 @@
         <td>{{IsDelegable(user.delegable)}}</td>
         <td>
           <button type="button" class="btn btn-warning btn-sm" @click="actualTeamUser = user" data-toggle="modal" data-target="#modifyUserModal"><i class="fa fa-user-o"></i></button>
-          <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+          <button type="button" class="btn btn-danger btn-sm" @click="actualTeamUser = user" data-toggle="modal" data-target="#eraseUserModal"><i class="fa fa-trash-o"></i></button>
         </td>
       </tr>
       <team-user-modifier :teamUser="actualTeamUser"></team-user-modifier>
+      <team-users-erase :teamUser="actualTeamUser"></team-users-erase>
       </tbody>
     </table>
   </div>
@@ -41,11 +43,12 @@
 <script>
   import Vuex from 'vuex'
   import userStore from '../users/UsersStore'
-  import TeamUserModifier from './TeamUsersModify.vue'
+  import TeamUserModifier from './TeamUsersModify'
+  import TeamUsersErase from './TeamUserErase'
 
   export default {
     components: {
-      TeamUserModifier},
+      TeamUserModifier, TeamUsersErase},
     name: 'team-members-administration',
     store: userStore,
     data () {

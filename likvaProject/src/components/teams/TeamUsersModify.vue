@@ -6,7 +6,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="modifyUserModalLabel">Modifier l'utilisateur {{teamUser.displayName}} ici</h5>
+            <h5 class="modal-title" id="modifyUserModalLabel">Modifier l'utilisateur {{teamUser.displayName}}</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -14,7 +14,7 @@
           <div class="modal-body">
             <form>
               <label for="status">Statut</label>
-              <div class="input-group col-sm-6">
+              <div class="input-group ">
                 <div class="input-group-addon"><i class="fa fa-users" aria-hidden="true"></i></div>
                 <select name="status" class="form-control" id="status" required="true"
                           v-model="status">
@@ -24,7 +24,7 @@
                 </select>
               </div>
               <label for="proposer">Proposeur</label>
-              <div class="input-group col-sm-6">
+              <div class="input-group ">
                 <div class="input-group-addon"><i class="fa fa-star" aria-hidden="true"></i></div>
                 <select name="proposer" class="form-control" id="proposer" required="true"
                           v-model="proposer">
@@ -33,7 +33,7 @@
                 </select>
               </div>
               <label for="admin">Admin</label>
-              <div class="input-group col-sm-6">
+              <div class="input-group ">
                 <div class="input-group-addon"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></div>
                 <select name="admin" class="form-control" id="admin" required="true"
                           v-model="admin">
