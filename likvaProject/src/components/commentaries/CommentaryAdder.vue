@@ -7,7 +7,7 @@
 			<div class="card-body">
 				<form>
 					<div class="form-group">
-					    <textarea class="form-control" id="new_comment" placeholder="Que pensez-vous de cette proposition"></textarea> 
+					    <textarea class="form-control" id="new_comment" placeholder="Que pensez-vous de cette proposition" v-model="content"></textarea> 
 					</div>
 				</form>
 				<button type="button" class="btn btn-primary"><i class="fa fa-send"></i> Envoyer</button>
@@ -18,7 +18,17 @@
 
 <script>
   export default {
-    name: 'commentary-adder'
+    name: 'commentary-adder',
+    props: {
+      idProposition: {
+        required: true
+      }
+    },
+    data () {
+      return {
+        content: null
+      }
+    }
   }
 </script>
 
