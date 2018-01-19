@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70a3ddf4-30a2-4c32-8b7c-8bf4f6665c76" name="Default" comment="Merge branch 'vue-cli_project' of https://github.com/AdrienMerlier/Likva_Front-end into vue-cli_project&#10;&#10;# Conflicts:&#10;#&#9;likvaProject/src/components/propositions/PropositionDisplay.vue">
+      <change beforePath="" afterPath="$PROJECT_DIR$/likvaProject/src/components/commentaries/SubcommentaryDisplay.vue" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/likvaProject/src/components/commentaries/CommentaryDisplay.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/commentaries/CommentaryDisplay.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -41,8 +43,8 @@
           <file leaf-file-name="TeamUsersAdministration.vue" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/teams/TeamUsersAdministration.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="646">
-                  <caret line="38" column="11" lean-forward="false" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
+                <state relative-caret-position="680">
+                  <caret line="40" column="11" lean-forward="false" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
                   <folding />
                 </state>
               </provider>
@@ -88,7 +90,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="TeamTree.vue" pinned="false" current-in-tab="false">
+          <file leaf-file-name="TeamTree.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/teams/TeamTree.vue">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="476">
@@ -98,7 +100,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="UserVotesTab.vue" pinned="false" current-in-tab="true">
+          <file leaf-file-name="UserVotesTab.vue" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/votes/UserVotesTab.vue">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="170">
@@ -187,18 +189,20 @@
           <file leaf-file-name="CommentaryDisplay.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/commentaries/CommentaryDisplay.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="102">
-                  <caret line="6" column="30" lean-forward="false" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-                  <folding />
+                <state relative-caret-position="374">
+                  <caret line="22" column="8" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+                  <folding>
+                    <element signature="e#969#1022#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Register.vue" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/likvaProject/src/components/users/Register.vue">
+          <file leaf-file-name="SubcommentaryDisplay.vue" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/likvaProject/src/components/commentaries/SubcommentaryDisplay.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+                <state relative-caret-position="391">
+                  <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
@@ -228,7 +232,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>user</find>
       <find>clô</find>
       <find>is</find>
       <find>console</find>
@@ -258,6 +261,7 @@
       <find>isO</find>
       <find>header</find>
       <find>headers</find>
+      <find>commentary</find>
     </findStrings>
     <replaceStrings>
       <replace>login</replace>
@@ -272,6 +276,7 @@
       <replace>actuaTeamStore</replace>
       <replace>actualTeamStorez</replace>
       <replace>owner</replace>
+      <replace>subcommentary</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -329,6 +334,7 @@
         <option value="$PROJECT_DIR$/likvaProject/index.html" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/votes/UserVotesTab.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/users/Profile.vue" />
+        <option value="$PROJECT_DIR$/likvaProject/src/components/commentaries/SubcommentaryDisplay.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/commentaries/CommentaryDisplay.vue" />
       </list>
     </option>
@@ -349,7 +355,8 @@
     <handled-path value="$PROJECT_DIR$/likvaProject/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+    <option name="x" value="286" />
+    <option name="y" value="-18" />
     <option name="width" value="1462" />
     <option name="height" value="1047" />
   </component>
@@ -446,12 +453,12 @@
       <workItem from="1516121170763" duration="11570000" />
       <workItem from="1516143705016" duration="2134000" />
       <workItem from="1516231473922" duration="2574000" />
-      <workItem from="1516259106396" duration="2912000" />
+      <workItem from="1516259106396" duration="3731000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="325523000" />
+    <option name="totallyTimeSpent" value="326342000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -508,7 +515,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/Datetime.vue" />
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/index.js" />
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/util.js" />
     <entry file="file://$PROJECT_DIR$/likvaProject/static/awesomplete.css" />
@@ -686,14 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/teams/TeamTree.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="5" lean-forward="false" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/teams/TeamUpdate.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -785,8 +783,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/teams/TeamUsersAdministration.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="11" lean-forward="false" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
+        <state relative-caret-position="680">
+          <caret line="40" column="11" lean-forward="false" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -830,11 +828,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/teams/TeamTree.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="5" lean-forward="false" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/commentaries/SubcommentaryDisplay.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/commentaries/CommentaryDisplay.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="30" lean-forward="false" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-          <folding />
+        <state relative-caret-position="374">
+          <caret line="22" column="8" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+          <folding>
+            <element signature="e#969#1022#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
