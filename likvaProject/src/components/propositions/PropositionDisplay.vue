@@ -30,7 +30,7 @@
           </ul>
         </div>
         <div class="col-sm-4">
-          <comment-adder :proposition="proposition"></comment-adder>
+          <comment-adder :proposition="proposition" :team-slug="proposition.slug"></comment-adder>
         </div>
       </div>
     </div>
