@@ -24,7 +24,7 @@
       <div class="row">
         <h3>Espace commentaire</h3>
         <div class="col-sm-8">
-          <ul v-if="proposition.comments.length() > 0">
+          <ul v-if="proposition.comments.length > 0">
             <li v-for="comment in proposition.comments">
               <comment-display :comment="comment"></comment-display>
             </li>
