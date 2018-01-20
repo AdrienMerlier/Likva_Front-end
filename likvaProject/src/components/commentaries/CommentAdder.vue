@@ -70,7 +70,7 @@
       ])
     },
     mounted () {
-      this.commentaryResource = this.$resource('http://127.0.0.0:3000/api/teams{/slug}/propositions{/idProposition}/addComment', {}, {}, {headers: {
+      this.commentaryResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/idProposition}/addComment', {}, {}, {headers: {
         authorId: this.userInfos.id}})
     }
   }
