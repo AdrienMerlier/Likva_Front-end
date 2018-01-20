@@ -65,8 +65,8 @@
             categoryName: this.categoryName
           },
           { //  Here you define passed object params
-            delegate: user.email,
-            voter: this.userInfos.email
+            delegate: user.userId,
+            voter: this.userInfos.userId
           }
         ).then(response => {
           //  If success
@@ -83,6 +83,7 @@
       }
     },
     mounted () {
+      console.log('Mounted!')
       this.slug = this.$router.history.current.params.slug
       this.categoryName = this.$router.history.current.query.category
       this.delegateAdderResources = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories{/categoryName}/delegate')

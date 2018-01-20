@@ -1,5 +1,6 @@
 <template>
   <div>
+    <delegation-category></delegation-category>
     <div class="propositionList">
       <h1>{{catQuery}}</h1>
       <h3>
@@ -9,11 +10,11 @@
       <h3>
         <div v-if="delegable">
           <small >Vous êtes éligible à la délégation pour cette catégorie.</small>
-          <button type="button" class="btn btn-warning" v-on:click.once="removeMyselfDelegate"> Se retirer de la délégation pour une catégorie</button>
+          <button type="button" class="btn btn-warning" v-on:click="removeMyselfDelegate"> Se retirer de la délégation pour une catégorie</button>
         </div>
         <div v-else>
           <small>Vous n'êtes pas élégible </small>
-          <button type="button" class="btn btn-warning" v-on:click.once="becomeDelegate"> Devenir délégué potentiel</button>
+          <button type="button" class="btn btn-warning" v-on:click="becomeDelegate"> Devenir délégué potentiel</button>
         </div>
       </h3>
       <p class></p>
@@ -42,7 +43,6 @@
               <button type="button" class="btn btn-outline-success">Détails de la proposition</button>
             </router-link>
           </div>
-          <delegation-category></delegation-category>
         </div>
       </div>
     </div>

@@ -1,8 +1,18 @@
 <template>
   <div>
     <div class="propositionList">
+      <router-link :to="{name: 'category-list', params: { slug: slug }}">
+        <button type="button" class="btn btn-outline-success">Passer à l'affichage par catégorie</button>
+      </router-link>
+      <router-link :to="{name: 'team-members-list', params: { slug: slug }}">
+        <button type="button" class="btn btn-outline-info">Voir les membres de l'équipe</button>
+      </router-link>
+      <router-link v-if="isAdmin" :to="{name: 'team-members-administration', params: { slug: slug }}">
+        <button type="button" class="btn btn-outline-danger">Administrer les membres de l'équipes</button>
+      </router-link>
+      <br></br>
       <div class="row">
-        <div class="col-sm-10">
+        <div class="col-sm-12">
           <div class="card-columns">
             <div class="card" v-for="proposition in allPropositions">
               <h4 class="card-header">{{proposition.title}}</h4>
@@ -25,17 +35,6 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-sm-2">
-          <router-link :to="{name: 'category-list', params: { slug: slug }}">
-            <button type="button" class="btn btn-outline-success">Passer à l'affichage par catégorie</button>
-          </router-link>
-          <router-link :to="{name: 'team-members-list', params: { slug: slug }}">
-            <button type="button" class="btn btn-outline-info">Voir les membres de l'équipe</button>
-          </router-link>
-          <router-link v-if="isAdmin" :to="{name: 'team-members-administration', params: { slug: slug }}">
-            <button type="button" class="btn btn-outline-danger">Administrer les membres de l'équipes</button>
-          </router-link>
         </div>
       </div>
     </div>
