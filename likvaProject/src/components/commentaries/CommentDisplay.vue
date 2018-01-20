@@ -9,7 +9,7 @@
 					<!-- Display only 120 char an add read more button or a modal on comment click ?-->
                     {{comment.content}}
                     <ul>
-                      <li v-for="subcomment in commntary.subcomments">
+                      <li v-for="subcomment in comment.subcomments">
                         <subcomment-display :subcomment="subcomment"></subcomment-display>
                       </li>
                     </ul>
