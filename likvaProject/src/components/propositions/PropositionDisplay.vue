@@ -22,12 +22,16 @@
         </div>
       </div>
       <div class="row">
+        <h3>Espace commentaire</h3>
         <div class="col-sm-8">
-          <ul>
+          <ul v-if="proposition.comments.length() > 0">
             <li v-for="comment in proposition.comments">
               <comment-display :comment="comment"></comment-display>
             </li>
           </ul>
+          <div class="card card-body" v-else>
+            <p class="card-text">Auncun commentaire pour le moment, allez vous être le premier ?</p>
+          </div>
         </div>
         <div class="col-sm-4">
           <comment-adder :proposition="proposition" :team-slug="proposition.slug"></comment-adder>
