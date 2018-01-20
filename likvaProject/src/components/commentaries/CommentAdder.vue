@@ -10,7 +10,7 @@
 					    <textarea class="form-control" id="new_comment" placeholder="Que pensez-vous de cette proposition" v-model="content"></textarea>
 					</div>
 				</form>
-				<button type="button" class="btn btn-primary"><i class="fa fa-send"></i> Envoyer</button>
+				<button type="button" class="btn btn-primary" @click="sendNewComment"><i class="fa fa-send"></i> Envoyer</button>
 			</div>
 		</div>
 	</div>
@@ -50,6 +50,7 @@
           if (response.body.success) {
             // Good request
             comment.subcomments = []
+            this.content = null
             this.proposition.comments.push(comment)
           } else {
             // Wrong request
