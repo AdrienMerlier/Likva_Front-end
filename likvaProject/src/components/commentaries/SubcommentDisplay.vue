@@ -19,7 +19,10 @@
     name: 'subcomment-display',
     props: {
       subcomment: {
-        required: true
+        required: true,
+        default: function () {
+          return {}
+        }
       }
     }
   }

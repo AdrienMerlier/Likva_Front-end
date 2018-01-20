@@ -36,7 +36,15 @@
           return {}
         }
       }
-     }
+    },
+    methods: {
+      displayDate (stringDate) {
+        var date = new Date(stringDate)
+        var mois = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
+        var jours = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche']
+        return jours[date.getDay()] + ' ' + date.getDate() + ' ' + mois[date.getMonth()] + ' ' + (date.getYear() + 1900)
+      }
+    }
   }
 </script>
 
