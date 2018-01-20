@@ -1,5 +1,5 @@
 <template>
-  <div class="subcommentary-adder">
+  <div class="subcomment-adder">
 		<div class="input-group mb-3">
 			<input type="text" class="form-control" placeholder="Réagissez à ce commentaire...">
 			<div class="input-group-append">
@@ -11,7 +11,7 @@
 
 <script>
   export default {
-    name: 'commentary-adder'
+    name: 'comment-adder'
   }
 </script>
 

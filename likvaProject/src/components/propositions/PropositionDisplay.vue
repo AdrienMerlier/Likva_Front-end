@@ -24,13 +24,13 @@
       <div class="row">
         <div class="col-sm-8">
           <ul>
-            <li v-for="commentary in proposition.commentaries">
-              <commentary-display :commentary="commentary"></commentary-display>
+            <li v-for="comment in proposition.comments">
+              <commentary-display :comment="comment"></commentary-display>
             </li>
           </ul>
         </div>
         <div class="col-sm-4">
-          <commentary-adder :id-proposition="idProposition"></commentary-adder>
+          <commentary-adder :proposition="proposition"></commentary-adder>
         </div>
       </div>
     </div>
@@ -46,8 +46,8 @@
   import Vuex from 'vuex'
   import userStore from '../users/UsersStore'
   import Nl2br from 'vue-nl2br'
-  import CommentaryDisplay from '../commentaries/CommentaryDisplay'
-  import CommentaryAdder from '../commentaries/CommentaryAdder'
+  import CommentaryDisplay from '../commentaries/CommentDisplay'
+  import CommentaryAdder from '../commentaries/CommentAdder'
 
   import Vote from '../votes/Vote'
   import PropositionUpdateButton from './PropositionUpdateButton'
@@ -63,6 +63,11 @@
         proposition: {},
         isFinalised: false,
         hasResults: false
+      }
+    },
+    watch: {
+      proposition: function () {
+        console.log('change detected in proposition')
       }
     },
     methods: {
