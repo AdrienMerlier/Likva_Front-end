@@ -2,7 +2,7 @@
   <div class="comment-display">
     <div class="card card-body card-outline-info">
       <div class="media">
-        <img src="../../assets/anonymousProfileLarge.png" alt="Image de Profile" class="rounded-circle"/>
+        <img src="../../assets/anonymousProfileLarge.png" alt="Image de Profile" class="rounded-circle profileImage"/>
         <div class="media-body">
           <!-- Add a router link to the author -->
           <h5 class="mt-0">{{comment.authorDisplay}} <small class="text-muted">{{displayDate(comment.date)}}</small></h5>
@@ -53,5 +53,10 @@
     list-style-type: none;
     padding: 0;
     margin-bottom: 7px;
+  }
+
+  .profileImage {
+    width: 64px;
+    height: 64px;
   }
 </style>
