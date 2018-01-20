@@ -25,12 +25,12 @@
         <div class="col-sm-8">
           <ul>
             <li v-for="comment in proposition.comments">
-              <commentary-display :comment="comment"></commentary-display>
+              <comment-display :comment="comment"></comment-display>
             </li>
           </ul>
         </div>
         <div class="col-sm-4">
-          <commentary-adder :proposition="proposition"></commentary-adder>
+          <comment-adder :proposition="proposition"></comment-adder>
         </div>
       </div>
     </div>
@@ -46,14 +46,14 @@
   import Vuex from 'vuex'
   import userStore from '../users/UsersStore'
   import Nl2br from 'vue-nl2br'
-  import CommentaryDisplay from '../commentaries/CommentDisplay'
-  import CommentaryAdder from '../commentaries/CommentAdder'
+  import commentDisplay from '../commentaries/CommentDisplay'
+  import commentAdder from '../commentaries/CommentAdder'
 
   import Vote from '../votes/Vote'
   import PropositionUpdateButton from './PropositionUpdateButton'
 
   export default {
-    components: {Vote, PropositionUpdateButton, Nl2br, CommentaryDisplay, CommentaryAdder},
+    components: {Vote, PropositionUpdateButton, Nl2br, commentDisplay, commentAdder},
     name: 'proposition-display',
     store: userStore,
     data () {
