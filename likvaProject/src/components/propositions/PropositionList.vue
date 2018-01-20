@@ -1,36 +1,41 @@
 <template>
   <div>
     <div class="propositionList">
-      <router-link :to="{name: 'category-list', params: { slug: slug }}">
-        <button type="button" class="btn btn-outline-success">Passer à l'affichage par catégorie</button>
-      </router-link>
-      <router-link :to="{name: 'team-members-list', params: { slug: slug }}">
-        <button type="button" class="btn btn-outline-info">Voir les membres de l'équipe</button>
-      </router-link>
-      <router-link v-if="isAdmin" :to="{name: 'team-members-administration', params: { slug: slug }}">
-        <button type="button" class="btn btn-outline-danger">Administrer les membres de l'équipes</button>
-      </router-link>
-      <br><br/>
-      <div class="card-columns">
-        <div class="card" v-for="proposition in allPropositions">
-          <h4 class="card-header">{{proposition.title}}</h4>
-          <section class="card-body">
-            <aside class="memberInfos" v-if="proposition.category">
-              <h5 class="card-title"><span class="badge badge-secondary">{{proposition.category}}</span></h5>
-            </aside>
-            <article>
-              <p class="card-text">{{proposition.summary}}</p>
-            </article>
-          </section>
-          <div class="card-footer">
-            <p class="card-text"><router-link :to="{name: 'profile-display', query: {id: proposition.authorLink}}">
-              Par {{proposition.author}}
-            </router-link></p>
-            <router-link :to="{name: 'display-proposition', params: { slug: slug, idProposition: proposition._id,
-            proposition: proposition }}">
-              <button type="button" class="btn btn-outline-success">Détails de la proposition</button>
-            </router-link>
+      <div class="row">
+        <div class="col-sm-10">
+          <div class="card-columns">
+            <div class="card" v-for="proposition in allPropositions">
+              <h4 class="card-header">{{proposition.title}}</h4>
+              <section class="card-body">
+                <aside class="memberInfos" v-if="proposition.category">
+                  <h5 class="card-title"><span class="badge badge-secondary">{{proposition.category}}</span></h5>
+                </aside>
+                <article>
+                  <p class="card-text">{{proposition.summary}}</p>
+                </article>
+              </section>
+              <div class="card-footer">
+                <p class="card-text"><router-link :to="{name: 'profile-display', query: {id: proposition.authorLink}}">
+                  Par {{proposition.author}}
+                </router-link></p>
+                <router-link :to="{name: 'display-proposition', params: { slug: slug, idProposition: proposition._id,
+                  proposition: proposition }}">
+                  <button type="button" class="btn btn-outline-success">Détails de la proposition</button>
+                </router-link>
+              </div>
+            </div>
           </div>
+        </div>
+        <div class="col-sm-2">
+          <router-link :to="{name: 'category-list', params: { slug: slug }}">
+            <button type="button" class="btn btn-outline-success">Passer à l'affichage par catégorie</button>
+          </router-link>
+          <router-link :to="{name: 'team-members-list', params: { slug: slug }}">
+            <button type="button" class="btn btn-outline-info">Voir les membres de l'équipe</button>
+          </router-link>
+          <router-link v-if="isAdmin" :to="{name: 'team-members-administration', params: { slug: slug }}">
+            <button type="button" class="btn btn-outline-danger">Administrer les membres de l'équipes</button>
+          </router-link>
         </div>
       </div>
     </div>
