@@ -1,23 +1,23 @@
 <template>
   <div class="comment-display">
-		<div class="card card-body card-outline-info">
-			<div class="media">
-				<img src="../../assets/anonymousProfileLarge.png" alt="Image de Profile" class="rounded-circle"/>
-				<div class="media-body">
-					<!-- Add a router link to the author -->
-					<h5 class="mt-0">{{comment.authorDisplay}} <small class="text-muted">{{displayDate(comment.date)}}</small></h5>
-					<!-- Display only 120 char an add read more button or a modal on comment click ?-->
-                    {{comment.content}}
-                    <ul>
-                      <li v-for="subcomment in comment.subcomments">
-                        <subcomment-display :subcomment="subcomment"></subcomment-display>
-                      </li>
-                    </ul>
-                    <subcomment-adder></subcomment-adder>
-                </div>
-            </div>
+    <div class="card card-body card-outline-info">
+      <div class="media">
+        <img src="../../assets/anonymousProfileLarge.png" alt="Image de Profile" class="rounded-circle"/>
+        <div class="media-body">
+          <!-- Add a router link to the author -->
+          <h5 class="mt-0">{{comment.authorDisplay}} <small class="text-muted">{{displayDate(comment.date)}}</small></h5>
+          <!-- Display only 120 char an add read more button or a modal on comment click ?-->
+          {{comment.content}}
+          <ul>
+            <li v-for="subcomment in comment.subcomments">
+              <subcomment-display :subcomment="subcomment"></subcomment-display>
+            </li>
+          </ul>
+          <subcomment-adder></subcomment-adder>
         </div>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -28,8 +28,8 @@
     components: [
       SubcommentAdder,
       SubcommentDisplay
-     ],
-     props: {
+    ],
+    props: {
       comment: {
         required: true,
         default: function () {
@@ -49,9 +49,9 @@
 </script>
 
 <style scoped>
-  ul, li{
-    list-style:none;
-    padding-left:0;
-    padding-bottom: 7px;
-  }​
+  li {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 7px;
+  }
 </style>

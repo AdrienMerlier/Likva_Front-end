@@ -1,19 +1,19 @@
 <template>
   <div class="commentary-adder">
-		<div class="card">
-			<div class="card-header">
-				<h6>Nouveau commentaire</h6>
-			</div>
-			<div class="card-body">
-				<form>
-					<div class="form-group">
-					    <textarea class="form-control" id="new_comment" placeholder="Que pensez-vous de cette proposition" v-model="content"></textarea>
-					</div>
-				</form>
-				<button type="button" class="btn btn-primary" @click="sendNewComment"><i class="fa fa-send"></i> Envoyer</button>
-			</div>
-		</div>
-	</div>
+    <div class="card">
+      <div class="card-header">
+        <h6>Nouveau commentaire</h6>
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <textarea class="form-control" id="new_comment" placeholder="Que pensez-vous de cette proposition" v-model="content"></textarea>
+          </div>
+        </form>
+        <button type="button" class="btn btn-primary" @click="sendNewComment"><i class="fa fa-send"></i> Envoyer</button>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -37,12 +37,12 @@
       ...Vuex.mapActions([
         'addMessageUserStore'
       ]),
-      sendNewComment(){
+      sendNewComment () {
         var comment = {}
         comment.authorDisplay = this.userFullName
         comment.content = this.content
         comment.date = Date.now()
-        this.commentaryResource.save({slug: teamSlug, idProposition: proposition._id}, comment).then(response => {
+        this.commentaryResource.save({slug: this.teamSlug, idProposition: this.proposition._id}, comment).then(response => {
           // Server answer
           var message = {
             concern: 'Nouveau Commentaire'
@@ -70,9 +70,9 @@
       ])
     },
     mounted () {
-      this.commentaryResource = this.$resource('http://127.0.0.0:3000/api/teams{/slug}/propositions{/idProposition}/addComment',{}, {}, {headers: {
+      this.commentaryResource = this.$resource('http://127.0.0.0:3000/api/teams{/slug}/propositions{/idProposition}/addComment', {}, {}, {headers: {
         authorId: this.userInfos.id}})
-  }
+    }
   }
 </script>
 

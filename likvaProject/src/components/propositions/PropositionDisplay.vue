@@ -149,5 +149,9 @@
 </script>
 
 <style scoped>
-
+  li {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 7px;
+  }
 </style>
