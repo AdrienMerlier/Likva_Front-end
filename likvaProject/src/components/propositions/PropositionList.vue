@@ -87,7 +87,7 @@
       }
       )
     },
-    updated () {
+    beforeUpdate () {
       this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions')
       this.propositionResource.get({slug: this.slug}).then(response => {
           //  If server answer
