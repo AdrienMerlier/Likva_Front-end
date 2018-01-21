@@ -23,7 +23,7 @@
       </div>
     </div>
     </div>
-    <category-adder></category-adder>
+    <category-adder :categories="allCategories"></category-adder>
   </div>
 </template>
 
