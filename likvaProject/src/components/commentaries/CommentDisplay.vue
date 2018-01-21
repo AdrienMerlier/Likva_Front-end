@@ -55,7 +55,7 @@
     margin-bottom: 7px;
   }
   .media-body{
-    margin-left: 5px;
+    margin-left: 3%;
   }
   .profileImage {
     width: 64px;
