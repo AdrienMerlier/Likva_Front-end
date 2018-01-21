@@ -201,8 +201,8 @@
           <file leaf-file-name="PropositionList.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionList.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="15" column="61" lean-forward="true" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
+                <state relative-caret-position="102">
+                  <caret line="6" column="30" lean-forward="false" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
                   <folding />
                 </state>
               </provider>
@@ -459,12 +459,12 @@
       <workItem from="1516231473922" duration="2574000" />
       <workItem from="1516259106396" duration="5812000" />
       <workItem from="1516435461833" duration="10311000" />
-      <workItem from="1516556618816" duration="3738000" />
+      <workItem from="1516556618816" duration="3804000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="342472000" />
+    <option name="totallyTimeSpent" value="342538000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="475" y="1" width="1462" height="1047" extended-state="0" />
@@ -864,8 +864,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionList.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="61" lean-forward="true" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
+        <state relative-caret-position="102">
+          <caret line="6" column="30" lean-forward="false" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
           <folding />
         </state>
       </provider>

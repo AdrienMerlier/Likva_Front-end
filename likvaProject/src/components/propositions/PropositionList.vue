@@ -4,7 +4,7 @@
 
       <div class="row">
         <div class="col-sm-9">
-          <h2>Les proposition de l'équipe {{actualTeamStore.displayName}}</h2>
+          <h2>Les propositions de l'équipe {{actualTeamStore.displayName}}</h2>
           <div class="card-columns">
             <div class="card" v-for="proposition in allPropositions">
               <h4 class="card-header">{{proposition.title}}</h4>
