@@ -111,5 +111,6 @@
   .side-btn{
     width: 100%;
     margin-bottom: 15px;
+    overflow: hidden;
   }
 </style>
