@@ -11,7 +11,7 @@
 
 <script>
   export default {
-    name: 'comment-adder',
+    name: 'subcomment-adder',
     data () {
       return {
         content: null

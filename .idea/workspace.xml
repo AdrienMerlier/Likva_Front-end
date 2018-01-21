@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70a3ddf4-30a2-4c32-8b7c-8bf4f6665c76" name="Default" comment="Merge branch 'vue-cli_project' of https://github.com/AdrienMerlier/Likva_Front-end into vue-cli_project&#10;&#10;# Conflicts:&#10;#&#9;likvaProject/src/components/propositions/PropositionDisplay.vue">
-      <change beforePath="$PROJECT_DIR$/likvaProject/src/components/commentaries/CommentDisplay.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/commentaries/CommentDisplay.vue" />
-      <change beforePath="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionDisplay.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionDisplay.vue" />
-      <change beforePath="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionList.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionList.vue" />
+      <change beforePath="$PROJECT_DIR$/likvaProject/src/components/commentaries/SubcommentAdder.vue" afterPath="$PROJECT_DIR$/likvaProject/src/components/commentaries/SubcommentAdder.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -92,21 +90,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SubcommentDisplay.vue" pinned="false" current-in-tab="false">
+          <file leaf-file-name="SubcommentDisplay.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/commentaries/SubcommentDisplay.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="68">
-                  <caret line="4" column="115" lean-forward="false" selection-start-line="4" selection-start-column="115" selection-end-line="4" selection-end-column="115" />
+                <state relative-caret-position="340">
+                  <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SubcommentAdder.vue" pinned="false" current-in-tab="true">
+          <file leaf-file-name="SubcommentAdder.vue" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/commentaries/SubcommentAdder.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+                <state relative-caret-position="306">
+                  <caret line="18" column="6" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
                   <folding />
                 </state>
               </provider>
@@ -213,8 +211,8 @@
           <file leaf-file-name="CommentDisplay.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/likvaProject/src/components/commentaries/CommentDisplay.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="651">
-                  <caret line="58" column="21" lean-forward="true" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
+                <state relative-caret-position="634">
+                  <caret line="57" column="14" lean-forward="true" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="14" />
                   <folding>
                     <element signature="e#878#925#0" expanded="true" />
                   </folding>
@@ -336,12 +334,12 @@
         <option value="$PROJECT_DIR$/likvaProject/src/components/commentaries/SubcommentaryDisplay.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/commentaries/CommentaryAdder.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/commentaries/CommentaryDisplay.vue" />
-        <option value="$PROJECT_DIR$/likvaProject/src/components/commentaries/SubcommentAdder.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/commentaries/CommentAdder.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/commentaries/SubcommentDisplay.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionList.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/propositions/PropositionDisplay.vue" />
         <option value="$PROJECT_DIR$/likvaProject/src/components/commentaries/CommentDisplay.vue" />
+        <option value="$PROJECT_DIR$/likvaProject/src/components/commentaries/SubcommentAdder.vue" />
       </list>
     </option>
   </component>
@@ -461,12 +459,12 @@
       <workItem from="1516231473922" duration="2574000" />
       <workItem from="1516259106396" duration="5812000" />
       <workItem from="1516435461833" duration="10311000" />
-      <workItem from="1516556618816" duration="2030000" />
+      <workItem from="1516556618816" duration="2155000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="340764000" />
+    <option name="totallyTimeSpent" value="340889000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="475" y="1" width="1462" height="1047" extended-state="0" />
@@ -808,14 +806,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/commentaries/SubcommentDisplay.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="115" lean-forward="false" selection-start-line="4" selection-start-column="115" selection-end-line="4" selection-end-column="115" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/votes/Vote.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -831,14 +821,6 @@
           <folding>
             <marker date="1516292577382" expanded="true" signature="2576:2583" ph="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/commentaries/SubcommentAdder.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -860,10 +842,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/commentaries/SubcommentAdder.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="6" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/likvaProject/src/components/commentaries/SubcommentDisplay.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/likvaProject/src/components/commentaries/CommentDisplay.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="58" column="21" lean-forward="true" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
+        <state relative-caret-position="634">
+          <caret line="57" column="14" lean-forward="true" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="14" />
           <folding>
             <element signature="e#878#925#0" expanded="true" />
           </folding>
