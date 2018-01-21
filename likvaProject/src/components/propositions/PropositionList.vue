@@ -104,12 +104,12 @@
 
 <style scoped>
   .propositionList{
-    width: 80%;
+    width: 95%;
     margin-left: auto;
     margin-right: auto;
   }
   .side-btn{
     width: 100%;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
   }
 </style>
