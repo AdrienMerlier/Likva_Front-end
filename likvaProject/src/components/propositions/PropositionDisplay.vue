@@ -1,7 +1,7 @@
 <template>
   <div class="propositionDisplay">
     <div class="jumbotron jumbotron-fluid">
-      <div class="container">
+      <div class="container border-bottom border-gray">
         <h1 class="display-3" id="title">{{proposition.title}}</h1>
         <router-link :to="{ name: 'display-results', params: {slug: slug, idProposition: idProposition}}" v-if="isReady()|hasResults">
           <button type="button" class="btn btn-success"> Avoir les résultats  </button>
@@ -21,20 +21,22 @@
           <nl2br id="resultat" tag="p" :text=proposition.consequences />
         </div>
       </div>
-      <h3>Espace commentaire</h3>
-      <div class="row">
-        <div class="col-sm-8">
-          <ul v-if="proposition.comments.length > 0">
-            <li v-for="comment in proposition.comments">
-              <comment-display :comment="comment"></comment-display>
-            </li>
-          </ul>
-          <div class="card card-body" v-else>
-            <p class="card-text">Auncun commentaire pour le moment, allez vous être le premier ?</p>
+      <div class="comment-space">
+        <h3>Espace commentaire</h3>
+        <div class="row">
+          <div class="col-sm-8">
+            <ul v-if="proposition.comments.length > 0">
+              <li v-for="comment in proposition.comments">
+                <comment-display :comment="comment"></comment-display>
+              </li>
+            </ul>
+            <div class="card card-body" v-else>
+              <p class="card-text">Auncun commentaire pour le moment, allez vous être le premier ?</p>
+            </div>
           </div>
-        </div>
-        <div class="col-sm-4">
-          <comment-adder :proposition="proposition" :team-slug="proposition.slug"></comment-adder>
+          <div class="col-sm-4">
+            <comment-adder :proposition="proposition" :team-slug="proposition.slug"></comment-adder>
+          </div>
         </div>
       </div>
     </div>
@@ -157,5 +159,11 @@
     list-style-type: none;
     padding: 0;
     margin-bottom: 7px;
+  }
+  .border-bottom {
+    border-bottom-width: 3px;
+  }
+  .comment-space {
+    text-align: left;
   }
 </style>
