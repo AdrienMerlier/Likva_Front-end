@@ -1,7 +1,7 @@
 <template>
   <div class="propositionDisplay">
     <div class="jumbotron jumbotron-fluid">
-      <div class="container border-bottom border-gray">
+      <div class="container border-bottom border-white">
         <h1 class="display-3" id="title">{{proposition.title}}</h1>
         <router-link :to="{ name: 'display-results', params: {slug: slug, idProposition: idProposition}}" v-if="isReady()|hasResults">
           <button type="button" class="btn btn-success"> Avoir les résultats  </button>
@@ -162,6 +162,9 @@
   }
   .border-bottom {
     border-bottom-width: 3px;
+  }
+  .comment-space h3{
+    margin-left: 5%;
   }
   .comment-space {
     text-align: left;

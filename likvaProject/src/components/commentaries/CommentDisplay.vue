@@ -55,7 +55,9 @@
     padding: 0;
     margin-bottom: 7px;
   }
-
+  .media-body{
+    margin-left: 5px;
+  }
   .profileImage {
     width: 64px;
     height: 64px;
