@@ -39,7 +39,6 @@
     },
     methods: {
       displayDate (stringDate) {
-        console.log('La date est enregistrée sous la forme: ' + stringDate)
         var date = new Date(stringDate)
         var mois = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
         var jours = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche']
