@@ -14,7 +14,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "bootstrap": "^4.0.0-beta.3",
+    "bootstrap": "^4.0.0",
     "bootstrap-vue": "^1.4.1",
     "chart.js": "^2.7.1",
     "moment": "^2.20.1",
@@ -40,7 +40,7 @@
     "babel-preset-stage-2": "^6.22.0",
     "babel-register": "^6.22.0",
     "chalk": "^2.0.1",
-    "chromedriver": "^2.34.1",
+    "chromedriver": "^2.35.0",
     "copy-webpack-plugin": "^4.3.1",
     "cross-spawn": "^5.0.1",
     "css-loader": "^0.28.9",
@@ -80,7 +80,7 @@
     "vue-template-compiler": "^2.5.13",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.2",
-    "webpack-dev-server": "^2.11.0",
+    "webpack-dev-server": "^2.11.1",
     "webpack-merge": "^4.1.0"
   },
   "engines": {
