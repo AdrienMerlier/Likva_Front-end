@@ -53,8 +53,8 @@
         this.idProposition = this.$router.history.current.params.idProposition
         console.log(this.result)
         this.voteResource.save({slug: this.slug, idProposition: this.idProposition}, {
-          content: this.delegationStore.hasDelegate ? this.delegationStore.delegate.email : this.result,
-          voter: this.userInfos.email,
+          content: this.delegationStore.hasDelegate ? this.delegationStore.delegate.userId : this.result,
+          voter: this.userInfos.id,
           delegation: this.delegationStore.hasDelegate
         }).then(response => {
           //  If server answer
@@ -92,9 +92,9 @@
       this.idProposition = this.$router.history.current.params.idProposition
       this.voteResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/idProposition}/vote')
       this.signatureResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/idProposition}/emargement', {}, {}, {headers: {
-        userEmail: this.userInfos.email}})
+        id: this.userInfos.id}})
       this.signatureResource.get({slug: this.slug, idProposition: this.idProposition}, {
-        email: this.userInfos.email
+        id: this.userInfos.id
       }).then(response => {
         // If server answer
         this.hasVoted = response.body.success
@@ -103,7 +103,7 @@
         console.error('Something went wrong with the server')
       })
       this.delegateResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/delegates', {}, {}, {headers: {
-        userEmail: this.userInfos.email}})
+        userEmail: this.userInfos.email, idProposition: this.idProposition}})
       this.delegateResource.get({slug: this.slug}).then(response => {
         // If server answer
         if (response.body.success) {

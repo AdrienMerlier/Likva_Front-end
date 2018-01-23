@@ -16,7 +16,9 @@
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <!--Changer avec un router-link-->
-            <a class="nav-link" href="#">Profile</a>
+            <router-link :to="{name: 'profile-display', query: {id: userInfos.id}}">
+              <a class="nav-link" href="#">Profile</a>
+            </router-link>
           </li>
           <li class="nav-item dropdown">
             <!--Changer avec un router-link-->

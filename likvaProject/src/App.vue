@@ -14,6 +14,7 @@
   import Messages from './components/Messages'
   import PropositionModal from './components/propositions/PropositionModal'
   import Delegation from './components/votes/Delegation'
+  import ModifyUser from './components/teams/TeamUsersModify'
 
   export default {
     name: 'app',
@@ -22,7 +23,8 @@
       HelloWorld,
       HeaderBar,
       Messages,
-      PropositionModal
+      PropositionModal,
+      ModifyUser
     }
   }
 </script>

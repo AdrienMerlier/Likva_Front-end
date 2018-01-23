@@ -37,6 +37,11 @@
 
   export default {
     name: 'category-adder',
+    props: {
+      categories: {
+        required: true
+      }
+    },
     data () {
       return {
         categoryName: ''
@@ -59,6 +64,7 @@
           //  If success
           message.content = 'Votre catégorie est ajouté, rechargez la page.'
           message.type = 'alert-success'
+          this.categories.push({categoryName: this.categoryName})
           this.addMessageUserStore(message)
         }, response => {
           //  If failure

@@ -3,6 +3,7 @@
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h2 class="display-3" id="verdict">Le résultat de cette proposition est {{verdict}}</h2>
+        <h5>Le nombre de votants pour cette proposition est {{sum(data)}}</h5>
         <doughnutResults v-if=loaded :labelsVote=labels :dataVote=data></doughnutResults>
       </div>
     </div>
@@ -27,6 +28,9 @@
       }
     },
     methods: {
+      sum (value) {
+        return value.reduce(function (a, b) { return a + b }, 0)
+      }
     },
     computed: {
       ...Vuex.mapGetters([

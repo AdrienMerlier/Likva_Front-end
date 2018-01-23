@@ -12,6 +12,9 @@ const PropositionDisplay = () => import('../components/propositions/PropositionD
 const PropositionResults = () => import('../components/propositions/PropositionResults')
 const PropositionList = () => import('../components/propositions/PropositionList')
 const PropositionUpdate = () => import('../components/propositions/PropositionUpdate')
+const ProfileDisplay = () => import('../components/users/Profile')
+const TeamMembersAdministration = () => import('../components/teams/TeamUsersAdministration')
+const TeamMembersList = () => import('../components/teams/TeamMembersList')
 
 export default new VueRouter({
   mode: 'history',
@@ -35,6 +38,16 @@ export default new VueRouter({
       path: '/teams/:slug/update',
       name: 'edit-team',
       component: TeamForm
+    },
+    {
+      path: '/teams/:slug/members',
+      name: 'team-members-list',
+      component: TeamMembersList
+    },
+    {
+      path: '/teams/:slug/administration',
+      name: 'team-members-administration',
+      component: TeamMembersAdministration
     },
     {
       path: '/teams/:slug/categories',
@@ -65,6 +78,11 @@ export default new VueRouter({
       path: '/teams/:slug/propositions/:idProposition/update',
       name: 'edit-proposition',
       component: PropositionUpdate
+    },
+    {
+      path: '/profile',
+      name: 'profile-display',
+      component: ProfileDisplay
     },
     {
       path: '*',

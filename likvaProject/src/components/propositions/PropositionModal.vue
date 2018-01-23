@@ -83,6 +83,7 @@
           team: this.actualTeamStore.displayName,
           title: this.proposition.title,
           author: this.userFullName,
+          authorLink: this.userInfos.id,
           summary: this.proposition.summary,
           description: this.proposition.description,
           change: this.proposition.change,
