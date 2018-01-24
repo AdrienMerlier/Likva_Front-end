@@ -5,8 +5,12 @@
       <div class="row">
         <div class="col-sm-9">
           <h2>Les propositions de l'équipe {{actualTeamStore.displayName}}</h2>
+          <input type="checkbox" id="checkboxEnCours" v-model="before">
+          <label for="checkboxEnCours"> Propositions en cours </label>
+          <input type="checkbox" id="checkboxAfter" v-model="after">
+          <label for="checkboxAfter"> Propositions terminées </label>
           <div class="card-columns">
-            <div class="card" v-for="proposition in allPropositions">
+            <div class="card" v-for="proposition in filteredList">
               <h4 class="card-header">{{proposition.title}}</h4>
               <section class="card-body">
                 <aside class="memberInfos" v-if="proposition.category">
@@ -55,7 +59,9 @@
       return {
         allPropositions: [],
         slug: false,
-        catQuery: false
+        catQuery: false,
+        before: true,
+        after: true
       }
     },
     watch: {
@@ -85,6 +91,23 @@
           if (team.slug === this.actualTeamStore.slug) { selectedTeam = team }
         })
         return selectedTeam.admin
+      },
+      filteredList () {
+        if (this.before && this.after) {
+          return this.allPropositions
+        } else if (this.before && this.after === false) {
+          return this.allPropositions.filter(prop => {
+            return Date.parse(prop.date) >= Date.now() // Gérer les dates
+          }
+        )
+        } else if (this.after && this.before === false) {
+          return this.allPropositions.filter(prop => {
+            return Date.parse(prop.date) < Date.now() // Gérer les dates
+          }
+          )
+        } else if (this.before === false && this.after === false) {
+          return null
+        }
       }
     },
     mounted () {

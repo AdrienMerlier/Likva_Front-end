@@ -4,7 +4,7 @@
       <button type="button" class="btn btn-outline-info">Retourner à la liste de proposition</button>
     </router-link>
     <br></br>
-    <h2>Gestion de l'équipe {{slug}}</h2>
+    <h2>Gestion de l'équipe {{actualTeamStore.displayName}}</h2>
     <br></br>
     <table class="table table-striped table-condensed">
       <thead>
@@ -87,7 +87,8 @@
     },
     computed: {
       ...Vuex.mapGetters([
-        'userInfos'
+        'userInfos',
+        'actualTeamStore'
       ])
     },
     mounted () {
