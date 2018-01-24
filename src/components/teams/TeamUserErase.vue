@@ -71,7 +71,6 @@
       }
     },
     mounted () {
-      console.log('I have mounted teamUserEraser' + this.teamUserId)
       this.slug = this.$router.history.current.params.slug
       this.teamUserEraseResources = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/users/erase')
     }

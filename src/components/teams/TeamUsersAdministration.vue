@@ -37,6 +37,8 @@
       <team-users-erase :teamUser="actualTeamUser"></team-users-erase>
       </tbody>
     </table>
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addUserModal">Ajouter un nouveau membre</button>
+    <team-user-add :existingMembers="allUsers"></team-user-add>
   </div>
 </template>
 
@@ -45,10 +47,11 @@
   import userStore from '../users/UsersStore'
   import TeamUserModifier from './TeamUsersModify'
   import TeamUsersErase from './TeamUserErase'
+  import TeamUserAdd from './TeamUserAdderModal.vue'
 
   export default {
     components: {
-      TeamUserModifier, TeamUsersErase},
+      TeamUserModifier, TeamUsersErase, TeamUserAdd},
     name: 'team-members-administration',
     store: userStore,
     data () {
