@@ -3,6 +3,9 @@
     <delegation-category></delegation-category>
     <div class="propositionList">
       <h1>{{catQuery}}</h1>
+      <router-link :to="{name: 'category-list', params: { slug: slug }}">
+        <button type="button" class="btn btn-outline-success">Retourner à l'ensemble des catégories</button>
+      </router-link>
       <h3>
         <small v-if="hasDelegate"> Votre délégué(e) actuel(le) est: {{currentDelegate.displayName}}</small>
         <small v-else> Vous n'avez pas de délégué(e) pour cette catégorie.</small>
@@ -18,15 +21,16 @@
         </div>
       </h3>
       <p class></p>
-      <router-link :to="{name: 'category-list', params: { slug: slug }}">
-        <button type="button" class="btn btn-outline-success">Retourner à l'ensemble des catégories</button>
-      </router-link>
       <button v-if="hasDelegate" type="button" class="btn btn-info" data-toggle="modal" data-target="#delegationPerCategoryModal">Changer mon délégué(e)</button>
       <button v-else type="button" class="btn btn-info" data-toggle="modal" data-target="#delegationPerCategoryModal">Ajouter un délégué(e)</button>
       <button v-if="hasDelegate" type="button" class="btn btn-warning" v-on:click.once="removeDelegate">Enlever votre délégué(e)</button>
       <br><br/>
+      <input type="checkbox" id="checkboxEnCours" v-model="before">
+      <label for="checkboxEnCours"> Propositions en cours </label>
+      <input type="checkbox" id="checkboxAfter" v-model="after">
+      <label for="checkboxAfter"> Propositions terminées </label>
       <div class="card-columns">
-        <div class="card" v-for="proposition in allPropositions">
+        <div class="card" v-for="proposition in filteredList">
           <h4 class="card-header">{{proposition.title}}</h4>
           <section class="card-body">
             <aside class="memberInfos" v-if="proposition.category">
@@ -65,7 +69,9 @@
         catQuery: false,
         currentDelegate: false,
         hasDelegate: false,
-        delegable: false
+        delegable: false,
+        before: true,
+        after: true
       }
     },
     methods: {
@@ -153,7 +159,24 @@
         'actualTeamStore',
         'userInfos',
         'delegateList'
-      ])
+      ]),
+      filteredList () {
+        if (this.before && this.after) {
+          return this.allPropositions
+        } else if (this.before && this.after === false) {
+          return this.allPropositions.filter(prop => {
+            return Date.parse(prop.date) >= Date.now() // Gérer les dates
+          }
+          )
+        } else if (this.after && this.before === false) {
+          return this.allPropositions.filter(prop => {
+            return Date.parse(prop.date) < Date.now() // Gérer les dates
+          }
+          )
+        } else if (this.before === false && this.after === false) {
+          return null
+        }
+      }
     },
     mounted () {
       this.slug = this.$router.history.current.params.slug

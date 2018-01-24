@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c41a0e05-e275-42ef-a56f-ba14b1e16d4d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/propositions/PropositionList.vue" afterPath="$PROJECT_DIR$/src/components/propositions/PropositionList.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/teams/TeamUsersAdministration.vue" afterPath="$PROJECT_DIR$/src/components/teams/TeamUsersAdministration.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/categories/CategoryPropositionsList.vue" afterPath="$PROJECT_DIR$/src/components/categories/CategoryPropositionsList.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,43 +26,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PropositionList.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PropositionList.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/propositions/PropositionList.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="581">
-              <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+            <state relative-caret-position="544">
+              <caret line="110" column="7" lean-forward="true" selection-start-line="94" selection-start-column="6" selection-end-line="110" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PropositionDisplay.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/propositions/PropositionDisplay.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="42" column="115" lean-forward="false" selection-start-line="42" selection-start-column="74" selection-end-line="42" selection-end-column="115" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TeamMembersList.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/teams/TeamMembersList.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-90">
-              <caret line="49" column="22" lean-forward="true" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
-              <folding>
-                <element signature="e#1497#1520#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CategoryPropositionsList.vue" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CategoryPropositionsList.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/categories/CategoryPropositionsList.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3348">
-              <caret line="188" column="32" lean-forward="false" selection-start-line="188" selection-start-column="23" selection-end-line="188" selection-end-column="32" />
+            <state relative-caret-position="211">
+              <caret line="163" column="40" lean-forward="true" selection-start-line="163" selection-start-column="40" selection-end-line="163" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -170,12 +145,12 @@
         <option value="$PROJECT_DIR$/src/components/commentaries/CommentDisplay.vue" />
         <option value="$PROJECT_DIR$/src/components/commentaries/CommentAdder.vue" />
         <option value="$PROJECT_DIR$/src/components/votes/DelegationPerCategory.vue" />
-        <option value="$PROJECT_DIR$/src/components/categories/CategoryPropositionsList.vue" />
         <option value="$PROJECT_DIR$/src/components/propositions/PropositionResults.vue" />
         <option value="$PROJECT_DIR$/src/components/propositions/PropositionDisplay.vue" />
         <option value="$PROJECT_DIR$/src/components/teams/TeamUsersAdministration.vue" />
         <option value="$PROJECT_DIR$/src/components/teams/TeamMembersList.vue" />
         <option value="$PROJECT_DIR$/src/components/propositions/PropositionList.vue" />
+        <option value="$PROJECT_DIR$/src/components/categories/CategoryPropositionsList.vue" />
       </list>
     </option>
   </component>
@@ -230,6 +205,13 @@
               <item name="Likva_Front-end" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Likva_Front-end" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Likva_Front-end" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="categories" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Likva_Front-end" type="b2602c69:ProjectViewProjectNode" />
@@ -356,12 +338,12 @@
       <workItem from="1516463905519" duration="6214000" />
       <workItem from="1516703950258" duration="52000" />
       <workItem from="1516785635301" duration="1568000" />
-      <workItem from="1516787244158" duration="816000" />
+      <workItem from="1516787244158" duration="1388000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180511000" />
+    <option name="totallyTimeSpent" value="181083000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="75" y="24" width="1122" height="1056" extended-state="4" />
@@ -707,14 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/categories/CategoryPropositionsList.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3348">
-          <caret line="188" column="32" lean-forward="false" selection-start-line="188" selection-start-column="23" selection-end-line="188" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/propositions/PropositionResults.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
@@ -749,16 +723,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/teams/TeamMembersList.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-90">
-          <caret line="49" column="22" lean-forward="true" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
-          <folding>
-            <element signature="e#1497#1520#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/votes/Vote.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -775,10 +739,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/teams/TeamMembersList.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-90">
+          <caret line="49" column="22" lean-forward="true" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+          <folding>
+            <element signature="e#1497#1520#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/propositions/PropositionList.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+        <state relative-caret-position="544">
+          <caret line="110" column="7" lean-forward="true" selection-start-line="94" selection-start-column="6" selection-end-line="110" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/categories/CategoryPropositionsList.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="163" column="40" lean-forward="true" selection-start-line="163" selection-start-column="40" selection-end-line="163" selection-end-column="40" />
           <folding />
         </state>
       </provider>
