@@ -13,12 +13,8 @@
       <div class="tab-pane fade show active" id="inProgress" role="tabpanel" aria-labelledby="inProgress-tab">
         <table class="table table-striped table-condensed">
           <thead>
-          <tr>
-            <th>Nom de la proposition</th>
-            <th>Catégorie</th>
-            <th>Equipe</th>
-            <th>Nombre de votant</th>
-            <th></th>
+          <tr v-for="header in inProgressHeaders">
+            <th>{{header.displayName| capitalize}}</th>
           </tr>
           </thead>
           <tbody>
@@ -29,11 +25,11 @@
             <td>{{proposition.numberOfVotes === undefined ? 0 : proposition.numberOfVotes }}</td>
             <td>
               <router-link :to="{name: 'proposition-display', params: {slug: proposition.slug, idProposition: proposition._id,
-					            proposition: proposition }}">
+                      proposition: proposition }}">
                 <button type="button" class="btn btn-primary btn-sm rounded-circle"><i class="fa fa-file-text-o"></i></button>
               </router-link>
               <router-link :to="{name: 'edit-proposition', params: { slug: proposition.slug, idProposition: idProposition,
-					        	proposition: proposition}}">
+                    proposition: proposition}}">
                 <button type="button" class="btn btn-warning btn-sm rounded-circle"><i class="fa fa-edit"></i></button>
               </router-link>
             </td>
@@ -44,13 +40,8 @@
       <div class="tab-pane fade" id="done" role="tabpanel" aria-labelledby="done-tab">
         <table class="table table-striped table-condensed">
           <thead>
-          <tr>
-            <th>Nom de la proposition</th>
-            <th>Catégorie</th>
-            <th>Equipe</th>
-            <th>Nombre de votant</th>
-            <th>Résultat</th>
-            <th></th>
+          <tr v-for="header in doneHeaders">
+            <th>{{header.displayName | capitalize}}</th>
           </tr>
           </thead>
           <tbody>
@@ -62,7 +53,7 @@
             <td>{{proposition.verdict}}</td>
             <td>
               <router-link :to="{name: 'proposition-display', params: {slug: proposition.slug, idProposition: proposition._id,
-					            proposition: proposition }}">
+                      proposition: proposition }}">
                 <button type="button" class="btn btn-success btn-sm rounded-circle"><i class="fa fa-pie-chart"></i></button>
               </router-link>
               <router-link :to="{ name: 'display-results', params: {slug: proposition.slug, idProposition: proposition._id}}">
@@ -88,7 +79,22 @@
       return {
         myPropositions: [],
         inProgressPropositions: [],
-        donePropositions: []
+        donePropositions: [],
+        inProgressHeaders: [
+          {displayName: 'titre', field: 'title'},
+          {displayName: 'catégorie', field: 'category'},
+          {displayName: 'équipe', field: 'slug'},
+          {displayName: 'nombre de votants', field: 'numerOfVotes'},
+          {displayName: '', field: ''}
+        ],
+        doneHeaders: [
+          {displayName: 'titre', field: 'title'},
+          {displayName: 'catégorie', field: 'category'},
+          {displayName: 'équipe', field: 'slug'},
+          {displayName: 'nombre de votants', field: 'numerOfVotes'},
+          {displayName: 'résultat', field: 'slug'}
+          {displayName: '', field: ''}
+        ]
       }
     },
     methods: {
