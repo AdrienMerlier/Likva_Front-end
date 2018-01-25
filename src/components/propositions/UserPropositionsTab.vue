@@ -13,8 +13,8 @@
       <div class="tab-pane fade show active" id="inProgress" role="tabpanel" aria-labelledby="inProgress-tab">
         <table class="table table-striped table-condensed">
           <thead>
-          <tr v-for="header in inProgressHeaders">
-            <th>{{header.displayName| capitalize}}</th>
+          <tr>
+            <th v-for="header in inProgressHeaders">{{header.displayName| capitalize}}</th>
           </tr>
           </thead>
           <tbody>
@@ -40,8 +40,8 @@
       <div class="tab-pane fade" id="done" role="tabpanel" aria-labelledby="done-tab">
         <table class="table table-striped table-condensed">
           <thead>
-          <tr v-for="header in doneHeaders">
-            <th>{{header.displayName | capitalize}}</th>
+          <tr>
+            <th v-for="header in doneHeaders">{{header.displayName | capitalize}}</th>
           </tr>
           </thead>
           <tbody>
