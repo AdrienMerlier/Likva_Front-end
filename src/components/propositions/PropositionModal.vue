@@ -88,7 +88,7 @@
           description: this.proposition.description,
           change: this.proposition.change,
           consequences: this.proposition.consequences,
-          information: this.proposition.information,
+          type: this.proposition.type,
           endDate: this.proposition.endDate,
           votePossibilities: this.proposition.optionsList,
           category: this.category.categoryName
