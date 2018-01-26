@@ -39,18 +39,27 @@
               <div class="input-group-addon"><i class="fa fa-signing" aria-hidden="true"></i></div>
               <select name="typeOfVote" class="form-control" id="typeOfVote" required="true"
                       v-model="proposition.type">
-                <option>Majorité absolue</option>
-                <option>Le plus de votes</option>
+                <option value="AbsoluteMajority">Majorité absolue</option>
+                <option value="MostVotes">Le plus de votes</option>
               </select>
             </div>
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-3">
             <label for="inputEndDate">Date de clôture</label>
             <div class="input-group">
               <div class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i>
               </div>
               <input name="endDate" type="date" class="form-control" id="inputEndDate"
                      aria-describedby="conditionsHelp" required="true" v-model="proposition.endDate">
+             </div>
+          </div>
+          <div class="col-sm-3">
+            <label for="inputEndHour">Date de clôture</label>
+            <div class="input-group">
+              <div class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i>
+              </div>
+              <input name="endHour" type="time" class="form-control" id="inputEndHour"
+                     aria-describedby="conditionsHelp" required="true" v-model="proposition.endHour">
             </div>
           </div>
         </div>

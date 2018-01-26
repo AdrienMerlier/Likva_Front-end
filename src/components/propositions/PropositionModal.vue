@@ -89,7 +89,7 @@
           change: this.proposition.change,
           consequences: this.proposition.consequences,
           type: this.proposition.type,
-          endDate: this.proposition.endDate,
+          endDate: this.proposition.endDate + ' ' + this.proposition.endHour,
           votePossibilities: this.proposition.optionsList,
           category: this.category.categoryName
         }).then(response => {
