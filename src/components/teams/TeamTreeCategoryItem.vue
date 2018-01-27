@@ -40,8 +40,8 @@
     methods: {
       updateDelegation (category) {
         if (category.delegable) {
-          this.becomeDelegableResource.save({slug: this.slug, categoryName: category.categoryName},
-          {userId: this.userInfos.id}).then(response => {
+          this.delegateResource.save({slug: this.slug, categoryName: category.categoryName},
+          {userId: this.userInfos.id, action: 'becomeDelegate'}).then(response => {
             // Server answer
             if (response.body.success) {
               // Good request
@@ -63,8 +63,8 @@
             console.error('Something went wrong with the server when trying to update delegable')
           })
         } else {
-          this.removeDelegableResource.save({slug: this.slug, categoryName: category.categoryName},
-          {userId: this.userInfos.id}).then(response => {
+          this.delegateResource.save({slug: this.slug, categoryName: category.categoryName},
+          {userId: this.userInfos.id, action: 'removeDelegate'}).then(response => {
             // Server answer
             if (response.body.success) {
               // Good request
@@ -89,8 +89,7 @@
       }
     },
     mounted () {
-      this.removeDelegableResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories{/categoryName}/removeDelegate')
-      this.becomeDelegableResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories{/categoryName}/becomeDelegate')
+      this.delegateResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories{/categoryName}{/action}')
     }
   }
 </script>

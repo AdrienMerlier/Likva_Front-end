@@ -66,7 +66,7 @@
       this.slug = this.$router.history.current.params.slug
       this.proposition = this.$router.history.current.params.proposition
       this.idProposition = this.$router.history.current.params.idProposition
-      this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/idProposition}')
+      this.propositionResource = this.$resource('teams{/slug}/propositions{/idProposition}')
       this.oldProposition = Object.assign({}, this.proposition)
       this.loaded = true
     }

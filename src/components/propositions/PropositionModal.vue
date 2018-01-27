@@ -146,8 +146,8 @@
       }
     },
     mounted () {
-      this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions')
-      this.categoryResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories')
+      this.propositionResource = this.$resource('teams{/slug}/propositions')
+      this.categoryResource = this.$resource('teams{/slug}/categories')
       this.categoryResource.get({slug: this.actualTeamStore.slug}).then(response => {
         //  If server answer
         this.allCategories = response.body.categories

@@ -91,8 +91,8 @@
       },
       delegateCategory () {
         let message = {concern: 'Finalisation du vote'}
-        this.delegateCategoryResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/propId}/delegateCategory')
-        this.delegateCategoryResource.get({slug: this.slug, propId: this.idProposition}).then(response => {
+        this.delegateResource.get(
+          {slug: this.slug, propId: this.idProposition, delegateOption: 'delegateCategory'}).then(response => {
           // If server answer
           if (response.body.success) {
             // Good request
@@ -114,8 +114,8 @@
       },
       delegateGeneral () {
         console.log('Coucou')
-        this.delegateGeneralResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/propId}/delegateGeneral')
-        this.delegateGeneralResource.get({slug: this.slug, propId: this.idProposition}).then(response => {
+        this.delegateResource.get(
+          {slug: this.slug, propId: this.idProposition, delegateOption: 'delegateGeneral'}).then(response => {
           // If server answer
           if (response.body.success) {
             // Good request
@@ -143,9 +143,10 @@
     },
     mounted () {
       this.proposition = this.$router.history.current.params.proposition
+      this.delegateResource = this.$resource('teams{/slug}/propositions{/propId}{/delegateOption}')
       if (this.proposition === undefined) {
         //  Ask back-end for the proposition
-        this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/idProposition}')
+        this.propositionResource = this.$resource('teams{/slug}/propositions{/idProposition}')
         this.propositionResource.get({slug: this.slug, idProposition: this.idProposition}).then(response => {
           this.proposition = response.body.props[0]
         })

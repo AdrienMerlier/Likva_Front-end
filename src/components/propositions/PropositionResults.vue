@@ -42,7 +42,7 @@
     mounted () {
       this.slug = this.$router.history.current.params.slug
       this.idProposition = this.$router.history.current.params.idProposition
-      this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions{/idProposition}/results')
+      this.propositionResource = this.$resource('teams{/slug}/propositions{/idProposition}/results')
       this.propositionResource.get({slug: this.slug, idProposition: this.idProposition}).then(response => {
         this.verdict = response.body.verdict
         this.labels = response.body.labels

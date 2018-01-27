@@ -78,7 +78,8 @@
       },
       updateBiography () {
         console.log('biography change detected')
-        this.biographyResource.update({_id: this.user._id}, {biography: this.user.biography}).then(response => {
+        this.userResource.update(
+          {_id: this.user._id, element: 'biography'}, {biography: this.user.biography}).then(response => {
           // Server answer
           if (response.body.success) {
             // Good request
@@ -108,7 +109,7 @@
       ])
     },
     beforeMount () {
-      this.userResource = this.$resource('http://127.0.0.1:3000/api/users{/_id}')
+      this.userResource = this.$resource('http://127.0.0.1:3000/api/users{/_id}{/element}')
       let _id = this.$router.history.current.query.id
       this.userResource.get({_id: _id}).then(response => {
         // If serveur answer
@@ -129,9 +130,6 @@
         // Server doesn't answer
         console.error('Something went wrong with the server when asking user infos')
       })
-    },
-    mounted () {
-      this.biographyResource = this.$resource('http://127.0.0.1:3000/api/users{/_id}/biography')
     }
   }
 </script>

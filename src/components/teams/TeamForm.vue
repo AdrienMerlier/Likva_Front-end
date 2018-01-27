@@ -56,7 +56,9 @@
         </div>
       </form>
       <div class="btn-group">
-        <button type="button" class="btn btn-outline-success" @click.prevent="createTeam">
+        <button type="button" class="btn btn-outline-success" @click.prevent="" v-if="update">
+          <i class="fa fa-send"></i> Mettre à jour</button>
+        <button type="button" class="btn btn-outline-success" @click.prevent="createTeam" v-else>
           <i class="fa fa-send"></i> Créer l'équipe</button>
         <button type="button" class="btn btn-outline-danger" @click.prevent="removeTeamInformation">
           <i class="fa fa-close"></i> Annuler</button>
@@ -88,6 +90,7 @@
     store: userStore,
     data () {
       return {
+        update: false
       }
     },
     methods: {
@@ -141,14 +144,12 @@
     },
     mounted () {
       this.update = this.$router.history.current.params.update
+      this.teamFormResource = this.$resource('teams{/slug}')
       if (this.update) {
         //  An update is coming
         this.slug = this.$router.history.current.params.slug
         this.team = this.$router.history.current.params.team
-        this.teamFormResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}')
-      } else {
-        //  A new team will be created
-        this.teamFormResource = this.$resource('http://127.0.0.1:3000/api/teams')
+
       }
     }
   }

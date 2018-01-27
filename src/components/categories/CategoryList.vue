@@ -67,7 +67,7 @@
     },
     mounted () {
       this.slug = this.$router.history.current.params.slug
-      this.categoryResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories')
+      this.categoryResource = this.$resource('teams{/slug}/categories')
       this.categoryResource.get({slug: this.slug}).then(response => {
           //  If server answer
         this.allCategories = response.body.categories

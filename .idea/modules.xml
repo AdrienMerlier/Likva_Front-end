@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Likva_Front-end.iml" filepath="$PROJECT_DIR$/.idea/Likva_Front-end.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/likvaProject.iml" filepath="$PROJECT_DIR$/.idea/likvaProject.iml" />
     </modules>
   </component>
 </project>

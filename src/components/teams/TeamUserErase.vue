@@ -49,9 +49,10 @@
       registerModification () {
         let message = {concern: 'Suppression utilisateur'}
         console.log(this.teamUser._id)
-        this.teamUserEraseResources.save(
+        this.teamAdminResource.save(
           { //  Here you define urls params
-            slug: this.slug
+            slug: this.slug,
+            action: 'erase'
           },
           { //  Here you define passed object params
             _id: this.teamUser._id
@@ -72,7 +73,7 @@
     },
     mounted () {
       this.slug = this.$router.history.current.params.slug
-      this.teamUserEraseResources = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/users/erase')
+      this.teamAdminResource = this.$resource('teams{/slug}/admin{/action}')
     }
   }
 </script>

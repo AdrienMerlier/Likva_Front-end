@@ -98,7 +98,6 @@
       logout () {
         this.razUserStore()
         this.loaded = this.hasUserInfos
-        console.log(this.loaded)
         return this.loaded
       }
     },

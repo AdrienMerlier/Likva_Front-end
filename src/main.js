@@ -12,6 +12,8 @@ Vue.use(Vuex)
 Vue.use(VueRouter)
 Vue.use(VueResource)
 
+Vue.http.options.root = 'http://127.0.0.1:3000/api'
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

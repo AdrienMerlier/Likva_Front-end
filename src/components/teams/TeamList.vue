@@ -60,7 +60,7 @@
       ]),
       joinTeam (team) {
         //  Have to update the page
-        this.joinResource.save({slug: team.slug}, {
+        this.teamResource.save({slug: team.slug, action:'join'}, {
           email: this.userInfos.email,
           teamPassword: team.secretCode
         }).then(response => {
@@ -100,11 +100,10 @@
       ])
     },
     mounted () {
-      this.teamResource = this.$resource('http://127.0.0.1:3000/api/teams', {}, {}, {
+      this.teamResource = this.$resource('teams{/slug}{/action}', {}, {}, {
         before: () => { this.loading = true },
         after: () => { this.loading = false }
       })
-      this.joinResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/join')
       this.teamResource.get().then(response => {
         // If server answer
         this.allTeams = response.body.teams

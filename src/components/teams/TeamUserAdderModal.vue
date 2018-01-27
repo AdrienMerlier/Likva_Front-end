@@ -80,7 +80,7 @@
     watch: {
       existingMembers: function () {
         let existingMembersEmail = this.existingMembers.map(user => user.userId)
-        this.usersResource = this.$resource('http://127.0.0.1:3000/api/users', {}, {}, {headers:
+        this.usersResource = this.$resource('users', {}, {}, {headers:
         {members: existingMembersEmail.toString()}})
         this.usersResource.get().then(response => {
           // If server answer
@@ -107,9 +107,10 @@
         let userToAdd = this.userList.filter(member => this.newUser === member.email)[0]
         console.log('User to add: ' + userToAdd)
         let message = {concern: 'Ajout membre'}
-        this.teamUserAdderResources.save(
+        this.teamAdminResource.save(
           { //  Here you define urls params
-            slug: this.slug
+            slug: this.slug,
+            action: 'addUser'
           },
           { //  Here you define passed object params
             _id: userToAdd._id,
@@ -135,7 +136,7 @@
     mounted () {
       console.log('On monte le MemberAdder')
       this.slug = this.$router.history.current.params.slug
-      this.teamUserAdderResources = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/admin/addUser')
+      this.teamAdminResource = this.$resource('teams{/slug}/admin{/action}')
     }
   }
 </script>

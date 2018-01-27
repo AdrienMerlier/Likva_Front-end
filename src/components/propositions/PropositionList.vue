@@ -66,7 +66,6 @@
     },
     watch: {
       allPropositions: function () {
-        this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions')
         this.slug = this.$router.history.current.params.slug
         this.propositionResource.get({slug: this.slug}).then(response => {
           //  If server answer
@@ -113,7 +112,7 @@
     mounted () {
       this.slug = this.$router.history.current.params.slug
       this.catQuery = this.$router.history.current.query.category
-      this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions')
+      this.propositionResource = this.$resource('teams{/slug}/propositions')
       this.propositionResource.get({slug: this.slug}).then(response => {
         //  If server answer
         this.allPropositions = response.body.props
@@ -127,7 +126,6 @@
       )
     },
     update () {
-      this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/propositions')
       this.slug = this.$router.history.current.params.slug
       this.propositionResource.get({slug: this.slug}).then(response => {
           //  If server answer

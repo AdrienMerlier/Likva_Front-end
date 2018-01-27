@@ -78,9 +78,10 @@
       registerModification () {
         let message = {concern: 'Modification utilisateur'}
         console.log(this.teamUser._id)
-        this.teamUserModifierResources.save(
+        this.teamAdminResource.save(
           { //  Here you define urls params
-            slug: this.slug
+            slug: this.slug,
+            action: 'modifyUser'
           },
           { //  Here you define passed object params
             _id: this.teamUser._id,
@@ -104,7 +105,7 @@
     },
     mounted () {
       this.slug = this.$router.history.current.params.slug
-      this.teamUserModifierResources = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/users/modify')
+      this.teamAdminResource = this.$resource('teams{/slug}/admin{/action}')
     }
   }
 </script>

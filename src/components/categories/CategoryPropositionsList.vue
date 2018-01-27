@@ -182,7 +182,7 @@
       this.slug = this.$router.history.current.params.slug
       this.catQuery = this.$router.history.current.query.category
       // Récupère les propositions pour une catégorie donnée
-      this.propositionResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/categories{/categoryName}', {}, {}, {headers: {
+      this.propositionResource = this.$resource('api/teams{/slug}/categories{/categoryName}', {}, {}, {headers: {
         userId: this.userInfos.id}})
       this.propositionResource.get({slug: this.slug, categoryName: this.catQuery}).then(response => {
           //  If server answer

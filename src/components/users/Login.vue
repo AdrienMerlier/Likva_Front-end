@@ -61,7 +61,8 @@
       ...Vuex.mapActions([
         'insertUserStore',
         'addMessageUserStore',
-        'updateActualTeam'
+        'updateActualTeam',
+        'updateToken'
       ]),
       logUser () {
         let message = {concern: 'Connexion'}
@@ -70,7 +71,8 @@
           if (response.body.success) {
             message.type = 'alert-success'
             message.content = 'Bienvenu dans votre espace Likva'
-            this.insertUserStore(response.body.user, response.body.token)
+            this.insertUserStore(response.body.user)
+            this.updateToken(response.body.token)
             this.updateActualTeam(this.userInfos.teams[0])
           } else {
             message.type = 'alert-danger'
@@ -92,7 +94,7 @@
       ])
     },
     mounted () {
-      this.loginResource = this.$resource('http://127.0.0.1:3000/login', {}, {}, {
+      this.loginResource = this.$resource('login', {}, {}, {
         before: () => { this.loading = true },
         after: () => { this.loading = false }
       })

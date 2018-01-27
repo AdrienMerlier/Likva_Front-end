@@ -63,7 +63,7 @@
     watch: {
       slug: function () {
         //  Ask back-end for the proposition
-        this.usersResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/users')
+        this.usersResource = this.$resource('teams{/slug}/users')
         this.usersResource.get({slug: this.slug}).then(response => {
           this.allUsers = response.body.users
         })
@@ -99,7 +99,7 @@
       console.log(this.slug)
       if (this.proposition === undefined) {
         //  Ask back-end for the proposition
-        this.usersResource = this.$resource('http://127.0.0.1:3000/api/teams{/slug}/users')
+        this.usersResource = this.$resource('teams{/slug}/users')
         this.usersResource.get({slug: this.slug}).then(response => {
           this.allUsers = response.body.users
         })

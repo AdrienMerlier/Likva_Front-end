@@ -1,6 +1,7 @@
 import Vuex from 'vuex'
 
 const state = {
+  token: '',
   user: {
     id: '',
     name: '',
@@ -32,7 +33,8 @@ const getters = {
   proposerTeams: state => state.user.teams.filter(team => team.proposer),
   tokenSession: state => state.token,
   delegateList: state => state.delegateList,
-  delegationStore: state => state.delegation
+  delegationStore: state => state.delegation,
+  userToken: state => state.token
 }
 
 const mutations = {
@@ -43,6 +45,7 @@ const mutations = {
     state.user = user
   },
   RAZ_STATE: (state) => {
+    state.token = ''
     state.user = {
       name: '',
       surname: '',
@@ -58,7 +61,7 @@ const mutations = {
     }
     state.delegateList = []
   },
-  ADD_TOKEN: (state, token) => {
+  UPDATE_TOKEN: (state, token) => {
     state.token = token
   },
   ADD_TEAM: (state, team) => {
@@ -94,10 +97,9 @@ const mutations = {
 }
 
 const actions = {
-  insertUserStore: (store, user, token) => {
+  insertUserStore: (store, user) => {
     store.commit('INSERT_USER', user)
     user.loaded = true
-    store.commit('ADD_TOKEN', token)
   },
   razUserStore: (store) => {
     store.commit('RAZ_STATE')
@@ -147,6 +149,9 @@ const actions = {
   },
   removeDelegation: (store) => {
     store.commit('REMOVE_DELEGATION')
+  },
+  updateToken: (store) => {
+    store.commit('UPDATE_TOKEN')
   }
 }
 
