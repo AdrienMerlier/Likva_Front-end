@@ -92,7 +92,7 @@
           {displayName: 'catégorie', field: 'category'},
           {displayName: 'équipe', field: 'slug'},
           {displayName: 'nombre de votants', field: 'numerOfVotes'},
-          {displayName: 'résultat', field: 'slug'}
+          {displayName: 'résultat', field: 'slug'},
           {displayName: '', field: ''}
         ]
       }

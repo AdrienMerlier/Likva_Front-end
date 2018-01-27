@@ -88,8 +88,8 @@
           description: this.proposition.description,
           change: this.proposition.change,
           consequences: this.proposition.consequences,
-          information: this.proposition.information,
-          endDate: this.proposition.endDate,
+          type: this.proposition.type,
+          endDate: this.proposition.endDate + ' ' + this.proposition.endHour,
           votePossibilities: this.proposition.optionsList,
           category: this.category.categoryName
         }).then(response => {
