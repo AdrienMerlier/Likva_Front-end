@@ -89,6 +89,7 @@
           change: this.proposition.change,
           consequences: this.proposition.consequences,
           type: this.proposition.type,
+          numberWinners: this.proposition.numberWinners,
           endDate: this.proposition.endDate + ' ' + this.proposition.endHour,
           votePossibilities: this.proposition.optionsList,
           category: this.category.categoryName

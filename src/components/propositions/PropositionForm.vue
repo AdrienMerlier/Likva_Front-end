@@ -41,7 +41,14 @@
                       v-model="proposition.type">
                 <option value="AbsoluteMajority">Majorité absolue</option>
                 <option value="MostVotes">Le plus de votes</option>
+                <option value="MostVotesSeveralWinners">Le plus de votes, plusieurs qualifiés</option>
               </select>
+            </div>
+          </div>
+          <div class="col-sm-4" v-if="proposition.type === 'MostVotesSeveralWinners'">
+            <label for="addOptions">Nombre de gagnants</label>
+            <div class="input-group">
+              <input type="number" class="form-control" name="numberWinners" id="numberWinners" v-model="proposition.numberWinners" />
             </div>
           </div>
           <div class="col-sm-3">
