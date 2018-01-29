@@ -81,26 +81,26 @@
         this.userResource.update(
           {_id: this.user._id, element: 'biography'}, {biography: this.user.biography}).then(response => {
           // Server answer
-          if (response.body.success) {
-            // Good request
-            this.addMessageUserStore({
-              content: 'Votre profile a été mis à jour',
-              type: 'alert-success',
-              concern: 'Profile'
-            })
-          } else {
-            // Bad request
-            this.addMessageUserStore({
-              content: 'Une erreur est survenue lors de la mise à jour de votre profile',
-              type: 'alert-danger',
-              concern: 'Profile'
-            })
-          }
-        }, _ => {
-          // Server doesn't answer
-          console.error('Something went wrong with the server when trying to update biography')
-        })
-      }
+            if (response.body.success) {
+              // Good request
+              this.addMessageUserStore({
+                content: 'Votre profile a été mis à jour',
+                type: 'alert-success',
+                concern: 'Profile'
+              })
+            } else {
+              // Bad request
+              this.addMessageUserStore({
+                content: 'Une erreur est survenue lors de la mise à jour de votre profile',
+                type: 'alert-danger',
+                concern: 'Profile'
+              })
+            }
+          }, _ => {
+            // Server doesn't answer
+            console.error('Something went wrong with the server when trying to update biography')
+          })
+        }
     },
     computed: {
       ...Vuex.mapGetters([
