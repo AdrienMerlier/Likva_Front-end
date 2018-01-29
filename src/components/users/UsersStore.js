@@ -80,6 +80,7 @@ const mutations = {
   CHANGE_ACTUAL_TEAM: (state, team) => {
     state.actualTeam.displayName = team.displayName
     state.actualTeam.slug = team.slug
+    state.actualTeam.public = team.public
   },
   INSERT_DELEGATES: (state, list) => {
     state.delegateList = list

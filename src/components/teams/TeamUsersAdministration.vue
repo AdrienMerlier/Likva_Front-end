@@ -38,6 +38,10 @@
       </tbody>
     </table>
     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addUserModal">Ajouter un nouveau membre</button>
+    <br></br>
+    <h4>Options pour l'équipe {{actualTeamStore.displayName}}</h4>
+    <label for="checkboxPublic"> Equipe publique </label>
+    <input type="checkbox" id="checkboxPublic" v-model="publicTeam">
     <team-user-add :existingMembers="allUsers"></team-user-add>
   </div>
 </template>
@@ -57,7 +61,8 @@
     data () {
       return {
         actualTeamUser: null,
-        allUsers: []
+        allUsers: [],
+        publicTeam: false
       }
     },
     watch: {
@@ -66,6 +71,18 @@
         this.usersResource = this.$resource('teams{/slug}/users')
         this.usersResource.get({slug: this.slug}).then(response => {
           this.allUsers = response.body.users
+        })
+      },
+      publicTeam: function () {
+        console.log(this.publicTeam)
+        this.publicResource = this.$resource('teams{/slug}/changePrivacy', {}, {}, {headers: {newPrivacy: this.publicTeam.toString()}})
+        this.publicResource.get({slug: this.slug}).then(response => {
+          if (response.body.success) {
+            console.log('It worked')
+          }
+          else {
+            this.publicTeam = !this.publicTeam
+          }
         })
       }
     },
@@ -96,6 +113,7 @@
     },
     mounted () {
       this.slug = this.$router.history.current.params.slug
+      this.publicTeam = this.actualTeamStore.public
       console.log(this.slug)
       if (this.proposition === undefined) {
         //  Ask back-end for the proposition
