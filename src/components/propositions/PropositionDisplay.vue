@@ -94,41 +94,41 @@
         this.delegateResource.get(
           {slug: this.slug, propId: this.idProposition, delegateOption: 'delegateCategory'}).then(response => {
           // If server answer
-          if (response.body.success) {
-            // Good request
-            this.isFinalised = true
-            message.content = 'La proposition a été finalisé, bouger les catégories.'
-            message.type = 'alert-success'
-            this.addMessageUserStore(message)
-          } else {
-            // Wrong request
-            console.error(response.body.message)
-            message.content = 'Le vote est en cours, finalisation impossible'
-            message.type = 'alert-danger'
-            this.addMessageUserStore(message)
-          }
-        }, _ => {
+            if (response.body.success) {
+              // Good request
+              this.isFinalised = true
+              message.content = 'La proposition a été finalisé, bouger les catégories.'
+              message.type = 'alert-success'
+              this.addMessageUserStore(message)
+            } else {
+              // Wrong request
+              console.error(response.body.message)
+              message.content = 'Le vote est en cours, finalisation impossible'
+              message.type = 'alert-danger'
+              this.addMessageUserStore(message)
+            }
+          }, _ => {
           // The server doesn't answer
-          console.error('Something went wrong with the server')
-        })
+            console.error('Something went wrong with the server')
+          })
       },
       delegateGeneral () {
         console.log('Coucou')
         this.delegateResource.get(
           {slug: this.slug, propId: this.idProposition, delegateOption: 'delegateGeneral'}).then(response => {
           // If server answer
-          if (response.body.success) {
-            // Good request
-            this.hasResults = true
-          } else {
-            // Wrong request
-            console.error(response.body.message)
-          }
-        }, _ => {
-          // The server doesn't answer
-          console.error('Something went wrong with the server')
-        })
-      }
+            if (response.body.success) {
+              // Good request
+              this.hasResults = true
+            } else {
+              // Wrong request
+              console.error(response.body.message)
+            }
+          }, _ => {
+            // The server doesn't answer
+            console.error('Something went wrong with the server')
+          })
+        }
     },
     computed: {
       ...Vuex.mapGetters([

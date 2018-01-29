@@ -60,7 +60,7 @@
       ]),
       joinTeam (team) {
         //  Have to update the page
-        this.teamResource.save({slug: team.slug, action:'join'}, {
+        this.teamResource.save({slug: team.slug, action: 'join'}, {
           email: this.userInfos.email,
           teamPassword: team.secretCode
         }).then(response => {

@@ -30,16 +30,16 @@
     methods: {
       matchWithSearch (object) {
         var res = false
-        keys.forEach(k => {
-          if (object.k.toLowerCase().includes(this.search.toLowerCase())) {res=true}
+        this.keys.forEach(k => {
+          if (object.k.toLowerCase().includes(this.search.toLowerCase())) res = true
         })
         return res
       },
       updateFilteredList () {
         this.filteredList = this.list.filter(element => {
-          matchWithSearch(element)
+          this.matchWithSearch(element)
         })
-        this.$emit('update' + this.searchName, this.filteredList )
+        this.$emit('update' + this.searchName, this.filteredList)
       }
     }
   }
