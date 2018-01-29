@@ -149,7 +149,6 @@
         //  An update is coming
         this.slug = this.$router.history.current.params.slug
         this.team = this.$router.history.current.params.team
-
       }
     }
   }
