@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c41a0e05-e275-42ef-a56f-ba14b1e16d4d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/propositions/DoughnutChart.vue" afterPath="$PROJECT_DIR$/src/components/propositions/DoughnutChart.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/propositions/PropositionResults.vue" afterPath="$PROJECT_DIR$/src/components/propositions/PropositionResults.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -50,17 +48,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DoughnutChart.vue" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DoughnutChart.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/propositions/DoughnutChart.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="249" />
+            <state relative-caret-position="198">
+              <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PropositionResults.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PropositionResults.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/propositions/PropositionResults.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
@@ -182,8 +180,8 @@
         <option value="$PROJECT_DIR$/src/components/teams/TeamUsersAdministration.vue" />
         <option value="$PROJECT_DIR$/src/components/propositions/PropositionForm.vue" />
         <option value="$PROJECT_DIR$/src/components/propositions/PropositionModal.vue" />
-        <option value="$PROJECT_DIR$/src/components/propositions/DoughnutChart.vue" />
         <option value="$PROJECT_DIR$/src/components/propositions/PropositionResults.vue" />
+        <option value="$PROJECT_DIR$/src/components/propositions/DoughnutChart.vue" />
       </list>
     </option>
   </component>
@@ -427,12 +425,12 @@
       <workItem from="1517170519019" duration="3955000" />
       <workItem from="1517206385893" duration="2384000" />
       <workItem from="1517211844515" duration="4184000" />
-      <workItem from="1517394736457" duration="1173000" />
+      <workItem from="1517394736457" duration="1789000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213619000" />
+    <option name="totallyTimeSpent" value="214235000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="75" y="24" width="928" height="1056" extended-state="4" />
@@ -788,18 +786,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/propositions/DoughnutChart.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="249" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/propositions/PropositionResults.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="54" column="29" lean-forward="false" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/propositions/DoughnutChart.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
           <folding />
         </state>
       </provider>
