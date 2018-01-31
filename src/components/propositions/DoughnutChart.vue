@@ -5,7 +5,7 @@
   export default Pie.extend({
 
     mixins: [mixins.reactiveData],
-    props: [ 'labelsVote', 'dataVote' ],
+    props: [ 'labelsVote', 'dataVote', 'backgroundColor' ],
     mounted () {
       // Overwriting base render method with actual data and options
       this.renderChart({
